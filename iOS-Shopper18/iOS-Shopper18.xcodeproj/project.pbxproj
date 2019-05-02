@@ -38,6 +38,8 @@
 		E1E255B3227B733300230E4F /* APIHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIHandler.m; sourceTree = "<group>"; };
 		E1E255B5227B74A400230E4F /* LoginViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewModel.h; sourceTree = "<group>"; };
 		E1E255B6227B74A400230E4F /* LoginViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewModel.m; sourceTree = "<group>"; };
+		E1EC9F5C227BA6AC00FD5CBB /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		E1EC9F5D227BA6B800FD5CBB /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +68,6 @@
 				85B196D217C29DD88443CC6D /* Pods-iOS-Shopper18.debug.xcconfig */,
 				A635EE0B3130BA4AB003EEA9 /* Pods-iOS-Shopper18.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -91,6 +92,7 @@
 		E1E2558F227B61EF00230E4F /* iOS-Shopper18 */ = {
 			isa = PBXGroup;
 			children = (
+				E1EC9F5B227BA69A00FD5CBB /* Utilities */,
 				E1E255AE227B647C00230E4F /* Controller */,
 				E1E255AD227B647600230E4F /* ViewModel */,
 				E1E255AC227B647100230E4F /* View */,
@@ -163,6 +165,15 @@
 				E1E255B0227B731A00230E4F /* LoginViewController.m */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		E1EC9F5B227BA69A00FD5CBB /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				E1EC9F5C227BA6AC00FD5CBB /* PrefixHeader.pch */,
+				E1EC9F5D227BA6B800FD5CBB /* Constants.h */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -434,6 +445,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4949F5FLDL;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/Utilities/PrefixHeader.pch";
 				INFOPLIST_FILE = "iOS-Shopper18/SupportFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -453,6 +466,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4949F5FLDL;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/Utilities/PrefixHeader.pch";
 				INFOPLIST_FILE = "iOS-Shopper18/SupportFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
