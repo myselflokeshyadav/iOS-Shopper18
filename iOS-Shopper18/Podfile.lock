@@ -1,0 +1,20 @@
+PODS:
+  - JVFloatLabeledTextField (1.0.2)
+  - XLForm (4.0.1)
+
+DEPENDENCIES:
+  - JVFloatLabeledTextField (= 1.0.2)
+  - XLForm
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - JVFloatLabeledTextField
+    - XLForm
+
+SPEC CHECKSUMS:
+  JVFloatLabeledTextField: 58a3a32cfb800e5b224f676987e7c13abf50a14d
+  XLForm: b8d47a9a00fb6166981cb40de7169d70d611e9be
+
+PODFILE CHECKSUM: 9d0c42ec7350f4a50c2d670d9ac73f76a07e6422
+
+COCOAPODS: 1.6.1

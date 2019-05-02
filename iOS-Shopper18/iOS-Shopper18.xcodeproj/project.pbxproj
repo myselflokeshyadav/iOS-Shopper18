@@ -1,0 +1,492 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9D2140A865400752A92949E8 /* libPods-iOS-Shopper18.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 97A6AEC58E44CD6722CA4958 /* libPods-iOS-Shopper18.a */; };
+		E1E25592227B61EF00230E4F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E25591227B61EF00230E4F /* AppDelegate.m */; };
+		E1E25598227B61EF00230E4F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1E25596227B61EF00230E4F /* Main.storyboard */; };
+		E1E2559A227B61F000230E4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1E25599227B61F000230E4F /* Assets.xcassets */; };
+		E1E2559D227B61F000230E4F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1E2559B227B61F000230E4F /* LaunchScreen.storyboard */; };
+		E1E255A0227B61F000230E4F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E2559F227B61F000230E4F /* main.m */; };
+		E1E255A9227B639400230E4F /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1E255A8227B639400230E4F /* Colors.xcassets */; };
+		E1E255B1227B731A00230E4F /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E255B0227B731A00230E4F /* LoginViewController.m */; };
+		E1E255B4227B733300230E4F /* APIHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E255B3227B733300230E4F /* APIHandler.m */; };
+		E1E255B7227B74A400230E4F /* LoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E255B6227B74A400230E4F /* LoginViewModel.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		85B196D217C29DD88443CC6D /* Pods-iOS-Shopper18.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-Shopper18.debug.xcconfig"; path = "Target Support Files/Pods-iOS-Shopper18/Pods-iOS-Shopper18.debug.xcconfig"; sourceTree = "<group>"; };
+		97A6AEC58E44CD6722CA4958 /* libPods-iOS-Shopper18.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOS-Shopper18.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A635EE0B3130BA4AB003EEA9 /* Pods-iOS-Shopper18.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-Shopper18.release.xcconfig"; path = "Target Support Files/Pods-iOS-Shopper18/Pods-iOS-Shopper18.release.xcconfig"; sourceTree = "<group>"; };
+		E1E2558D227B61EF00230E4F /* iOS-Shopper18.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-Shopper18.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1E25590227B61EF00230E4F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E1E25591227B61EF00230E4F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E1E25597227B61EF00230E4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E1E25599227B61F000230E4F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E1E2559C227B61F000230E4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E1E2559E227B61F000230E4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1E2559F227B61F000230E4F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E1E255A8227B639400230E4F /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		E1E255AF227B731A00230E4F /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		E1E255B0227B731A00230E4F /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		E1E255B2227B733300230E4F /* APIHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIHandler.h; sourceTree = "<group>"; };
+		E1E255B3227B733300230E4F /* APIHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIHandler.m; sourceTree = "<group>"; };
+		E1E255B5227B74A400230E4F /* LoginViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewModel.h; sourceTree = "<group>"; };
+		E1E255B6227B74A400230E4F /* LoginViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewModel.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E1E2558A227B61EF00230E4F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D2140A865400752A92949E8 /* libPods-iOS-Shopper18.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		74907BAC92A46BF3D9B7DDD5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				97A6AEC58E44CD6722CA4958 /* libPods-iOS-Shopper18.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DF3FF0407FBDBA03D55CBC33 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				85B196D217C29DD88443CC6D /* Pods-iOS-Shopper18.debug.xcconfig */,
+				A635EE0B3130BA4AB003EEA9 /* Pods-iOS-Shopper18.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E1E25584227B61EF00230E4F = {
+			isa = PBXGroup;
+			children = (
+				E1E2558F227B61EF00230E4F /* iOS-Shopper18 */,
+				E1E2558E227B61EF00230E4F /* Products */,
+				DF3FF0407FBDBA03D55CBC33 /* Pods */,
+				74907BAC92A46BF3D9B7DDD5 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		E1E2558E227B61EF00230E4F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E1E2558D227B61EF00230E4F /* iOS-Shopper18.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E1E2558F227B61EF00230E4F /* iOS-Shopper18 */ = {
+			isa = PBXGroup;
+			children = (
+				E1E255AE227B647C00230E4F /* Controller */,
+				E1E255AD227B647600230E4F /* ViewModel */,
+				E1E255AC227B647100230E4F /* View */,
+				E1E255AB227B646A00230E4F /* Model */,
+				E1E255AA227B63B800230E4F /* AppDelegate */,
+				E1E255A6227B62B900230E4F /* Storyboards */,
+				E1E255A7227B636100230E4F /* SupportFiles */,
+			);
+			path = "iOS-Shopper18";
+			sourceTree = "<group>";
+		};
+		E1E255A6227B62B900230E4F /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				E1E25596227B61EF00230E4F /* Main.storyboard */,
+				E1E2559B227B61F000230E4F /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		E1E255A7227B636100230E4F /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				E1E2559F227B61F000230E4F /* main.m */,
+				E1E2559E227B61F000230E4F /* Info.plist */,
+				E1E25599227B61F000230E4F /* Assets.xcassets */,
+				E1E255A8227B639400230E4F /* Colors.xcassets */,
+			);
+			path = SupportFiles;
+			sourceTree = "<group>";
+		};
+		E1E255AA227B63B800230E4F /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				E1E25590227B61EF00230E4F /* AppDelegate.h */,
+				E1E25591227B61EF00230E4F /* AppDelegate.m */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		E1E255AB227B646A00230E4F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E1E255B2227B733300230E4F /* APIHandler.h */,
+				E1E255B3227B733300230E4F /* APIHandler.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E1E255AC227B647100230E4F /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E1E255AD227B647600230E4F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E1E255B5227B74A400230E4F /* LoginViewModel.h */,
+				E1E255B6227B74A400230E4F /* LoginViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E1E255AE227B647C00230E4F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E1E255AF227B731A00230E4F /* LoginViewController.h */,
+				E1E255B0227B731A00230E4F /* LoginViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E1E2558C227B61EF00230E4F /* iOS-Shopper18 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E1E255A3227B61F000230E4F /* Build configuration list for PBXNativeTarget "iOS-Shopper18" */;
+			buildPhases = (
+				F9B30F6734832283E9EA959F /* [CP] Check Pods Manifest.lock */,
+				E1E25589227B61EF00230E4F /* Sources */,
+				E1E2558A227B61EF00230E4F /* Frameworks */,
+				E1E2558B227B61EF00230E4F /* Resources */,
+				DF0EF089386923C3D6B9C7AC /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "iOS-Shopper18";
+			productName = "iOS-Shopper18";
+			productReference = E1E2558D227B61EF00230E4F /* iOS-Shopper18.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E1E25585227B61EF00230E4F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = iOSPlayground;
+				TargetAttributes = {
+					E1E2558C227B61EF00230E4F = {
+						CreatedOnToolsVersion = 10.2;
+					};
+				};
+			};
+			buildConfigurationList = E1E25588227B61EF00230E4F /* Build configuration list for PBXProject "iOS-Shopper18" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E1E25584227B61EF00230E4F;
+			productRefGroup = E1E2558E227B61EF00230E4F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E1E2558C227B61EF00230E4F /* iOS-Shopper18 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E1E2558B227B61EF00230E4F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1E2559D227B61F000230E4F /* LaunchScreen.storyboard in Resources */,
+				E1E255A9227B639400230E4F /* Colors.xcassets in Resources */,
+				E1E2559A227B61F000230E4F /* Assets.xcassets in Resources */,
+				E1E25598227B61EF00230E4F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		DF0EF089386923C3D6B9C7AC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iOS-Shopper18/Pods-iOS-Shopper18-resources.sh",
+				"${PODS_ROOT}/XLForm/XLForm/XLForm.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/XLForm.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iOS-Shopper18/Pods-iOS-Shopper18-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F9B30F6734832283E9EA959F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iOS-Shopper18-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E1E25589227B61EF00230E4F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1E255A0227B61F000230E4F /* main.m in Sources */,
+				E1E25592227B61EF00230E4F /* AppDelegate.m in Sources */,
+				E1E255B1227B731A00230E4F /* LoginViewController.m in Sources */,
+				E1E255B7227B74A400230E4F /* LoginViewModel.m in Sources */,
+				E1E255B4227B733300230E4F /* APIHandler.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E1E25596227B61EF00230E4F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E1E25597227B61EF00230E4F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E1E2559B227B61F000230E4F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E1E2559C227B61F000230E4F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E1E255A1227B61F000230E4F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		E1E255A2227B61F000230E4F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E1E255A4227B61F000230E4F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 85B196D217C29DD88443CC6D /* Pods-iOS-Shopper18.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4949F5FLDL;
+				INFOPLIST_FILE = "iOS-Shopper18/SupportFiles/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.iOSDevs.iOS-Shopper18";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		E1E255A5227B61F000230E4F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A635EE0B3130BA4AB003EEA9 /* Pods-iOS-Shopper18.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4949F5FLDL;
+				INFOPLIST_FILE = "iOS-Shopper18/SupportFiles/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.iOSDevs.iOS-Shopper18";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E1E25588227B61EF00230E4F /* Build configuration list for PBXProject "iOS-Shopper18" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E1E255A1227B61F000230E4F /* Debug */,
+				E1E255A2227B61F000230E4F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E1E255A3227B61F000230E4F /* Build configuration list for PBXNativeTarget "iOS-Shopper18" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E1E255A4227B61F000230E4F /* Debug */,
+				E1E255A5227B61F000230E4F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E1E25585227B61EF00230E4F /* Project object */;
+}
