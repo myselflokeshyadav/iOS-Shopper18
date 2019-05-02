@@ -12,6 +12,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface APIHandler : NSObject
 
+@property (strong, nonnull) NSString *apiKey;
+
++ (instancetype)shared;
+
 @end
 
 NS_ASSUME_NONNULL_END
