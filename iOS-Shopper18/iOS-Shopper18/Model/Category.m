@@ -38,4 +38,8 @@
     return nil;
 }
 
+-(NSString *)scid {
+    return self.cid;
+}
+
 @end

@@ -18,6 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
     *desc,
     *imageURL;
 
+- (NSString *)scid;
+
 @end
 
 typedef Category Subcategory;
