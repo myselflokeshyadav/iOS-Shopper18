@@ -10,6 +10,7 @@
 		6D0137AE227C9B6900797006 /* CategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0137AC227C9B6800797006 /* CategoriesViewController.m */; };
 		6D0137B3227C9BD200797006 /* CategoryViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0137B0227C9BD100797006 /* CategoryViewCell.m */; };
 		6D0137B4227C9BD200797006 /* CategoriesViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0137B2227C9BD200797006 /* CategoriesViewModel.m */; };
+		6D0137B6227C9C8800797006 /* Category.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D0137B5227C9C8800797006 /* Category.storyboard */; };
 		9D2140A865400752A92949E8 /* libPods-iOS-Shopper18.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 97A6AEC58E44CD6722CA4958 /* libPods-iOS-Shopper18.a */; };
 		E18ADF43227C034C001EC15F /* Category.m in Sources */ = {isa = PBXBuildFile; fileRef = E18ADF42227C034C001EC15F /* Category.m */; };
 		E18ADF46227C0A48001EC15F /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = E18ADF45227C0A48001EC15F /* Product.m */; };
@@ -33,6 +34,7 @@
 		6D0137B0227C9BD100797006 /* CategoryViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryViewCell.m; sourceTree = "<group>"; };
 		6D0137B1227C9BD100797006 /* CategoriesViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoriesViewModel.h; sourceTree = "<group>"; };
 		6D0137B2227C9BD200797006 /* CategoriesViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriesViewModel.m; sourceTree = "<group>"; };
+		6D0137B5227C9C8800797006 /* Category.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Category.storyboard; sourceTree = "<group>"; };
 		85B196D217C29DD88443CC6D /* Pods-iOS-Shopper18.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-Shopper18.debug.xcconfig"; path = "Target Support Files/Pods-iOS-Shopper18/Pods-iOS-Shopper18.debug.xcconfig"; sourceTree = "<group>"; };
 		97A6AEC58E44CD6722CA4958 /* libPods-iOS-Shopper18.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOS-Shopper18.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A635EE0B3130BA4AB003EEA9 /* Pods-iOS-Shopper18.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-Shopper18.release.xcconfig"; path = "Target Support Files/Pods-iOS-Shopper18/Pods-iOS-Shopper18.release.xcconfig"; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 		E1E255A6227B62B900230E4F /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				6D0137B5227C9C8800797006 /* Category.storyboard */,
 				E1E25596227B61EF00230E4F /* Main.storyboard */,
 				E1E2559B227B61F000230E4F /* LaunchScreen.storyboard */,
 			);
@@ -270,6 +273,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D0137B6227C9C8800797006 /* Category.storyboard in Resources */,
 				E1E2559D227B61F000230E4F /* LaunchScreen.storyboard in Resources */,
 				E1E255A9227B639400230E4F /* Colors.xcassets in Resources */,
 				E1E2559A227B61F000230E4F /* Assets.xcassets in Resources */,
