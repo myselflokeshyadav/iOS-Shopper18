@@ -18,6 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
     *desc,
     *imageURL;
 
++ (instancetype)initWithInfo:(NSDictionary *)info;
+
 - (NSString *)scid;
 
 @end
