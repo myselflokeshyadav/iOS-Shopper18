@@ -17,6 +17,7 @@
 		E1E255B1227B731A00230E4F /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E255B0227B731A00230E4F /* LoginViewController.m */; };
 		E1E255B4227B733300230E4F /* APIHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E255B3227B733300230E4F /* APIHandler.m */; };
 		E1E255B7227B74A400230E4F /* LoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E255B6227B74A400230E4F /* LoginViewModel.m */; };
+		E1F91D0B227BEBE8009D0D54 /* Order.m in Sources */ = {isa = PBXBuildFile; fileRef = E1F91D0A227BEBE8009D0D54 /* Order.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,8 @@
 		E1E255B6227B74A400230E4F /* LoginViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewModel.m; sourceTree = "<group>"; };
 		E1EC9F5C227BA6AC00FD5CBB /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		E1EC9F5D227BA6B800FD5CBB /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		E1F91D09227BEBE8009D0D54 /* Order.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Order.h; sourceTree = "<group>"; };
+		E1F91D0A227BEBE8009D0D54 /* Order.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Order.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +141,8 @@
 			children = (
 				E1E255B2227B733300230E4F /* APIHandler.h */,
 				E1E255B3227B733300230E4F /* APIHandler.m */,
+				E1F91D09227BEBE8009D0D54 /* Order.h */,
+				E1F91D0A227BEBE8009D0D54 /* Order.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -296,6 +301,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1F91D0B227BEBE8009D0D54 /* Order.m in Sources */,
 				E1E255A0227B61F000230E4F /* main.m in Sources */,
 				E1E25592227B61EF00230E4F /* AppDelegate.m in Sources */,
 				E1E255B1227B731A00230E4F /* LoginViewController.m in Sources */,
