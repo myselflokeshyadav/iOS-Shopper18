@@ -7,6 +7,7 @@
 //
 
 #import "APIHandler.h"
+#import "APIParser.h"
 
 @interface APIHandler ()
 
@@ -48,11 +49,14 @@
 }
 
 - (void)callAPIWithBase:(NSString *)base endpoint:(NSString *)endpoint params:(NSDictionary *)params
-             completion: (void(^)(NSData * _Nullable, NSError * _Nullable))completion {
+             completion: (void(^)(id _Nullable, NSError * _Nullable))completion {
     
     NSURL *url = [NSURL URLWithString:[self constructURL:base endpoint:endpoint params:params]];
     [NSURLSession.sharedSession dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable _, NSError * _Nullable error) {
-        completion(data, error);
+        if (data) {
+            id result = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error: &error];
+            completion(result, error);
+        } else completion(nil, error);
     }];
 }
 
@@ -65,7 +69,7 @@
 
 - (void)registerUser:(NSDictionary *)info completion:(void(^)(id _Nullable, NSError * _Nullable))completion {
     
-    [self callAPIWithBase:kAPIEcomBase endpoint:kAPIEndPointRegister params:info completion:^(NSData * _Nullable data, NSError * _Nullable error ) {
+    [self callAPIWithBase:kAPIEcomBase endpoint:kAPIEndPointRegister params:info completion:^(id _Nullable result, NSError * _Nullable error ) {
         
     }];
     
@@ -73,7 +77,7 @@
 
 - (void)loginUser:(NSDictionary *)info completion:(void(^)(id _Nullable, NSError * _Nullable))completion {
     
-    [self callAPIWithBase:kAPIEcomBase endpoint:kAPIEndPointLogin params:info completion:^(NSData * _Nullable data, NSError * _Nullable error ) {
+    [self callAPIWithBase:kAPIEcomBase endpoint:kAPIEndPointLogin params:info completion:^(id _Nullable result, NSError * _Nullable error ) {
         
     }];
     
@@ -81,7 +85,7 @@
 
 - (void)updateProfile:(NSDictionary *)info completion:(void(^)(id _Nullable, NSError * _Nullable))completion {
     
-    [self callAPIWithBase:kAPIEcomBase endpoint:kAPIEndPointProfile params:info completion:^(NSData * _Nullable data, NSError * _Nullable error ) {
+    [self callAPIWithBase:kAPIEcomBase endpoint:kAPIEndPointProfile params:info completion:^(id _Nullable result, NSError * _Nullable error ) {
         
     }];
     
@@ -90,7 +94,7 @@
 
 - (void)resetPassword:(NSDictionary *)info completion:(void(^)(id _Nullable, NSError * _Nullable))completion {
     
-    [self callAPIWithBase:kAPIEcomBase endpoint:kAPIEndPointPassw params:info completion:^(NSData * _Nullable data, NSError * _Nullable error ) {
+    [self callAPIWithBase:kAPIEcomBase endpoint:kAPIEndPointPassw params:info completion:^(id _Nullable result, NSError * _Nullable error ) {
         
     }];
     
@@ -98,48 +102,60 @@
 
 - (void)forgotPassword:(NSDictionary *)info completion:(void(^)(id _Nullable, NSError * _Nullable))completion {
     
-    [self callAPIWithBase:kAPIEcomBase endpoint:kAPIEndPointForgot params:info completion:^(NSData * _Nullable data, NSError * _Nullable error ) {
+    [self callAPIWithBase:kAPIEcomBase endpoint:kAPIEndPointForgot params:info completion:^(id _Nullable result, NSError * _Nullable error ) {
         
     }];
     
 }
 
-
 - (void)getProductCategories:(NSDictionary *)info completion:(void(^)(id _Nullable, NSError * _Nullable))completion {
     info = [self extendedInfo:info];
-    [self callAPIWithBase:kAPICartBase endpoint:kAPIEndPointCategory params:info completion:^(NSData * _Nullable data, NSError * _Nullable error ) {
-        
+    [self callAPIWithBase:kAPICartBase endpoint:kAPIEndPointCategory params:info completion:^(id _Nullable result, NSError * _Nullable error ) {
+        if (result) completion([APIParser categoriesFrom:result], nil);
+        else completion(nil, error);
     }];
     
 }
 
 - (void)getProductSubCategories:(NSDictionary *)info completion:(void(^)(id _Nullable, NSError * _Nullable))completion {
     info = [self extendedInfo:info];
-    [self callAPIWithBase:kAPICartBase endpoint:kAPIEndPointSubCategory params:info completion:^(NSData * _Nullable data, NSError * _Nullable error ) {
-        
+    [self callAPIWithBase:kAPICartBase endpoint:kAPIEndPointSubCategory params:info completion:^(id _Nullable result, NSError * _Nullable error ) {
+        if (result) completion([APIParser categoriesFrom:result], nil);
+        else completion(nil, error);
+    }];
+    
+}
+
+- (void)getProducts:(NSDictionary *)info completion:(void(^)(id _Nullable, NSError * _Nullable))completion {
+    info = [self extendedInfo:info];
+    [self callAPIWithBase:kAPICartBase endpoint:kAPIEndPointProductList params:info completion:^(id _Nullable result, NSError * _Nullable error ) {
+        if (result) completion([APIParser productsFrom:result], nil);
+        else completion(nil, error);
     }];
     
 }
 
 - (void)placeOrder:(NSDictionary *)info completion:(void(^)(id _Nullable, NSError * _Nullable))completion {
     info = [self extendedInfo:info];
-    [self callAPIWithBase:kAPICartBase endpoint:kAPIEndPointProductList params:info completion:^(NSData * _Nullable data, NSError * _Nullable error ) {
-        
+    [self callAPIWithBase:kAPIEcomBase endpoint:kAPIEndPointMakeOrder params:info completion:^(id _Nullable result, NSError * _Nullable error ) {
+        if (result) completion([APIParser ordersFrom:result], nil);
+        else completion(nil, error);
     }];
     
 }
 
 - (void)getOrderHistory:(NSDictionary *)info completion:(void(^)(id _Nullable, NSError * _Nullable))completion {
     info = [self extendedInfo:info];
-    [self callAPIWithBase:kAPICartBase endpoint:kAPIEndPointProductList params:info completion:^(NSData * _Nullable data, NSError * _Nullable error ) {
-        
+    [self callAPIWithBase:kAPIEcomBase endpoint:kAPIEndPointOrderHist params:info completion:^(id _Nullable result, NSError * _Nullable error ) {
+        if (result) completion([APIParser ordersFrom:result], nil);
+        else completion(nil, error);
     }];
     
 }
 
 - (void)getShipmentTrack:(NSDictionary *)info completion:(void(^)(id _Nullable, NSError * _Nullable))completion {
     info = [self extendedInfo:info];
-    [self callAPIWithBase:kAPICartBase endpoint:kAPIEndPointProductList params:info completion:^(NSData * _Nullable data, NSError * _Nullable error ) {
+    [self callAPIWithBase:kAPIEcomBase endpoint:kAPIEndPointShipTrack params:info completion:^(id _Nullable result, NSError * _Nullable error ) {
         
     }];
     
@@ -147,7 +163,7 @@
 
 - (void)getCoupon:(NSDictionary *)info completion:(void(^)(id _Nullable, NSError * _Nullable))completion {
     info = [self extendedInfo:info];
-    [self callAPIWithBase:kAPICartBase endpoint:kAPIEndPointProductList params:info completion:^(NSData * _Nullable data, NSError * _Nullable error ) {
+    [self callAPIWithBase:kAPIEcomBase endpoint:kAPIEndPointCoupon params:info completion:^(id _Nullable result, NSError * _Nullable error ) {
         
     }];
     
@@ -155,7 +171,7 @@
 
 - (void)uploadProfilePic:(NSDictionary *)info completion:(void(^)(id _Nullable, NSError * _Nullable))completion {
     
-    [self callAPIWithBase:kAPICartBase endpoint:kAPIEndPointProductList params:info completion:^(NSData * _Nullable data, NSError * _Nullable error ) {
+    [self callAPIWithBase:kAPIEcomBase endpoint:kAPIEndPointCoupon params:info completion:^(id _Nullable result, NSError * _Nullable error ) {
         
     }];
     
