@@ -20,4 +20,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+typedef Category Subcategory;
+
 NS_ASSUME_NONNULL_END
