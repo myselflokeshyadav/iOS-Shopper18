@@ -30,4 +30,9 @@
 #define kAPIEndPointSubCategory @"cust_sub_category.php?"
 #define kAPIEndPointProductList @"product_details.php?"
 
+
+#define kTestAPIKey             @"a10f31e8bd677f6db68e7ec411861412"
+#define kTestUserID             @"1737"
+#define kTestMobile             @"0001112222"
+
 #endif /* Constants_h */
