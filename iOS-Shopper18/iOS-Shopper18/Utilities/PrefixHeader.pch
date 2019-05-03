@@ -1,0 +1,14 @@
+//
+//  PrefixHeader.pch
+//  iOS-Shopper18
+//
+//  Created by Alvin Ling on 5/2/19.
+//  Copyright © 2019 iOSPlayground. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import "Constants.h"
+
+#endif /* PrefixHeader_pch */
