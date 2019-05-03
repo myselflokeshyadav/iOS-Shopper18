@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D0137AE227C9B6900797006 /* CategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0137AC227C9B6800797006 /* CategoriesViewController.m */; };
 		9D2140A865400752A92949E8 /* libPods-iOS-Shopper18.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 97A6AEC58E44CD6722CA4958 /* libPods-iOS-Shopper18.a */; };
 		E18ADF43227C034C001EC15F /* Category.m in Sources */ = {isa = PBXBuildFile; fileRef = E18ADF42227C034C001EC15F /* Category.m */; };
 		E18ADF46227C0A48001EC15F /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = E18ADF45227C0A48001EC15F /* Product.m */; };
@@ -24,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6D0137AC227C9B6800797006 /* CategoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriesViewController.m; sourceTree = "<group>"; };
+		6D0137AD227C9B6800797006 /* CategoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoriesViewController.h; sourceTree = "<group>"; };
 		85B196D217C29DD88443CC6D /* Pods-iOS-Shopper18.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-Shopper18.debug.xcconfig"; path = "Target Support Files/Pods-iOS-Shopper18/Pods-iOS-Shopper18.debug.xcconfig"; sourceTree = "<group>"; };
 		97A6AEC58E44CD6722CA4958 /* libPods-iOS-Shopper18.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOS-Shopper18.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A635EE0B3130BA4AB003EEA9 /* Pods-iOS-Shopper18.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-Shopper18.release.xcconfig"; path = "Target Support Files/Pods-iOS-Shopper18/Pods-iOS-Shopper18.release.xcconfig"; sourceTree = "<group>"; };
@@ -172,6 +175,8 @@
 		E1E255AD227B647600230E4F /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				6D0137AD227C9B6800797006 /* CategoriesViewController.h */,
+				6D0137AC227C9B6800797006 /* CategoriesViewController.m */,
 				E1E255B5227B74A400230E4F /* LoginViewModel.h */,
 				E1E255B6227B74A400230E4F /* LoginViewModel.m */,
 			);
@@ -324,6 +329,7 @@
 				E1E255B1227B731A00230E4F /* LoginViewController.m in Sources */,
 				E18ADF46227C0A48001EC15F /* Product.m in Sources */,
 				E1E255B7227B74A400230E4F /* LoginViewModel.m in Sources */,
+				6D0137AE227C9B6900797006 /* CategoriesViewController.m in Sources */,
 				E1E255B4227B733300230E4F /* APIHandler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
