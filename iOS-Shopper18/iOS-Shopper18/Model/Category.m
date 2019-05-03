@@ -23,12 +23,19 @@
 + (instancetype)initWithInfo:(NSDictionary *)info {
     Category *category = [self init];
     if (category) {
-        category.cid = info[@"cid"];
-        category.name = info[@"cname"];
-        category.desc = info[@"cdiscription"];
-        category.imageURL = info[@"cimagerl"];
+        category.cid = [self parseFromKeys:@[@"cid", @"scid"] info:info];
+        category.name = [self parseFromKeys:@[@"cname", @"scname"] info:info];
+        category.desc = [self parseFromKeys:@[@"cdiscription", @"scdiscription"] info:info];
+        
+        category.imageURL = [self parseFromKeys:@[@"cimagerl", @"scimageurl"] info:info];
     }
     return category;
+}
+
++ (id) parseFromKeys:(NSArray<NSString *> *)keys info:(NSDictionary *)info {
+    for (NSString *key in keys)
+        if (info[key]) return info[key];
+    return nil;
 }
 
 @end
