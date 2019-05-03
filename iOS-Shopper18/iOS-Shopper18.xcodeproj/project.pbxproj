@@ -10,6 +10,7 @@
 		9D2140A865400752A92949E8 /* libPods-iOS-Shopper18.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 97A6AEC58E44CD6722CA4958 /* libPods-iOS-Shopper18.a */; };
 		E18ADF43227C034C001EC15F /* Category.m in Sources */ = {isa = PBXBuildFile; fileRef = E18ADF42227C034C001EC15F /* Category.m */; };
 		E18ADF46227C0A48001EC15F /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = E18ADF45227C0A48001EC15F /* Product.m */; };
+		E18ADF49227C10EA001EC15F /* APIParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E18ADF48227C10EA001EC15F /* APIParser.m */; };
 		E1E25592227B61EF00230E4F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E25591227B61EF00230E4F /* AppDelegate.m */; };
 		E1E25598227B61EF00230E4F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1E25596227B61EF00230E4F /* Main.storyboard */; };
 		E1E2559A227B61F000230E4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1E25599227B61F000230E4F /* Assets.xcassets */; };
@@ -30,6 +31,8 @@
 		E18ADF42227C034C001EC15F /* Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Category.m; sourceTree = "<group>"; };
 		E18ADF44227C0A48001EC15F /* Product.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
 		E18ADF45227C0A48001EC15F /* Product.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
+		E18ADF47227C10EA001EC15F /* APIParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIParser.h; sourceTree = "<group>"; };
+		E18ADF48227C10EA001EC15F /* APIParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIParser.m; sourceTree = "<group>"; };
 		E1E2558D227B61EF00230E4F /* iOS-Shopper18.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-Shopper18.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1E25590227B61EF00230E4F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E1E25591227B61EF00230E4F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -147,6 +150,8 @@
 			children = (
 				E1E255B2227B733300230E4F /* APIHandler.h */,
 				E1E255B3227B733300230E4F /* APIHandler.m */,
+				E18ADF47227C10EA001EC15F /* APIParser.h */,
+				E18ADF48227C10EA001EC15F /* APIParser.m */,
 				E1F91D09227BEBE8009D0D54 /* Order.h */,
 				E1F91D0A227BEBE8009D0D54 /* Order.m */,
 				E18ADF41227C034C001EC15F /* Category.h */,
@@ -314,6 +319,7 @@
 				E18ADF43227C034C001EC15F /* Category.m in Sources */,
 				E1F91D0B227BEBE8009D0D54 /* Order.m in Sources */,
 				E1E255A0227B61F000230E4F /* main.m in Sources */,
+				E18ADF49227C10EA001EC15F /* APIParser.m in Sources */,
 				E1E25592227B61EF00230E4F /* AppDelegate.m in Sources */,
 				E1E255B1227B731A00230E4F /* LoginViewController.m in Sources */,
 				E18ADF46227C0A48001EC15F /* Product.m in Sources */,
