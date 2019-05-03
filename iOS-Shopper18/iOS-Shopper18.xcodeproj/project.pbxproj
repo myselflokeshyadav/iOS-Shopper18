@@ -175,8 +175,6 @@
 		E1E255AD227B647600230E4F /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				6D0137AD227C9B6800797006 /* CategoriesViewController.h */,
-				6D0137AC227C9B6800797006 /* CategoriesViewController.m */,
 				E1E255B5227B74A400230E4F /* LoginViewModel.h */,
 				E1E255B6227B74A400230E4F /* LoginViewModel.m */,
 			);
@@ -188,6 +186,8 @@
 			children = (
 				E1E255AF227B731A00230E4F /* LoginViewController.h */,
 				E1E255B0227B731A00230E4F /* LoginViewController.m */,
+				6D0137AD227C9B6800797006 /* CategoriesViewController.h */,
+				6D0137AC227C9B6800797006 /* CategoriesViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
