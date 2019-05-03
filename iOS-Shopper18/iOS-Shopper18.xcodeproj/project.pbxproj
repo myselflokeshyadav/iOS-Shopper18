@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9D2140A865400752A92949E8 /* libPods-iOS-Shopper18.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 97A6AEC58E44CD6722CA4958 /* libPods-iOS-Shopper18.a */; };
+		E18ADF43227C034C001EC15F /* Category.m in Sources */ = {isa = PBXBuildFile; fileRef = E18ADF42227C034C001EC15F /* Category.m */; };
 		E1E25592227B61EF00230E4F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E25591227B61EF00230E4F /* AppDelegate.m */; };
 		E1E25598227B61EF00230E4F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1E25596227B61EF00230E4F /* Main.storyboard */; };
 		E1E2559A227B61F000230E4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1E25599227B61F000230E4F /* Assets.xcassets */; };
@@ -24,6 +25,8 @@
 		85B196D217C29DD88443CC6D /* Pods-iOS-Shopper18.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-Shopper18.debug.xcconfig"; path = "Target Support Files/Pods-iOS-Shopper18/Pods-iOS-Shopper18.debug.xcconfig"; sourceTree = "<group>"; };
 		97A6AEC58E44CD6722CA4958 /* libPods-iOS-Shopper18.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOS-Shopper18.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A635EE0B3130BA4AB003EEA9 /* Pods-iOS-Shopper18.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-Shopper18.release.xcconfig"; path = "Target Support Files/Pods-iOS-Shopper18/Pods-iOS-Shopper18.release.xcconfig"; sourceTree = "<group>"; };
+		E18ADF41227C034C001EC15F /* Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Category.h; sourceTree = "<group>"; };
+		E18ADF42227C034C001EC15F /* Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Category.m; sourceTree = "<group>"; };
 		E1E2558D227B61EF00230E4F /* iOS-Shopper18.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-Shopper18.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1E25590227B61EF00230E4F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E1E25591227B61EF00230E4F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -143,6 +146,8 @@
 				E1E255B3227B733300230E4F /* APIHandler.m */,
 				E1F91D09227BEBE8009D0D54 /* Order.h */,
 				E1F91D0A227BEBE8009D0D54 /* Order.m */,
+				E18ADF41227C034C001EC15F /* Category.h */,
+				E18ADF42227C034C001EC15F /* Category.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -301,6 +306,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E18ADF43227C034C001EC15F /* Category.m in Sources */,
 				E1F91D0B227BEBE8009D0D54 /* Order.m in Sources */,
 				E1E255A0227B61F000230E4F /* main.m in Sources */,
 				E1E25592227B61EF00230E4F /* AppDelegate.m in Sources */,
