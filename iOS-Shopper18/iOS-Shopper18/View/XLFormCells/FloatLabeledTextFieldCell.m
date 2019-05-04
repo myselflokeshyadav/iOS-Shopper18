@@ -66,8 +66,10 @@ const static CGFloat kFloatingLabelFontSize = 11.0f;
     [self.contentView addSubview:self.floatLabeledTextField];
     [self.floatLabeledTextField setDelegate:self];
     [self.contentView addConstraints:[self layoutConstraints]];
-//    [self.contentView setBackgroundColor:UIColor.blueColor];
-//    [self.floatLabeledTextField setBackgroundColor:UIColor.brownColor];
+    [self.contentView setBackgroundColor:UIColor.yellowColor];
+    self.contentView.layer.cornerRadius = 10;
+    [self.floatLabeledTextField setBackgroundColor:UIColor.clearColor];
+    self.backgroundColor = UIColor.clearColor;
 }
 
 -(void)update
