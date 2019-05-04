@@ -12,6 +12,7 @@
 		6D0137B4227C9BD200797006 /* CategoriesViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0137B2227C9BD200797006 /* CategoriesViewModel.m */; };
 		6D0137B6227C9C8800797006 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D0137B5227C9C8800797006 /* Main.storyboard */; };
 		9D2140A865400752A92949E8 /* libPods-iOS-Shopper18.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 97A6AEC58E44CD6722CA4958 /* libPods-iOS-Shopper18.a */; };
+		A3E30393227CEA3E001E48AF /* FeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3E30392227CEA3E001E48AF /* FeedbackViewController.m */; };
 		E18ADF43227C034C001EC15F /* Category.m in Sources */ = {isa = PBXBuildFile; fileRef = E18ADF42227C034C001EC15F /* Category.m */; };
 		E18ADF46227C0A48001EC15F /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = E18ADF45227C0A48001EC15F /* Product.m */; };
 		E18ADF49227C10EA001EC15F /* APIParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E18ADF48227C10EA001EC15F /* APIParser.m */; };
@@ -41,6 +42,8 @@
 		6D0137B5227C9C8800797006 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		85B196D217C29DD88443CC6D /* Pods-iOS-Shopper18.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-Shopper18.debug.xcconfig"; path = "Target Support Files/Pods-iOS-Shopper18/Pods-iOS-Shopper18.debug.xcconfig"; sourceTree = "<group>"; };
 		97A6AEC58E44CD6722CA4958 /* libPods-iOS-Shopper18.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOS-Shopper18.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A3E30391227CEA3E001E48AF /* FeedbackViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedbackViewController.h; sourceTree = "<group>"; };
+		A3E30392227CEA3E001E48AF /* FeedbackViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedbackViewController.m; sourceTree = "<group>"; };
 		A635EE0B3130BA4AB003EEA9 /* Pods-iOS-Shopper18.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-Shopper18.release.xcconfig"; path = "Target Support Files/Pods-iOS-Shopper18/Pods-iOS-Shopper18.release.xcconfig"; sourceTree = "<group>"; };
 		E18ADF41227C034C001EC15F /* Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Category.h; sourceTree = "<group>"; };
 		E18ADF42227C034C001EC15F /* Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Category.m; sourceTree = "<group>"; };
@@ -237,6 +240,8 @@
 				6D0137AC227C9B6800797006 /* CategoriesViewController.m */,
 				E1C45368227CB4E3001CD5E6 /* RegisterViewController.h */,
 				E1C45369227CB4E3001CD5E6 /* RegisterViewController.m */,
+				A3E30391227CEA3E001E48AF /* FeedbackViewController.h */,
+				A3E30392227CEA3E001E48AF /* FeedbackViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -379,6 +384,7 @@
 				E18ADF49227C10EA001EC15F /* APIParser.m in Sources */,
 				E1E25592227B61EF00230E4F /* AppDelegate.m in Sources */,
 				6D0137B4227C9BD200797006 /* CategoriesViewModel.m in Sources */,
+				A3E30393227CEA3E001E48AF /* FeedbackViewController.m in Sources */,
 				E1E255B1227B731A00230E4F /* LoginViewController.m in Sources */,
 				E18ADF46227C0A48001EC15F /* Product.m in Sources */,
 				E1C4536A227CB4E4001CD5E6 /* RegisterViewController.m in Sources */,
