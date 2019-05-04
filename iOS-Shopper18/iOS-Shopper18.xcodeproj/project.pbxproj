@@ -17,6 +17,7 @@
 		E18ADF46227C0A48001EC15F /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = E18ADF45227C0A48001EC15F /* Product.m */; };
 		E18ADF49227C10EA001EC15F /* APIParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E18ADF48227C10EA001EC15F /* APIParser.m */; };
 		E1AF4A32227E411D0087D198 /* Category.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1AF4A31227E411D0087D198 /* Category.storyboard */; };
+		E1AF4A35227E47B40087D198 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = E1AF4A34227E47B40087D198 /* User.m */; };
 		E1C45367227CB47A001CD5E6 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1C45366227CB47A001CD5E6 /* Login.storyboard */; };
 		E1C4536A227CB4E4001CD5E6 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1C45369227CB4E3001CD5E6 /* RegisterViewController.m */; };
 		E1C4536D227CB586001CD5E6 /* RegisterViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E1C4536C227CB586001CD5E6 /* RegisterViewModel.m */; };
@@ -54,6 +55,8 @@
 		E18ADF47227C10EA001EC15F /* APIParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIParser.h; sourceTree = "<group>"; };
 		E18ADF48227C10EA001EC15F /* APIParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIParser.m; sourceTree = "<group>"; };
 		E1AF4A31227E411D0087D198 /* Category.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Category.storyboard; sourceTree = "<group>"; };
+		E1AF4A33227E47B40087D198 /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		E1AF4A34227E47B40087D198 /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		E1C45366227CB47A001CD5E6 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		E1C45368227CB4E3001CD5E6 /* RegisterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		E1C45369227CB4E3001CD5E6 /* RegisterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
@@ -219,6 +222,8 @@
 				E18ADF42227C034C001EC15F /* Category.m */,
 				E18ADF44227C0A48001EC15F /* Product.h */,
 				E18ADF45227C0A48001EC15F /* Product.m */,
+				E1AF4A33227E47B40087D198 /* User.h */,
+				E1AF4A34227E47B40087D198 /* User.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -403,6 +408,7 @@
 				E1C4536A227CB4E4001CD5E6 /* RegisterViewController.m in Sources */,
 				E1E255B7227B74A400230E4F /* LoginViewModel.m in Sources */,
 				6D0137AE227C9B6900797006 /* CategoriesViewController.m in Sources */,
+				E1AF4A35227E47B40087D198 /* User.m in Sources */,
 				E1C45371227CC1BF001CD5E6 /* FloatLabeledTextFieldCell.m in Sources */,
 				E1E255B4227B733300230E4F /* APIHandler.m in Sources */,
 				E1C4536D227CB586001CD5E6 /* RegisterViewModel.m in Sources */,
