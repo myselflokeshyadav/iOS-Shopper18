@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Category.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -14,6 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIImageView *categoryImage;
 @property (weak, nonatomic) IBOutlet UILabel *categoryName;
 
+@property (assign, nonatomic) Category * category;
+-(void)setCategoryCell:(Category * _Nonnull)category;
 @end
 
 NS_ASSUME_NONNULL_END
