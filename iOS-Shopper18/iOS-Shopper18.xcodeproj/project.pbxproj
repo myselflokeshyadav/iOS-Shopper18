@@ -11,6 +11,10 @@
 		6D0137B3227C9BD200797006 /* CategoryViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0137B0227C9BD100797006 /* CategoryViewCell.m */; };
 		6D0137B4227C9BD200797006 /* CategoriesViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0137B2227C9BD200797006 /* CategoriesViewModel.m */; };
 		6D0137B6227C9C8800797006 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D0137B5227C9C8800797006 /* Main.storyboard */; };
+		6D0C41F4227E56EF005AE167 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0C41F3227E56EF005AE167 /* HomeViewController.m */; };
+		6D0C41F7227E5836005AE167 /* HomeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0C41F6227E5836005AE167 /* HomeViewModel.m */; };
+		6D0C41FA227E596C005AE167 /* SubcategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0C41F9227E596C005AE167 /* SubcategoriesViewController.m */; };
+		6D0C41FD227E598D005AE167 /* SubcategoriesViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0C41FC227E598D005AE167 /* SubcategoriesViewModel.m */; };
 		6EBDFE20EADB5BE4DDC36B99 /* libPods-iOS-Shopper18.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3767B6D6BA0F789D1EA64F4B /* libPods-iOS-Shopper18.a */; };
 		A3E30393227CEA3E001E48AF /* FeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3E30392227CEA3E001E48AF /* FeedbackViewController.m */; };
 		E18ADF43227C034C001EC15F /* Category.m in Sources */ = {isa = PBXBuildFile; fileRef = E18ADF42227C034C001EC15F /* Category.m */; };
@@ -46,6 +50,14 @@
 		6D0137B1227C9BD100797006 /* CategoriesViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoriesViewModel.h; sourceTree = "<group>"; };
 		6D0137B2227C9BD200797006 /* CategoriesViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriesViewModel.m; sourceTree = "<group>"; };
 		6D0137B5227C9C8800797006 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		6D0C41F2227E56EF005AE167 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		6D0C41F3227E56EF005AE167 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		6D0C41F5227E5836005AE167 /* HomeViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewModel.h; sourceTree = "<group>"; };
+		6D0C41F6227E5836005AE167 /* HomeViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewModel.m; sourceTree = "<group>"; };
+		6D0C41F8227E596C005AE167 /* SubcategoriesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SubcategoriesViewController.h; sourceTree = "<group>"; };
+		6D0C41F9227E596C005AE167 /* SubcategoriesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SubcategoriesViewController.m; sourceTree = "<group>"; };
+		6D0C41FB227E598D005AE167 /* SubcategoriesViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SubcategoriesViewModel.h; sourceTree = "<group>"; };
+		6D0C41FC227E598D005AE167 /* SubcategoriesViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SubcategoriesViewModel.m; sourceTree = "<group>"; };
 		A3E30391227CEA3E001E48AF /* FeedbackViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedbackViewController.h; sourceTree = "<group>"; };
 		A3E30392227CEA3E001E48AF /* FeedbackViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedbackViewController.m; sourceTree = "<group>"; };
 		E18ADF41227C034C001EC15F /* Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Category.h; sourceTree = "<group>"; };
@@ -247,6 +259,10 @@
 				E1C4536C227CB586001CD5E6 /* RegisterViewModel.m */,
 				6D0137B1227C9BD100797006 /* CategoriesViewModel.h */,
 				6D0137B2227C9BD200797006 /* CategoriesViewModel.m */,
+				6D0C41F5227E5836005AE167 /* HomeViewModel.h */,
+				6D0C41F6227E5836005AE167 /* HomeViewModel.m */,
+				6D0C41FB227E598D005AE167 /* SubcategoriesViewModel.h */,
+				6D0C41FC227E598D005AE167 /* SubcategoriesViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -263,6 +279,10 @@
 				E1C45369227CB4E3001CD5E6 /* RegisterViewController.m */,
 				A3E30391227CEA3E001E48AF /* FeedbackViewController.h */,
 				A3E30392227CEA3E001E48AF /* FeedbackViewController.m */,
+				6D0C41F2227E56EF005AE167 /* HomeViewController.h */,
+				6D0C41F3227E56EF005AE167 /* HomeViewController.m */,
+				6D0C41F8227E596C005AE167 /* SubcategoriesViewController.h */,
+				6D0C41F9227E596C005AE167 /* SubcategoriesViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -396,17 +416,21 @@
 				E18ADF43227C034C001EC15F /* Category.m in Sources */,
 				E1C45376227D3AA5001CD5E6 /* BaseFormViewController.m in Sources */,
 				E1F91D0B227BEBE8009D0D54 /* Order.m in Sources */,
+				6D0C41F4227E56EF005AE167 /* HomeViewController.m in Sources */,
 				E1E255A0227B61F000230E4F /* main.m in Sources */,
+				6D0C41FA227E596C005AE167 /* SubcategoriesViewController.m in Sources */,
 				E1C4537B227D4875001CD5E6 /* UIView+InterfaceBuilder.m in Sources */,
 				6D0137B3227C9BD200797006 /* CategoryViewCell.m in Sources */,
 				E18ADF49227C10EA001EC15F /* APIParser.m in Sources */,
 				E1E25592227B61EF00230E4F /* AppDelegate.m in Sources */,
+				6D0C41F7227E5836005AE167 /* HomeViewModel.m in Sources */,
 				6D0137B4227C9BD200797006 /* CategoriesViewModel.m in Sources */,
 				A3E30393227CEA3E001E48AF /* FeedbackViewController.m in Sources */,
 				E1E255B1227B731A00230E4F /* LoginViewController.m in Sources */,
 				E18ADF46227C0A48001EC15F /* Product.m in Sources */,
 				E1C4536A227CB4E4001CD5E6 /* RegisterViewController.m in Sources */,
 				E1E255B7227B74A400230E4F /* LoginViewModel.m in Sources */,
+				6D0C41FD227E598D005AE167 /* SubcategoriesViewModel.m in Sources */,
 				6D0137AE227C9B6900797006 /* CategoriesViewController.m in Sources */,
 				E1AF4A35227E47B40087D198 /* User.m in Sources */,
 				E1C45371227CC1BF001CD5E6 /* FloatLabeledTextFieldCell.m in Sources */,
