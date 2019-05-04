@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hT0-C4-kU1">
-    <device id="retina6_1" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,31 +15,80 @@
             <objects>
                 <viewController id="aPy-gI-8lj" customClass="LoginViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gWn-pA-ebo">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tZ2-Lb-L89">
-                                <rect key="frame" x="40" y="378" width="334" height="140"/>
+                                <rect key="frame" x="40" y="280" width="334" height="140"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="140" id="FzZ-28-gLt"/>
                                 </constraints>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xV4-bU-Umi">
-                                <rect key="frame" x="275" y="131" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h3s-rZ-pOd">
+                                <rect key="frame" x="40" y="510" width="334" height="55"/>
+                                <color key="backgroundColor" red="0.0" green="0.68137293779999997" blue="0.084394885899999994" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="2ot-ec-eDj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Sign In">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cWK-MZ-jk7">
+                                <rect key="frame" x="40" y="605" width="334" height="55"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Need an account?">
+                                    <color key="titleColor" red="0.0" green="0.68137293779999997" blue="0.084394885899999994" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.0" green="0.68137293779999997" blue="0.084394885899999994" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="xNB-D8-9TT" kind="show" id="xMn-dN-kg0"/>
+                                    <segue destination="xNB-D8-9TT" kind="show" id="GnS-uz-f57"/>
                                 </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Nh-Mt-Pnd">
+                                <rect key="frame" x="128.66666666666666" y="565" width="156.99999999999997" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="157" id="8tY-we-25u"/>
+                                    <constraint firstAttribute="height" constant="30" id="e7A-up-9Vf"/>
+                                </constraints>
+                                <state key="normal" title="Forgot your password?">
+                                    <color key="titleColor" red="0.0" green="0.68137293779999997" blue="0.084394885899999994" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="tZ2-Lb-L89" firstAttribute="leading" secondItem="Jry-1l-4eM" secondAttribute="leading" constant="40" id="CWD-bH-h3M"/>
+                            <constraint firstItem="2Nh-Mt-Pnd" firstAttribute="top" secondItem="h3s-rZ-pOd" secondAttribute="bottom" id="D2q-ku-nAo"/>
+                            <constraint firstItem="Jry-1l-4eM" firstAttribute="trailing" secondItem="h3s-rZ-pOd" secondAttribute="trailing" constant="40" id="GYJ-Ru-wKY"/>
+                            <constraint firstItem="2Nh-Mt-Pnd" firstAttribute="centerX" secondItem="h3s-rZ-pOd" secondAttribute="centerX" id="Kqg-aW-lv0"/>
+                            <constraint firstItem="h3s-rZ-pOd" firstAttribute="top" secondItem="tZ2-Lb-L89" secondAttribute="bottom" constant="90" id="ZLg-BW-NcN"/>
+                            <constraint firstItem="cWK-MZ-jk7" firstAttribute="top" secondItem="h3s-rZ-pOd" secondAttribute="bottom" constant="40" id="ZWj-ix-lZp"/>
+                            <constraint firstItem="cWK-MZ-jk7" firstAttribute="trailing" secondItem="h3s-rZ-pOd" secondAttribute="trailing" id="e9d-AA-h0h"/>
+                            <constraint firstItem="cWK-MZ-jk7" firstAttribute="height" secondItem="h3s-rZ-pOd" secondAttribute="height" id="ek9-dj-rKS"/>
+                            <constraint firstItem="cWK-MZ-jk7" firstAttribute="leading" secondItem="h3s-rZ-pOd" secondAttribute="leading" id="fo0-7w-lSx"/>
+                            <constraint firstItem="h3s-rZ-pOd" firstAttribute="leading" secondItem="Jry-1l-4eM" secondAttribute="leading" constant="40" id="pw8-6x-SMJ"/>
                             <constraint firstItem="Jry-1l-4eM" firstAttribute="trailing" secondItem="tZ2-Lb-L89" secondAttribute="trailing" constant="40" id="qhB-w2-WkN"/>
-                            <constraint firstItem="tZ2-Lb-L89" firstAttribute="centerY" secondItem="gWn-pA-ebo" secondAttribute="centerY" id="wj4-px-Ap9"/>
+                            <constraint firstItem="tZ2-Lb-L89" firstAttribute="centerY" secondItem="Jry-1l-4eM" secondAttribute="centerY" constant="-50" id="wj4-px-Ap9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Jry-1l-4eM"/>
                     </view>
@@ -57,17 +106,24 @@
             <objects>
                 <viewController id="xNB-D8-9TT" customClass="RegisterViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="i3p-Pp-7X2">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JxF-hM-USH">
-                                <rect key="frame" x="0.0" y="210" width="414" height="527"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JxF-hM-USH">
+                                <rect key="frame" x="40" y="175" width="334" height="450"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="450" id="wwc-Xo-xhg"/>
+                                </constraints>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.68731337749999999" blue="0.1559075862" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="JxF-hM-USH" firstAttribute="leading" secondItem="Cyp-vV-j40" secondAttribute="leading" constant="40" id="KGX-f1-qka"/>
+                            <constraint firstItem="JxF-hM-USH" firstAttribute="centerY" secondItem="Cyp-vV-j40" secondAttribute="centerY" id="pgH-hk-4FW"/>
+                            <constraint firstItem="Cyp-vV-j40" firstAttribute="trailing" secondItem="JxF-hM-USH" secondAttribute="trailing" constant="40" id="vZp-6v-Zhf"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Cyp-vV-j40"/>
                     </view>
                     <connections>
@@ -84,7 +140,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hT0-C4-kU1" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="TlK-fS-Jho">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

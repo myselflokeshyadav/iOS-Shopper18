@@ -18,6 +18,20 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)setTagForRow:(XLFormRowDescriptor *)row tag:(NSInteger)tag;
 
+- (XLFormRowDescriptor *)floatRowWithTag:(NSString *)tag title:(NSString *)title;
+
+- (XLFormRowDescriptor *)mobileRowRequired:(BOOL)required;
+
+- (XLFormRowDescriptor *)passwordRowRequired:(BOOL)required;
+
+- (XLFormRowDescriptor *)emailRowRequired:(BOOL)required;
+
+- (XLFormRowDescriptor *)fnameRowRequired:(BOOL)required;
+
+- (XLFormRowDescriptor *)lnameRowRequired:(BOOL)required;
+
+- (XLFormRowDescriptor *)addressRowRequired:(BOOL)required;
+
 @end
 
 NS_ASSUME_NONNULL_END

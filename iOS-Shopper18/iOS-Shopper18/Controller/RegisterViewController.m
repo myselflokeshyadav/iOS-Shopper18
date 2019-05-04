@@ -14,51 +14,44 @@
 
 - (void)initializeForm
 {
-    XLFormDescriptor * form;
-    XLFormSectionDescriptor * section;
-    XLFormRowDescriptor * row;
+    XLFormDescriptor *form = [XLFormDescriptor formDescriptor];
+    XLFormSectionDescriptor *section;
+    XLFormRowDescriptor *row;
     
-    form = [XLFormDescriptor formDescriptor];
-    
+    // First name
     section = [XLFormSectionDescriptor formSection];
     [form addFormSection:section];
-    // Name
-    row = [XLFormRowDescriptor formRowDescriptorWithTag:@"fname" rowType:XLFormRowDescriptorTypeFloatLabeledTextField title:@"First Name"];
-    row.required = YES;
+    row = [self fnameRowRequired:YES];
     [section addFormRow:row];
     
+    // Last name
     section = [XLFormSectionDescriptor formSection];
     [form addFormSection:section];
-    
-    row = [XLFormRowDescriptor formRowDescriptorWithTag:@"lname" rowType:XLFormRowDescriptorTypeFloatLabeledTextField title:@"Last Name"];
-    row.required = YES;
+    row = [self lnameRowRequired:YES];
     [section addFormRow:row];
     
+    // Address
     section = [XLFormSectionDescriptor formSection];
     [form addFormSection:section];
-    // Name
-    row = [XLFormRowDescriptor formRowDescriptorWithTag:@"address" rowType:XLFormRowDescriptorTypeFloatLabeledTextField title:@"Address"];
-    row.required = YES;
+    row = [self addressRowRequired:YES];
     [section addFormRow:row];
     
+    // Mobile
     section = [XLFormSectionDescriptor formSection];
     [form addFormSection:section];
-    
-    row = [XLFormRowDescriptor formRowDescriptorWithTag:@"mobile" rowType:XLFormRowDescriptorTypeFloatLabeledTextField title:@"Mobile"];
-    row.required = YES;
+    row = [self mobileRowRequired:YES];
     [section addFormRow:row];
     
+    // Email
     section = [XLFormSectionDescriptor formSection];
     [form addFormSection:section];
-    // Name
-    row = [XLFormRowDescriptor formRowDescriptorWithTag:@"email" rowType:XLFormRowDescriptorTypeFloatLabeledTextField title:@"Email"];
-    row.required = YES;
+    row = [self emailRowRequired:YES];
     [section addFormRow:row];
     
+    // Password
     section = [XLFormSectionDescriptor formSection];
     [form addFormSection:section];
-    row = [XLFormRowDescriptor formRowDescriptorWithTag:@"password" rowType:XLFormRowDescriptorTypeFloatLabeledTextField title:@"Password"];
-    row.required = YES;
+    row = [self passwordRowRequired:YES];
     [section addFormRow:row];
     
     self.form = form;

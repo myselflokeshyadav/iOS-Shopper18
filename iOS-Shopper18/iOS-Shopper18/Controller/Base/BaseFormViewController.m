@@ -46,6 +46,52 @@
     cell.floatLabeledTextField.tag = tag;
 }
 
+- (XLFormRowDescriptor *)floatRowWithTag:(NSString *)tag title:(NSString *)title {
+    return [XLFormRowDescriptor formRowDescriptorWithTag:tag rowType:XLFormRowDescriptorTypeFloatLabeledTextField title:title];
+}
+
+- (XLFormRowDescriptor *)mobileRowRequired:(BOOL)required {
+    XLFormRowDescriptor *row = [self floatRowWithTag:@"mobile" title:@"Mobile"];
+    row.required = required;
+    [self floatCellForRow:row].textFieldMaxNumberOfCharacters = @10;
+    [self setKeyboardForRow:row keyboardType:UIKeyboardTypePhonePad];
+    return row;
+}
+
+- (XLFormRowDescriptor *)passwordRowRequired:(BOOL)required {
+    XLFormRowDescriptor *row = [self floatRowWithTag:@"password" title:@"Password"];
+    row.required = required;
+    return row;
+}
+
+- (XLFormRowDescriptor *)emailRowRequired:(BOOL)required {
+    XLFormRowDescriptor *row = [self floatRowWithTag:@"email" title:@"Email"];
+    row.required = required;
+    return row;
+}
+
+- (XLFormRowDescriptor *)fnameRowRequired:(BOOL)required {
+    XLFormRowDescriptor *row = [self floatRowWithTag:@"fname" title:@"First Name"];
+    row.required = required;
+    return row;
+}
+
+- (XLFormRowDescriptor *)lnameRowRequired:(BOOL)required {
+    XLFormRowDescriptor *row = [self floatRowWithTag:@"lname" title:@"Last Name"];
+    row.required = required;
+    return row;
+}
+
+- (XLFormRowDescriptor *)addressRowRequired:(BOOL)required {
+    XLFormRowDescriptor *row = [self floatRowWithTag:@"address" title:@"Address"];
+    row.required = required;
+    return row;
+}
+
+
+
+
+
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
     return 10;
 }
