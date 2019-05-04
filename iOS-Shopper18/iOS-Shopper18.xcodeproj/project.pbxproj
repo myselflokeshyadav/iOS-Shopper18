@@ -508,7 +508,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4949F5FLDL;
+				DEVELOPMENT_TEAM = RQAE768Z9N;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/Utilities/PrefixHeader.pch";
 				INFOPLIST_FILE = "iOS-Shopper18/SupportFiles/Info.plist";
@@ -529,7 +529,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4949F5FLDL;
+				DEVELOPMENT_TEAM = RQAE768Z9N;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/Utilities/PrefixHeader.pch";
 				INFOPLIST_FILE = "iOS-Shopper18/SupportFiles/Info.plist";
