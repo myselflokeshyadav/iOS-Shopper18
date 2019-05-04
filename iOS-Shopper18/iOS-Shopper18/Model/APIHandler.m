@@ -8,6 +8,7 @@
 
 #import "APIHandler.h"
 #import "APIParser.h"
+#import "User.h"
 
 @interface APIHandler ()
 
@@ -77,7 +78,17 @@
 
 - (void)loginUser:(NSDictionary *)info completion:(void(^)(id _Nullable, NSError * _Nullable))completion {
     
-    [self callAPIWithBase:kAPIEcomBase endpoint:kAPIEndPointLogin params:info completion:completion];
+    [self callAPIWithBase:kAPIEcomBase endpoint:kAPIEndPointLogin params:info completion:^(id _Nullable result, NSError * _Nullable error) {
+        if (result) {
+            User *user = [APIParser userFrom:result];
+            if (user) {
+                self.userID = user.userID;
+                self.apiKey = user.apiKey;
+            }
+            completion(user, nil);
+        }
+        else completion(nil, error);
+    }];
     
 }
 

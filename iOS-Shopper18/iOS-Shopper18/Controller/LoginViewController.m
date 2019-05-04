@@ -10,6 +10,7 @@
 #import "FloatLabeledTextFieldCell.h"
 #import <JVFloatLabeledTextField/JVFloatLabeledTextField.h>
 #import "LoginViewModel.h"
+#import <TWMessageBarManager.h>
 
 @interface LoginViewController ()
 
@@ -49,7 +50,11 @@
     if (self.isFormValid) {
         NSLog(@"%@", [self formValues]);
         [self.vm login:[self formValues] completion:^(BOOL success, NSString * _Nullable msg) {
-            
+            if (success) {
+                // Jump to Home
+            } else {
+                [TWMessageBarManager.sharedInstance showMessageWithTitle:@"Error" description:msg type:TWMessageBarMessageTypeError duration:1 callback:^{}];
+            }
         }];
     }
 }

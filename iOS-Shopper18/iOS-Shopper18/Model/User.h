@@ -17,7 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
     *fname,
     *lname,
     *email,
-    *mobile;
+    *mobile,
+    *apiKey;
 
 + (instancetype)initWithInfo:(NSDictionary *)info;
 

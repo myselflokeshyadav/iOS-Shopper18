@@ -10,6 +10,7 @@
 @class Product;
 @class Category;
 @class Order;
+@class User;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -18,6 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (nullable NSArray<Category *> *)categoriesFrom:(id)jsonObject;
 + (nullable NSArray<Product *> *)productsFrom:(id)jsonObject;
 + (nullable NSArray<Order *> *)ordersFrom:(id)jsonObject;
++ (nullable User *)userFrom:(id)jsonObject;
 
 @end
 

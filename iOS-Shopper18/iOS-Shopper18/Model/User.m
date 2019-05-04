@@ -15,7 +15,8 @@
     *fname,
     *lname,
     *email,
-    *mobile;
+    *mobile,
+    *apiKey;
 
 @end
 
@@ -29,6 +30,7 @@
         user.lname = info[@"lastname"];
         user.email = info[@"email"];
         user.mobile = info[@"mobile"];
+        user.apiKey = info[@"appapikey "];
     }
     return user;
 }
