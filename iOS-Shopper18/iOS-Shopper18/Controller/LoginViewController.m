@@ -9,12 +9,20 @@
 #import "LoginViewController.h"
 #import "FloatLabeledTextFieldCell.h"
 #import <JVFloatLabeledTextField/JVFloatLabeledTextField.h>
+#import "LoginViewModel.h"
 
 @interface LoginViewController ()
+
+@property (strong, nonatomic) LoginViewModel *vm;
 
 @end
 
 @implementation LoginViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.vm = LoginViewModel.new;
+}
 
 - (void)initializeForm
 {
@@ -40,7 +48,9 @@
     [[self.tableView superview] endEditing:YES];
     if (self.isFormValid) {
         NSLog(@"%@", [self formValues]);
-        
+        [self.vm login:[self formValues] completion:^(BOOL success, NSString * _Nullable msg) {
+            
+        }];
     }
 }
 

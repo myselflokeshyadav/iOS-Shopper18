@@ -41,4 +41,8 @@
     return list;
 }
 
++ (nullable NSDictionary *)userFrom:(id)jsonObject {
+    return nil;
+}
+
 @end
