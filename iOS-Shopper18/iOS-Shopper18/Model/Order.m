@@ -29,7 +29,7 @@
 @implementation Order
 
 + (instancetype)initWithInfo:(NSDictionary *)info {
-    Order *order = [self init];
+    Order *order = Order.new;
     if (order) {
         order.orderID = info[@"orderid"];
         order.status = info[@"orderstatus"];

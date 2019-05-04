@@ -23,7 +23,7 @@
 @implementation Product
 
 + (instancetype)initWithInfo:(NSDictionary *)info {
-    Product *product = [self init];
+    Product *product = Product.new;
     if (product) {
         product.pid = info[@"id"];
         product.name = info[@"pname"];

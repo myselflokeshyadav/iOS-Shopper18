@@ -21,7 +21,7 @@
 @implementation Category
 
 + (instancetype)initWithInfo:(NSDictionary *)info {
-    Category *category = [self init];
+    Category *category = Category.new;
     if (category) {
         category.cid = [self parseFromKeys:@[@"cid", @"scid"] info:info];
         category.name = [self parseFromKeys:@[@"cname", @"scname"] info:info];
