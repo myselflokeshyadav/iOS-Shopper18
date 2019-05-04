@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <XLForm.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface RegisterViewController : UIViewController
+@interface RegisterViewController : XLFormViewController
 
 @end
 

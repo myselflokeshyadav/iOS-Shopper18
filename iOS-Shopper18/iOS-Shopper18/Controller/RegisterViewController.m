@@ -7,6 +7,7 @@
 //
 
 #import "RegisterViewController.h"
+#import "FloatLabeledTextFieldCell.h"
 
 @interface RegisterViewController ()
 
@@ -14,19 +15,101 @@
 
 @implementation RegisterViewController
 
+-(instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self){
+        [self initializeForm];
+    }
+    return self;
+}
+
+
+-(id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self){
+        [self initializeForm];
+    }
+    return self;
+}
+
+
+#pragma mark - Helper
+
+-(void)initializeForm
+{
+    XLFormDescriptor * form;
+    XLFormSectionDescriptor * section;
+    XLFormRowDescriptor * row;
+    
+    form = [XLFormDescriptor formDescriptor];
+    
+    section = [XLFormSectionDescriptor formSection];
+    [form addFormSection:section];
+    // Name
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:@"fname" rowType:XLFormRowDescriptorTypeFloatLabeledTextField title:@"First Name"];
+    row.required = YES;
+    [section addFormRow:row];
+    
+    section = [XLFormSectionDescriptor formSection];
+    [form addFormSection:section];
+    
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:@"lname" rowType:XLFormRowDescriptorTypeFloatLabeledTextField title:@"Last Name"];
+    row.required = YES;
+    [section addFormRow:row];
+    
+    section = [XLFormSectionDescriptor formSection];
+    [form addFormSection:section];
+    // Name
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:@"address" rowType:XLFormRowDescriptorTypeFloatLabeledTextField title:@"Address"];
+    row.required = YES;
+    [section addFormRow:row];
+    
+    section = [XLFormSectionDescriptor formSection];
+    [form addFormSection:section];
+    
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:@"mobile" rowType:XLFormRowDescriptorTypeFloatLabeledTextField title:@"Mobile"];
+    row.required = YES;
+    [section addFormRow:row];
+    
+    section = [XLFormSectionDescriptor formSection];
+    [form addFormSection:section];
+    // Name
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:@"email" rowType:XLFormRowDescriptorTypeFloatLabeledTextField title:@"Email"];
+    row.required = YES;
+    [section addFormRow:row];
+    
+    section = [XLFormSectionDescriptor formSection];
+    [form addFormSection:section];
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:@"password" rowType:XLFormRowDescriptorTypeFloatLabeledTextField title:@"Password"];
+    row.required = YES;
+    [section addFormRow:row];
+    
+    self.form = form;
+    
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.tableView.separatorColor = UIColor.clearColor;
+    self.tableView.backgroundColor = UIColor.clearColor;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return 10;
 }
-*/
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 0;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    return UIView.new;
+}
+
+-(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    return UIView.new;
+}
 
 @end
