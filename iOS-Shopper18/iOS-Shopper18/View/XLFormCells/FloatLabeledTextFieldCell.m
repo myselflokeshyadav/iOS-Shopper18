@@ -38,8 +38,6 @@ const static CGFloat kFloatingLabelFontSize = 11.0f;
 
 @implementation FloatLabeledTextFieldCell
 
-@synthesize floatLabeledTextField =_floatLabeledTextField;
-
 +(void)load
 {
     [XLFormViewController.cellClassesForRowDescriptorTypes setObject:[FloatLabeledTextFieldCell class] forKey:XLFormRowDescriptorTypeFloatLabeledTextField];
@@ -66,10 +64,12 @@ const static CGFloat kFloatingLabelFontSize = 11.0f;
     [self.contentView addSubview:self.floatLabeledTextField];
     [self.floatLabeledTextField setDelegate:self];
     [self.contentView addConstraints:[self layoutConstraints]];
-    [self.contentView setBackgroundColor:UIColor.yellowColor];
-    self.contentView.layer.cornerRadius = 10;
-    [self.floatLabeledTextField setBackgroundColor:UIColor.clearColor];
-    self.backgroundColor = UIColor.clearColor;
+    self.contentView.backgroundColor = UIColor.clearColor;
+    self.floatLabeledTextField.backgroundColor = UIColor.clearColor;
+    self.backgroundColor = UIColor.groupTableViewBackgroundColor;
+    self.layer.cornerRadius = 10;
+    self.layer.borderWidth = 2.5;
+    self.layer.borderColor = UIColor.greenColor.CGColor;
 }
 
 -(void)update

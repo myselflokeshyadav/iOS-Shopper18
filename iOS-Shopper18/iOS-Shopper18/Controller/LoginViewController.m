@@ -8,6 +8,7 @@
 
 #import "LoginViewController.h"
 #import "FloatLabeledTextFieldCell.h"
+#import <JVFloatLabeledTextField/JVFloatLabeledTextField.h>
 
 @interface LoginViewController ()
 
@@ -15,30 +16,7 @@
 
 @implementation LoginViewController
 
-
--(instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self){
-        [self initializeForm];
-    }
-    return self;
-}
-
-
--(id)initWithCoder:(NSCoder *)aDecoder
-{
-    self = [super initWithCoder:aDecoder];
-    if (self){
-        [self initializeForm];
-    }
-    return self;
-}
-
-
-#pragma mark - Helper
-
--(void)initializeForm
+- (void)initializeForm
 {
     XLFormDescriptor * form;
     XLFormSectionDescriptor * section;
@@ -53,6 +31,9 @@
     // Name
     row = [XLFormRowDescriptor formRowDescriptorWithTag:@"mobile" rowType:XLFormRowDescriptorTypeFloatLabeledTextField title:@"Mobile"];
     row.required = YES;
+    [self floatCellForRow:row].textFieldMaxNumberOfCharacters = @10;
+    [self setKeyboardForRow:row keyboardType:UIKeyboardTypePhonePad];
+    [self setTagForRow:row tag:0];
     [section addFormRow:row];
     
     section = [XLFormSectionDescriptor formSection];
@@ -62,30 +43,7 @@
     [section addFormRow:row];
     
     self.form = form;
-    
 }
 
-- (void)viewDidLoad {
-    [super viewDidLoad];\
-    self.tableView.separatorColor = UIColor.clearColor;
-    self.tableView.backgroundColor = UIColor.clearColor;\
-}
-
-
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    return 10;
-}
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 0;
-}
-
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
-    return UIView.new;
-}
-
--(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
-    return UIView.new;
-}
 
 @end

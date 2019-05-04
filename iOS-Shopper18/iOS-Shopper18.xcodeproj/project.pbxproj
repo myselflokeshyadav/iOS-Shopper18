@@ -19,6 +19,7 @@
 		E1C4536A227CB4E4001CD5E6 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1C45369227CB4E3001CD5E6 /* RegisterViewController.m */; };
 		E1C4536D227CB586001CD5E6 /* RegisterViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E1C4536C227CB586001CD5E6 /* RegisterViewModel.m */; };
 		E1C45371227CC1BF001CD5E6 /* FloatLabeledTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E1C4536F227CC1BF001CD5E6 /* FloatLabeledTextFieldCell.m */; };
+		E1C45376227D3AA5001CD5E6 /* BaseFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1C45375227D3AA5001CD5E6 /* BaseFormViewController.m */; };
 		E1E25592227B61EF00230E4F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E25591227B61EF00230E4F /* AppDelegate.m */; };
 		E1E2559A227B61F000230E4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1E25599227B61F000230E4F /* Assets.xcassets */; };
 		E1E2559D227B61F000230E4F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1E2559B227B61F000230E4F /* LaunchScreen.storyboard */; };
@@ -54,6 +55,8 @@
 		E1C4536C227CB586001CD5E6 /* RegisterViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterViewModel.m; sourceTree = "<group>"; };
 		E1C4536F227CC1BF001CD5E6 /* FloatLabeledTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FloatLabeledTextFieldCell.m; sourceTree = "<group>"; };
 		E1C45372227CC1D4001CD5E6 /* FloatLabeledTextFieldCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FloatLabeledTextFieldCell.h; sourceTree = "<group>"; };
+		E1C45374227D3AA5001CD5E6 /* BaseFormViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseFormViewController.h; sourceTree = "<group>"; };
+		E1C45375227D3AA5001CD5E6 /* BaseFormViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseFormViewController.m; sourceTree = "<group>"; };
 		E1E2558D227B61EF00230E4F /* iOS-Shopper18.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-Shopper18.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1E25590227B61EF00230E4F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E1E25591227B61EF00230E4F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -110,6 +113,15 @@
 				E1C4536F227CC1BF001CD5E6 /* FloatLabeledTextFieldCell.m */,
 			);
 			path = XLFormCells;
+			sourceTree = "<group>";
+		};
+		E1C45373227D3A91001CD5E6 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				E1C45374227D3AA5001CD5E6 /* BaseFormViewController.h */,
+				E1C45375227D3AA5001CD5E6 /* BaseFormViewController.m */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		E1E25584227B61EF00230E4F = {
@@ -218,6 +230,7 @@
 		E1E255AE227B647C00230E4F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E1C45373227D3A91001CD5E6 /* Base */,
 				E1E255AF227B731A00230E4F /* LoginViewController.h */,
 				E1E255B0227B731A00230E4F /* LoginViewController.m */,
 				6D0137AD227C9B6800797006 /* CategoriesViewController.h */,
@@ -359,6 +372,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E18ADF43227C034C001EC15F /* Category.m in Sources */,
+				E1C45376227D3AA5001CD5E6 /* BaseFormViewController.m in Sources */,
 				E1F91D0B227BEBE8009D0D54 /* Order.m in Sources */,
 				E1E255A0227B61F000230E4F /* main.m in Sources */,
 				6D0137B3227C9BD200797006 /* CategoryViewCell.m in Sources */,

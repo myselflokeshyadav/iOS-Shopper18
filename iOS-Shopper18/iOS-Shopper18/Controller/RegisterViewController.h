@@ -6,12 +6,11 @@
 //  Copyright © 2019 iOSPlayground. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import <XLForm.h>
+#import "BaseFormViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface RegisterViewController : XLFormViewController
+@interface RegisterViewController : BaseFormViewController
 
 @end
 
