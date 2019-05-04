@@ -12,5 +12,7 @@ target 'iOS-Shopper18' do
   #pod 'ReactiveCocoa'
   pod 'libextobjc'
   pod 'surveymonkey-ios-sdk'
+  pod 'TWMessageBarManager'
+  pod 'SVProgressHUD'
 
 end
