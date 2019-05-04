@@ -11,7 +11,7 @@
 		6D0137B3227C9BD200797006 /* CategoryViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0137B0227C9BD100797006 /* CategoryViewCell.m */; };
 		6D0137B4227C9BD200797006 /* CategoriesViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0137B2227C9BD200797006 /* CategoriesViewModel.m */; };
 		6D0137B6227C9C8800797006 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D0137B5227C9C8800797006 /* Main.storyboard */; };
-		9D2140A865400752A92949E8 /* libPods-iOS-Shopper18.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 97A6AEC58E44CD6722CA4958 /* libPods-iOS-Shopper18.a */; };
+		6EBDFE20EADB5BE4DDC36B99 /* libPods-iOS-Shopper18.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3767B6D6BA0F789D1EA64F4B /* libPods-iOS-Shopper18.a */; };
 		A3E30393227CEA3E001E48AF /* FeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3E30392227CEA3E001E48AF /* FeedbackViewController.m */; };
 		E18ADF43227C034C001EC15F /* Category.m in Sources */ = {isa = PBXBuildFile; fileRef = E18ADF42227C034C001EC15F /* Category.m */; };
 		E18ADF46227C0A48001EC15F /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = E18ADF45227C0A48001EC15F /* Product.m */; };
@@ -34,6 +34,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		321B2C67D44EE3915873EAE5 /* Pods-iOS-Shopper18.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-Shopper18.release.xcconfig"; path = "Target Support Files/Pods-iOS-Shopper18/Pods-iOS-Shopper18.release.xcconfig"; sourceTree = "<group>"; };
+		3767B6D6BA0F789D1EA64F4B /* libPods-iOS-Shopper18.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOS-Shopper18.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		61DEB2EB65CBFCEA080A7666 /* Pods-iOS-Shopper18.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-Shopper18.debug.xcconfig"; path = "Target Support Files/Pods-iOS-Shopper18/Pods-iOS-Shopper18.debug.xcconfig"; sourceTree = "<group>"; };
 		6D0137AC227C9B6800797006 /* CategoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriesViewController.m; sourceTree = "<group>"; };
 		6D0137AD227C9B6800797006 /* CategoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoriesViewController.h; sourceTree = "<group>"; };
 		6D0137AF227C9BD100797006 /* CategoryViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryViewCell.h; sourceTree = "<group>"; };
@@ -41,11 +44,8 @@
 		6D0137B1227C9BD100797006 /* CategoriesViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoriesViewModel.h; sourceTree = "<group>"; };
 		6D0137B2227C9BD200797006 /* CategoriesViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriesViewModel.m; sourceTree = "<group>"; };
 		6D0137B5227C9C8800797006 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		85B196D217C29DD88443CC6D /* Pods-iOS-Shopper18.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-Shopper18.debug.xcconfig"; path = "Target Support Files/Pods-iOS-Shopper18/Pods-iOS-Shopper18.debug.xcconfig"; sourceTree = "<group>"; };
-		97A6AEC58E44CD6722CA4958 /* libPods-iOS-Shopper18.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOS-Shopper18.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3E30391227CEA3E001E48AF /* FeedbackViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedbackViewController.h; sourceTree = "<group>"; };
 		A3E30392227CEA3E001E48AF /* FeedbackViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedbackViewController.m; sourceTree = "<group>"; };
-		A635EE0B3130BA4AB003EEA9 /* Pods-iOS-Shopper18.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-Shopper18.release.xcconfig"; path = "Target Support Files/Pods-iOS-Shopper18/Pods-iOS-Shopper18.release.xcconfig"; sourceTree = "<group>"; };
 		E18ADF41227C034C001EC15F /* Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Category.h; sourceTree = "<group>"; };
 		E18ADF42227C034C001EC15F /* Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Category.m; sourceTree = "<group>"; };
 		E18ADF44227C0A48001EC15F /* Product.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
@@ -88,17 +88,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D2140A865400752A92949E8 /* libPods-iOS-Shopper18.a in Frameworks */,
+				6EBDFE20EADB5BE4DDC36B99 /* libPods-iOS-Shopper18.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		74907BAC92A46BF3D9B7DDD5 /* Frameworks */ = {
+		0694EF2DA5E038A9B316777E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				97A6AEC58E44CD6722CA4958 /* libPods-iOS-Shopper18.a */,
+				3767B6D6BA0F789D1EA64F4B /* libPods-iOS-Shopper18.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -106,8 +106,8 @@
 		DF3FF0407FBDBA03D55CBC33 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				85B196D217C29DD88443CC6D /* Pods-iOS-Shopper18.debug.xcconfig */,
-				A635EE0B3130BA4AB003EEA9 /* Pods-iOS-Shopper18.release.xcconfig */,
+				61DEB2EB65CBFCEA080A7666 /* Pods-iOS-Shopper18.debug.xcconfig */,
+				321B2C67D44EE3915873EAE5 /* Pods-iOS-Shopper18.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -145,7 +145,7 @@
 				E1E2558F227B61EF00230E4F /* iOS-Shopper18 */,
 				E1E2558E227B61EF00230E4F /* Products */,
 				DF3FF0407FBDBA03D55CBC33 /* Pods */,
-				74907BAC92A46BF3D9B7DDD5 /* Frameworks */,
+				0694EF2DA5E038A9B316777E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -275,11 +275,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E1E255A3227B61F000230E4F /* Build configuration list for PBXNativeTarget "iOS-Shopper18" */;
 			buildPhases = (
-				F9B30F6734832283E9EA959F /* [CP] Check Pods Manifest.lock */,
+				B99999C0F38C11C28DA4E15E /* [CP] Check Pods Manifest.lock */,
 				E1E25589227B61EF00230E4F /* Sources */,
 				E1E2558A227B61EF00230E4F /* Frameworks */,
 				E1E2558B227B61EF00230E4F /* Resources */,
-				DF0EF089386923C3D6B9C7AC /* [CP] Copy Pods Resources */,
+				3A6DD04F58F4F85BF039581C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -338,43 +338,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		DF0EF089386923C3D6B9C7AC /* [CP] Copy Pods Resources */ = {
+		3A6DD04F58F4F85BF039581C /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-iOS-Shopper18/Pods-iOS-Shopper18-resources.sh",
-				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
-				"${PODS_ROOT}/TWMessageBarManager/Classes/Icons/icon-error.png",
-				"${PODS_ROOT}/TWMessageBarManager/Classes/Icons/icon-error@2x.png",
-				"${PODS_ROOT}/TWMessageBarManager/Classes/Icons/icon-info.png",
-				"${PODS_ROOT}/TWMessageBarManager/Classes/Icons/icon-info@2x.png",
-				"${PODS_ROOT}/TWMessageBarManager/Classes/Icons/icon-success.png",
-				"${PODS_ROOT}/TWMessageBarManager/Classes/Icons/icon-success@2x.png",
-				"${PODS_ROOT}/XLForm/XLForm/XLForm.bundle",
+				"${PODS_ROOT}/Target Support Files/Pods-iOS-Shopper18/Pods-iOS-Shopper18-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icon-error.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icon-error@2x.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icon-info.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icon-info@2x.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icon-success.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icon-success@2x.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/XLForm.bundle",
+				"${PODS_ROOT}/Target Support Files/Pods-iOS-Shopper18/Pods-iOS-Shopper18-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iOS-Shopper18/Pods-iOS-Shopper18-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F9B30F6734832283E9EA959F /* [CP] Check Pods Manifest.lock */ = {
+		B99999C0F38C11C28DA4E15E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -552,7 +533,7 @@
 		};
 		E1E255A4227B61F000230E4F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 85B196D217C29DD88443CC6D /* Pods-iOS-Shopper18.debug.xcconfig */;
+			baseConfigurationReference = 61DEB2EB65CBFCEA080A7666 /* Pods-iOS-Shopper18.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -573,7 +554,7 @@
 		};
 		E1E255A5227B61F000230E4F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A635EE0B3130BA4AB003EEA9 /* Pods-iOS-Shopper18.release.xcconfig */;
+			baseConfigurationReference = 321B2C67D44EE3915873EAE5 /* Pods-iOS-Shopper18.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
