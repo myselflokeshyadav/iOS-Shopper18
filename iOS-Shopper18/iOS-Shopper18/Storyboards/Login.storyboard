@@ -41,6 +41,9 @@
                                         <real key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="signinTapped:" destination="aPy-gI-8lj" eventType="touchUpInside" id="FZv-ne-Dq2"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cWK-MZ-jk7">
                                 <rect key="frame" x="40" y="605" width="334" height="55"/>
@@ -126,6 +129,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Cyp-vV-j40"/>
                     </view>
+                    <navigationItem key="navigationItem" id="FFg-hu-31R">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="hy0-IS-p4X">
+                            <connections>
+                                <action selector="doneTapped:" destination="xNB-D8-9TT" id="oe1-Wk-OEf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="JxF-hM-USH" id="ogR-tl-5RA"/>
                     </connections>

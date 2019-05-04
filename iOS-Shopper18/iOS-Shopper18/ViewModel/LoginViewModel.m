@@ -7,7 +7,15 @@
 //
 
 #import "LoginViewModel.h"
-
+#import "APIHandler.h"
 @implementation LoginViewModel
+
+- (void)login:(NSDictionary *)info completion:(void (^)(BOOL, NSString * _Nullable))completion {
+    [APIHandler.shared loginUser:info completion:^(id _Nullable result, NSError * _Nullable error) {
+        if (result) {
+            
+        }
+    }];
+}
 
 @end

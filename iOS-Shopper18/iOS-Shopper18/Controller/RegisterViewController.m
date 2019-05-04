@@ -8,9 +8,21 @@
 
 #import "RegisterViewController.h"
 #import "FloatLabeledTextFieldCell.h"
+#import <JVFloatLabeledTextField/JVFloatLabeledTextField.h>
+#import "RegisterViewModel.h"
+
+@interface RegisterViewController ()
+
+@property (strong, nonatomic) RegisterViewModel *vm;
+
+@end
 
 @implementation RegisterViewController
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.vm = RegisterViewModel.new;
+}
 
 - (void)initializeForm
 {
@@ -54,8 +66,24 @@
     row = [self passwordRowRequired:YES];
     [section addFormRow:row];
     
+    self.lastField = [self floatCellForRow:row].floatLabeledTextField;
     self.form = form;
-    
+}
+
+- (IBAction)doneTapped:(id)sender {
+    [[self.tableView superview] endEditing:YES];
+    if (self.isFormValid) {
+        NSLog(@"%@", [self formValues]);
+        [self.vm register:[self formValues] completion:^(BOOL success, NSString * _Nullable msg) {
+            NSLog(@"%@", success? @"Success" : msg);
+        }];
+    }
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    if (self.lastField && textField == self.lastField) {
+        [self doneTapped:nil];
+    }
 }
 
 @end

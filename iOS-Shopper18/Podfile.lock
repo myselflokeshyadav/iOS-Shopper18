@@ -39,6 +39,8 @@ PODS:
     - SDWebImage/Core (= 5.0.2)
   - SDWebImage/Core (5.0.2)
   - surveymonkey-ios-sdk (2.0.4)
+  - SVProgressHUD (2.2.5)
+  - TWMessageBarManager (1.8.1)
   - XLForm (4.0.1)
 
 DEPENDENCIES:
@@ -46,6 +48,8 @@ DEPENDENCIES:
   - libextobjc
   - SDWebImage
   - surveymonkey-ios-sdk
+  - SVProgressHUD
+  - TWMessageBarManager
   - XLForm
 
 SPEC REPOS:
@@ -54,6 +58,8 @@ SPEC REPOS:
     - libextobjc
     - SDWebImage
     - surveymonkey-ios-sdk
+    - SVProgressHUD
+    - TWMessageBarManager
     - XLForm
 
 SPEC CHECKSUMS:
@@ -61,8 +67,10 @@ SPEC CHECKSUMS:
   libextobjc: aed8b7d2b07f511c1a7ecaacb33ea03e327c69b7
   SDWebImage: 6764b5fa0f73c203728052955dbefa2bf1f33282
   surveymonkey-ios-sdk: 974f5b54687df43edf63253f6de8da035237e15f
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  TWMessageBarManager: fd84e7948ba7968a2b5d9454859135761214ec56
   XLForm: b8d47a9a00fb6166981cb40de7169d70d611e9be
 
-PODFILE CHECKSUM: 9e0f03d27e1735e10e221e1382c59ea52d1e549d
+PODFILE CHECKSUM: ee7805d4a1af39abdd106a89b3bbfcf16fe9f5bc
 
 COCOAPODS: 1.6.1

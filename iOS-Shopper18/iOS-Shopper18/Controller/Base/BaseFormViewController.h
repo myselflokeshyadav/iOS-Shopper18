@@ -8,6 +8,7 @@
 
 #import "XLFormViewController.h"
 @class FloatLabeledTextFieldCell;
+@class JVFloatLabeledTextField;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -18,6 +19,8 @@ typedef enum : NSUInteger {
 } FormInputOption;
 
 @interface BaseFormViewController : XLFormViewController
+@property (weak, nonatomic, nullable) UITextField *lastField;
+
 - (FloatLabeledTextFieldCell *)floatCellForRow:(XLFormRowDescriptor *)row;
 
 - (void)setKeyboardForRow:(XLFormRowDescriptor *)row keyboardType:(UIKeyboardType)type;
@@ -37,6 +40,12 @@ typedef enum : NSUInteger {
 - (XLFormRowDescriptor *)lnameRowRequired:(BOOL)required;
 
 - (XLFormRowDescriptor *)addressRowRequired:(BOOL)required;
+
+- (void)flashCell:(UITableViewCell *)cell color:(UIColor *)color;
+
+- (void)shakeCell:(UITableViewCell *)cell;
+
+- (BOOL)isFormValid;
 
 @end
 

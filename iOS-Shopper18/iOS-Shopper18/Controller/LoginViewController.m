@@ -21,14 +21,9 @@
     XLFormDescriptor *form = [XLFormDescriptor formDescriptor];
     XLFormSectionDescriptor *section;
     XLFormRowDescriptor *row;
-    
-    
-    
+
     section = [XLFormSectionDescriptor formSection];
-    
     [form addFormSection:section];
-    
-    
     row = [self mobileRowRequired:YES];
     [section addFormRow:row];
     
@@ -37,7 +32,22 @@
     row = [self passwordRowRequired:YES];
     [section addFormRow:row];
     
+    self.lastField = [self floatCellForRow:row].floatLabeledTextField;
     self.form = form;
+}
+
+- (IBAction)signinTapped:(id)sender {
+    [[self.tableView superview] endEditing:YES];
+    if (self.isFormValid) {
+        NSLog(@"%@", [self formValues]);
+        
+    }
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    if (self.lastField && textField == self.lastField) {
+        [self signinTapped:nil];
+    }
 }
 
 
