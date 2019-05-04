@@ -7,8 +7,12 @@
 //
 
 #import "CategoriesViewController.h"
+#import "CategoryViewCell.h"
+#import <SDWebImage/SDWebImage.h>
 
 @interface CategoriesViewController ()
+
+@property (assign, nonatomic) NSDictionary * info;
 
 @end
 
@@ -16,17 +20,43 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    //    self.info = NSDictionary.new;
+    self.categories = NSMutableArray.new;
+    self.categoryModel = CategoriesViewModel.new;
+    [self getProductCategories];
 }
 
+-(void) getProductCategories{
+    
+    //    info = NSDictionary.new;
+    [self.categoryModel getProductCategories:^(NSError * error) {
+        if(error == nil){
+            
+            self.categories = self.categoryModel.categories;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.collectionView reloadData];
+            });
+        }
+        else{
+            NSLog(@"There are no categories available");
+        }
+    }];
+    
+}
 
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    UICollectionViewCell *cell =  [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
+    CategoryViewCell *cell =  [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
+    Category * category = self.categories[indexPath.item];
+    [cell setCategoryCell:category];
     return cell;
 }
 
 - (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 15;
+    return self.categoryModel.categories.count;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    
 }
 
 //- (void)encodeWithCoder:(nonnull NSCoder *)aCoder {

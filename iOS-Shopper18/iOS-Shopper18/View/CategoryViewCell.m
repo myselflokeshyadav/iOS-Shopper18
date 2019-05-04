@@ -7,7 +7,15 @@
 //
 
 #import "CategoryViewCell.h"
+#import <SDWebImage/SDWebImage.h>
 
 @implementation CategoryViewCell
 
+-(void)setCategoryCell:(Category * _Nonnull)category{
+    self.category = category;
+    self.categoryName.text = category.name;
+    NSString *urlString = category.imageURL;
+    NSURL *url = [NSURL URLWithString:urlString];
+    [self.categoryImage sd_setImageWithURL:url];
+}
 @end

@@ -31,7 +31,7 @@
 #define kAPIEndPointProductList @"product_details.php?"
 
 
-#define kTestAPIKey             @"a10f31e8bd677f6db68e7ec411861412"
+#define kTestAPIKey             @"31d5f9dd54bcdcd9be7fbced569700a9"
 #define kTestUserID             @"1737"
 #define kTestMobile             @"0001112222"
 #define kTestPassword           @"asdf"
