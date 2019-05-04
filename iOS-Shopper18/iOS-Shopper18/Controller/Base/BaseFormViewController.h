@@ -11,12 +11,18 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef enum : NSUInteger {
+    InputAnything = 0,
+    InputLettersOnly = 1000,
+    InputNumbersOnly = 2000,
+} FormInputOption;
+
 @interface BaseFormViewController : XLFormViewController
 - (FloatLabeledTextFieldCell *)floatCellForRow:(XLFormRowDescriptor *)row;
 
 - (void)setKeyboardForRow:(XLFormRowDescriptor *)row keyboardType:(UIKeyboardType)type;
 
-- (void)setTagForRow:(XLFormRowDescriptor *)row tag:(NSInteger)tag;
+- (void)setInputOptionForRow:(XLFormRowDescriptor *)row option:(FormInputOption)option;
 
 - (XLFormRowDescriptor *)floatRowWithTag:(NSString *)tag title:(NSString *)title;
 

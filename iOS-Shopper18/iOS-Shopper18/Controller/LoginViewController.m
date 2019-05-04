@@ -30,7 +30,6 @@
     
     
     row = [self mobileRowRequired:YES];
-    [self setTagForRow:row tag:0];
     [section addFormRow:row];
     
     section = [XLFormSectionDescriptor formSection];

@@ -9,6 +9,7 @@
 #import "BaseFormViewController.h"
 #import "FloatLabeledTextFieldCell.h"
 #import <JVFloatLabeledTextField/JVFloatLabeledTextField.h>
+#import "XLForm.h"
 
 @implementation BaseFormViewController
 
@@ -41,9 +42,9 @@
     cell.floatLabeledTextField.keyboardType = type;
 }
 
-- (void)setTagForRow:(XLFormRowDescriptor *)row tag:(NSInteger)tag {
+- (void)setInputOptionForRow:(XLFormRowDescriptor *)row option:(FormInputOption)option {
     FloatLabeledTextFieldCell *cell = [self floatCellForRow:row];
-    cell.floatLabeledTextField.tag = tag;
+    cell.floatLabeledTextField.tag = option;
 }
 
 - (XLFormRowDescriptor *)floatRowWithTag:(NSString *)tag title:(NSString *)title {
@@ -53,31 +54,38 @@
 - (XLFormRowDescriptor *)mobileRowRequired:(BOOL)required {
     XLFormRowDescriptor *row = [self floatRowWithTag:@"mobile" title:@"Mobile"];
     row.required = required;
-    [self floatCellForRow:row].textFieldMaxNumberOfCharacters = @10;
+    [row.cellConfigAtConfigure setObject:@10 forKey:@"textFieldMaxNumberOfCharacters"];
     [self setKeyboardForRow:row keyboardType:UIKeyboardTypePhonePad];
+    [self setInputOptionForRow:row option:InputNumbersOnly];
+    [row addValidator:[XLFormRegexValidator formRegexValidatorWithMsg:@"Not a valid phone number"
+                                                                regex:@"^\\d{10}$"]];
     return row;
 }
 
 - (XLFormRowDescriptor *)passwordRowRequired:(BOOL)required {
     XLFormRowDescriptor *row = [self floatRowWithTag:@"password" title:@"Password"];
     row.required = required;
+    [row addValidator:[XLFormRegexValidator formRegexValidatorWithMsg:@"At least 6, max 32 characters" regex:@"^(?=.*\\d)(?=.*[A-Za-z]).{6,32}$"]];
     return row;
 }
 
 - (XLFormRowDescriptor *)emailRowRequired:(BOOL)required {
     XLFormRowDescriptor *row = [self floatRowWithTag:@"email" title:@"Email"];
     row.required = required;
+    [row addValidator:[XLFormValidator emailValidator]];
     return row;
 }
 
 - (XLFormRowDescriptor *)fnameRowRequired:(BOOL)required {
     XLFormRowDescriptor *row = [self floatRowWithTag:@"fname" title:@"First Name"];
+    [self setInputOptionForRow:row option:InputLettersOnly];
     row.required = required;
     return row;
 }
 
 - (XLFormRowDescriptor *)lnameRowRequired:(BOOL)required {
     XLFormRowDescriptor *row = [self floatRowWithTag:@"lname" title:@"Last Name"];
+    [self setInputOptionForRow:row option:InputLettersOnly];
     row.required = required;
     return row;
 }
@@ -90,7 +98,17 @@
 
 
 
-
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    if (!string.length) return YES;
+    switch (textField.tag) {
+        case InputLettersOnly:
+            return [NSCharacterSet.letterCharacterSet characterIsMember:[string characterAtIndex:0]];
+        case InputNumbersOnly:
+            return [NSCharacterSet.decimalDigitCharacterSet characterIsMember:[string characterAtIndex:0]];
+        default:
+            return [super textField:textField shouldChangeCharactersInRange:range replacementString:string];
+    }
+}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
     return 10;
