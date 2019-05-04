@@ -34,5 +34,6 @@
 #define kTestAPIKey             @"a10f31e8bd677f6db68e7ec411861412"
 #define kTestUserID             @"1737"
 #define kTestMobile             @"0001112222"
+#define kTestPassword           @"asdf"
 
 #endif /* Constants_h */
