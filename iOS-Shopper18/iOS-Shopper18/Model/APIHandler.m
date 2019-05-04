@@ -55,9 +55,10 @@
     [NSURLSession.sharedSession dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable _, NSError * _Nullable error) {
         if (data) {
             id result = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error: &error];
+            if (!result) result = [NSString.alloc initWithData:data encoding:NSUTF8StringEncoding];
             completion(result, error);
         } else completion(nil, error);
-    }];
+    }].resume;
 }
 
 - (NSDictionary *)extendedInfo:(NSDictionary *)info {
@@ -69,17 +70,13 @@
 
 - (void)registerUser:(NSDictionary *)info completion:(void(^)(id _Nullable, NSError * _Nullable))completion {
     
-    [self callAPIWithBase:kAPIEcomBase endpoint:kAPIEndPointRegister params:info completion:^(id _Nullable result, NSError * _Nullable error ) {
-        
-    }];
+    [self callAPIWithBase:kAPIEcomBase endpoint:kAPIEndPointRegister params:info completion:completion];
     
 }
 
 - (void)loginUser:(NSDictionary *)info completion:(void(^)(id _Nullable, NSError * _Nullable))completion {
     
-    [self callAPIWithBase:kAPIEcomBase endpoint:kAPIEndPointLogin params:info completion:^(id _Nullable result, NSError * _Nullable error ) {
-        
-    }];
+    [self callAPIWithBase:kAPIEcomBase endpoint:kAPIEndPointLogin params:info completion:completion];
     
 }
 
