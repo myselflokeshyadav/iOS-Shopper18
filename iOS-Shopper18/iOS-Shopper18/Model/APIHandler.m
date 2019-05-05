@@ -127,15 +127,6 @@
     
 }
 
-- (void)getProductCategories:(NSDictionary *)info completion:(void(^)(id _Nullable, NSError * _Nullable))completion {
-    info = [self extendedInfo:info];
-    [self callAPIWithBase:kAPICartBase endpoint:kAPIEndPointCategory params:info completion:^(id _Nullable result, NSError * _Nullable error ) {
-        if (result) completion([APIParser categoriesFrom:result], nil);
-        else completion(nil, error);
-    }];
-    
-}
-
 - (void)getProductSubCategories:(NSString *)cid completion:(void(^)(id _Nullable, NSError * _Nullable))completion {
     NSDictionary *info = @{@"Id": cid, @"api_key": self.apiKey, @"user_id": self.userID};
     [self callAPIWithBase:kAPICartBase endpoint:kAPIEndPointSubCategory params:info completion:^(id _Nullable result, NSError * _Nullable error ) {
@@ -145,13 +136,12 @@
     
 }
 
-- (void)getProducts:(NSDictionary *)info completion:(void(^)(id _Nullable, NSError * _Nullable))completion {
-    info = [self extendedInfo:info];
+- (void)getProductsWithCid:(NSString *)cid scid:(NSString *)scid completion:(void(^)(id _Nullable, NSError * _Nullable))completion {
+    NSDictionary *info = @{@"cid": cid, @"scid": scid, @"api_key": self.apiKey, @"user_id": self.userID};
     [self callAPIWithBase:kAPICartBase endpoint:kAPIEndPointProductList params:info completion:^(id _Nullable result, NSError * _Nullable error ) {
         if (result) completion([APIParser productsFrom:result], nil);
         else completion(nil, error);
     }];
-    
 }
 
 - (void)placeOrder:(NSDictionary *)info completion:(void(^)(id _Nullable, NSError * _Nullable))completion {
