@@ -61,7 +61,7 @@
     Product *product = self.productList[indexPath.item];
 //    ProductDetailViewModel * productVM = [[ProductDetailViewModel alloc] initWithProduct:product];
     ProductDetailViewModel * productVM = ProductDetailViewModel.new;
-    [productVM initWithProduct:product];
+    productVM = [productVM initWithProduct:product];
     [detailVC setDetailViewModel:productVM];
     [self.navigationController pushViewController:detailVC animated:true];
 }

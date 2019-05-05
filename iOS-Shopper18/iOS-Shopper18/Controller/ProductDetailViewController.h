@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 @class ProductDetailViewModel;
+@class Product;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -20,6 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *productDescribtion;
 
 @property (strong, nonatomic) ProductDetailViewModel *vm;
+@property (strong, nonatomic) Product * product;
 
 -(void)setDetailViewModel:(ProductDetailViewModel *)viewModel;
 

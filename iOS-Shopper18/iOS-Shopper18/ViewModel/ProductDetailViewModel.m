@@ -20,7 +20,8 @@
 
 - (instancetype)initWithProduct:(Product *)product{
     ProductDetailViewModel *vm = ProductDetailViewModel.new;
-    if (vm) vm.product = product;
+//    if (vm) vm.product = product;
+    vm.product = product;
     return vm;
 }
 
