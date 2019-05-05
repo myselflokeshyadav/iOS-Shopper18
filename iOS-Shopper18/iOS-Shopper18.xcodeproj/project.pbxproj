@@ -17,6 +17,9 @@
 		6D0C41FD227E598D005AE167 /* SubcategoriesViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0C41FC227E598D005AE167 /* SubcategoriesViewModel.m */; };
 		6EBDFE20EADB5BE4DDC36B99 /* libPods-iOS-Shopper18.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3767B6D6BA0F789D1EA64F4B /* libPods-iOS-Shopper18.a */; };
 		A3E30393227CEA3E001E48AF /* FeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3E30392227CEA3E001E48AF /* FeedbackViewController.m */; };
+		E1432AAD227E713900365467 /* TopSeller.m in Sources */ = {isa = PBXBuildFile; fileRef = E1432AAC227E713900365467 /* TopSeller.m */; };
+		E1432AAF227E718100365467 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1432AAE227E718100365467 /* Profile.storyboard */; };
+		E1432AB1227E722E00365467 /* OrderForm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1432AB0227E722E00365467 /* OrderForm.storyboard */; };
 		E18ADF43227C034C001EC15F /* Category.m in Sources */ = {isa = PBXBuildFile; fileRef = E18ADF42227C034C001EC15F /* Category.m */; };
 		E18ADF46227C0A48001EC15F /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = E18ADF45227C0A48001EC15F /* Product.m */; };
 		E18ADF49227C10EA001EC15F /* APIParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E18ADF48227C10EA001EC15F /* APIParser.m */; };
@@ -60,6 +63,10 @@
 		6D0C41FC227E598D005AE167 /* SubcategoriesViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SubcategoriesViewModel.m; sourceTree = "<group>"; };
 		A3E30391227CEA3E001E48AF /* FeedbackViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedbackViewController.h; sourceTree = "<group>"; };
 		A3E30392227CEA3E001E48AF /* FeedbackViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedbackViewController.m; sourceTree = "<group>"; };
+		E1432AAB227E713900365467 /* TopSeller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TopSeller.h; sourceTree = "<group>"; };
+		E1432AAC227E713900365467 /* TopSeller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TopSeller.m; sourceTree = "<group>"; };
+		E1432AAE227E718100365467 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		E1432AB0227E722E00365467 /* OrderForm.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OrderForm.storyboard; sourceTree = "<group>"; };
 		E18ADF41227C034C001EC15F /* Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Category.h; sourceTree = "<group>"; };
 		E18ADF42227C034C001EC15F /* Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Category.m; sourceTree = "<group>"; };
 		E18ADF44227C0A48001EC15F /* Product.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
@@ -197,6 +204,8 @@
 				E1C45366227CB47A001CD5E6 /* Login.storyboard */,
 				E1E2559B227B61F000230E4F /* LaunchScreen.storyboard */,
 				E1AF4A31227E411D0087D198 /* Category.storyboard */,
+				E1432AAE227E718100365467 /* Profile.storyboard */,
+				E1432AB0227E722E00365467 /* OrderForm.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -236,6 +245,8 @@
 				E18ADF45227C0A48001EC15F /* Product.m */,
 				E1AF4A33227E47B40087D198 /* User.h */,
 				E1AF4A34227E47B40087D198 /* User.m */,
+				E1432AAB227E713900365467 /* TopSeller.h */,
+				E1432AAC227E713900365467 /* TopSeller.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -358,8 +369,10 @@
 				E1AF4A32227E411D0087D198 /* Category.storyboard in Resources */,
 				6D0137B6227C9C8800797006 /* Main.storyboard in Resources */,
 				E1E2559D227B61F000230E4F /* LaunchScreen.storyboard in Resources */,
+				E1432AB1227E722E00365467 /* OrderForm.storyboard in Resources */,
 				E1E255A9227B639400230E4F /* Colors.xcassets in Resources */,
 				E1C45367227CB47A001CD5E6 /* Login.storyboard in Resources */,
+				E1432AAF227E718100365467 /* Profile.storyboard in Resources */,
 				E1E2559A227B61F000230E4F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -429,6 +442,7 @@
 				E1E255B1227B731A00230E4F /* LoginViewController.m in Sources */,
 				E18ADF46227C0A48001EC15F /* Product.m in Sources */,
 				E1C4536A227CB4E4001CD5E6 /* RegisterViewController.m in Sources */,
+				E1432AAD227E713900365467 /* TopSeller.m in Sources */,
 				E1E255B7227B74A400230E4F /* LoginViewModel.m in Sources */,
 				6D0C41FD227E598D005AE167 /* SubcategoriesViewModel.m in Sources */,
 				6D0137AE227C9B6900797006 /* CategoriesViewController.m in Sources */,
