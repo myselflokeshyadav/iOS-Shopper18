@@ -14,5 +14,8 @@ target 'iOS-Shopper18' do
   pod 'surveymonkey-ios-sdk'
   pod 'TWMessageBarManager'
   pod 'SVProgressHUD'
+  pod 'Braintree'
+  pod 'BraintreeDropIn'
+  pod 'Braintree/PayPal'
 
 end

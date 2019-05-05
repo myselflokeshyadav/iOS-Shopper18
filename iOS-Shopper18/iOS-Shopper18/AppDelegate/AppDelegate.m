@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "BraintreeCore.h"
 
 @interface AppDelegate ()
 
@@ -17,7 +18,17 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [BTAppSwitch setReturnURLScheme:@"com.iOSDevs.iOS-Shopper18.payments"];
     return YES;
+}
+
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+            options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
+    if ([url.scheme localizedCaseInsensitiveCompare:@"com.iOSDevs.iOS-Shopper18.payments"] == NSOrderedSame) {
+        return [BTAppSwitch handleOpenURL:url options:options];
+    }
+    return NO;
 }
 
 
