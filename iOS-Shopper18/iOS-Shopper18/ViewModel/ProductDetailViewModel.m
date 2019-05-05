@@ -18,7 +18,7 @@
 
 #pragma mark - Liftcycle
 
-+ (instancetype)initWithProduct:(Product *)product{
+- (instancetype)initWithProduct:(Product *)product{
     ProductDetailViewModel *vm = ProductDetailViewModel.new;
     if (vm) vm.product = product;
     return vm;
