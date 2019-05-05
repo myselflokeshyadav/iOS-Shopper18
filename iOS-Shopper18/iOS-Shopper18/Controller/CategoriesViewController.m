@@ -56,8 +56,10 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    CategoryViewCell *cell =  [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
+    Category * category = self.categories[indexPath.item];
     SubcategoriesViewController *vc = SubcategoriesViewController.new;
-//    [vc ]
+//    [vc sid:]
     [self.navigationController pushViewController:vc animated:YES];
 }
 

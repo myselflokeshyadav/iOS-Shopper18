@@ -11,19 +11,29 @@
 
 @implementation SubcategoriesViewModel
 
-- (void)getProductSubcategories:(void(^)(NSError * _Nullable error))completion{
-    self.info = NSDictionary.new;
-    
-    [APIHandler.shared getProductCategories:self.info completion:^(id categoryList, NSError * error) {
+- (void)getProductSubCategories:(NSString *)cid completion:(void(^)(id _Nullable, NSError * _Nullable))completion{
+    [APIHandler.shared getProductSubCategories:cid completion:^(id categoryList, NSError * error) {
         if(error == nil){
             self.subcategories = categoryList;
-            completion(nil);
+            completion(categoryList,nil);
         }
         else{
-            completion(error);
+            completion(nil,error);
         }
     }];
-    
 }
+//- (void)getProductSubcategories:(void(^)(NSError * _Nullable error))completion{
+//    self.info = NSDictionary.new;
+//
+//    [APIHandler.shared getProductCategories:self.info completion:^(id categoryList, NSError * error) {
+//        if(error == nil){
+//            self.subcategories = categoryList;
+//            completion(nil);
+//        }
+//        else{
+//            completion(error);
+//        }
+//    }];
+//}
 
 @end

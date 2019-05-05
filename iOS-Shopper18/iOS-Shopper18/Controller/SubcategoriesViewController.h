@@ -16,8 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (strong, nonatomic) SubcategoriesViewModel * subcategoryModel;
 @property (strong, nonatomic) NSMutableArray<Category *> *subcategories;
-
-- (void)getProductSubcategories;
+@property(assign, nonatomic) Category * category;
+- (void)getProductSubCategories:(NSString *)cid;
 
 
 @end

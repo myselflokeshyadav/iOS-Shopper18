@@ -17,7 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(assign, nonatomic) NSDictionary * info;
 
-- (void)getProductSubcategories:(void(^)(NSError * _Nullable))completion;
+
+- (void)getProductSubCategories:(NSString *)cid completion:(void(^)(id _Nullable, NSError * _Nullable))completion;
 
 @end
 
