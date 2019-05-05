@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Product : NSObject
+@interface Product : NSObject <NSCopying>
 
 @property (strong, nonatomic) NSString
     *pid,
@@ -30,6 +30,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (double) totalPrice;
 
 - (NSDictionary *)orderInfo;
+
+- (nonnull id)copyWithZone:(nullable NSZone *)zone;
 
 @end
 

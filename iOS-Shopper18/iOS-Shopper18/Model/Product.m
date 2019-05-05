@@ -58,5 +58,19 @@
              };
 }
 
+
+- (nonnull id)copyWithZone:(nullable NSZone *)zone {
+    Product* product = [[Product allocWithZone:zone]init];
+    if (product) {
+        product.pid = [self.pid copy];
+        product.name = [self.name copy];
+        product.quantity = self.quantity;
+        product.price = self.price;
+        product.desc = [self.desc copy];
+        product.imageURL = [self.imageURL copy];
+    }
+    return product;
+}
+
 @end
 
