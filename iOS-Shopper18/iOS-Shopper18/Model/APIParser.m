@@ -11,6 +11,7 @@
 #import "Product.h"
 #import "Order.h"
 #import "User.h"
+#import "TopSeller.h"
 
 @implementation APIParser
 
@@ -49,4 +50,12 @@
     return [User initWithInfo:info];
 }
 
++ (nullable NSArray<TopSeller *> *)topSellersFrom:(id)jsonObject {
+    NSDictionary *dict = jsonObject;
+    NSArray *orders = dict[@"Top sellers"];
+    NSMutableArray *list = NSMutableArray.new;
+    for (NSDictionary *info in orders)
+        [list addObject:[TopSeller initWithInfo:info]];
+    return list;
+}
 @end
