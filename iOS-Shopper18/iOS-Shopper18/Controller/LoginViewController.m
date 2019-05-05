@@ -50,11 +50,14 @@
     if (self.isFormValid) {
         NSLog(@"%@", [self formValues]);
         [self.vm login:[self formValues] completion:^(BOOL success, NSString * _Nullable msg) {
-            if (success) {
-                // Jump to Home
-            } else {
-                [TWMessageBarManager.sharedInstance showMessageWithTitle:@"Error" description:msg type:TWMessageBarMessageTypeError duration:1 callback:^{}];
-            }
+            dispatch_async(dispatch_get_main_queue(), ^{
+                if (success) {
+                    // Replace with jump to home page
+                    [TWMessageBarManager.sharedInstance showMessageWithTitle:@"Success" description:@"" type:TWMessageBarMessageTypeSuccess duration:1];
+                } else {
+                    [TWMessageBarManager.sharedInstance showMessageWithTitle:@"Error" description:msg type:TWMessageBarMessageTypeError duration:2];
+                }
+            });
         }];
     }
 }

@@ -73,7 +73,7 @@
     XLFormRowDescriptor *row = [self floatRowWithTag:@"password" title:@"Password"];
     row.required = required;
     [self floatCellForRow:row].floatLabeledTextField.secureTextEntry = YES;
-    [row addValidator:[XLFormRegexValidator formRegexValidatorWithMsg:@"At least 6, max 32 characters" regex:@"^(?=.*\\d)(?=.*[A-Za-z]).{6,32}$"]];
+    [row addValidator:[XLFormRegexValidator formRegexValidatorWithMsg:@"At least 6, max 32 characters" regex:@"^.{6,32}$"]];
     return row;
 }
 

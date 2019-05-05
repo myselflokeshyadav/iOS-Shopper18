@@ -12,8 +12,9 @@
 
 - (void)login:(NSDictionary *)info completion:(void (^)(BOOL, NSString * _Nullable))completion {
     [APIHandler.shared loginUser:info completion:^(id _Nullable result, NSError * _Nullable error) {
-        if (result) completion(YES, nil);
-        else completion(NO, @"Mobile number is not registered");
+        if (error) completion(NO, @"Server error, please try again later");
+        else if (result) completion(YES, nil);
+        else completion(NO, @"Mobile number is not registered or incorrect password.");
     }];
 }
 

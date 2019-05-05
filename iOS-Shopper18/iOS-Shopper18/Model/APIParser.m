@@ -43,7 +43,8 @@
 }
 
 + (nullable User *)userFrom:(id)jsonObject {
-    if (!jsonObject[0]) return nil;
+    if ([jsonObject isKindOfClass:NSDictionary.class]) return nil;
+    if (![jsonObject isKindOfClass:NSArray.class]) return nil;
     NSDictionary *info = jsonObject[0];
     return [User initWithInfo:info];
 }
