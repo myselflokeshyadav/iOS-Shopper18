@@ -31,6 +31,8 @@
 		E18ADF43227C034C001EC15F /* Category.m in Sources */ = {isa = PBXBuildFile; fileRef = E18ADF42227C034C001EC15F /* Category.m */; };
 		E18ADF46227C0A48001EC15F /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = E18ADF45227C0A48001EC15F /* Product.m */; };
 		E18ADF49227C10EA001EC15F /* APIParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E18ADF48227C10EA001EC15F /* APIParser.m */; };
+		E1A221D6227F64F600952EC5 /* ProductDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A221D5227F64F600952EC5 /* ProductDetailViewController.m */; };
+		E1A221D9227F653600952EC5 /* ProductDetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A221D8227F653600952EC5 /* ProductDetailViewModel.m */; };
 		E1AF4A32227E411D0087D198 /* Category.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1AF4A31227E411D0087D198 /* Category.storyboard */; };
 		E1AF4A35227E47B40087D198 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = E1AF4A34227E47B40087D198 /* User.m */; };
 		E1C45367227CB47A001CD5E6 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1C45366227CB47A001CD5E6 /* Login.storyboard */; };
@@ -96,6 +98,10 @@
 		E18ADF45227C0A48001EC15F /* Product.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
 		E18ADF47227C10EA001EC15F /* APIParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIParser.h; sourceTree = "<group>"; };
 		E18ADF48227C10EA001EC15F /* APIParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIParser.m; sourceTree = "<group>"; };
+		E1A221D4227F64F600952EC5 /* ProductDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductDetailViewController.h; sourceTree = "<group>"; };
+		E1A221D5227F64F600952EC5 /* ProductDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProductDetailViewController.m; sourceTree = "<group>"; };
+		E1A221D7227F653600952EC5 /* ProductDetailViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductDetailViewModel.h; sourceTree = "<group>"; };
+		E1A221D8227F653600952EC5 /* ProductDetailViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProductDetailViewModel.m; sourceTree = "<group>"; };
 		E1AF4A31227E411D0087D198 /* Category.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Category.storyboard; sourceTree = "<group>"; };
 		E1AF4A33227E47B40087D198 /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		E1AF4A34227E47B40087D198 /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
@@ -306,6 +312,8 @@
 				2F032E3D227E9EFD00B2842F /* TopSellerViewModel.m */,
 				6DBBB1A9227F32AD00979E87 /* ProductsViewModel.h */,
 				6DBBB1AA227F32AD00979E87 /* ProductsViewModel.m */,
+				E1A221D7227F653600952EC5 /* ProductDetailViewModel.h */,
+				E1A221D8227F653600952EC5 /* ProductDetailViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -332,6 +340,8 @@
 				2F032E3A227E9EE900B2842F /* TopSellerViewController.m */,
 				6DBBB1A6227F328E00979E87 /* ProductsViewController.h */,
 				6DBBB1A7227F328E00979E87 /* ProductsViewController.m */,
+				E1A221D4227F64F600952EC5 /* ProductDetailViewController.h */,
+				E1A221D5227F64F600952EC5 /* ProductDetailViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -466,6 +476,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E18ADF43227C034C001EC15F /* Category.m in Sources */,
+				E1A221D9227F653600952EC5 /* ProductDetailViewModel.m in Sources */,
 				E1C45376227D3AA5001CD5E6 /* BaseFormViewController.m in Sources */,
 				E1F91D0B227BEBE8009D0D54 /* Order.m in Sources */,
 				6D0C41F4227E56EF005AE167 /* HomeViewController.m in Sources */,
@@ -476,6 +487,7 @@
 				E1C4537B227D4875001CD5E6 /* UIView+InterfaceBuilder.m in Sources */,
 				6D0137B3227C9BD200797006 /* CategoryViewCell.m in Sources */,
 				E18ADF49227C10EA001EC15F /* APIParser.m in Sources */,
+				E1A221D6227F64F600952EC5 /* ProductDetailViewController.m in Sources */,
 				6DBBB1A8227F328E00979E87 /* ProductsViewController.m in Sources */,
 				E1E25592227B61EF00230E4F /* AppDelegate.m in Sources */,
 				2F032E41227E9F3500B2842F /* TopSellerCell.m in Sources */,
