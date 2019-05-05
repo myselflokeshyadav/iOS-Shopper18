@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) NSMutableArray<Product *> *productList;
 @property(assign, nonatomic) Category * subcategory;
 
-- (void)getProducts:(NSString *)sid;
+- (void)getProducts:(NSString *)cid scid:(NSString *)sid;
 
 @end
 

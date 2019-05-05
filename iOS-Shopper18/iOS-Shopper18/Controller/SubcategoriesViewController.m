@@ -8,6 +8,7 @@
 
 #import "SubcategoriesViewController.h"
 #import "CategoryViewCell.h"
+#import "ProductsViewController.h"
 
 @interface SubcategoriesViewController ()
 
@@ -52,7 +53,11 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    
+    Subcategory * subcategory = self.subcategories[indexPath.item];
+    UIStoryboard * sb = [UIStoryboard storyboardWithName:@"Category" bundle:nil];
+    ProductsViewController *vc = [sb instantiateViewControllerWithIdentifier:@"ProductsViewController"];
+    vc.subcategory = subcategory;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end

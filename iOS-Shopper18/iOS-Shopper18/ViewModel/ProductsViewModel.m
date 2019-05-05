@@ -11,16 +11,16 @@
 
 @implementation ProductsViewModel
 
-- (void)getProducts:(NSString *)cid completion:(void(^)(id _Nullable, NSError * _Nullable))completion{
-//    [APIHandler.shared getProductSubCategories:cid completion:^(id productList, NSError * error) {
-//        if(error == nil){
-//            self.productList = productList;
-//            completion(productList,nil);
-//        }
-//        else{
-//            completion(nil,error);
-//        }
-//    }];
+-(void) getProducts:(NSString *)cid scid:(NSString *)scid completion:(void (^)(id productList, NSError * error))completion{
+    [APIHandler.shared getProducts:cid scid:scid completion:^(id productList, NSError * error) {
+        if(error == nil){
+            self.productList = productList;
+            completion(productList, nil);
+        }
+        else{
+            completion(nil,error);
+        }
+    }];
 }
 
 @end

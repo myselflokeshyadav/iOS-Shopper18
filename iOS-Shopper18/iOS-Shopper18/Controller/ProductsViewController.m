@@ -19,16 +19,17 @@
     [super viewDidLoad];
     self.productList = NSMutableArray.new;
     self.productVModel = ProductsViewModel.new;
-    [self getProducts:self.subcategory.scid];
+    [self getProducts:self.subcategory.cid scid:self.subcategory.scid];
 }
 
-- (void)getProducts:(NSString *)cid{
-    [self.productVModel getProducts:cid completion:^(id listSubcategories, NSError * error) {
+- (void)getProducts:(NSString *)cid scid:(NSString *)scid{
+    
+    [self.productVModel getProducts:cid scid:scid completion:^(id productList, NSError * error) {
         if(error == nil){
             
             
-            self.productVModel.productList = listSubcategories;
-            //            self.subcategories = self.subcategoryModel.subcategories;
+            self.productVModel.productList = productList;
+            self.productList = self.productVModel.productList;
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.collectionView reloadData];
             });

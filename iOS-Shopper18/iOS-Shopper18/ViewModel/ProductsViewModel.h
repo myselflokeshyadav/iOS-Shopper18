@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(assign,nonatomic) NSMutableArray<Product *>* productList;
 
-- (void)getProducts:(NSString *)sid completion:(void(^)(id _Nullable, NSError * _Nullable))completion;
+- (void)getProducts:(NSString *)cid scid:(NSString *)scid completion:(void(^)(id _Nullable, NSError * _Nullable))completion;
 
 @end
 
