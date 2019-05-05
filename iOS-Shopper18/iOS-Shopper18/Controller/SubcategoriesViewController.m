@@ -19,8 +19,7 @@
     [super viewDidLoad];
     self.subcategories = NSMutableArray.new;
     self.subcategoryModel = SubcategoriesViewModel.new;
-//    [self getProductSubCategories:self.category.cid];
-    [self getProductSubCategories:@"108"];
+    [self getProductSubCategories:self.category.cid];
 }
 
 - (void)getProductSubCategories:(NSString *)cid{
@@ -41,35 +40,15 @@
     
 }
 
-
-//-(void) getProductSubcategories{
-//
-//    //    info = NSDictionary.new;
-//    [self.subcategoryModel getProductSubcategories:^(NSError * error) {
-//        if(error == nil){
-//
-//            self.subcategories = self.subcategoryModel.subcategories;
-//            dispatch_async(dispatch_get_main_queue(), ^{
-//                [self.collectionView reloadData];
-//            });
-//        }
-//        else{
-//            NSLog(@"There are no subcategories available");
-//        }
-//    }];
-//
-//}
-
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     CategoryViewCell *cell =  [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
-    //Category * subcategory = self.subcategories[indexPath.item];
-//    [cell setCategoryCell:subcategory];
+    Category * subcategory = self.subcategories[indexPath.item];
+    [cell setCategoryCell:subcategory];
     return cell;
 }
 
 - (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-//    return self.subcategoryModel.subcategories.count;
-    return 10;
+    return self.subcategoryModel.subcategories.count;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
