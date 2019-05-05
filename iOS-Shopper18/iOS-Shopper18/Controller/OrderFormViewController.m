@@ -7,8 +7,13 @@
 //
 
 #import "OrderFormViewController.h"
+#import "OrderFormViewModel.h"
+#import "FloatLabeledTextFieldCell.h"
+#import <JVFloatLabeledTextField/JVFloatLabeledTextField.h>
 
 @interface OrderFormViewController ()
+
+@property (strong, nonatomic) OrderFormViewModel *vm;
 
 @end
 
@@ -16,17 +21,41 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.vm = OrderFormViewModel.new;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)initializeForm
+{
+    XLFormDescriptor *form = [XLFormDescriptor formDescriptor];
+    XLFormSectionDescriptor *section;
+    XLFormRowDescriptor *row;
+    
+    section = [XLFormSectionDescriptor formSection];
+    [form addFormSection:section];
+    row = [self mobileRowRequired:YES];
+    [section addFormRow:row];
+    
+    section = [XLFormSectionDescriptor formSection];
+    [form addFormSection:section];
+    row = [self passwordRowRequired:YES];
+    [section addFormRow:row];
+    
+    self.lastField = [self floatCellForRow:row].floatLabeledTextField;
+    self.form = form;
 }
-*/
+
+- (IBAction)signinTapped:(id)sender {
+    [[self.tableView superview] endEditing:YES];
+    if (self.isFormValid) {
+        NSLog(@"%@", [self formValues]);
+        
+    }
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    if (self.lastField && textField == self.lastField) {
+        [self signinTapped:nil];
+    }
+}
 
 @end
