@@ -20,6 +20,7 @@
 		E1432AAD227E713900365467 /* TopSeller.m in Sources */ = {isa = PBXBuildFile; fileRef = E1432AAC227E713900365467 /* TopSeller.m */; };
 		E1432AAF227E718100365467 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1432AAE227E718100365467 /* Profile.storyboard */; };
 		E1432AB1227E722E00365467 /* OrderForm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1432AB0227E722E00365467 /* OrderForm.storyboard */; };
+		E1432AB4227E7A4000365467 /* OrderFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1432AB3227E7A4000365467 /* OrderFormViewController.m */; };
 		E18ADF43227C034C001EC15F /* Category.m in Sources */ = {isa = PBXBuildFile; fileRef = E18ADF42227C034C001EC15F /* Category.m */; };
 		E18ADF46227C0A48001EC15F /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = E18ADF45227C0A48001EC15F /* Product.m */; };
 		E18ADF49227C10EA001EC15F /* APIParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E18ADF48227C10EA001EC15F /* APIParser.m */; };
@@ -67,6 +68,8 @@
 		E1432AAC227E713900365467 /* TopSeller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TopSeller.m; sourceTree = "<group>"; };
 		E1432AAE227E718100365467 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		E1432AB0227E722E00365467 /* OrderForm.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OrderForm.storyboard; sourceTree = "<group>"; };
+		E1432AB2227E7A4000365467 /* OrderFormViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderFormViewController.h; sourceTree = "<group>"; };
+		E1432AB3227E7A4000365467 /* OrderFormViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderFormViewController.m; sourceTree = "<group>"; };
 		E18ADF41227C034C001EC15F /* Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Category.h; sourceTree = "<group>"; };
 		E18ADF42227C034C001EC15F /* Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Category.m; sourceTree = "<group>"; };
 		E18ADF44227C0A48001EC15F /* Product.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
@@ -294,6 +297,8 @@
 				6D0C41F3227E56EF005AE167 /* HomeViewController.m */,
 				6D0C41F8227E596C005AE167 /* SubcategoriesViewController.h */,
 				6D0C41F9227E596C005AE167 /* SubcategoriesViewController.m */,
+				E1432AB2227E7A4000365467 /* OrderFormViewController.h */,
+				E1432AB3227E7A4000365467 /* OrderFormViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -436,6 +441,7 @@
 				6D0137B3227C9BD200797006 /* CategoryViewCell.m in Sources */,
 				E18ADF49227C10EA001EC15F /* APIParser.m in Sources */,
 				E1E25592227B61EF00230E4F /* AppDelegate.m in Sources */,
+				E1432AB4227E7A4000365467 /* OrderFormViewController.m in Sources */,
 				6D0C41F7227E5836005AE167 /* HomeViewModel.m in Sources */,
 				6D0137B4227C9BD200797006 /* CategoriesViewModel.m in Sources */,
 				A3E30393227CEA3E001E48AF /* FeedbackViewController.m in Sources */,
