@@ -15,8 +15,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(assign,nonatomic) NSMutableArray<Category *>* subcategories;
 
-@property(assign, nonatomic) NSDictionary * info;
-
 
 - (void)getProductSubCategories:(NSString *)cid completion:(void(^)(id _Nullable, NSError * _Nullable))completion;
 

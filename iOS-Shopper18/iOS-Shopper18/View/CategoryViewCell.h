@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Category.h"
+#import "Product.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -16,7 +17,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *categoryName;
 
 @property (assign, nonatomic) Category * category;
+@property (assign, nonatomic) Product * product;
 -(void)setCategoryCell:(Category * _Nonnull)category;
+-(void)setProductCell:(Product * _Nonnull)product;
+
 @end
 
 NS_ASSUME_NONNULL_END
