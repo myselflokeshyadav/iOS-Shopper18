@@ -198,8 +198,8 @@
 - (void)getTopSellers:(void(^)(id _Nullable, NSError * _Nullable))completion {
     
     [self callAPIWithBase:kAPIEcomBase endpoint:kAPIEndPointTopSellers params:@{} completion:^(id _Nullable result, NSError * _Nullable error ) {
-        
+        if (result) completion([APIParser topSellersFrom:result], nil);
+        else completion(nil, error);
     }];
-    
 }
 @end
