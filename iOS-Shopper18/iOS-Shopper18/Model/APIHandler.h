@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+@class Product;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -31,6 +32,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)getProducts:(NSString *)cid scid:(NSString *)scid completion:(void(^)(id _Nullable, NSError * _Nullable))completion;
 
 - (void)placeOrder:(NSDictionary *)info completion:(void(^)(id _Nullable, NSError * _Nullable))completion;
+
+- (void)placeOrders:(NSDictionary *)info products:(NSArray<Product *> *)products
+         completion:(void(^)(id _Nullable, NSError * _Nullable))completion;
 
 - (void)getOrderHistory:(NSDictionary *)info completion:(void(^)(id _Nullable, NSError * _Nullable))completion;
 

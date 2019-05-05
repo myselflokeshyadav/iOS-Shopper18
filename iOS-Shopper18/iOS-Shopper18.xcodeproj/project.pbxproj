@@ -33,6 +33,9 @@
 		E18ADF49227C10EA001EC15F /* APIParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E18ADF48227C10EA001EC15F /* APIParser.m */; };
 		E1A221D6227F64F600952EC5 /* ProductDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A221D5227F64F600952EC5 /* ProductDetailViewController.m */; };
 		E1A221D9227F653600952EC5 /* ProductDetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A221D8227F653600952EC5 /* ProductDetailViewModel.m */; };
+		E1A221DC227F6D5400952EC5 /* ShipmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A221DB227F6D5400952EC5 /* ShipmentViewController.m */; };
+		E1A221DF227F6D9E00952EC5 /* ShipmentViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A221DE227F6D9E00952EC5 /* ShipmentViewModel.m */; };
+		E1A221E2227F6DF100952EC5 /* ShipmentTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A221E1227F6DF100952EC5 /* ShipmentTrack.m */; };
 		E1AF4A32227E411D0087D198 /* Category.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1AF4A31227E411D0087D198 /* Category.storyboard */; };
 		E1AF4A35227E47B40087D198 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = E1AF4A34227E47B40087D198 /* User.m */; };
 		E1C45367227CB47A001CD5E6 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1C45366227CB47A001CD5E6 /* Login.storyboard */; };
@@ -102,6 +105,12 @@
 		E1A221D5227F64F600952EC5 /* ProductDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProductDetailViewController.m; sourceTree = "<group>"; };
 		E1A221D7227F653600952EC5 /* ProductDetailViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductDetailViewModel.h; sourceTree = "<group>"; };
 		E1A221D8227F653600952EC5 /* ProductDetailViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProductDetailViewModel.m; sourceTree = "<group>"; };
+		E1A221DA227F6D5400952EC5 /* ShipmentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShipmentViewController.h; sourceTree = "<group>"; };
+		E1A221DB227F6D5400952EC5 /* ShipmentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShipmentViewController.m; sourceTree = "<group>"; };
+		E1A221DD227F6D9E00952EC5 /* ShipmentViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShipmentViewModel.h; sourceTree = "<group>"; };
+		E1A221DE227F6D9E00952EC5 /* ShipmentViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShipmentViewModel.m; sourceTree = "<group>"; };
+		E1A221E0227F6DF100952EC5 /* ShipmentTrack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShipmentTrack.h; sourceTree = "<group>"; };
+		E1A221E1227F6DF100952EC5 /* ShipmentTrack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShipmentTrack.m; sourceTree = "<group>"; };
 		E1AF4A31227E411D0087D198 /* Category.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Category.storyboard; sourceTree = "<group>"; };
 		E1AF4A33227E47B40087D198 /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		E1AF4A34227E47B40087D198 /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
@@ -289,6 +298,8 @@
 				6D0137B0227C9BD100797006 /* CategoryViewCell.m */,
 				2F032E3F227E9F3500B2842F /* TopSellerCell.h */,
 				2F032E40227E9F3500B2842F /* TopSellerCell.m */,
+				E1A221E0227F6DF100952EC5 /* ShipmentTrack.h */,
+				E1A221E1227F6DF100952EC5 /* ShipmentTrack.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -314,6 +325,8 @@
 				6DBBB1AA227F32AD00979E87 /* ProductsViewModel.m */,
 				E1A221D7227F653600952EC5 /* ProductDetailViewModel.h */,
 				E1A221D8227F653600952EC5 /* ProductDetailViewModel.m */,
+				E1A221DD227F6D9E00952EC5 /* ShipmentViewModel.h */,
+				E1A221DE227F6D9E00952EC5 /* ShipmentViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -342,6 +355,8 @@
 				6DBBB1A7227F328E00979E87 /* ProductsViewController.m */,
 				E1A221D4227F64F600952EC5 /* ProductDetailViewController.h */,
 				E1A221D5227F64F600952EC5 /* ProductDetailViewController.m */,
+				E1A221DA227F6D5400952EC5 /* ShipmentViewController.h */,
+				E1A221DB227F6D5400952EC5 /* ShipmentViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -481,6 +496,7 @@
 				E1F91D0B227BEBE8009D0D54 /* Order.m in Sources */,
 				6D0C41F4227E56EF005AE167 /* HomeViewController.m in Sources */,
 				6DBBB1AB227F32AD00979E87 /* ProductsViewModel.m in Sources */,
+				E1A221DC227F6D5400952EC5 /* ShipmentViewController.m in Sources */,
 				E1E255A0227B61F000230E4F /* main.m in Sources */,
 				E1432AB7227E7B2000365467 /* OrderFormViewModel.m in Sources */,
 				6D0C41FA227E596C005AE167 /* SubcategoriesViewController.m in Sources */,
@@ -493,6 +509,7 @@
 				2F032E41227E9F3500B2842F /* TopSellerCell.m in Sources */,
 				E1432AB4227E7A4000365467 /* OrderFormViewController.m in Sources */,
 				6D0C41F7227E5836005AE167 /* HomeViewModel.m in Sources */,
+				E1A221DF227F6D9E00952EC5 /* ShipmentViewModel.m in Sources */,
 				2F032E3E227E9EFD00B2842F /* TopSellerViewModel.m in Sources */,
 				6D0137B4227C9BD200797006 /* CategoriesViewModel.m in Sources */,
 				A3E30393227CEA3E001E48AF /* FeedbackViewController.m in Sources */,
@@ -504,6 +521,7 @@
 				6D0C41FD227E598D005AE167 /* SubcategoriesViewModel.m in Sources */,
 				6D0137AE227C9B6900797006 /* CategoriesViewController.m in Sources */,
 				E1AF4A35227E47B40087D198 /* User.m in Sources */,
+				E1A221E2227F6DF100952EC5 /* ShipmentTrack.m in Sources */,
 				E1C45371227CC1BF001CD5E6 /* FloatLabeledTextFieldCell.m in Sources */,
 				E1E255B4227B733300230E4F /* APIHandler.m in Sources */,
 				E1C4536D227CB586001CD5E6 /* RegisterViewModel.m in Sources */,
