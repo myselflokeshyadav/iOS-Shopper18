@@ -28,9 +28,9 @@
             
             self.subcategories = self.subcategoryModel.subcategories;
             self.subcategoryModel.subcategories = listSubcategories;
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self.collectionView reloadData];
-            });
+//            dispatch_async(dispatch_get_main_queue(), ^{
+//                [self.collectionView reloadData];
+//            });
         }
         else{
             NSLog(@"There are no subcategories available");
@@ -60,13 +60,14 @@
 
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     CategoryViewCell *cell =  [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
-    Category * subcategory = self.subcategories[indexPath.item];
-    [cell setCategoryCell:subcategory];
+//    Category * subcategory = self.subcategories[indexPath.item];
+//    [cell setCategoryCell:subcategory];
     return cell;
 }
 
 - (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return self.subcategoryModel.subcategories.count;
+//    return self.subcategoryModel.subcategories.count;
+    return 10;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
