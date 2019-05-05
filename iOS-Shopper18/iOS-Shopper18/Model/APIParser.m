@@ -33,8 +33,14 @@
     return list;
 }
 
++ (nullable Order *)orderFrom:(id)jsonObject {
+    if ([jsonObject isKindOfClass:NSString.class]) return nil;
+    NSDictionary *dict = jsonObject;
+    NSDictionary *orderInfo = (dict[@"Order confirmed"])[0];
+    return [Order initWithInfo:orderInfo];
+}
 
-+ (nullable NSArray<Order *> *)ordersFrom:(id)jsonObject {
++ (nullable NSArray<Order *> *)orderHistoryFrom:(id)jsonObject {
     NSDictionary *dict = jsonObject;
     NSArray *orders = (dict[@"Order confirmed"])? dict[@"Order confirmed"] : dict[@"Order history"];
     NSMutableArray *list = NSMutableArray.new;

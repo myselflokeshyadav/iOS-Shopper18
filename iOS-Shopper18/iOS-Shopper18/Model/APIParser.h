@@ -19,7 +19,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (nullable NSArray<Category *> *)categoriesFrom:(id)jsonObject;
 + (nullable NSArray<Product *> *)productsFrom:(id)jsonObject;
-+ (nullable NSArray<Order *> *)ordersFrom:(id)jsonObject;
++ (nullable Order *)orderFrom:(id)jsonObject;
++ (nullable NSArray<Order *> *)orderHistoryFrom:(id)jsonObject;
 + (nullable User *)userFrom:(id)jsonObject;
 + (nullable NSArray<TopSeller *> *)topSellersFrom:(id)jsonObject;
 

@@ -10,14 +10,6 @@
 
 @interface Product ()
 
-@property (readwrite) NSString
-    *pid,
-    *name,
-    *quantity,
-    *prize,
-    *desc,
-    *imageURL;
-
 @end
 
 @implementation Product
@@ -27,12 +19,43 @@
     if (product) {
         product.pid = info[@"id"];
         product.name = info[@"pname"];
-        product.quantity = info[@"quantity"];
-        product.prize = info[@"prize"];
+        product.quantity = 1;
+        product.price = [info[@"prize"] doubleValue];
         product.desc = info[@"discription"];
         product.imageURL = info[@"image"];
     }
     return product;
+}
+
++ (instancetype)initWithID:(NSString *)pid name:(NSString *)name price:(double)price {
+    Product *product = Product.new;
+    if (product) {
+        product.pid = pid;
+        product.name = name;
+        product.price = price;
+        product.quantity = 1;
+    }
+    return product;
+}
+
++ (instancetype)initWithID:(NSString *)pid name:(NSString *)name price:(double)price quantity:(NSInteger)count {
+    Product *product = [Product initWithID:pid name:name price:price];
+    if (product) {
+        product.quantity = count;
+    }
+    return product;
+}
+
+- (double)totalPrice {
+    return self.quantity * self.price;
+}
+
+- (NSDictionary *)orderInfo {
+    return @{ @"item_id": self.pid,
+              @"item_names": self.name,
+              @"item_quantity": [NSNumber numberWithInteger:self.quantity],
+              @"final_price": [NSNumber numberWithDouble:self.totalPrice]
+             };
 }
 
 @end
