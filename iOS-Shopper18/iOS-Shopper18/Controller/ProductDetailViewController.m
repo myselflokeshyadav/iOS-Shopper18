@@ -35,9 +35,9 @@
     //set up UI by accessing viewModel.stuff
     self.productName.text = self.product.name;
     self.productDescribtion.text = self.product.desc;
-    NSString  * price = [NSString stringWithFormat:@"%d", self.product.price];
+    NSString  * price = [NSString stringWithFormat:@"%f", self.product.price];
     self.productPrize.text = price;
-    NSString  * quantity = [NSString stringWithFormat:@"%i", self.product.quantity];
+    NSString  * quantity = [NSString stringWithFormat:@"%li", (long)self.product.quantity];
     self.productQuantity.text = quantity;
     NSString * urlString = self.product.imageURL;
     NSURL * url = [NSURL URLWithString:urlString];
