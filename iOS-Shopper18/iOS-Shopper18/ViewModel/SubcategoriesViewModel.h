@@ -12,11 +12,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SubcategoriesViewModel : NSObject
-
-@property(assign,nonatomic) NSMutableArray<Category *>* subcategories;
-
-@property(assign, nonatomic) NSDictionary * info;
-
+@property(assign,nonatomic) NSMutableArray<Subcategory *>* subcategories;
 
 - (void)getProductSubCategories:(NSString *)cid completion:(void(^)(id _Nullable, NSError * _Nullable))completion;
 

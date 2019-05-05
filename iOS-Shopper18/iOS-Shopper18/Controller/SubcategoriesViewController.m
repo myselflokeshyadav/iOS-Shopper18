@@ -8,6 +8,7 @@
 
 #import "SubcategoriesViewController.h"
 #import "CategoryViewCell.h"
+#import "ProductsViewController.h"
 
 @interface SubcategoriesViewController ()
 
@@ -26,8 +27,9 @@
     [self.subcategoryModel getProductSubCategories:cid completion:^(id listSubcategories, NSError * error) {
         if(error == nil){
             
-            self.subcategories = self.subcategoryModel.subcategories;
+            
             self.subcategoryModel.subcategories = listSubcategories;
+            self.subcategories = self.subcategoryModel.subcategories;
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.collectionView reloadData];
             });
@@ -38,25 +40,6 @@
     }];
     
 }
-
-
-//-(void) getProductSubcategories{
-//
-//    //    info = NSDictionary.new;
-//    [self.subcategoryModel getProductSubcategories:^(NSError * error) {
-//        if(error == nil){
-//
-//            self.subcategories = self.subcategoryModel.subcategories;
-//            dispatch_async(dispatch_get_main_queue(), ^{
-//                [self.collectionView reloadData];
-//            });
-//        }
-//        else{
-//            NSLog(@"There are no subcategories available");
-//        }
-//    }];
-//
-//}
 
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     CategoryViewCell *cell =  [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
@@ -70,7 +53,12 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    
+    Subcategory * subcategory = self.subcategories[indexPath.item];
+    UIStoryboard * sb = [UIStoryboard storyboardWithName:@"Category" bundle:nil];
+    ProductsViewController *vc = [sb instantiateViewControllerWithIdentifier:@"ProductsViewController"];
+    vc.subcategory = subcategory;
+    vc.category = self.category;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end

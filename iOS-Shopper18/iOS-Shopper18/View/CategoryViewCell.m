@@ -18,4 +18,13 @@
     NSURL *url = [NSURL URLWithString:urlString];
     [self.categoryImage sd_setImageWithURL:url];
 }
+
+-(void)setProductCell:(Product * _Nonnull)product{
+    self.product = product;
+    self.categoryName.text = product.name;
+    
+    NSString *urlString = product.imageURL;
+    NSURL *url = [NSURL URLWithString:urlString];
+    [self.categoryImage sd_setImageWithURL:url];
+}
 @end

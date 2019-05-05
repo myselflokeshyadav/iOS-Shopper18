@@ -12,15 +12,24 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Product : NSObject
 
-@property (strong, nonatomic, readonly) NSString
+@property (strong, nonatomic) NSString
     *pid,
     *name,
-    *quantity,
-    *prize,
     *desc,
     *imageURL;
 
+@property (assign, nonatomic) NSInteger quantity;
+@property (assign, nonatomic) double price;
+
 + (instancetype)initWithInfo:(NSDictionary *)info;
+
++ (instancetype)initWithID:(NSString *)pid name:(NSString *)name price:(double)price;
+
++ (instancetype)initWithID:(NSString *)pid name:(NSString *)name price:(double)price quantity:(NSInteger)count;
+
+- (double) totalPrice;
+
+- (NSDictionary *)orderInfo;
 
 @end
 

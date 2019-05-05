@@ -9,6 +9,7 @@
 #import "APIHandler.h"
 #import "APIParser.h"
 #import "User.h"
+#import "Product.h"
 
 @interface APIHandler ()
 
@@ -126,17 +127,8 @@
     
 }
 
-- (void)getProductCategories:(NSDictionary *)info completion:(void(^)(id _Nullable, NSError * _Nullable))completion {
-    info = [self extendedInfo:info];
-    [self callAPIWithBase:kAPICartBase endpoint:kAPIEndPointCategory params:info completion:^(id _Nullable result, NSError * _Nullable error ) {
-        if (result) completion([APIParser categoriesFrom:result], nil);
-        else completion(nil, error);
-    }];
-    
-}
-
 - (void)getProductSubCategories:(NSString *)cid completion:(void(^)(id _Nullable, NSError * _Nullable))completion {
-    NSDictionary *info = @{@"id": cid, @"api_key": self.apiKey, @"user_id": self.userID};
+    NSDictionary *info = @{@"Id": cid, @"api_key": self.apiKey, @"user_id": self.userID};
     [self callAPIWithBase:kAPICartBase endpoint:kAPIEndPointSubCategory params:info completion:^(id _Nullable result, NSError * _Nullable error ) {
         if (result) completion([APIParser categoriesFrom:result], nil);
         else completion(nil, error);
@@ -144,35 +136,53 @@
     
 }
 
-- (void)getProducts:(NSDictionary *)info completion:(void(^)(id _Nullable, NSError * _Nullable))completion {
-    info = [self extendedInfo:info];
+- (void)getProducts:(NSString *)cid scid:(NSString *)scid completion:(void(^)(id _Nullable, NSError * _Nullable))completion {
+    NSDictionary *info = @{@"cid": cid, @"scid": scid, @"api_key": self.apiKey, @"user_id": self.userID};
     [self callAPIWithBase:kAPICartBase endpoint:kAPIEndPointProductList params:info completion:^(id _Nullable result, NSError * _Nullable error ) {
         if (result) completion([APIParser productsFrom:result], nil);
         else completion(nil, error);
     }];
-    
 }
 
 - (void)placeOrder:(NSDictionary *)info completion:(void(^)(id _Nullable, NSError * _Nullable))completion {
     info = [self extendedInfo:info];
     [self callAPIWithBase:kAPIEcomBase endpoint:kAPIEndPointMakeOrder params:info completion:^(id _Nullable result, NSError * _Nullable error ) {
-        if (result) completion([APIParser ordersFrom:result], nil);
+        if (result) completion([APIParser orderFrom:result], nil);
         else completion(nil, error);
     }];
 }
 
-- (void)placeOrders:(NSDictionary *)info completion:(void(^)(id _Nullable, NSError * _Nullable))completion {
+- (void)placeOrders:(NSDictionary *)info products:(NSArray<Product *> *)products
+         completion:(void(^)(id _Nullable, NSError * _Nullable))completion {
+    
     info = [self extendedInfo:info];
-    [self callAPIWithBase:kAPIEcomBase endpoint:kAPIEndPointMakeOrder params:info completion:^(id _Nullable result, NSError * _Nullable error ) {
-        if (result) completion([APIParser ordersFrom:result], nil);
-        else completion(nil, error);
-    }];
+    NSMutableArray *orderResults = NSMutableArray.new;
+    dispatch_group_t dgPlaceOrder = dispatch_group_create();
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        for (Product *prod in products) {
+            dispatch_group_enter(dgPlaceOrder);
+            NSMutableDictionary *orderInfo = [NSMutableDictionary dictionaryWithDictionary:info];
+            [orderInfo addEntriesFromDictionary:prod.orderInfo];
+            [self callAPIWithBase:kAPIEcomBase endpoint:kAPIEndPointMakeOrder params:info completion:^(id _Nullable result, NSError * _Nullable error ) {
+                id obj = result? [APIParser orderFrom:result] : nil;
+                if (!obj) obj = [NSString stringWithFormat:@"Order for %@ x%ld failed.", prod.name, prod.quantity];
+                dispatch_barrier_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                    [orderResults addObject:obj];
+                    dispatch_group_leave(dgPlaceOrder);
+                });
+            }];
+        }
+        dispatch_group_notify(dgPlaceOrder, dispatch_get_main_queue(), ^{
+            completion(orderResults, nil);
+        });
+    });
 }
 
 - (void)getOrderHistory:(NSDictionary *)info completion:(void(^)(id _Nullable, NSError * _Nullable))completion {
     info = [self extendedInfo:info];
     [self callAPIWithBase:kAPIEcomBase endpoint:kAPIEndPointOrderHist params:info completion:^(id _Nullable result, NSError * _Nullable error ) {
-        if (result) completion([APIParser ordersFrom:result], nil);
+        if (result) completion([APIParser orderHistoryFrom:result], nil);
         else completion(nil, error);
     }];
     
