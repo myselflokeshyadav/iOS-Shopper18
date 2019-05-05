@@ -45,7 +45,7 @@ typedef enum : NSUInteger {
 
 - (void)shakeCell:(UITableViewCell *)cell;
 
-- (BOOL)isFormValid;
+- (nullable NSArray<NSString *> *)validateForm;
 
 @end
 

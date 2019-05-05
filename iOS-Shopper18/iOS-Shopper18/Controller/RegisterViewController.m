@@ -73,7 +73,8 @@
 
 - (IBAction)doneTapped:(id)sender {
     [[self.tableView superview] endEditing:YES];
-    if (self.isFormValid) {
+    NSArray<NSString *> *errorMsgs = [self validateForm];
+    if (!errorMsgs) {
         NSLog(@"%@", [self formValues]);
         [self.vm register:[self formValues] completion:^(BOOL success, NSString * _Nullable msg) {
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -88,10 +89,11 @@
     }
 }
 
-- (void)textFieldDidEndEditing:(UITextField *)textField {
-    if (self.lastField && textField == self.lastField) {
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    BOOL shouldReturn = [super textFieldShouldReturn:textField];
+    if (shouldReturn && textField == self.lastField)
         [self doneTapped:nil];
-    }
+    return shouldReturn;
 }
 
 @end

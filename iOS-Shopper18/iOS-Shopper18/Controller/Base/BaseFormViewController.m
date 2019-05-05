@@ -81,6 +81,7 @@
     XLFormRowDescriptor *row = [self floatRowWithTag:@"email" title:@"Email"];
     row.required = required;
     [self floatCellForRow:row].floatLabeledTextField.autocorrectionType = UITextAutocorrectionTypeNo;
+    [self floatCellForRow:row].floatLabeledTextField.autocapitalizationType = UITextAutocapitalizationTypeNone;
     [row addValidator:[XLFormValidator emailValidator]];
     return row;
 }
@@ -139,9 +140,9 @@
 
 #pragma MARK: - Form Helpers
 
-- (BOOL)isFormValid {
+- (nullable NSArray<NSString *> *)validateForm {
     NSArray *errors = [self formValidationErrors];
-    if (!errors.count) return YES;
+    if (!errors.count) return nil;
     NSMutableArray *msgs = NSMutableArray.new;
     for (id obj in errors) {
         XLFormValidationStatus * validationStatus = [[obj userInfo] objectForKey:XLValidationStatusErrorKey];
@@ -151,7 +152,7 @@
         [self shakeCell:cell];
     }
     NSLog(@"%@", [msgs componentsJoinedByString:@"\n"]);
-    return NO;
+    return msgs;
 }
 
 
@@ -161,6 +162,7 @@
     if (!string.length) return YES;
     switch (textField.tag) {
         case InputLettersOnly:
+            if ([string isEqualToString:@" "]) return YES;
             return [NSCharacterSet.letterCharacterSet characterIsMember:[string characterAtIndex:0]];
         case InputNumbersOnly:
             return [NSCharacterSet.decimalDigitCharacterSet characterIsMember:[string characterAtIndex:0]];
