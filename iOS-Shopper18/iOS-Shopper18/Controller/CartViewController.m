@@ -101,18 +101,18 @@
     }] resume];
 }
 
-- (NSMutableArray *)dataArray
-{
-    if (!_dataArray) {
-        _dataArray = [NSMutableArray new];
-        for (int i = 0; i < 6; i++) {
-            Product *model = [[Product alloc] init];
-            [model dataParser:nil];
-            [_dataArray addObject:model];
-        }
-    }
-    return _dataArray;
-}
+//- (NSMutableArray *)dataArray
+//{
+//    if (!_dataArray) {
+//        _dataArray = [NSMutableArray new];
+//        for (int i = 0; i < 6; i++) {
+//            Product *model = [[Product alloc] init];
+//            [model dataParser:nil];
+//            [_dataArray addObject:model];
+//        }
+//    }
+//    return _dataArray;
+//}
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     CartTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
