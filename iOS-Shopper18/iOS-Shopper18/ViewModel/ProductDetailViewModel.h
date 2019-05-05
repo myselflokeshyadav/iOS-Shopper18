@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ProductDetailViewModel : NSObject
 
-+ (instancetype)initWithProduct:(Product *)product;
+- (instancetype)initWithProduct:(Product *)product;
 
 - (NSString *)productName;
 - (NSString *)showProductName;

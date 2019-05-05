@@ -97,6 +97,21 @@
             </objects>
             <point key="canvasLocation" x="2773.913043478261" y="203.57142857142856"/>
         </scene>
+        <!--Product Detail View Controller-->
+        <scene sceneID="A8q-ml-TyF">
+            <objects>
+                <viewController storyboardIdentifier="ProductDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Uxh-nw-PxC" customClass="ProductDetailViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ovb-3p-eum">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="edZ-CG-WsM"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ysi-Ig-URQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2774" y="931"/>
+        </scene>
         <!--Subcategories View Controller-->
         <scene sceneID="whP-pI-rYt">
             <objects>

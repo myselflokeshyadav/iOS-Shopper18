@@ -11,7 +11,7 @@
 //#import <SDWebImage/SDWebImage.h>
 
 @interface ProductDetailViewController ()
-
+@property (nonatomic, strong) ProductDetailViewModel* viewModel;
 @end
 
 @implementation ProductDetailViewController
@@ -24,9 +24,9 @@
 }
 
 //setter
-//-(void)setDetailViewModel:(DetailViewModel *)viewModel{
-//    _viewModel = viewModel;
-//}
+-(void)setDetailViewModel:(ProductDetailViewModel *)viewModel{
+    _viewModel = viewModel;
+}
 //- (void)setupUI{
 //    //set up UI by accessing viewModel.stuff
 //    //    self.productName.text = self.detailViewModel;

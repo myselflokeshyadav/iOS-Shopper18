@@ -8,6 +8,8 @@
 
 #import "ProductsViewController.h"
 #import "CategoryViewCell.h"
+#import "ProductDetailViewController.h"
+#import "ProductDetailViewModel.h"
 
 @interface ProductsViewController ()
 
@@ -44,7 +46,7 @@
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     CategoryViewCell *cell =  [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
     Product * product = self.productList[indexPath.item];
-    [cell setCategoryCell:product];
+    [cell setProductCell:product];
     return cell;
 }
 
@@ -54,6 +56,14 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Category" bundle: nil];
+    ProductDetailViewController *detailVC = [storyboard instantiateViewControllerWithIdentifier:@"ProductDetailViewController"];
+    Product *product = self.productList[indexPath.item];
+//    ProductDetailViewModel * productVM = [[ProductDetailViewModel alloc] initWithProduct:product];
+    ProductDetailViewModel * productVM = ProductDetailViewModel.new;
+    [productVM initWithProduct:product];
+    [detailVC setDetailViewModel:productVM];
+    [self.navigationController pushViewController:detailVC animated:true];
 }
 
 

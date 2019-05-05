@@ -21,6 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (strong, nonatomic) ProductDetailViewModel *vm;
 
+-(void)setDetailViewModel:(ProductDetailViewModel *)viewModel;
+
 @end
 
 NS_ASSUME_NONNULL_END
