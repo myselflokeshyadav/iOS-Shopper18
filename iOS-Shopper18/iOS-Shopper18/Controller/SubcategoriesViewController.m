@@ -57,6 +57,7 @@
     UIStoryboard * sb = [UIStoryboard storyboardWithName:@"Category" bundle:nil];
     ProductsViewController *vc = [sb instantiateViewControllerWithIdentifier:@"ProductsViewController"];
     vc.subcategory = subcategory;
+    vc.category = self.category;
     [self.navigationController pushViewController:vc animated:YES];
 }
 

@@ -13,6 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ProductsViewModel : NSObject
 
+@property(strong, nonnull) NSString *cid;
+//@property(strong, nonnull) NSString *scid;
 @property(assign,nonatomic) NSMutableArray<Product *>* productList;
 
 - (void)getProducts:(NSString *)cid scid:(NSString *)scid completion:(void(^)(id _Nullable, NSError * _Nullable))completion;

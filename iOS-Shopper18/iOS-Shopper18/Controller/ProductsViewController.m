@@ -19,7 +19,7 @@
     [super viewDidLoad];
     self.productList = NSMutableArray.new;
     self.productVModel = ProductsViewModel.new;
-    [self getProducts:self.subcategory.cid scid:self.subcategory.scid];
+    [self getProducts:self.category.cid scid:self.subcategory.scid];
 }
 
 - (void)getProducts:(NSString *)cid scid:(NSString *)scid{

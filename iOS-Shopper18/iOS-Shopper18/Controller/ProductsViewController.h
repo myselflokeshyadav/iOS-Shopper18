@@ -16,7 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (strong, nonatomic) ProductsViewModel * productVModel;
 @property (strong, nonatomic) NSMutableArray<Product *> *productList;
-@property(assign, nonatomic) Category * subcategory;
+@property(assign, nonatomic) Subcategory * subcategory;
+@property(assign, nonatomic) Category * category;
 
 - (void)getProducts:(NSString *)cid scid:(NSString *)sid;
 
