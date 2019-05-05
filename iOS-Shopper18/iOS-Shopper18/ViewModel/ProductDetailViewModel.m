@@ -11,7 +11,6 @@
 
 @interface ProductDetailViewModel ()
 
-@property (nonatomic, strong) Product *product;
 
 @end
 
