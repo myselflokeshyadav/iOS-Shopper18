@@ -191,7 +191,7 @@
 - (void)getShipmentTrack:(NSDictionary *)info completion:(void(^)(id _Nullable, NSError * _Nullable))completion {
     info = [self extendedInfo:info];
     [self callAPIWithBase:kAPIEcomBase endpoint:kAPIEndPointShipTrack params:info completion:^(id _Nullable result, NSError * _Nullable error ) {
-        
+        completion(result, error);
     }];
     
 }
