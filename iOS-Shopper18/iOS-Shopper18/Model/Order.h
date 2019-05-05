@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Order : NSObject
 
-@property (strong, nonatomic, readonly) NSString
+@property (strong, nonatomic) NSString
     *orderID,
     *status,
     *name,

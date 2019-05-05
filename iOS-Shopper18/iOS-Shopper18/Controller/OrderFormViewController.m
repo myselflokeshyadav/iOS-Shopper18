@@ -30,32 +30,62 @@
     XLFormSectionDescriptor *section;
     XLFormRowDescriptor *row;
     
+    // First name
+    section = [XLFormSectionDescriptor formSection];
+    [form addFormSection:section];
+    row = [self floatRowWithTag:@"name" title:@"Name"];
+    row.required = YES;
+    [self setInputOptionForRow:row option:InputLettersOnly];
+    [self floatCellForRow:row].floatLabeledTextField.autocorrectionType = UITextAutocorrectionTypeNo;
+    [self floatCellForRow:row].floatLabeledTextField.autocapitalizationType = UITextAutocapitalizationTypeWords;
+    [section addFormRow:row];
+    
+    // Billing Address
+    section = [XLFormSectionDescriptor formSection];
+    [form addFormSection:section];
+    row = [self addressRowRequired:YES];
+    row.tag = @"billingadd";
+    row.title = @"Billing Address";
+    [section addFormRow:row];
+    
+    // Delivery Address
+    section = [XLFormSectionDescriptor formSection];
+    [form addFormSection:section];
+    row = [self addressRowRequired:YES];
+    row.tag = @"deliveryadd";
+    row.title = @"Delivery Address";
+    [section addFormRow:row];
+    
+    // Mobile
     section = [XLFormSectionDescriptor formSection];
     [form addFormSection:section];
     row = [self mobileRowRequired:YES];
     [section addFormRow:row];
     
+    // Email
     section = [XLFormSectionDescriptor formSection];
     [form addFormSection:section];
-    row = [self passwordRowRequired:YES];
+    row = [self emailRowRequired:YES];
     [section addFormRow:row];
     
     self.lastField = [self floatCellForRow:row].floatLabeledTextField;
     self.form = form;
 }
 
-- (IBAction)signinTapped:(id)sender {
+- (IBAction)confirmTapped:(id)sender {
     [[self.tableView superview] endEditing:YES];
-    if (self.isFormValid) {
+    NSArray<NSString *> *errorMsgs = [self validateForm];
+    if (!errorMsgs) {
         NSLog(@"%@", [self formValues]);
         
     }
 }
 
-- (void)textFieldDidEndEditing:(UITextField *)textField {
-    if (self.lastField && textField == self.lastField) {
-        [self signinTapped:nil];
-    }
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    BOOL shouldReturn = [super textFieldShouldReturn:textField];
+    if (shouldReturn && textField == self.lastField)
+        [self confirmTapped:nil];
+    return shouldReturn;
 }
 
 @end

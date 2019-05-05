@@ -159,7 +159,14 @@
         if (result) completion([APIParser ordersFrom:result], nil);
         else completion(nil, error);
     }];
-    
+}
+
+- (void)placeOrders:(NSDictionary *)info completion:(void(^)(id _Nullable, NSError * _Nullable))completion {
+    info = [self extendedInfo:info];
+    [self callAPIWithBase:kAPIEcomBase endpoint:kAPIEndPointMakeOrder params:info completion:^(id _Nullable result, NSError * _Nullable error ) {
+        if (result) completion([APIParser ordersFrom:result], nil);
+        else completion(nil, error);
+    }];
 }
 
 - (void)getOrderHistory:(NSDictionary *)info completion:(void(^)(id _Nullable, NSError * _Nullable))completion {
