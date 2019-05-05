@@ -8,18 +8,6 @@
 
 #import "User.h"
 
-@interface User ()
-
-@property (readwrite) NSString
-    *userID,
-    *fname,
-    *lname,
-    *email,
-    *mobile,
-    *apiKey;
-
-@end
-
 @implementation User
 
 + (instancetype)initWithInfo:(NSDictionary *)info {

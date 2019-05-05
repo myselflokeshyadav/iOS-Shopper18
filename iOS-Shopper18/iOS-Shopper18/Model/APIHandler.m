@@ -195,21 +195,11 @@
     
 }
 
-- (BOOL)checkParams:(NSArray<NSString *> *)params info:(NSDictionary *)info {
-    NSArray<NSString *> *keys = info.allKeys;
-    if (keys.count == params.count) {
-        for (NSString *paramName in params)
-            if (!info[paramName]) return NO;
-        return YES;
-    }
-    return NO;
-}
-
-- (BOOL)checkRegisterParams:(NSDictionary *)info {
-    return [self checkParams: @[@"fname", @"lname", @"address", @"password", @"email", ] info:info];
-}
-
-- (BOOL)checkLoginParams:(NSDictionary *)info {
-    return [self checkParams: @[@"mobile", @"password"] info:info];
+- (void)getTopSellers:(void(^)(id _Nullable, NSError * _Nullable))completion {
+    
+    [self callAPIWithBase:kAPIEcomBase endpoint:kAPIEndPointTopSellers params:@{} completion:^(id _Nullable result, NSError * _Nullable error ) {
+        if (result) completion([APIParser topSellersFrom:result], nil);
+        else completion(nil, error);
+    }];
 }
 @end

@@ -1,5 +1,5 @@
 //
-//  TopSeller.h
+//  OrderFormViewModel.h
 //  iOS-Shopper18
 //
 //  Created by Alvin Ling on 5/4/19.
@@ -10,16 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TopSeller : NSObject
-
-@property (strong, nonatomic, readonly) NSString
-    *sellID,
-    *name,
-    *deal,
-    *rating,
-    *logo;
-
-+ (instancetype)initWithInfo:(NSDictionary *)info;
+@interface OrderFormViewModel : NSObject
 
 @end
 

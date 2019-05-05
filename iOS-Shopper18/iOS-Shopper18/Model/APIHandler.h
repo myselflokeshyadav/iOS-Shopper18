@@ -40,6 +40,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)uploadProfilePic:(NSDictionary *)info completion:(void(^)(id _Nullable, NSError * _Nullable))completion;
 
+- (void)getTopSellers:(void(^)(id _Nullable, NSError * _Nullable))completion;
+
 @end
 
 NS_ASSUME_NONNULL_END

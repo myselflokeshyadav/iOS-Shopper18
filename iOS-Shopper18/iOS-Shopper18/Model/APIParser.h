@@ -11,6 +11,7 @@
 @class Category;
 @class Order;
 @class User;
+@class TopSeller;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -20,6 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (nullable NSArray<Product *> *)productsFrom:(id)jsonObject;
 + (nullable NSArray<Order *> *)ordersFrom:(id)jsonObject;
 + (nullable User *)userFrom:(id)jsonObject;
++ (nullable NSArray<TopSeller *> *)topSellersFrom:(id)jsonObject;
 
 @end
 
