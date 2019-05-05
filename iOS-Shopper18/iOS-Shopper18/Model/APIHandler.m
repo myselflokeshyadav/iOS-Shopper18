@@ -136,7 +136,7 @@
     
 }
 
-- (void)getProductsWithCid:(NSString *)cid scid:(NSString *)scid completion:(void(^)(id _Nullable, NSError * _Nullable))completion {
+- (void)getProducts:(NSString *)cid scid:(NSString *)scid completion:(void(^)(id _Nullable, NSError * _Nullable))completion {
     NSDictionary *info = @{@"cid": cid, @"scid": scid, @"api_key": self.apiKey, @"user_id": self.userID};
     [self callAPIWithBase:kAPICartBase endpoint:kAPIEndPointProductList params:info completion:^(id _Nullable result, NSError * _Nullable error ) {
         if (result) completion([APIParser productsFrom:result], nil);
