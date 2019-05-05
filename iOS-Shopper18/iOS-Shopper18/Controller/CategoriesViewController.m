@@ -8,7 +8,7 @@
 
 #import "CategoriesViewController.h"
 #import "CategoryViewCell.h"
-#import <SDWebImage/SDWebImage.h>
+#import "SubcategoriesViewController.h"
 
 @interface CategoriesViewController ()
 
@@ -56,51 +56,11 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    
+    CategoryViewCell *cell =  [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
+    Category * category = self.categories[indexPath.item];
+    SubcategoriesViewController *vc = [[SubcategoriesViewController alloc] init];
+    vc.category = category;
+    [self.navigationController pushViewController:vc animated:YES];
 }
-
-//- (void)encodeWithCoder:(nonnull NSCoder *)aCoder {
-//    <#code#>
-//}
-//
-//- (void)traitCollectionDidChange:(nullable UITraitCollection *)previousTraitCollection {
-//    <#code#>
-//}
-//
-//- (void)preferredContentSizeDidChangeForChildContentContainer:(nonnull id<UIContentContainer>)container {
-//    <#code#>
-//}
-//
-//- (CGSize)sizeForChildContentContainer:(nonnull id<UIContentContainer>)container withParentContainerSize:(CGSize)parentSize {
-//    <#code#>
-//}
-//
-//- (void)systemLayoutFittingSizeDidChangeForChildContentContainer:(nonnull id<UIContentContainer>)container {
-//    <#code#>
-//}
-//
-//- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(nonnull id<UIViewControllerTransitionCoordinator>)coordinator {
-//    <#code#>
-//}
-//
-//- (void)willTransitionToTraitCollection:(nonnull UITraitCollection *)newCollection withTransitionCoordinator:(nonnull id<UIViewControllerTransitionCoordinator>)coordinator {
-//    <#code#>
-//}
-//
-//- (void)didUpdateFocusInContext:(nonnull UIFocusUpdateContext *)context withAnimationCoordinator:(nonnull UIFocusAnimationCoordinator *)coordinator {
-//    <#code#>
-//}
-//
-//- (void)setNeedsFocusUpdate {
-//    <#code#>
-//}
-//
-//- (BOOL)shouldUpdateFocusInContext:(nonnull UIFocusUpdateContext *)context {
-//    <#code#>
-//}
-//
-//- (void)updateFocusIfNeeded {
-//    <#code#>
-//}
 
 @end
