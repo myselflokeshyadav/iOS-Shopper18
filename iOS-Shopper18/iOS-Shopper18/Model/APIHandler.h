@@ -24,9 +24,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)forgotPassword:(NSDictionary *)info completion:(void(^)(id _Nullable, NSError * _Nullable))completion;
 
+- (void)getProductCategories:(void(^)(id _Nullable, NSError * _Nullable))completion;
+
 - (void)getProductCategories:(NSDictionary *)info completion:(void(^)(id _Nullable, NSError * _Nullable))completion;
 
-- (void)getProductSubCategories:(NSDictionary *)info completion:(void(^)(id _Nullable, NSError * _Nullable))completion;
+- (void)getProductSubCategories:(NSString *)cid completion:(void(^)(id _Nullable, NSError * _Nullable))completion;
 
 - (void)placeOrder:(NSDictionary *)info completion:(void(^)(id _Nullable, NSError * _Nullable))completion;
 

@@ -10,6 +10,7 @@
 #import "Category.h"
 #import "Product.h"
 #import "Order.h"
+#import "User.h"
 
 @implementation APIParser
 
@@ -41,8 +42,11 @@
     return list;
 }
 
-+ (nullable NSDictionary *)userFrom:(id)jsonObject {
-    return nil;
++ (nullable User *)userFrom:(id)jsonObject {
+    if ([jsonObject isKindOfClass:NSDictionary.class]) return nil;
+    if (![jsonObject isKindOfClass:NSArray.class]) return nil;
+    NSDictionary *info = jsonObject[0];
+    return [User initWithInfo:info];
 }
 
 @end
