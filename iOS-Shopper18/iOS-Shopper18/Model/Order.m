@@ -10,20 +10,6 @@
 
 @interface Order ()
 
-@property (readwrite) NSString
-    *orderID,
-    *status,
-    *name,
-    *billAddr,
-    *deliverAddr,
-    *mobile,
-    *email,
-    *itemID,
-    *itemName,
-    *quantity,
-    *totalPrice,
-    *paidPrice,
-    *datePlaced;
 @end
 
 @implementation Order
