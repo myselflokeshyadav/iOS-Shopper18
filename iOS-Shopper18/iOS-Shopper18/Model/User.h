@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface User : NSObject
 
-@property (strong, nonatomic, readonly) NSString
+@property (strong, nonatomic) NSString
     *userID,
     *fname,
     *lname,
