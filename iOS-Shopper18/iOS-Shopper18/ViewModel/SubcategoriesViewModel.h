@@ -7,10 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Category.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SubcategoriesViewModel : NSObject
+
+@property(assign,nonatomic) NSMutableArray<Category *>* subcategories;
+
+@property(assign, nonatomic) NSDictionary * info;
+
+- (void)getProductSubcategories:(void(^)(NSError * _Nullable))completion;
 
 @end
 

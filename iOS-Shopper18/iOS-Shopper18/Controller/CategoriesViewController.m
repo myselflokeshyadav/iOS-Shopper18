@@ -8,7 +8,7 @@
 
 #import "CategoriesViewController.h"
 #import "CategoryViewCell.h"
-#import <SDWebImage/SDWebImage.h>
+#import "SubcategoriesViewController.h"
 
 @interface CategoriesViewController ()
 
@@ -56,7 +56,9 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    
+    SubcategoriesViewController *vc = SubcategoriesViewController.new;
+//    [vc ]
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 //- (void)encodeWithCoder:(nonnull NSCoder *)aCoder {

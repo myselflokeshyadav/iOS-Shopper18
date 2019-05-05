@@ -7,10 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SubcategoriesViewModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SubcategoriesViewController : UIViewController
+@interface SubcategoriesViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate>
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+
+@property (strong, nonatomic) SubcategoriesViewModel * subcategoryModel;
+@property (strong, nonatomic) NSMutableArray<Category *> *subcategories;
+
+- (void)getProductSubcategories;
+
 
 @end
 
