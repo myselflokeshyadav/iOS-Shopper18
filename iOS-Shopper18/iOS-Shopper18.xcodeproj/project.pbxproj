@@ -19,6 +19,8 @@
 		6D0C41F7227E5836005AE167 /* HomeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0C41F6227E5836005AE167 /* HomeViewModel.m */; };
 		6D0C41FA227E596C005AE167 /* SubcategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0C41F9227E596C005AE167 /* SubcategoriesViewController.m */; };
 		6D0C41FD227E598D005AE167 /* SubcategoriesViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0C41FC227E598D005AE167 /* SubcategoriesViewModel.m */; };
+		6DBBB1A8227F328E00979E87 /* ProductsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DBBB1A7227F328E00979E87 /* ProductsViewController.m */; };
+		6DBBB1AB227F32AD00979E87 /* ProductsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DBBB1AA227F32AD00979E87 /* ProductsViewModel.m */; };
 		747D2DE84227179A0A92F8EF /* libPods-iOS-Shopper18.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CCC2A546E2A49C365C8BF4CC /* libPods-iOS-Shopper18.a */; };
 		A3E30393227CEA3E001E48AF /* FeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3E30392227CEA3E001E48AF /* FeedbackViewController.m */; };
 		E1432AAD227E713900365467 /* TopSeller.m in Sources */ = {isa = PBXBuildFile; fileRef = E1432AAC227E713900365467 /* TopSeller.m */; };
@@ -72,6 +74,10 @@
 		6D0C41F9227E596C005AE167 /* SubcategoriesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SubcategoriesViewController.m; sourceTree = "<group>"; };
 		6D0C41FB227E598D005AE167 /* SubcategoriesViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SubcategoriesViewModel.h; sourceTree = "<group>"; };
 		6D0C41FC227E598D005AE167 /* SubcategoriesViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SubcategoriesViewModel.m; sourceTree = "<group>"; };
+		6DBBB1A6227F328E00979E87 /* ProductsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductsViewController.h; sourceTree = "<group>"; };
+		6DBBB1A7227F328E00979E87 /* ProductsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProductsViewController.m; sourceTree = "<group>"; };
+		6DBBB1A9227F32AD00979E87 /* ProductsViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductsViewModel.h; sourceTree = "<group>"; };
+		6DBBB1AA227F32AD00979E87 /* ProductsViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProductsViewModel.m; sourceTree = "<group>"; };
 		9FE291F08751C929314A741E /* Pods-iOS-Shopper18.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-Shopper18.debug.xcconfig"; path = "Target Support Files/Pods-iOS-Shopper18/Pods-iOS-Shopper18.debug.xcconfig"; sourceTree = "<group>"; };
 		A3E30391227CEA3E001E48AF /* FeedbackViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedbackViewController.h; sourceTree = "<group>"; };
 		A3E30392227CEA3E001E48AF /* FeedbackViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedbackViewController.m; sourceTree = "<group>"; };
@@ -298,6 +304,8 @@
 				E1432AB6227E7B2000365467 /* OrderFormViewModel.m */,
 				2F032E3C227E9EFD00B2842F /* TopSellerViewModel.h */,
 				2F032E3D227E9EFD00B2842F /* TopSellerViewModel.m */,
+				6DBBB1A9227F32AD00979E87 /* ProductsViewModel.h */,
+				6DBBB1AA227F32AD00979E87 /* ProductsViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -322,6 +330,8 @@
 				E1432AB3227E7A4000365467 /* OrderFormViewController.m */,
 				2F032E39227E9EE900B2842F /* TopSellerViewController.h */,
 				2F032E3A227E9EE900B2842F /* TopSellerViewController.m */,
+				6DBBB1A6227F328E00979E87 /* ProductsViewController.h */,
+				6DBBB1A7227F328E00979E87 /* ProductsViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -459,12 +469,14 @@
 				E1C45376227D3AA5001CD5E6 /* BaseFormViewController.m in Sources */,
 				E1F91D0B227BEBE8009D0D54 /* Order.m in Sources */,
 				6D0C41F4227E56EF005AE167 /* HomeViewController.m in Sources */,
+				6DBBB1AB227F32AD00979E87 /* ProductsViewModel.m in Sources */,
 				E1E255A0227B61F000230E4F /* main.m in Sources */,
 				E1432AB7227E7B2000365467 /* OrderFormViewModel.m in Sources */,
 				6D0C41FA227E596C005AE167 /* SubcategoriesViewController.m in Sources */,
 				E1C4537B227D4875001CD5E6 /* UIView+InterfaceBuilder.m in Sources */,
 				6D0137B3227C9BD200797006 /* CategoryViewCell.m in Sources */,
 				E18ADF49227C10EA001EC15F /* APIParser.m in Sources */,
+				6DBBB1A8227F328E00979E87 /* ProductsViewController.m in Sources */,
 				E1E25592227B61EF00230E4F /* AppDelegate.m in Sources */,
 				2F032E41227E9F3500B2842F /* TopSellerCell.m in Sources */,
 				E1432AB4227E7A4000365467 /* OrderFormViewController.m in Sources */,
