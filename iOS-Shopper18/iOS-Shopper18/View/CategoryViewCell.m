@@ -16,7 +16,7 @@
     self.categoryName.text = category.name;
     NSString *urlString = category.imageURL;
     NSURL *url = [NSURL URLWithString:urlString];
-    [self.categoryImage sd_setImageWithURL:url];
+    [self.categoryImage sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"No image available"]];
 }
 
 -(void)setProductCell:(Product * _Nonnull)product{
@@ -25,6 +25,6 @@
     
     NSString *urlString = product.imageURL;
     NSURL *url = [NSURL URLWithString:urlString];
-    [self.categoryImage sd_setImageWithURL:url];
+    [self.categoryImage sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"No image available"]];
 }
 @end
