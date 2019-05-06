@@ -26,6 +26,30 @@
     // Do any additional setup after loading the view.
     self.navigationItem.title = @"Shopping Cart";
     self.pCount = 1;
+    
+//    NSDictionary *testInfo = @{ @"id": @"2",
+//                                @"pname": @"test",
+//                                @"quantity": @10,
+//                                @"prize": @1.4,
+//                                @"discription": @"asdfasdfasdf",
+//                                @"image": @"testURL.com"
+//                                
+//                                };
+//    
+//    Product *product = [Product initWithInfo:testInfo];
+//    [FirebaseHandler.shared addProduct:product completion:^(NSError * _Nullable error) {
+//        
+//    }];
+    
+    //    [FirebaseHandler.shared cartForUser:kTestUserID completion:^(NSMutableArray * _Nullable result) {
+    //        for( id x in result){
+    //            NSLog(@"%@", x);
+    //        }
+    //    }];
+    
+    //    [FirebaseHandler.shared removeProductFromFirebase:product.pid completion:^(NSError * _Nullable error) {
+    //
+    //    }];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
