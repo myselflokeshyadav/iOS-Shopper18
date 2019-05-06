@@ -23,10 +23,11 @@
     self.topSeller = TopSeller.new;
     self.category = Category.new;
     [self setControls];
-//    [self getProductCategories];
 }
 
 -(void)setControls{
+    self.topSellerImage.image = [UIImage imageNamed:@"home"];
+    self.topSellerProductLabel.text = @"Welcome";
     [self getTopSellerCompany];
     [self getProductCategories];
 }
@@ -35,15 +36,11 @@
     [self.homeVM getTopSellers:^(BOOL success, NSString * _Nullable error) {
         if (success == YES){
             dispatch_async(dispatch_get_main_queue(), ^{
-                TopSeller *tsObj = [self.homeVM topSellerAt:2];
-                [self.topSellerImage sd_setImageWithURL:[NSURL URLWithString:tsObj.logo]
-                                       placeholderImage:[UIImage imageNamed:@"No image available"]];
-                self.topSellerProductLabel.text = tsObj.name;
                 [self.colView reloadData];
             });
         }
         else{
-            NSLog(@"Can't get data from API Services");
+            NSLog(@"There are no topSellers available");
         }
     }];
 }
@@ -70,9 +67,6 @@
     if(collectionView == self.colView){
         TopSellerCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"topsellerCell" forIndexPath:indexPath];
         TopSeller *tsObj = [self.homeVM topSellerAt:indexPath.item];
-        //    cell.sNameLbl.text = [NSString stringWithFormat:@"Name: %@", tsObj.name];
-        //    cell.sDealLbl.text = [NSString stringWithFormat:@"Deal: %@", tsObj.deal];
-        //    cell.sRatingLbl.text = [NSString stringWithFormat:@"Rating: %@", tsObj.rating];
         [cell.logoImgView sd_setImageWithURL:[NSURL URLWithString:tsObj.logo]
                             placeholderImage:[UIImage imageNamed:@"No image available"]];
         return cell;
