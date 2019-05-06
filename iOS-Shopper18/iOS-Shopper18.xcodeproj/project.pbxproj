@@ -190,6 +190,19 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		E1BF3EC1227FEF0100B26661 /* WebService */ = {
+			isa = PBXGroup;
+			children = (
+				E1E255B2227B733300230E4F /* APIHandler.h */,
+				E1E255B3227B733300230E4F /* APIHandler.m */,
+				E18ADF47227C10EA001EC15F /* APIParser.h */,
+				E18ADF48227C10EA001EC15F /* APIParser.m */,
+				E1BF3EBE227FEEAB00B26661 /* FirebaseHandler.h */,
+				E1BF3EBF227FEEAB00B26661 /* FirebaseHandler.m */,
+			);
+			path = WebService;
+			sourceTree = "<group>";
+		};
 		E1C4536E227CC180001CD5E6 /* XLFormCells */ = {
 			isa = PBXGroup;
 			children = (
@@ -290,12 +303,7 @@
 		E1E255AB227B646A00230E4F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E1E255B2227B733300230E4F /* APIHandler.h */,
-				E1E255B3227B733300230E4F /* APIHandler.m */,
-				E18ADF47227C10EA001EC15F /* APIParser.h */,
-				E18ADF48227C10EA001EC15F /* APIParser.m */,
-				E1BF3EBE227FEEAB00B26661 /* FirebaseHandler.h */,
-				E1BF3EBF227FEEAB00B26661 /* FirebaseHandler.m */,
+				E1BF3EC1227FEF0100B26661 /* WebService */,
 				E1F91D09227BEBE8009D0D54 /* Order.h */,
 				E1F91D0A227BEBE8009D0D54 /* Order.m */,
 				E18ADF41227C034C001EC15F /* Category.h */,
