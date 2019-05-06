@@ -13,6 +13,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface APIHandler : NSObject
 
+@property (strong, nonatomic, readonly, nullable) NSString *apiKey;
+@property (strong, nonatomic, readonly, nullable) NSString *userID;
+
 + (instancetype)shared;
 
 - (void)registerUser:(NSDictionary *)info completion:(void(^)(id _Nullable, NSError * _Nullable))completion;
