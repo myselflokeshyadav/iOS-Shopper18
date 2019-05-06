@@ -28,6 +28,11 @@
     self.pCount = 1;
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    //todo
+    //pull cart data from firebase.
+}
+
 //- (IBAction)countBtnClick:(UIButton *)sender {
 //    if (sender.tag == 100){
 //        //minus count btn clicked
@@ -118,15 +123,8 @@
     CartTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
 //    Product *pObj = [self.dataArray objectAtIndex:indexPath.row];
-//    
-//    cell.minusButtonTapHandler = ^{
-//        self.pCount -= 1;
-//        cell.pCountLbl.text = [NSString stringWithFormat: @"%d", self.pCount];
-//    };
-//    cell.plusButtonTapHandler = ^{
-//        
-//    };
-//    
+
+//
 //    cell.pNameLbl.text = pObj.name;
 //    cell.pPriceLbl.text = pObj.prize;
 //    
