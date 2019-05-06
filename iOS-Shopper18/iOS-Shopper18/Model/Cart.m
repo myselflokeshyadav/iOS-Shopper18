@@ -7,6 +7,7 @@
 //
 
 #import "Cart.h"
+#import "FirebaseHandler.h"
 
 @implementation Cart
 
@@ -30,22 +31,30 @@
 
 - (void)addProduct:(Product *)product {
     [self.items addObject:product];
-    //delete this after testing
-    NSLog(@"success in adding product");
-
+    [FirebaseHandler.shared addProduct:product completion:^(NSError * _Nullable error) {
+        
+    }];
 }
 
 - (void)removeProduct:(NSUInteger)index {
     if (index < 0 || index >= self.items.count) return;
+    Product *removed = self.items[index];
     [self.items removeObjectAtIndex:index];
+    
+    [FirebaseHandler.shared removeProduct:removed.pid completion:^(NSError * _Nullable error) {
+        
+    }];
 }
 
 - (void)setProducts:(NSArray<Product *> *)products {
     self.items = [NSMutableArray arrayWithArray:products];
 }
 
-- (void)loadProducts {
-    
+- (void)loadProducts:(void (^)(BOOL))completion {
+    [FirebaseHandler.shared cartForUser:^(NSMutableArray * _Nullable results) {
+        if (results) self.items = results;
+        completion(results);
+    }];
 }
 
 @end
