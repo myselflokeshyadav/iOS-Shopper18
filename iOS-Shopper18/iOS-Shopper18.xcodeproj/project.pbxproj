@@ -43,6 +43,7 @@
 		E1A221E2227F6DF100952EC5 /* ShipmentTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A221E1227F6DF100952EC5 /* ShipmentTrack.m */; };
 		E1AF4A32227E411D0087D198 /* Category.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1AF4A31227E411D0087D198 /* Category.storyboard */; };
 		E1AF4A35227E47B40087D198 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = E1AF4A34227E47B40087D198 /* User.m */; };
+		E1BF3EC0227FEEAB00B26661 /* FirebaseHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E1BF3EBF227FEEAB00B26661 /* FirebaseHandler.m */; };
 		E1C45367227CB47A001CD5E6 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1C45366227CB47A001CD5E6 /* Login.storyboard */; };
 		E1C4536A227CB4E4001CD5E6 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1C45369227CB4E3001CD5E6 /* RegisterViewController.m */; };
 		E1C4536D227CB586001CD5E6 /* RegisterViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E1C4536C227CB586001CD5E6 /* RegisterViewModel.m */; };
@@ -127,6 +128,8 @@
 		E1AF4A31227E411D0087D198 /* Category.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Category.storyboard; sourceTree = "<group>"; };
 		E1AF4A33227E47B40087D198 /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		E1AF4A34227E47B40087D198 /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		E1BF3EBE227FEEAB00B26661 /* FirebaseHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirebaseHandler.h; sourceTree = "<group>"; };
+		E1BF3EBF227FEEAB00B26661 /* FirebaseHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirebaseHandler.m; sourceTree = "<group>"; };
 		E1C45366227CB47A001CD5E6 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		E1C45368227CB4E3001CD5E6 /* RegisterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		E1C45369227CB4E3001CD5E6 /* RegisterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
@@ -291,6 +294,8 @@
 				E1E255B3227B733300230E4F /* APIHandler.m */,
 				E18ADF47227C10EA001EC15F /* APIParser.h */,
 				E18ADF48227C10EA001EC15F /* APIParser.m */,
+				E1BF3EBE227FEEAB00B26661 /* FirebaseHandler.h */,
+				E1BF3EBF227FEEAB00B26661 /* FirebaseHandler.m */,
 				E1F91D09227BEBE8009D0D54 /* Order.h */,
 				E1F91D0A227BEBE8009D0D54 /* Order.m */,
 				E18ADF41227C034C001EC15F /* Category.h */,
@@ -557,6 +562,7 @@
 				E1E25592227B61EF00230E4F /* AppDelegate.m in Sources */,
 				2F032E41227E9F3500B2842F /* TopSellerCell.m in Sources */,
 				E1432AB4227E7A4000365467 /* OrderFormViewController.m in Sources */,
+				E1BF3EC0227FEEAB00B26661 /* FirebaseHandler.m in Sources */,
 				6D0C41F7227E5836005AE167 /* HomeViewModel.m in Sources */,
 				E1A221DF227F6D9E00952EC5 /* ShipmentViewModel.m in Sources */,
 				2F032E4C227FA29600B2842F /* CartViewController.m in Sources */,
