@@ -38,6 +38,9 @@ PODS:
     - Braintree/UnionPay (~> 4.23)
     - BraintreeDropIn/UIKit
   - BraintreeDropIn/UIKit (7.1.0)
+  - Crashlytics (3.12.0):
+    - Fabric (~> 1.9.0)
+  - Fabric (1.9.0)
   - Firebase/Core (5.20.2):
     - Firebase/CoreOnly
     - FirebaseAnalytics (= 5.8.1)
@@ -145,6 +148,8 @@ DEPENDENCIES:
   - Braintree
   - Braintree/PayPal
   - BraintreeDropIn
+  - Crashlytics (~> 3.12.0)
+  - Fabric (~> 1.9.0)
   - Firebase/Core
   - Firebase/Database
   - JVFloatLabeledTextField (= 1.0.2)
@@ -159,6 +164,8 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Braintree
     - BraintreeDropIn
+    - Crashlytics
+    - Fabric
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuthInterop
@@ -180,6 +187,8 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Braintree: b5841b9b1c1dadc86959db3e29d36099b67f91bf
   BraintreeDropIn: a019fcbf4edb87c55780ec01d5db3998b19164ce
+  Crashlytics: 07fb167b1694128c1c9a5a5cc319b0e9c3ca0933
+  Fabric: f988e33c97f08930a413e08123064d2e5f68d655
   Firebase: 0c8cf33f266410c61ab3e2265cfa412200351d9c
   FirebaseAnalytics: ece1aa57a4f43c64d53a648b5a5e05151aae947b
   FirebaseAuthInterop: 0ffa57668be100582bb7643d4fcb7615496c41fc
@@ -198,6 +207,6 @@ SPEC CHECKSUMS:
   TWMessageBarManager: fd84e7948ba7968a2b5d9454859135761214ec56
   XLForm: b8d47a9a00fb6166981cb40de7169d70d611e9be
 
-PODFILE CHECKSUM: 4326bb3961251862244161145219bf85e659a96f
+PODFILE CHECKSUM: a18339c6d72d63a95ff386cf408dc85b48430a64
 
 COCOAPODS: 1.6.1

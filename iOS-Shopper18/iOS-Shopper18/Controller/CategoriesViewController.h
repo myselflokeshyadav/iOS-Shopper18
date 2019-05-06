@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) CategoriesViewModel * categoryModel;
 @property (strong, nonatomic) NSMutableArray<Category *> *categories;
 
+- (IBAction)featureCategorySegAction:(UISegmentedControl *)sender;
 - (void)getProductCategories;
 
 @end

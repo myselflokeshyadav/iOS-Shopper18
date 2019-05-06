@@ -27,6 +27,7 @@
 		6D0C41FD227E598D005AE167 /* SubcategoriesViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0C41FC227E598D005AE167 /* SubcategoriesViewModel.m */; };
 		6DBBB1A8227F328E00979E87 /* ProductsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DBBB1A7227F328E00979E87 /* ProductsViewController.m */; };
 		6DBBB1AB227F32AD00979E87 /* ProductsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DBBB1AA227F32AD00979E87 /* ProductsViewModel.m */; };
+		A33A855C22808631004F1A54 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A33A855B22808631004F1A54 /* Home.storyboard */; };
 		A3E30393227CEA3E001E48AF /* FeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3E30392227CEA3E001E48AF /* FeedbackViewController.m */; };
 		E1432AAD227E713900365467 /* TopSeller.m in Sources */ = {isa = PBXBuildFile; fileRef = E1432AAC227E713900365467 /* TopSeller.m */; };
 		E1432AAF227E718100365467 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1432AAE227E718100365467 /* Profile.storyboard */; };
@@ -58,6 +59,7 @@
 		E1E255B1227B731A00230E4F /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E255B0227B731A00230E4F /* LoginViewController.m */; };
 		E1E255B4227B733300230E4F /* APIHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E255B3227B733300230E4F /* APIHandler.m */; };
 		E1E255B7227B74A400230E4F /* LoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E255B6227B74A400230E4F /* LoginViewModel.m */; };
+		E1F1AAAE22807767008DF53D /* Cart.m in Sources */ = {isa = PBXBuildFile; fileRef = E1F1AAAD22807767008DF53D /* Cart.m */; };
 		E1F91D0B227BEBE8009D0D54 /* Order.m in Sources */ = {isa = PBXBuildFile; fileRef = E1F91D0A227BEBE8009D0D54 /* Order.m */; };
 /* End PBXBuildFile section */
 
@@ -98,6 +100,7 @@
 		6DBBB1AA227F32AD00979E87 /* ProductsViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProductsViewModel.m; sourceTree = "<group>"; };
 		882449B0E6DB3505385877CA /* libPods-iOS-Shopper18.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOS-Shopper18.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AC595C7461237891601B117 /* Pods-iOS-Shopper18.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-Shopper18.release.xcconfig"; path = "Target Support Files/Pods-iOS-Shopper18/Pods-iOS-Shopper18.release.xcconfig"; sourceTree = "<group>"; };
+		A33A855B22808631004F1A54 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		A3E30391227CEA3E001E48AF /* FeedbackViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedbackViewController.h; sourceTree = "<group>"; };
 		A3E30392227CEA3E001E48AF /* FeedbackViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedbackViewController.m; sourceTree = "<group>"; };
 		B4CC99934A1FC435D6362B9F /* Pods-iOS-Shopper18.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-Shopper18.debug.xcconfig"; path = "Target Support Files/Pods-iOS-Shopper18/Pods-iOS-Shopper18.debug.xcconfig"; sourceTree = "<group>"; };
@@ -157,6 +160,8 @@
 		E1E255B6227B74A400230E4F /* LoginViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewModel.m; sourceTree = "<group>"; };
 		E1EC9F5C227BA6AC00FD5CBB /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		E1EC9F5D227BA6B800FD5CBB /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		E1F1AAAC22807767008DF53D /* Cart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cart.h; sourceTree = "<group>"; };
+		E1F1AAAD22807767008DF53D /* Cart.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Cart.m; sourceTree = "<group>"; };
 		E1F91D09227BEBE8009D0D54 /* Order.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Order.h; sourceTree = "<group>"; };
 		E1F91D0A227BEBE8009D0D54 /* Order.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Order.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -275,6 +280,7 @@
 				E1432AB0227E722E00365467 /* OrderForm.storyboard */,
 				2F032E37227E9ED000B2842F /* TopSeller.storyboard */,
 				2F032E50227FA36500B2842F /* Cart.storyboard */,
+				A33A855B22808631004F1A54 /* Home.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -316,6 +322,8 @@
 				E1432AAC227E713900365467 /* TopSeller.m */,
 				E1A221E0227F6DF100952EC5 /* ShipmentTrack.h */,
 				E1A221E1227F6DF100952EC5 /* ShipmentTrack.m */,
+				E1F1AAAC22807767008DF53D /* Cart.h */,
+				E1F1AAAD22807767008DF53D /* Cart.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -416,6 +424,7 @@
 				E1E2558A227B61EF00230E4F /* Frameworks */,
 				E1E2558B227B61EF00230E4F /* Resources */,
 				AD4FF6ABF995D2969704CAEA /* [CP] Copy Pods Resources */,
+				E1F1AAAF2280C3ED008DF53D /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -466,6 +475,7 @@
 				E1AF4A32227E411D0087D198 /* Category.storyboard in Resources */,
 				2F032E38227E9ED000B2842F /* TopSeller.storyboard in Resources */,
 				6D0137B6227C9C8800797006 /* Main.storyboard in Resources */,
+				A33A855C22808631004F1A54 /* Home.storyboard in Resources */,
 				E1E2559D227B61F000230E4F /* LaunchScreen.storyboard in Resources */,
 				E1432AB1227E722E00365467 /* OrderForm.storyboard in Resources */,
 				E1E255A9227B639400230E4F /* Colors.xcassets in Resources */,
@@ -544,6 +554,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		E1F1AAAF2280C3ED008DF53D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\"\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -579,6 +607,7 @@
 				A3E30393227CEA3E001E48AF /* FeedbackViewController.m in Sources */,
 				E1E255B1227B731A00230E4F /* LoginViewController.m in Sources */,
 				E18ADF46227C0A48001EC15F /* Product.m in Sources */,
+				E1F1AAAE22807767008DF53D /* Cart.m in Sources */,
 				E1C4536A227CB4E4001CD5E6 /* RegisterViewController.m in Sources */,
 				E1432AAD227E713900365467 /* TopSeller.m in Sources */,
 				E1E255B7227B74A400230E4F /* LoginViewModel.m in Sources */,
@@ -726,6 +755,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = RQAE768Z9N;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/Utilities/PrefixHeader.pch";
@@ -747,6 +777,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = RQAE768Z9N;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/Utilities/PrefixHeader.pch";

@@ -27,6 +27,14 @@
     return product;
 }
 
++ (instancetype)loadFromInfo:(NSDictionary *)info {
+    Product *product = [Product initWithInfo:info];
+    if (product) {
+        product.quantity = [info[@"quantity"] integerValue];
+    }
+    return product;
+}
+
 + (instancetype)initWithID:(NSString *)pid name:(NSString *)name price:(double)price {
     Product *product = Product.new;
     if (product) {
@@ -56,6 +64,16 @@
               @"item_quantity": [NSNumber numberWithInteger:self.quantity],
               @"final_price": [NSNumber numberWithDouble:self.totalPrice]
              };
+}
+
+- (NSDictionary *)encodeJSON {
+    return @{ @"id": self.pid,
+              @"pname": self.name,
+              @"quantity": [NSNumber numberWithInteger:self.quantity],
+              @"prize": [NSNumber numberWithDouble:self.price],
+              @"discription": self.desc,
+              @"image": self.imageURL
+              };
 }
 
 

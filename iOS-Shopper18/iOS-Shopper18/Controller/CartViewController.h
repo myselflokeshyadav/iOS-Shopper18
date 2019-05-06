@@ -11,6 +11,7 @@
 #import "BraintreeDropIn.h"
 #import "BTDropInViewController.h"
 #import "BraintreePayPal.h"
+#import "FirebaseHandler.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
