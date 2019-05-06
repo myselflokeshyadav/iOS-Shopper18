@@ -156,7 +156,7 @@
          completion:(void(^)(NSArray<NSNumber *> *, NSError * _Nullable))completion {
     
     info = [self extendedInfo:info];
-    NSMutableArray *orderResults = NSMutableArray.new;
+    NSMutableArray *orderResults = [NSMutableArray arrayWithCapacity:products.count];;
     dispatch_group_t dgPlaceOrder = dispatch_group_create();
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
@@ -166,10 +166,8 @@
             [orderInfo addEntriesFromDictionary:prod.orderInfo];
             [self callAPIWithBase:kAPIEcomBase endpoint:kAPIEndPointMakeOrder params:info completion:^(id _Nullable result, NSError * _Nullable error ) {
                 BOOL success = [result isKindOfClass:NSDictionary.class];
-                dispatch_barrier_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-                    [orderResults addObject:[NSNumber numberWithBool:success]];
-                    dispatch_group_leave(dgPlaceOrder);
-                });
+                orderResults[i] = [NSNumber numberWithBool:success];
+                dispatch_group_leave(dgPlaceOrder);
             }];
         }];
         dispatch_group_notify(dgPlaceOrder, dispatch_get_main_queue(), ^{
