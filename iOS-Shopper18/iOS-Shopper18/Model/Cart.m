@@ -30,6 +30,9 @@
 
 - (void)addProduct:(Product *)product {
     [self.items addObject:product];
+    //delete this after testing
+    NSLog(@"success in adding product");
+
 }
 
 - (void)removeProduct:(NSUInteger)index {

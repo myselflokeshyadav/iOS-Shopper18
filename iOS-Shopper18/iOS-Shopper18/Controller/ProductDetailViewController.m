@@ -10,14 +10,17 @@
 #import "ProductDetailViewModel.h"
 #import <libextobjc/EXTScope.h>
 #import <SDWebImage/SDWebImage.h>
+#import "Cart.h"
 
 @interface ProductDetailViewController ()
 @property (nonatomic, strong) ProductDetailViewModel* viewModel;
+@property (nonatomic, strong) Cart *sharedManager;
 @end
 
 @implementation ProductDetailViewController
 
 - (void)viewDidLoad {
+    self.sharedManager = [Cart shared];
     [super viewDidLoad];
 //    [self setupUI];
 //    NSLog(@"%@",self.viewModel.showProductName);
@@ -34,15 +37,26 @@
 - (void)setupUI{
     //set up UI by accessing viewModel.stuff
     self.productName.text = self.product.name;
-    self.productDescribtion.text = self.product.desc;
-    NSString  * price = [NSString stringWithFormat:@"%f", self.product.price];
+    NSString *productDescribTxt = [NSString stringWithFormat:@"Description: %@",self.product.desc];
+    self.productDescribtion.text = productDescribTxt;
+    NSString  * price = [NSString stringWithFormat:@"%f USD", self.product.price];
     self.productPrize.text = price;
-    NSString  * quantity = [NSString stringWithFormat:@"%li", (long)self.product.quantity];
+    NSString  * quantity = [NSString stringWithFormat:@"Quantity: %li", (long)self.product.quantity];
     self.productQuantity.text = quantity;
     NSString * urlString = self.product.imageURL;
     NSURL * url = [NSURL URLWithString:urlString];
     [self.productImage sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"No image available"]];
 
 }
+- (IBAction)buyProduct:(id)sender {
+    [self.sharedManager addProduct:self.product];
+    NSString *mess = [NSString stringWithFormat:@"Success in purchasing %@",self.product.name];
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Success!" message:mess preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"Great!" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){}];
+    [alert addAction:defaultAction];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+
 
 @end
