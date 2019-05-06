@@ -58,6 +58,7 @@
 		E1E255B1227B731A00230E4F /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E255B0227B731A00230E4F /* LoginViewController.m */; };
 		E1E255B4227B733300230E4F /* APIHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E255B3227B733300230E4F /* APIHandler.m */; };
 		E1E255B7227B74A400230E4F /* LoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E255B6227B74A400230E4F /* LoginViewModel.m */; };
+		E1F1AAAE22807767008DF53D /* Cart.m in Sources */ = {isa = PBXBuildFile; fileRef = E1F1AAAD22807767008DF53D /* Cart.m */; };
 		E1F91D0B227BEBE8009D0D54 /* Order.m in Sources */ = {isa = PBXBuildFile; fileRef = E1F91D0A227BEBE8009D0D54 /* Order.m */; };
 /* End PBXBuildFile section */
 
@@ -157,6 +158,8 @@
 		E1E255B6227B74A400230E4F /* LoginViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewModel.m; sourceTree = "<group>"; };
 		E1EC9F5C227BA6AC00FD5CBB /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		E1EC9F5D227BA6B800FD5CBB /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		E1F1AAAC22807767008DF53D /* Cart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cart.h; sourceTree = "<group>"; };
+		E1F1AAAD22807767008DF53D /* Cart.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Cart.m; sourceTree = "<group>"; };
 		E1F91D09227BEBE8009D0D54 /* Order.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Order.h; sourceTree = "<group>"; };
 		E1F91D0A227BEBE8009D0D54 /* Order.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Order.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -316,6 +319,8 @@
 				E1432AAC227E713900365467 /* TopSeller.m */,
 				E1A221E0227F6DF100952EC5 /* ShipmentTrack.h */,
 				E1A221E1227F6DF100952EC5 /* ShipmentTrack.m */,
+				E1F1AAAC22807767008DF53D /* Cart.h */,
+				E1F1AAAD22807767008DF53D /* Cart.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -579,6 +584,7 @@
 				A3E30393227CEA3E001E48AF /* FeedbackViewController.m in Sources */,
 				E1E255B1227B731A00230E4F /* LoginViewController.m in Sources */,
 				E18ADF46227C0A48001EC15F /* Product.m in Sources */,
+				E1F1AAAE22807767008DF53D /* Cart.m in Sources */,
 				E1C4536A227CB4E4001CD5E6 /* RegisterViewController.m in Sources */,
 				E1432AAD227E713900365467 /* TopSeller.m in Sources */,
 				E1E255B7227B74A400230E4F /* LoginViewModel.m in Sources */,
