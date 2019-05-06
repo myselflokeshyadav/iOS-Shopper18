@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface OrderFormViewModel : NSObject
 
-@property (strong, nonnull) NSArray<Product *> *products;
+@property (strong, nonnull) NSMutableArray<Product *> *products;
 
 - (void)placeOrder:(NSDictionary *)orderInfo completion:(void (^)(NSArray * _Nullable, NSError * _Nullable))completion;
 
