@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface OrderFormViewModel : NSObject
 
+- (void)placeOrder:(NSDictionary *)orderInfo completion:(void (^)(NSArray * _Nullable, NSError * _Nullable))completion;
+
 @end
 
 NS_ASSUME_NONNULL_END

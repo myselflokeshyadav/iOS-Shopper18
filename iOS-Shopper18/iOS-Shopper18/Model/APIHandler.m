@@ -153,26 +153,25 @@
 }
 
 - (void)placeOrders:(NSDictionary *)info products:(NSArray<Product *> *)products
-         completion:(void(^)(id _Nullable, NSError * _Nullable))completion {
+         completion:(void(^)(NSArray<NSNumber *> *, NSError * _Nullable))completion {
     
     info = [self extendedInfo:info];
     NSMutableArray *orderResults = NSMutableArray.new;
     dispatch_group_t dgPlaceOrder = dispatch_group_create();
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        for (Product *prod in products) {
+        [products enumerateObjectsUsingBlock:^(Product *prod, NSUInteger i, BOOL *stop) {
             dispatch_group_enter(dgPlaceOrder);
             NSMutableDictionary *orderInfo = [NSMutableDictionary dictionaryWithDictionary:info];
             [orderInfo addEntriesFromDictionary:prod.orderInfo];
             [self callAPIWithBase:kAPIEcomBase endpoint:kAPIEndPointMakeOrder params:info completion:^(id _Nullable result, NSError * _Nullable error ) {
-                id obj = result? [APIParser orderFrom:result] : nil;
-                if (!obj) obj = [NSString stringWithFormat:@"Order for %@ x%ld failed.", prod.name, prod.quantity];
+                BOOL success = [result isKindOfClass:NSDictionary.class];
                 dispatch_barrier_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-                    [orderResults addObject:obj];
+                    [orderResults addObject:[NSNumber numberWithBool:success]];
                     dispatch_group_leave(dgPlaceOrder);
                 });
             }];
-        }
+        }];
         dispatch_group_notify(dgPlaceOrder, dispatch_get_main_queue(), ^{
             completion(orderResults, nil);
         });

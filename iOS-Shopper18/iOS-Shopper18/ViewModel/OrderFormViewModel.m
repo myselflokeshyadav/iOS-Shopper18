@@ -7,7 +7,14 @@
 //
 
 #import "OrderFormViewModel.h"
+#import "APIHandler.h"
 
 @implementation OrderFormViewModel
+
+- (void)placeOrder:(NSDictionary *)orderInfo completion:(void (^)(NSArray * _Nullable, NSError * _Nullable))completion {
+    [APIHandler.shared placeOrders:orderInfo products:@[] completion:^(id _Nullable result, NSError * _Nullable error) {
+        
+    }];
+}
 
 @end
