@@ -20,6 +20,7 @@
         self.productCount += 1;
     }
     self.pCountLbl.text = [NSString stringWithFormat:@"%ld", self.productCount];
+    self.pPriceLbl.text = [NSString stringWithFormat:@"Unit price: $ %ld", self.productCount];
 }
 
 
@@ -27,6 +28,7 @@
     [super awakeFromNib];
     // Initialization code
     self.productCount = 1;
+    self.pCountLbl.text = [NSString stringWithFormat:@"%ld", self.productCount];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

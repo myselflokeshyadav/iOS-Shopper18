@@ -147,6 +147,7 @@
     CartTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
 //    Product *pObj = [self.dataArray objectAtIndex:indexPath.row];
+    //self.totalPrizeLbl.text = cell.pPriceLbl.text;
 
 //
 //    cell.pNameLbl.text = pObj.name;
