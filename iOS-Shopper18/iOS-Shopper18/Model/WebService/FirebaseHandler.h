@@ -7,11 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Product.h"
+@import Firebase;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface FirebaseHandler : NSObject
++ (instancetype)shared;
+@property (strong, nonatomic) FIRDatabaseReference *ref;
 
+- (void)addProductToFirebase:(Product *)pInfo completion:(void(^)(id _Nullable, NSError * _Nullable))completion;
 @end
 
 NS_ASSUME_NONNULL_END
