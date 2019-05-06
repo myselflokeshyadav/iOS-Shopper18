@@ -18,9 +18,8 @@
     NSLog(@"before I call getshipment with info %@",newInfo);;
     [APIHandler.shared getShipmentTrack:newInfo completion:^(id shipmentTrackObj, NSError * error){
         if(error == nil){
-            ShipmentTrack *newShipmentTrack = [ShipmentTrack initWithInfo:shipmentTrackObj];
             
-            self.shipmentTrack = newShipmentTrack;
+            self.shipmentTrack = shipmentTrackObj;
             completion(nil);
         }else{
             completion(error);
