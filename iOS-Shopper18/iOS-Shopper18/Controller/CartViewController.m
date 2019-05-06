@@ -9,6 +9,8 @@
 #import "CartViewController.h"
 #import "Product.h"
 #import "CartTableViewCell.h"
+#import "Cart.h"
+#import <SDWebImage/SDWebImage.h>
 
 
 @interface CartViewController ()<BTDropInViewControllerDelegate, BTViewControllerPresentingDelegate>
@@ -26,6 +28,17 @@
     // Do any additional setup after loading the view.
     self.navigationItem.title = @"Shopping Cart";
     self.pCount = 1;
+    [Cart.shared loadProducts:^(BOOL success) {
+        if (success) {
+//            [self.dataArray addObjectsFromArray:Cart.shared.items];
+            self.dataArray = [Cart.shared.items mutableCopy];
+            NSLog(@"%@",self.dataArray);
+            [self.tblView reloadData];
+        }else{
+            NSLog(@"Error loading data");
+        }
+    }];
+    
     
 //    NSDictionary *testInfo = @{ @"id": @"2",
 //                                @"pname": @"test",
@@ -55,31 +68,16 @@
 - (void)viewWillAppear:(BOOL)animated{
     //todo
     //pull cart data from firebase.
+    [Cart.shared loadProducts:^(BOOL success) {
+        if (success) {
+            [self.dataArray addObjectsFromArray:Cart.shared.items];
+        }else{
+            NSLog(@"Error loading data");
+        }
+    }];
+    [self.tblView reloadData];
 }
 
-//- (IBAction)countBtnClick:(UIButton *)sender {
-//    if (sender.tag == 100){
-//        //minus count btn clicked
-//        CartTableViewCell *cartcell = [[CartTableViewCell alloc] init];
-//        cartcell.pCountLbl.text = @"-1";
-//
-//    }else{
-//        //plus count btn click
-//    }
-//
-//}
-
-//- (void)dataParser:(id)data
-//{
-//    if (data) {
-//
-//    } else {
-//        _name = [NSString stringWithFormat:@"Product Name %u",arc4random() % 100];
-//        _desc = [NSString stringWithFormat:@"Product Info --- %u",arc4random() % 100];
-//        _prize = [NSString stringWithFormat:@"Product Price: %u",arc4random() % 100];
-//        _imageURL = [NSString stringWithFormat:@"imageUrl --- %u",arc4random() % 100];
-//    }
-//}
 
 - (IBAction)checkoutBtnClick:(UIButton *)sender {
     [self showDropIn:kclientToken];
@@ -130,36 +128,25 @@
     }] resume];
 }
 
-//- (NSMutableArray *)dataArray
-//{
-//    if (!_dataArray) {
-//        _dataArray = [NSMutableArray new];
-//        for (int i = 0; i < 6; i++) {
-//            Product *model = [[Product alloc] init];
-//            [model dataParser:nil];
-//            [_dataArray addObject:model];
-//        }
-//    }
-//    return _dataArray;
-//}
-
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     CartTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-//    Product *pObj = [self.dataArray objectAtIndex:indexPath.row];
+    Product *pObj = [self.dataArray objectAtIndex:indexPath.row];
     //self.totalPrizeLbl.text = cell.pPriceLbl.text;
 
 //
-//    cell.pNameLbl.text = pObj.name;
-//    cell.pPriceLbl.text = pObj.prize;
-//    
+    cell.pNameLbl.text = pObj.name;
+    cell.pDescLbl.text = pObj.desc;
+    [cell.pImgView sd_setImageWithURL:[NSURL URLWithString:pObj.imageURL]
+                 placeholderImage:[UIImage imageNamed:@"No image available"]];
+    cell.pPriceLbl.text = [NSString stringWithFormat:@"Item price: $%.2f", pObj.price];
+//
 //    NSLog(@"%@",[self.dataArray objectAtIndex:indexPath.row]);
     return cell;
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//    return self.dataArray ? self.dataArray.count : 0;
-    return 5;
+    return self.dataArray ? self.dataArray.count : 0;
 }
 
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath{
