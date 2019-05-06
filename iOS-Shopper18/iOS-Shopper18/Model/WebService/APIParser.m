@@ -17,8 +17,9 @@
 @implementation APIParser
 
 + (nullable NSArray<Category *> *)categoriesFrom:(id)jsonObject {
+    if (![jsonObject isKindOfClass:NSDictionary.class]) return nil;
     NSDictionary *dict = jsonObject;
-    
+    if (dict[@"msg"]) return nil;
     NSArray *categories = (dict[@"category"])? dict[@"category"] : dict[@"subcategory"];
     NSMutableArray *list = NSMutableArray.new;
     for (NSDictionary *info in categories)
@@ -27,7 +28,10 @@
 }
 
 + (nullable NSArray<Product *> *)productsFrom:(id)jsonObject {
-    NSArray *products = ((NSDictionary *)jsonObject)[@"products"];
+    if (![jsonObject isKindOfClass:NSDictionary.class]) return nil;
+    NSDictionary *dict = jsonObject;
+    if (dict[@"msg"]) return nil;
+    NSArray *products = dict[@"products"];
     NSMutableArray *list = NSMutableArray.new;
     for (NSDictionary *info in products)
         [list addObject:[Product initWithInfo:info]];
@@ -35,15 +39,17 @@
 }
 
 + (nullable Order *)orderFrom:(id)jsonObject {
-    if ([jsonObject isKindOfClass:NSString.class]) return nil;
+    if (![jsonObject isKindOfClass:NSDictionary.class]) return nil;
     NSDictionary *dict = jsonObject;
     NSDictionary *orderInfo = (dict[@"Order confirmed"])[0];
     return [Order initWithInfo:orderInfo];
 }
 
 + (nullable NSArray<Order *> *)orderHistoryFrom:(id)jsonObject {
+    if (![jsonObject isKindOfClass:NSDictionary.class]) return nil;
     NSDictionary *dict = jsonObject;
-    NSArray *orders = (dict[@"Order confirmed"])? dict[@"Order confirmed"] : dict[@"Order history"];
+    if (dict[@"msg"]) return nil;
+    NSArray *orders = dict[@"Order history"];
     NSMutableArray *list = NSMutableArray.new;
     for (NSDictionary *info in orders)
         [list addObject:[Order initWithInfo:info]];
@@ -57,8 +63,9 @@
 }
 
 + (nullable NSArray<TopSeller *> *)topSellersFrom:(id)jsonObject {
-    NSDictionary *dict = jsonObject;
-    NSArray *orders = dict[@"Top sellers"];
+    if (![jsonObject isKindOfClass:NSDictionary.class]) return nil;
+    NSArray *orders = ((NSDictionary *)jsonObject)[@"Top sellers"];
+    if (!orders) return  nil;
     NSMutableArray *list = NSMutableArray.new;
     for (NSDictionary *info in orders)
         [list addObject:[TopSeller initWithInfo:info]];
@@ -66,8 +73,9 @@
 }
 
 + (nullable ShipmentTrack *)shipmentFrom:(id)jsonObject {
+    if (![jsonObject isKindOfClass:NSDictionary.class]) return nil;
     NSDictionary *dict = jsonObject;
-    if (dict[@"msg"] || !dict[@"Shipment track"]) return nil;
+    if (!dict[@"Shipment track"]) return nil;
     return [ShipmentTrack initWithInfo:dict[@"Shipment track"][0]];
 }
 @end
