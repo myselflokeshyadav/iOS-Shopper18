@@ -7,10 +7,20 @@
 //
 
 #import <Foundation/Foundation.h>
+@class Product;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Cart : NSObject
+
+@property (strong, nonatomic) NSMutableArray<Product *> *items;
+
++ (instancetype)shared;
+
+- (void)addProduct:(Product *)product;
+- (void)removeProduct:(NSUInteger)index;
+- (void)setProducts:(NSArray<Product *> *)products;
+- (void)loadProducts;
 
 @end
 
