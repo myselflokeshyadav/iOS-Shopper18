@@ -23,6 +23,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)initWithInfo:(NSDictionary *)info;
 
++ (instancetype)loadFromInfo:(NSDictionary *)info;
+
 + (instancetype)initWithID:(NSString *)pid name:(NSString *)name price:(double)price;
 
 + (instancetype)initWithID:(NSString *)pid name:(NSString *)name price:(double)price quantity:(NSInteger)count;
@@ -30,6 +32,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (double) totalPrice;
 
 - (NSDictionary *)orderInfo;
+
+- (NSDictionary *)encodeJSON;
 
 - (nonnull id)copyWithZone:(nullable NSZone *)zone;
 
