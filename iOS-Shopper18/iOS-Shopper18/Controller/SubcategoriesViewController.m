@@ -23,11 +23,10 @@
     [self getProductSubCategories:self.category.cid];
 }
 
+//Mark:  Handle failing links
 - (void)getProductSubCategories:(NSString *)cid{
-    [self.subcategoryModel getProductSubCategories:cid completion:^(id listSubcategories, NSError * error) {
+    [self.subcategoryModel getProductSubCategories:cid completion:^(id _Nullable listSubcategories, NSError * _Nullable error) {
         if(error == nil){
-            
-            
             self.subcategoryModel.subcategories = listSubcategories;
             self.subcategories = self.subcategoryModel.subcategories;
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -49,6 +48,7 @@
 }
 
 - (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    if (!self.subcategoryModel.subcategories) return 0;
     return self.subcategoryModel.subcategories.count;
 }
 

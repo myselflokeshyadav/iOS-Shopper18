@@ -13,7 +13,7 @@
 
 - (void)getProductSubCategories:(NSString *)cid completion:(void(^)(id _Nullable, NSError * _Nullable))completion{
     [APIHandler.shared getProductSubCategories:cid completion:^(id subcategoryList, NSError * error) {
-        if(error == nil){
+        if(subcategoryList){
             self.subcategories = subcategoryList;
             completion(subcategoryList,nil);
         }
