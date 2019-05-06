@@ -10,17 +10,23 @@
 
 @implementation CartTableViewCell
 
-- (IBAction)minusBtnClick:(UIButton *)sender {
-    self.minusButtonTapHandler();
+
+- (IBAction)countBtnClick:(UIButton *)sender {
+    if (sender.tag == 100) {
+        if (self.productCount > 1) {
+            self.productCount -= 1;
+        }
+    } else {
+        self.productCount += 1;
+    }
+    self.pCountLbl.text = [NSString stringWithFormat:@"%ld", self.productCount];
 }
 
-- (IBAction)plusBtnClick:(UIButton *)sender {
-    self.plusButtonTapHandler();
-}
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+    self.productCount = 1;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
