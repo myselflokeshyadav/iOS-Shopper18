@@ -298,6 +298,8 @@
 				E1AF4A34227E47B40087D198 /* User.m */,
 				E1432AAB227E713900365467 /* TopSeller.h */,
 				E1432AAC227E713900365467 /* TopSeller.m */,
+				E1A221E0227F6DF100952EC5 /* ShipmentTrack.h */,
+				E1A221E1227F6DF100952EC5 /* ShipmentTrack.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -310,8 +312,6 @@
 				6D0137B0227C9BD100797006 /* CategoryViewCell.m */,
 				2F032E3F227E9F3500B2842F /* TopSellerCell.h */,
 				2F032E40227E9F3500B2842F /* TopSellerCell.m */,
-				E1A221E0227F6DF100952EC5 /* ShipmentTrack.h */,
-				E1A221E1227F6DF100952EC5 /* ShipmentTrack.m */,
 				2F032E52227FA3A300B2842F /* CartTableViewCell.h */,
 				2F032E53227FA3A300B2842F /* CartTableViewCell.m */,
 			);
