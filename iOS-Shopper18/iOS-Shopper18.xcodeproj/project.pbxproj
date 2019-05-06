@@ -27,6 +27,7 @@
 		6D0C41FD227E598D005AE167 /* SubcategoriesViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0C41FC227E598D005AE167 /* SubcategoriesViewModel.m */; };
 		6DBBB1A8227F328E00979E87 /* ProductsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DBBB1A7227F328E00979E87 /* ProductsViewController.m */; };
 		6DBBB1AB227F32AD00979E87 /* ProductsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DBBB1AA227F32AD00979E87 /* ProductsViewModel.m */; };
+		A33A855C22808631004F1A54 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A33A855B22808631004F1A54 /* Home.storyboard */; };
 		A3E30393227CEA3E001E48AF /* FeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3E30392227CEA3E001E48AF /* FeedbackViewController.m */; };
 		E1432AAD227E713900365467 /* TopSeller.m in Sources */ = {isa = PBXBuildFile; fileRef = E1432AAC227E713900365467 /* TopSeller.m */; };
 		E1432AAF227E718100365467 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1432AAE227E718100365467 /* Profile.storyboard */; };
@@ -99,6 +100,7 @@
 		6DBBB1AA227F32AD00979E87 /* ProductsViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProductsViewModel.m; sourceTree = "<group>"; };
 		882449B0E6DB3505385877CA /* libPods-iOS-Shopper18.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOS-Shopper18.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AC595C7461237891601B117 /* Pods-iOS-Shopper18.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-Shopper18.release.xcconfig"; path = "Target Support Files/Pods-iOS-Shopper18/Pods-iOS-Shopper18.release.xcconfig"; sourceTree = "<group>"; };
+		A33A855B22808631004F1A54 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		A3E30391227CEA3E001E48AF /* FeedbackViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedbackViewController.h; sourceTree = "<group>"; };
 		A3E30392227CEA3E001E48AF /* FeedbackViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedbackViewController.m; sourceTree = "<group>"; };
 		B4CC99934A1FC435D6362B9F /* Pods-iOS-Shopper18.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-Shopper18.debug.xcconfig"; path = "Target Support Files/Pods-iOS-Shopper18/Pods-iOS-Shopper18.debug.xcconfig"; sourceTree = "<group>"; };
@@ -278,6 +280,7 @@
 				E1432AB0227E722E00365467 /* OrderForm.storyboard */,
 				2F032E37227E9ED000B2842F /* TopSeller.storyboard */,
 				2F032E50227FA36500B2842F /* Cart.storyboard */,
+				A33A855B22808631004F1A54 /* Home.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -471,6 +474,7 @@
 				E1AF4A32227E411D0087D198 /* Category.storyboard in Resources */,
 				2F032E38227E9ED000B2842F /* TopSeller.storyboard in Resources */,
 				6D0137B6227C9C8800797006 /* Main.storyboard in Resources */,
+				A33A855C22808631004F1A54 /* Home.storyboard in Resources */,
 				E1E2559D227B61F000230E4F /* LaunchScreen.storyboard in Resources */,
 				E1432AB1227E722E00365467 /* OrderForm.storyboard in Resources */,
 				E1E255A9227B639400230E4F /* Colors.xcassets in Resources */,
