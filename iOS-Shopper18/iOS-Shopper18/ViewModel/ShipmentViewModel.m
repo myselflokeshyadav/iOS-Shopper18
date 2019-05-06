@@ -28,11 +28,11 @@
     }];
 }
 -(NSString *)getShipmentID{
-    return self.shipmentTrack.shipmentid;
+    return self.shipmentTrack.sid;
 }
 
 -(NSString *)getShipmentStatus{
-    NSString *status = self.shipmentTrack.shipmentstatus;
+    NSString *status = self.shipmentTrack.status;
     if([status  isEqual: @"1"]){
         return @"Order Confirm";
     }else if([status  isEqual: @"2"]){

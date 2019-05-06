@@ -31,10 +31,10 @@
 -(void)getShipmentTrackingInfo{
     [self.vm getShipmenTrack:self.orderID completionHandler:^(NSError * error){
         if(error == nil){
-            NSLog(@"shipmentID is %@",self.vm.shipmentTrack.shipmentid);
-            NSLog(@"shipmentStatus is %@",self.vm.shipmentTrack.shipmentstatus);
+            NSLog(@"shipmentID is %@",self.vm.shipmentTrack.sid);
+            NSLog(@"shipmentStatus is %@",self.vm.shipmentTrack.sid);
             ShipmentTrack *fuckItIAmMakingACopy = self.vm.shipmentTrack;
-            NSString *shipmentIDDict = fuckItIAmMakingACopy.shipmentid;
+            NSString *shipmentIDDict = fuckItIAmMakingACopy.sid;
             self.shipmentIDDisplay = shipmentIDDict;
             NSLog(@"THE END");
         }else{

@@ -12,6 +12,7 @@
 #import "Order.h"
 #import "User.h"
 #import "TopSeller.h"
+#import "ShipmentTrack.h"
 
 @implementation APIParser
 
@@ -50,7 +51,6 @@
 }
 
 + (nullable User *)userFrom:(id)jsonObject {
-    if ([jsonObject isKindOfClass:NSDictionary.class]) return nil;
     if (![jsonObject isKindOfClass:NSArray.class]) return nil;
     NSDictionary *info = jsonObject[0];
     return [User initWithInfo:info];
@@ -63,5 +63,11 @@
     for (NSDictionary *info in orders)
         [list addObject:[TopSeller initWithInfo:info]];
     return list;
+}
+
++ (nullable ShipmentTrack *)shipmentFrom:(id)jsonObject {
+    NSDictionary *dict = jsonObject;
+    if (dict[@"msg"] || !dict[@"Shipment track"]) return nil;
+    return [ShipmentTrack initWithInfo:dict[@"Shipment track"][0]];
 }
 @end

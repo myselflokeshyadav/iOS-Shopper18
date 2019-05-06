@@ -13,10 +13,10 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ShipmentTrack : NSObject
 
 @property (strong, nonatomic, readonly) NSString
-*shipmentid,
-*shipmentstatus;
+    *sid,
+    *status;
 
-+(instancetype)initWithInfo:(NSDictionary *)info;
++ (instancetype)initWithInfo:(NSDictionary *)info;
 
 @end
 

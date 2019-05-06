@@ -10,19 +10,25 @@
 @interface ShipmentTrack ()
 
 @property (readwrite) NSString
-*shipmentid,
-*shipmentstatus;
+    *sid,
+    *status;
 @end
 
 @implementation ShipmentTrack
-+(instancetype)initWithInfo:(NSDictionary *)info{
-    NSLog(@"this is info: %@", info);
-    ShipmentTrack *shipmentTrack = [[ShipmentTrack alloc] init];
-    if(shipmentTrack){
-        shipmentTrack.shipmentid = [info valueForKey:@"shipmentid"];
-        shipmentTrack.shipmentstatus = [info valueForKey:@"shipmentstatus"];
++ (instancetype)initWithInfo:(NSDictionary *)info{
+    ShipmentTrack *shipment = ShipmentTrack.new;
+    if(shipment){
+        shipment.sid = info[@"shipmentid"];
+        NSDictionary *statuses = @{ @"1": @"Order confirmed",
+                                    @"2": @"Order dispatched",
+                                    @"3": @"Order on the way",
+                                    @"4": @"Order delivered"
+                                    };
+        shipment.status = statuses[info[@"shipmentstatus"]];
+        if (!shipment.status) shipment.status = kUnknownOrderStatus;
     }
-    return shipmentTrack;
+    
+    return shipment;
 }
 
 @end

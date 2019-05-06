@@ -37,7 +37,7 @@
                                     @"4": @"Order delivered"
                                    };
         order.status = statuses[info[@"orderstatus"]];
-        if (!order.status) order.status = @"Undefined status code";
+        if (!order.status) order.status = kUnknownOrderStatus;
     }
     return order;
 }
