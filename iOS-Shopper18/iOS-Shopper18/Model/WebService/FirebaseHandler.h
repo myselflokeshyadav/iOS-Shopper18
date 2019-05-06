@@ -17,7 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)shared;
 - (void)addProduct:(Product *)pInfo completion:(void(^)(NSError * _Nullable))completion;
 - (void)removeProduct:(NSString *)pid completion:(void(^)(NSError * _Nullable))completion;
-- (void)cartForUser:(NSString *)userID completion:(void(^)(NSMutableArray * _Nullable))completion;
+- (void)cartForUser:(void(^)(NSMutableArray * _Nullable))completion;
+- (void)clearCartForUser:(void(^)(NSError * _Nullable))completion;
 
 @end
 

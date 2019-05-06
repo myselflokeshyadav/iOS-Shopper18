@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)addProduct:(Product *)product;
 - (void)removeProduct:(NSUInteger)index;
 - (void)setProducts:(NSArray<Product *> *)products;
-- (void)loadProducts;
+- (void)loadProducts:(void (^)(BOOL))completion;
 
 @end
 

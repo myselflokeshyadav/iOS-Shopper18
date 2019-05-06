@@ -49,7 +49,7 @@
     [[[self.cartRef child:APIHandler.shared.userID] child:pid] removeValue];
 }
 
--  (void)cartForUser:(NSString *)userID completion:(void(^)(NSMutableArray * _Nullable))completion {
+-  (void)cartForUser:(void(^)(NSMutableArray * _Nullable))completion {
     [[self.cartRef child:APIHandler.shared.userID] observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
         // Get user value
         
@@ -66,6 +66,12 @@
             [items addObject:product];
         }
         completion(items);
+    }];
+}
+
+- (void)clearCartForUser:(void(^)(NSError * _Nullable))completion {
+    [[self.cartRef child:APIHandler.shared.userID] removeValueWithCompletionBlock:^(NSError * _Nullable error, FIRDatabaseReference * _Nonnull ref) {
+        completion(error);
     }];
 }
 
