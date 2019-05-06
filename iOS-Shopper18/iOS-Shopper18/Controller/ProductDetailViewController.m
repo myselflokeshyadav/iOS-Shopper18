@@ -37,12 +37,10 @@
 - (void)setupUI{
     //set up UI by accessing viewModel.stuff
     self.productName.text = self.product.name;
-    NSString *productDescribTxt = [NSString stringWithFormat:@"Description: %@",self.product.desc];
+    NSString *productDescribTxt = [NSString stringWithFormat:@"%@",self.product.desc];
     self.productDescribtion.text = productDescribTxt;
     NSString  * price = [NSString stringWithFormat:@"%f USD", self.product.price];
     self.productPrize.text = price;
-    NSString  * quantity = [NSString stringWithFormat:@"Quantity: %li", (long)self.product.quantity];
-    self.productQuantity.text = quantity;
     NSString * urlString = self.product.imageURL;
     NSURL * url = [NSURL URLWithString:urlString];
     [self.productImage sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"No image available"]];
