@@ -13,8 +13,6 @@
 @interface ShipmentViewController ()
 @property (strong, nonatomic) NSString* orderID;
 @property (strong,nonatomic) ShipmentViewModel* vm;
-@property (strong,nonatomic) NSString *shipmentIDDisplay;
-@property (strong,nonatomic) NSString *shipmentStatusDisplay;
 
 @end
 
@@ -24,33 +22,28 @@
     [super viewDidLoad];
     self.vm = ShipmentViewModel.new;
     self.orderID = @"2147484660";
-    [self getShipmentTrackingInfo];
     // Do any additional setup after loading the view.
 }
 
--(void)getShipmentTrackingInfo{
-    [self.vm getShipmenTrack:self.orderID completionHandler:^(NSError * error){
+
+- (IBAction)enterOrderID:(UIButton*)sender {
+    
+    [self.vm getShipmenTrack:self.orderIDInput.text completionHandler:^(NSError * error){
         if(error == nil){
-            NSLog(@"shipmentID is %@",self.vm.shipmentTrack.sid);
-            NSLog(@"shipmentStatus is %@",self.vm.shipmentTrack.sid);
-            ShipmentTrack *fuckItIAmMakingACopy = self.vm.shipmentTrack;
-            NSString *shipmentIDDict = fuckItIAmMakingACopy.sid;
-            self.shipmentIDDisplay = shipmentIDDict;
-            NSLog(@"THE END");
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.responseLabel.text = self.vm.shipmentTrack.status;
+            });
+
         }else{
             NSLog(@"%@",error);
         }
     }];
+
+
 }
 
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
+
+
+
 
 @end

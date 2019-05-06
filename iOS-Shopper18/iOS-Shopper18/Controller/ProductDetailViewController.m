@@ -43,13 +43,13 @@
     self.productName.text = self.product.name;
     NSString *productDescribTxt = [NSString stringWithFormat:@"%@",self.product.desc];
     self.productDescribtion.text = productDescribTxt;
-    NSString* formattedNumber = [NSString stringWithFormat:@"$%.02f USD", self.product.price];
+    NSString* formattedNumber = [NSString stringWithFormat:@"$%.02f", self.product.price];
     self.productPrize.text = formattedNumber;
     NSString * urlString = self.product.imageURL;
     NSURL * url = [NSURL URLWithString:urlString];
     [self.productImage sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"No image available"]];
-
 }
+
 - (IBAction)buyProduct:(id)sender {
     for( int i = 0; i <self.itemsBoughtCount; i ++){
     [self.sharedManager addProduct:self.product];

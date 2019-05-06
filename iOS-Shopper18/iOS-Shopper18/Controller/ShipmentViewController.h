@@ -15,6 +15,14 @@ NS_ASSUME_NONNULL_BEGIN
 //@property (weak,nonatomic) IBOutlet NSString order_id;
 
 -(void)getShipmentTrackingInfo;
+
+@property (weak, nonatomic) IBOutlet UITextField *orderIDInput;
+
+@property (weak, nonatomic) IBOutlet UILabel *responseLabel;
+
+
+
+
 @end
 
 
