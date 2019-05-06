@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -74,7 +73,7 @@
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pbk-E6-z1r">
                                                 <rect key="frame" x="10" y="638" width="394" height="495"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" name="Sample"/>
+                                                <color key="backgroundColor" red="0.21962529219999999" green="1" blue="0.34466816169999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wEf-nk-8Rw">
                                                     <size key="itemSize" width="390" height="248"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -767,8 +766,5 @@
     </scenes>
     <resources>
         <image name="No image available" width="650" height="644"/>
-        <namedColor name="Sample">
-            <color red="0.52100002765655518" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
     </resources>
 </document>
