@@ -13,8 +13,8 @@
 
 @interface APIHandler ()
 
-@property (strong, nonatomic, nullable) NSString *apiKey;
-@property (strong, nonatomic, nullable) NSString *userID;
+@property (readwrite) NSString *apiKey;
+@property (readwrite) NSString *userID;
 
 @end
 

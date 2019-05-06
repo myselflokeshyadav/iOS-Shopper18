@@ -7,10 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Product.h"
+#import "APIHandler.h"
+@import Firebase;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface FirebaseHandler : NSObject
++ (instancetype)shared;
+- (void)addProduct:(Product *)pInfo completion:(void(^)(NSError * _Nullable))completion;
+- (void)removeProduct:(NSString *)pid completion:(void(^)(NSError * _Nullable))completion;
+- (void)cartForUser:(void(^)(NSMutableArray * _Nullable))completion;
+- (void)clearCartForUser:(void(^)(NSError * _Nullable))completion;
 
 @end
 
