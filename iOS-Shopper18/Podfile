@@ -17,5 +17,7 @@ target 'iOS-Shopper18' do
   pod 'Braintree'
   pod 'BraintreeDropIn'
   pod 'Braintree/PayPal'
+  pod 'Firebase/Core'
+  pod 'Firebase/Database'
 
 end

@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "BraintreeCore.h"
+@import Firebase;
 
 @interface AppDelegate ()
 
@@ -19,6 +20,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     [BTAppSwitch setReturnURLScheme:@"com.iOSDevs.iOS-Shopper18.payments"];
+    [FIRApp configure];
     return YES;
 }
 
