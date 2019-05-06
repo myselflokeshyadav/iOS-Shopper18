@@ -15,7 +15,7 @@
 @interface ProductDetailViewController ()
 @property (nonatomic, strong) ProductDetailViewModel* viewModel;
 @property (nonatomic, strong) Cart *sharedManager;
-@property (readwrite) NSInteger *itemsBoughtCount;
+@property (readwrite) NSInteger itemsBoughtCount;
 @end
 
 @implementation ProductDetailViewController
@@ -36,21 +36,26 @@
     self.product = viewModel.product;
 }
 - (void)setupUI{
+    //set 1 quantity button default
+    self.btnOne.backgroundColor = UIColor.grayColor;
+    self.itemsBoughtCount = self.btnOne.tag;
     //set up UI by accessing viewModel.stuff
     self.productName.text = self.product.name;
     NSString *productDescribTxt = [NSString stringWithFormat:@"%@",self.product.desc];
     self.productDescribtion.text = productDescribTxt;
-    NSString  * price = [NSString stringWithFormat:@"%f USD", self.product.price];
-    self.productPrize.text = price;
+    NSString* formattedNumber = [NSString stringWithFormat:@"$%.02f USD", self.product.price];
+    self.productPrize.text = formattedNumber;
     NSString * urlString = self.product.imageURL;
     NSURL * url = [NSURL URLWithString:urlString];
     [self.productImage sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"No image available"]];
 
 }
 - (IBAction)buyProduct:(id)sender {
+    for( int i = 0; i <self.itemsBoughtCount; i ++){
     [self.sharedManager addProduct:self.product];
-    NSString *mess = [NSString stringWithFormat:@"Success in purchasing %@",self.product.name];
-    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Success!" message:mess preferredStyle:UIAlertControllerStyleAlert];
+    }
+    NSString *mess = [NSString stringWithFormat:@"Success in purchasing %ld of %@",(long)self.itemsBoughtCount,self.product.name];
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Add to Cart!" message:mess preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"Great!" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){}];
     [alert addAction:defaultAction];
     [self presentViewController:alert animated:YES completion:nil];
@@ -67,7 +72,8 @@
     switch (tag) {
         case 1:
             self.itemsBoughtCount = tag;
-            sender.backgroundColor = UIColor.grayColor;            break;
+            sender.backgroundColor = UIColor.grayColor;
+            break;
         case 2:
             self.itemsBoughtCount = tag;
             sender.backgroundColor = UIColor.grayColor;
