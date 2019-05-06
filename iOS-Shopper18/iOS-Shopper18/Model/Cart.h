@@ -21,6 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)removeProduct:(NSUInteger)index;
 - (void)setProducts:(NSArray<Product *> *)products;
 - (void)loadProducts:(void (^)(BOOL))completion;
+- (void)changeProductQuantityAt:(NSInteger)index amount:(NSInteger)amount;
 
 @end
 

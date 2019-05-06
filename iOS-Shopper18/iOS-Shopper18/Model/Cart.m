@@ -75,4 +75,12 @@
     }];
 }
 
+- (void)changeProductQuantityAt:(NSInteger)index amount:(NSInteger)amount {
+    if (index < 0 || index >= self.items.count) return;
+    self.items[index].quantity = amount;
+    [FirebaseHandler.shared addProduct:self.items[index] completion:^(NSError * _Nullable error) {
+        
+    }];
+}
+
 @end
