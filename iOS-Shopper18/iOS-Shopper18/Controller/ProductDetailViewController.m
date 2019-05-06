@@ -15,6 +15,7 @@
 @interface ProductDetailViewController ()
 @property (nonatomic, strong) ProductDetailViewModel* viewModel;
 @property (nonatomic, strong) Cart *sharedManager;
+@property (readwrite) NSInteger *itemsBoughtCount;
 @end
 
 @implementation ProductDetailViewController
@@ -54,6 +55,40 @@
     [alert addAction:defaultAction];
     [self presentViewController:alert animated:YES completion:nil];
 }
+- (IBAction)pickQuantity:(UIButton*)sender {
+    self.btnOne.backgroundColor = UIColor.whiteColor;
+    self.btnTwo.backgroundColor = UIColor.whiteColor;
+    self.btnThree.backgroundColor = UIColor.whiteColor;
+    self.btnFoure.backgroundColor = UIColor.whiteColor;
+    self.btnFive.backgroundColor = UIColor.whiteColor;
+
+    
+    NSInteger tag = [sender tag];
+    switch (tag) {
+        case 1:
+            self.itemsBoughtCount = tag;
+            sender.backgroundColor = UIColor.grayColor;            break;
+        case 2:
+            self.itemsBoughtCount = tag;
+            sender.backgroundColor = UIColor.grayColor;
+            break;
+        case 3:
+            self.itemsBoughtCount = tag;
+            sender.backgroundColor = UIColor.grayColor;
+            break;
+        case 4:
+            self.itemsBoughtCount = tag;
+            sender.backgroundColor = UIColor.grayColor;
+            break;
+        case 5:
+            self.itemsBoughtCount = tag;
+            sender.backgroundColor = UIColor.grayColor;
+            break;
+        default:
+            break;
+    }
+}
+
 
 
 
