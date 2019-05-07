@@ -28,15 +28,6 @@
     self.navigationItem.title = @"Product Categories";
 }
 
-- (IBAction)featureCategorySegAction:(UISegmentedControl *)sender {
-    NSInteger * selectedSegment = [sender selectedSegmentIndex];
-    UIStoryboard * sb = [UIStoryboard storyboardWithName:@"Category" bundle:nil];
-    if(selectedSegment == 1){
-        TopSellerViewController *vc = [sb instantiateViewControllerWithIdentifier:@"TopSellerViewController"];
-        [self.navigationController pushViewController:vc animated:YES];
-    }
-}
-
 -(void) getProductCategories{
     //    info = NSDictionary.new;
     [self.categoryModel getProductCategories:^(NSError * error) {
@@ -73,5 +64,25 @@
     vc.category = category;
     [self.navigationController pushViewController:vc animated:YES];
 }
+
+
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    CGFloat size = collectionView.bounds.size.width / 2;
+    
+    return CGSizeMake(size - 8, size + 25);
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
+    return 0;
+}
+
+-(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
+    return UIEdgeInsetsMake(5, 5, 0, 10);
+}
+
+//-(CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
+//    return 10;
+//}
 
 @end

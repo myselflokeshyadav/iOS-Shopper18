@@ -23,6 +23,10 @@
 #define kColorSecondaryGreen    [UIColor.new initWithDisplayP3Red:144/255.0 green:252/255.0 blue:164/255.0 alpha:1]
 #define kColorPrimeOrange       [UIColor.alloc initWithDisplayP3Red:224/255.0 green:163/255.0 blue:71/255.0 alpha:1];
 
+//  Images
+#define kImagePlaceholder       [UIImage imageNamed:@"No image available"]
+
+
 //  API
 //  Ecommerce Endpoints
 #define kAPIEcomBase            @"http://rjtmobile.com/aamir/e-commerce/ios-app/"

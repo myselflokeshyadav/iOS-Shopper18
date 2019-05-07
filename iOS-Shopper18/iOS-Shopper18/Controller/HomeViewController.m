@@ -12,6 +12,7 @@
 #import "CategoryViewCell.h"
 #import "TopSellerViewController.h"
 #import "SubcategoriesViewController.h"
+#import "CategoriesViewController.h"
 
 @interface HomeViewController ()
 
@@ -28,8 +29,6 @@
 }
 
 -(void)setControls{
-    self.topSellerImage.image = [UIImage imageNamed:@"home"];
-    self.topSellerProductLabel.text = @"Welcome";
     [self getTopSellerCompany];
     [self getProductCategories];
 }
@@ -64,13 +63,23 @@
     
 }
 
+- (IBAction)categoriesButton:(id)sender {
+    CategoriesViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"CategoriesViewController"];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (IBAction)topSellerButton:(UIButton *)sender {
+    TopSellerViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"TopSellerViewController"];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
 
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     if(collectionView == self.colView){
         TopSellerCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"topsellerCell" forIndexPath:indexPath];
         TopSeller *tsObj = [self.homeVM topSellerAt:indexPath.item];
         [cell.logoImgView sd_setImageWithURL:[NSURL URLWithString:tsObj.logo]
-                            placeholderImage:[UIImage imageNamed:@"No image available"]];
+                            placeholderImage:kImagePlaceholder];
         return cell;
     }
     else{
@@ -104,27 +113,5 @@
     }
 }
 
-
-//- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-//    CGFloat size = collectionView.bounds.size.width / 2;
-//    if(collectionView == self.colView){
-//        TopSellerViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"TopSellerViewController"];
-//        [self.navigationController pushViewController:vc animated:YES];
-//        
-//    }
-//    return CGSizeMake(size - 20, size + 25);
-//}
-//
-//- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
-//    return 0;
-//}
-//
-//-(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
-//    return UIEdgeInsetsMake(10, 10, 0, 10);
-//}
-//
-//-(CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
-//    return 10;
-//}
 
 @end

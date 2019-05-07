@@ -16,8 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface HomeViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource>
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIView *subView;
-@property (weak, nonatomic) IBOutlet UIImageView *topSellerImage;
-@property (weak, nonatomic) IBOutlet UILabel *topSellerProductLabel;
+
 @property (weak, nonatomic) IBOutlet UICollectionView *colView;
 @property (weak, nonatomic) IBOutlet UICollectionView *categoryCollectionView;
 
@@ -26,8 +25,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) Category * category;
 @property (strong, nonatomic) NSMutableArray<Category *>* categories;
 
+- (IBAction)categoriesButton:(id)sender;
+- (IBAction)topSellerButton:(UIButton *)sender;
 - (void)setControls;
 - (void)getProductCategories;
+
 - (void)getTopSellerCompany;
 
 @end

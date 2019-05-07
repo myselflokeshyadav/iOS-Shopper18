@@ -127,7 +127,7 @@
     cell.pNameLbl.text = pObj.name;
     cell.pDescLbl.text = pObj.desc;
     [cell.pImgView sd_setImageWithURL:[NSURL URLWithString:pObj.imageURL]
-                 placeholderImage:[UIImage imageNamed:@"No image available"]];
+                 placeholderImage:kImagePlaceholder];
     cell.pPriceLbl.text = [NSString stringWithFormat:@"Item price: $%.2f", pObj.totalPrice];
     cell.pCountLbl.text = [NSString stringWithFormat: @"%ld",(long)pObj.quantity];
     

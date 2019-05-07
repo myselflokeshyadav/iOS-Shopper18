@@ -48,7 +48,7 @@
     self.productPrize.text = formattedNumber;
     NSString * urlString = self.product.imageURL;
     NSURL * url = [NSURL URLWithString:urlString];
-    [self.productImage sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"No image available"]];
+    [self.productImage sd_setImageWithURL:url placeholderImage:kImagePlaceholder];
 }
 
 - (IBAction)buyProduct:(id)sender {
