@@ -10,7 +10,7 @@
 #define Constants_h
 
 #define kColorPrimeGreen        [UIColor.new initWithDisplayP3Red:79/255.0 green:175/255.0 blue:95/255.0 alpha:1]
-
+#define kColorPrimeOrange       [UIColor.alloc initWithDisplayP3Red:224/255.0 green:163/255.0 blue:71/255.0 alpha:1];
 
 #define kAPIEcomBase            @"http://rjtmobile.com/aamir/e-commerce/ios-app/"
 
