@@ -68,8 +68,7 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     Category * category = self.categories[indexPath.item];
-    UIStoryboard * sb = [UIStoryboard storyboardWithName:@"Category" bundle:nil];
-    SubcategoriesViewController *vc = [sb instantiateViewControllerWithIdentifier:@"SubcategoriesViewController"];
+    SubcategoriesViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"SubcategoriesViewController"];
     vc.category = category;
     [self.navigationController pushViewController:vc animated:YES];
 }

@@ -56,8 +56,8 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Category" bundle: nil];
-    ProductDetailViewController *detailVC = [storyboard instantiateViewControllerWithIdentifier:@"ProductDetailViewController"];
+   // UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
+    ProductDetailViewController *detailVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ProductDetailViewController"];
     Product *product = self.productList[indexPath.item];
 //    ProductDetailViewModel * productVM = [[ProductDetailViewModel alloc] initWithProduct:product];
     ProductDetailViewModel * productVM = ProductDetailViewModel.new;

@@ -10,6 +10,8 @@
 #import <SDWebImage/SDWebImage.h>
 #import "TopSellerCell.h"
 #import "CategoryViewCell.h"
+#import "TopSellerViewController.h"
+#import "SubcategoriesViewController.h"
 
 @interface HomeViewController ()
 
@@ -87,5 +89,42 @@
         return self.homeVM.categories.count;
     }
 }
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    if(collectionView == self.colView){
+        TopSellerViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"TopSellerViewController"];
+        [self.navigationController pushViewController:vc animated:YES];
+        
+    }
+    else{
+        Category * category = self.categories[indexPath.item];
+        SubcategoriesViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"SubcategoriesViewController"];
+        vc.category = category;
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+}
+
+
+//- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+//    CGFloat size = collectionView.bounds.size.width / 2;
+//    if(collectionView == self.colView){
+//        TopSellerViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"TopSellerViewController"];
+//        [self.navigationController pushViewController:vc animated:YES];
+//        
+//    }
+//    return CGSizeMake(size - 20, size + 25);
+//}
+//
+//- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
+//    return 0;
+//}
+//
+//-(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
+//    return UIEdgeInsetsMake(10, 10, 0, 10);
+//}
+//
+//-(CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
+//    return 10;
+//}
 
 @end
