@@ -22,10 +22,11 @@
     UITabBar.appearance.tintColor = UIColor.whiteColor;
     UITabBar.appearance.barTintColor = kColorPrimeGreen;
     UITabBar.appearance.unselectedItemTintColor = kColorSecondaryGreen;
+    [UITabBarItem.appearance setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont systemFontOfSize:13], NSFontAttributeName, nil] forState:UIControlStateNormal];
     
     UINavigationBar.appearance.barTintColor = kColorPrimeGreen;
     UINavigationBar.appearance.tintColor = UIColor.whiteColor;
-    [[UINavigationBar appearance] setTitleTextAttributes: @{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+    [UINavigationBar.appearance setTitleTextAttributes: @{NSForegroundColorAttributeName: [UIColor whiteColor]}];
     
     [BTAppSwitch setReturnURLScheme:@"com.iOSDevs.iOS-Shopper18.payments"];
     [FIRApp configure];
