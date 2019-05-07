@@ -83,8 +83,30 @@
     }];
 }
 
+- (void)clearCart:(void (^)(BOOL success, NSError * _Nullable error))completion {
+    [self.items removeAllObjects];
+    [FirebaseHandler.shared clearCartForUser:^(NSError * _Nullable error) {
+        if (!error) completion(YES, nil);
+        else completion(NO, error);
+    }];
+}
+
 - (void)deleteItems:(NSMutableIndexSet *)indices completion:(void (^)(BOOL success, NSError * _Nullable error))completion {
+    dispatch_group_t dg = dispatch_group_create();
+    NSArray *products = [self.items objectsAtIndexes:indices];
+    [self.items removeObjectsAtIndexes:indices];
     
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [products enumerateObjectsUsingBlock:^(Product *prod, NSUInteger i, BOOL *stop) {
+            dispatch_group_enter(dg);
+            [FirebaseHandler.shared removeProduct:prod.pid completion:^(NSError * _Nullable error) {
+                dispatch_group_leave(dg);
+            }];
+        }];
+        dispatch_group_notify(dg, dispatch_get_main_queue(), ^{
+            completion(YES, nil);
+        });
+    });
 }
 
 - (void)saveCart:(void (^)(BOOL))completion {

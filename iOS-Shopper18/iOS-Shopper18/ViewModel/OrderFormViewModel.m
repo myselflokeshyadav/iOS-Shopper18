@@ -27,8 +27,12 @@
                 [succeeded addObject:Cart.shared.items[idx]];
             }
         }];
-        if (Cart.shared.items.count == succeeded.count) completion(YES, nil);
-        else completion(NO, error);
+        if (Cart.shared.items.count == succeeded.count) {
+            [Cart.shared clearCart:completion];
+        }
+        else {
+            [Cart.shared deleteItems:indices completion:completion];
+        }
     }];
 }
 
