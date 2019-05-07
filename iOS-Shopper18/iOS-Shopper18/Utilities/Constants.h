@@ -9,7 +9,7 @@
 #ifndef Constants_h
 #define Constants_h
 
-#define kColorPrimeGreen        [UIColor.new initWithRed:70.0/255.0 green:195.0/255.0 blue:94.0/255.0 alpha:1]
+#define kColorPrimeGreen        [UIColor.new initWithDisplayP3Red:79/255.0 green:175/255.0 blue:95/255.0 alpha:1]
 
 
 #define kAPIEcomBase            @"http://rjtmobile.com/aamir/e-commerce/ios-app/"
