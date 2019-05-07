@@ -37,7 +37,7 @@
 }
 - (void)setupUI{
     //set 1 quantity button default
-    self.btnOne.backgroundColor = UIColor.grayColor;
+    self.btnOne.backgroundColor = kColorPrimeOrange;
     self.itemsBoughtCount = self.btnOne.tag;
     //set up UI by accessing viewModel.stuff
     self.productName.text = self.product.name;
@@ -67,28 +67,29 @@
     self.btnFoure.backgroundColor = UIColor.whiteColor;
     self.btnFive.backgroundColor = UIColor.whiteColor;
 
+    UIColor *orange = kColorPrimeOrange;
     
     NSInteger tag = [sender tag];
     switch (tag) {
         case 1:
             self.itemsBoughtCount = tag;
-            sender.backgroundColor = UIColor.grayColor;
+            sender.backgroundColor = orange;
             break;
         case 2:
             self.itemsBoughtCount = tag;
-            sender.backgroundColor = UIColor.grayColor;
+            sender.backgroundColor = orange;
             break;
         case 3:
             self.itemsBoughtCount = tag;
-            sender.backgroundColor = UIColor.grayColor;
+            sender.backgroundColor = orange;
             break;
         case 4:
             self.itemsBoughtCount = tag;
-            sender.backgroundColor = UIColor.grayColor;
+            sender.backgroundColor = orange;
             break;
         case 5:
             self.itemsBoughtCount = tag;
-            sender.backgroundColor = UIColor.grayColor;
+            sender.backgroundColor = orange;
             break;
         default:
             break;

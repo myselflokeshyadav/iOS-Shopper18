@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="G5g-Zt-qfN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ms7-mm-TwC">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -362,6 +362,11 @@
                                         <state key="normal" title="2">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="18"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="pickQuantity:" destination="Uxh-nw-PxC" eventType="touchUpInside" id="bzK-pg-1Qp"/>
                                         </connections>
@@ -375,6 +380,11 @@
                                         <state key="normal" title="1">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="18"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="pickQuantity:" destination="Uxh-nw-PxC" eventType="touchUpInside" id="kaj-q3-0HE"/>
                                         </connections>
@@ -390,6 +400,11 @@
                                         <state key="normal" title="3">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="18"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="pickQuantity:" destination="Uxh-nw-PxC" eventType="touchUpInside" id="pqw-a1-xjd"/>
                                         </connections>
@@ -405,6 +420,11 @@
                                         <state key="normal" title="4">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="18"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="pickQuantity:" destination="Uxh-nw-PxC" eventType="touchUpInside" id="9T6-3R-290"/>
                                         </connections>
@@ -420,6 +440,11 @@
                                         <state key="normal" title="5">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="18"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="pickQuantity:" destination="Uxh-nw-PxC" eventType="touchUpInside" id="LQ9-dw-wSL"/>
                                         </connections>
@@ -805,7 +830,7 @@
         <!--Feedback View Controller-->
         <scene sceneID="bHv-jz-hpk">
             <objects>
-                <viewController id="Ms7-mm-TwC" customClass="FeedbackViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FeedbackViewController" id="Ms7-mm-TwC" customClass="FeedbackViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SEJ-Wf-pRW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -864,28 +889,29 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Order ID I.E. 2147484660" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SSG-eG-xRx">
-                                <rect key="frame" x="113" y="380" width="188" height="30"/>
+                                <rect key="frame" x="113" y="350" width="188" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mek-2E-UZK">
-                                <rect key="frame" x="113" y="498" width="188" height="49"/>
+                                <rect key="frame" x="113" y="220" width="188" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Gi-nh-xuX">
-                                <rect key="frame" x="113" y="673" width="188" height="75"/>
+                                <rect key="frame" x="20" y="673" width="374" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
                                         <fragment content="Enter">
                                             <attributes>
-                                                <color key="NSColor" red="0.2716325094" green="0.929132297" blue="0.38564158500000001" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <font key="NSFont" size="46" name="MarkerFelt-Thin"/>
+                                                <color key="NSColor" red="0.56193309966788052" green="0.84979774746192893" blue="0.50795660606953941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <font key="NSFont" size="46" name="Monaco"/>
+                                                <font key="NSOriginalFont" size="46" name="AppleColorEmoji"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                             </attributes>
                                         </fragment>
@@ -906,6 +932,10 @@
                                     <action selector="enterOrderID:" destination="CwS-xy-069" eventType="touchUpInside" id="ENU-HC-NDF"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="freeShipping" translatesAutoresizingMaskIntoConstraints="NO" id="w5d-7r-ATn">
+                                <rect key="frame" x="47" y="408" width="320" height="240"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -923,7 +953,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wvf-d1-lQm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2774" y="1755"/>
+            <point key="canvasLocation" x="2773.913043478261" y="1754.4642857142856"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ChV-qd-IMp">
@@ -948,7 +978,7 @@
         <!--Cart View Controller-->
         <scene sceneID="kkV-qV-6f3">
             <objects>
-                <viewController storyboardIdentifier="CartViewController" id="LoZ-Vy-a6r" customClass="CartViewController" sceneMemberID="viewController">
+                <viewController id="LoZ-Vy-a6r" customClass="CartViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oK4-sM-bFy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -992,10 +1022,21 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                            <real key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                            <color key="value" red="0.0" green="0.69803921570000005" blue="0.3294117647" alpha="0.53223994009999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l5D-aB-UTn">
                                                     <rect key="frame" x="260" y="163.5" width="70" height="21"/>
-                                                    <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.69803921568627447" blue="0.32941176470588235" alpha="0.53223994006849318" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="70" id="QZO-h3-0mm"/>
                                                         <constraint firstAttribute="height" constant="21" id="ugJ-cK-Gjk"/>
@@ -1003,6 +1044,11 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <button opaque="NO" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m2o-qi-hgw">
                                                     <rect key="frame" x="344" y="150" width="30" height="45"/>
@@ -1015,7 +1061,7 @@
                                                         <color key="titleColor" red="0.086453045689999994" green="0.086453045689999994" blue="0.086453045689999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="countBtnClick:" destination="doo-KK-6kk" eventType="touchUpInside" id="AwS-TR-DTl"/>
+                                                        <action selector="addButtonTapped:" destination="doo-KK-6kk" eventType="touchUpInside" id="ECR-9C-F2t"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kfh-MT-LU2">
@@ -1029,7 +1075,7 @@
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="countBtnClick:" destination="doo-KK-6kk" eventType="touchUpInside" id="scZ-4P-Ql4"/>
+                                                        <action selector="minusButtonTapped:" destination="doo-KK-6kk" eventType="touchUpInside" id="GdP-E1-nf0"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -1071,24 +1117,40 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TXc-VX-JlL">
                                 <rect key="frame" x="0.0" y="779" width="414" height="83"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Total price : $100 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s6P-d6-r3h">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s6P-d6-r3h">
                                         <rect key="frame" x="10" y="12" width="277" height="59"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.0" green="0.69803921570000005" blue="0.3294117647" alpha="0.53223994009999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rkj-cn-ngO">
                                         <rect key="frame" x="295" y="24" width="111" height="45"/>
-                                        <color key="backgroundColor" red="0.45009386540000001" green="0.98132258650000004" blue="0.4743030667" alpha="0.55562392979999997" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.30980392156862746" green="0.68627450980392157" blue="0.38431372549019605" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="111" id="8aR-ni-fjg"/>
                                             <constraint firstAttribute="height" constant="45" id="vB8-s1-wUR"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                         <state key="normal" title="CheckOut">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="checkoutBtnClick:" destination="LoZ-Vy-a6r" eventType="touchUpInside" id="UU9-68-Zep"/>
                                         </connections>
@@ -1118,6 +1180,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="J6D-eK-tgt"/>
                     <connections>
+                        <outlet property="checkoutBtnOutlet" destination="rkj-cn-ngO" id="ML4-El-gL5"/>
                         <outlet property="tblView" destination="xiy-t8-A0z" id="IKj-7g-yKe"/>
                         <outlet property="totalPrizeLbl" destination="s6P-d6-r3h" id="NUs-Ca-FKM"/>
                     </connections>
@@ -1129,7 +1192,7 @@
         <!--Navigation Controller-->
         <scene sceneID="rM5-C2-BZV">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LL6-C2-ZPL" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="CartViewController" automaticallyAdjustsScrollViewInsets="NO" id="LL6-C2-ZPL" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dN0-TK-KC6">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -1300,7 +1363,7 @@
         <!--Order Form View Controller-->
         <scene sceneID="JIU-4e-BJC">
             <objects>
-                <viewController id="fb5-fN-phD" customClass="OrderFormViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OrderFormViewController" id="fb5-fN-phD" customClass="OrderFormViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VO9-zz-Ngg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1327,6 +1390,9 @@
                                         <real key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="confirmTapped" destination="fb5-fN-phD" eventType="touchUpInside" id="yv8-lC-yYz"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1594,5 +1660,6 @@
     </scenes>
     <resources>
         <image name="No image available" width="650" height="644"/>
+        <image name="freeShipping" width="80.666664123535156" height="69.333335876464844"/>
     </resources>
 </document>

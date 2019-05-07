@@ -69,7 +69,7 @@ const static CGFloat kFloatingLabelFontSize = 11.0f;
     self.backgroundColor = UIColor.groupTableViewBackgroundColor;
     self.layer.cornerRadius = 10;
     self.layer.borderWidth = 2.5;
-    self.layer.borderColor = UIColor.greenColor.CGColor;
+    self.layer.borderColor = kColorPrimeGreen.CGColor;
 }
 
 -(void)update

@@ -8,7 +8,7 @@
 
 #import "OrderFormViewModel.h"
 #import "APIHandler.h"
-
+#import "Cart.h"
 @implementation OrderFormViewModel
 
 + (instancetype)initWithProducts:(NSMutableArray<Product *> *)products {
@@ -18,17 +18,16 @@
 }
 
 - (void)placeOrder:(NSDictionary *)orderInfo completion:(void (^)(NSArray * _Nullable, NSError * _Nullable))completion {
-    [APIHandler.shared placeOrders:orderInfo products:self.products completion:^(NSArray * _Nullable result, NSError * _Nullable error) {
+    [APIHandler.shared placeOrders:orderInfo products:[Cart.shared items] completion:^(NSArray * _Nullable result, NSError * _Nullable error) {
         NSMutableIndexSet *indices = [NSMutableIndexSet new];
         NSMutableArray *succeeded = NSMutableArray.new;
         [result enumerateObjectsUsingBlock:^(NSNumber * _Nonnull success, NSUInteger idx, BOOL * _Nonnull stop) {
             if ([success boolValue]) {
                 [indices addIndex:idx];
-                [succeeded addObject:self.products[idx]];
+                [succeeded addObject:Cart.shared.items[idx]];
             }
         }];
-        [self.products removeObjectsAtIndexes:succeeded];
-        
+        completion(nil, nil);
     }];
 }
 
