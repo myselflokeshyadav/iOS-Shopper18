@@ -83,4 +83,14 @@
     }];
 }
 
+- (void)deleteItems:(NSMutableIndexSet *)indices completion:(void (^)(BOOL success, NSError * _Nullable error))completion {
+    
+}
+
+- (void)saveCart:(void (^)(BOOL))completion {
+    [FirebaseHandler.shared saveProducts:self.items completion:^(BOOL success, NSError * _Nullable error) {
+        completion(success);
+    }];
+}
+
 @end

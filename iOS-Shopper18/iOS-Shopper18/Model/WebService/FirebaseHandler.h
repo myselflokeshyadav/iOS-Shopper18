@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)removeProduct:(NSString *)pid completion:(void(^)(NSError * _Nullable))completion;
 - (void)cartForUser:(void(^)(NSMutableArray * _Nullable))completion;
 - (void)clearCartForUser:(void(^)(NSError * _Nullable))completion;
-
+- (void)saveProducts:(NSArray<Product *> *)products completion:(void (^)(BOOL, NSError * _Nullable ))completion;
 @end
 
 NS_ASSUME_NONNULL_END
