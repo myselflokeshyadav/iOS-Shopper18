@@ -8,6 +8,7 @@
 
 #import "UIViewController+Helpers.h"
 #import "AppDelegate.h"
+#import <SVProgressHUD.h>
 @implementation UIViewController (Helpers)
 
 - (void)alert:(NSString*)title msg:(NSString *)msg {
@@ -18,12 +19,20 @@
 }
 
 - (void)signout {
+    [SVProgressHUD show];
     [NSUserDefaults.standardUserDefaults removeObjectForKey:kUserDefaultsUserInfo];
     [NSUserDefaults.standardUserDefaults synchronize];
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier: kLoginVCID];
     id<UIApplicationDelegate> app = UIApplication.sharedApplication.delegate;
-    app.window.rootViewController = viewController;
+    double delayInSeconds = 2.0;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        [SVProgressHUD dismiss];
+        app.window.rootViewController = viewController;
+    });
+    
+    
 }
 
 @end
