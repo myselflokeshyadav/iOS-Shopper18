@@ -64,6 +64,7 @@
 		E1E255B4227B733300230E4F /* APIHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E255B3227B733300230E4F /* APIHandler.m */; };
 		E1E255B7227B74A400230E4F /* LoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E255B6227B74A400230E4F /* LoginViewModel.m */; };
 		E1F1AAAE22807767008DF53D /* Cart.m in Sources */ = {isa = PBXBuildFile; fileRef = E1F1AAAD22807767008DF53D /* Cart.m */; };
+		E1F2D1CC2281CA3400E14D8E /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1F2D1CB2281CA3400E14D8E /* AccountViewController.m */; };
 		E1F91D0B227BEBE8009D0D54 /* Order.m in Sources */ = {isa = PBXBuildFile; fileRef = E1F91D0A227BEBE8009D0D54 /* Order.m */; };
 /* End PBXBuildFile section */
 
@@ -174,6 +175,8 @@
 		E1EC9F5D227BA6B800FD5CBB /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		E1F1AAAC22807767008DF53D /* Cart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cart.h; sourceTree = "<group>"; };
 		E1F1AAAD22807767008DF53D /* Cart.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Cart.m; sourceTree = "<group>"; };
+		E1F2D1CA2281CA3400E14D8E /* AccountViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AccountViewController.h; sourceTree = "<group>"; };
+		E1F2D1CB2281CA3400E14D8E /* AccountViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AccountViewController.m; sourceTree = "<group>"; };
 		E1F91D09227BEBE8009D0D54 /* Order.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Order.h; sourceTree = "<group>"; };
 		E1F91D0A227BEBE8009D0D54 /* Order.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Order.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -419,6 +422,8 @@
 				E1AB3DD422816BDB00E5CC0F /* ProfileViewController.m */,
 				E1AB3DD622816BE800E5CC0F /* PasswordViewController.h */,
 				E1AB3DD722816BE800E5CC0F /* PasswordViewController.m */,
+				E1F2D1CA2281CA3400E14D8E /* AccountViewController.h */,
+				E1F2D1CB2281CA3400E14D8E /* AccountViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -625,6 +630,7 @@
 				E1A221DF227F6D9E00952EC5 /* ShipmentViewModel.m in Sources */,
 				2F032E4C227FA29600B2842F /* CartViewController.m in Sources */,
 				2F032E3E227E9EFD00B2842F /* TopSellerViewModel.m in Sources */,
+				E1F2D1CC2281CA3400E14D8E /* AccountViewController.m in Sources */,
 				6D0137B4227C9BD200797006 /* CategoriesViewModel.m in Sources */,
 				A3E30393227CEA3E001E48AF /* FeedbackViewController.m in Sources */,
 				E1E255B1227B731A00230E4F /* LoginViewController.m in Sources */,
