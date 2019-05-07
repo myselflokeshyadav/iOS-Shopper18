@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CartViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *totalPrizeLbl;
+@property (weak, nonatomic) IBOutlet UIButton *checkoutBtnOutlet;
 
 @end
 

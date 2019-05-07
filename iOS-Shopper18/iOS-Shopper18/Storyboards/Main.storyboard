@@ -1132,6 +1132,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="J6D-eK-tgt"/>
                     <connections>
+                        <outlet property="checkoutBtnOutlet" destination="rkj-cn-ngO" id="ML4-El-gL5"/>
                         <outlet property="tblView" destination="xiy-t8-A0z" id="IKj-7g-yKe"/>
                         <outlet property="totalPrizeLbl" destination="s6P-d6-r3h" id="NUs-Ca-FKM"/>
                     </connections>

@@ -28,25 +28,20 @@
     // Do any additional setup after loading the view.
     self.totalPaidPrice = 0;
     self.navigationItem.title = @"Shopping Cart";
-    [Cart.shared loadProducts:^(BOOL success) {
-        if (success) {
-            for (int i = 0; i < Cart.shared.items.count; i++){
-                self.totalPaidPrice += Cart.shared.items[i].price;
-            }
-            self.totalPrizeLbl.text = [NSString stringWithFormat: @"Total price: $%.2f",self.totalPaidPrice];
-            [self.tblView reloadData];
-        }else{
-            NSLog(@"Error loading data");
-        }
-    }];
-
 }
 
 - (void)viewWillAppear:(BOOL)animated{
     //pull cart data from firebase.
     [Cart.shared loadProducts:^(BOOL success) {
         if (success) {
-            [self.tblView reloadData];
+            if (Cart.shared.items.count == 0){
+                self.checkoutBtnOutlet.enabled = NO;
+            }
+            for (int i = 0; i < Cart.shared.items.count; i++){
+                self.totalPaidPrice += Cart.shared.items[i].price;
+            }
+            self.totalPrizeLbl.text = [NSString stringWithFormat: @"Total price: $%.2f",self.totalPaidPrice];
+             [self.tblView reloadData];
         }else{
             NSLog(@"Error loading data");
         }
@@ -132,9 +127,6 @@
                  placeholderImage:[UIImage imageNamed:@"No image available"]];
     cell.pPriceLbl.text = [NSString stringWithFormat:@"Item price: $%.2f", pObj.totalPrice];
     cell.pCountLbl.text = [NSString stringWithFormat: @"%ld",(long)pObj.quantity];
-    
-//    self.totalPaidPrice += pObj.totalPrice;
-    NSLog(@"%f", self.totalPaidPrice);
     
     return cell;
 }
