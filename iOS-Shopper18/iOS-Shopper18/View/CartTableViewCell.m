@@ -10,43 +10,21 @@
 
 @implementation CartTableViewCell
 
-
-- (IBAction)countBtnClick:(UIButton *)sender {
-    if (sender.tag == 100) {
-        if (self.productCount > 1) {
-            self.productCount -= 1;
-        }
-    } else {
-        self.productCount += 1;
-    }
-    //[Cart.shared changeProductQuantityAt:sender.tag amount:<#(NSInteger)#>]
+- (IBAction)addButtonTapped:(UIButton *)sender
+{
+    self.plusButtonTapHandler();
     
-//    NSString *originalString = self.pPriceLbl.text;
-//
-//    // Intermediate
-//    NSString *numberString;
-//    NSScanner *scanner = [NSScanner scannerWithString:originalString];
-//    NSCharacterSet *numbers = [NSCharacterSet characterSetWithCharactersInString:@"0123456789"];
-//    // Throw away characters before the first number.
-//    [scanner scanUpToCharactersFromSet:numbers intoString:NULL];
-//
-//    // Collect numbers.
-//    [scanner scanCharactersFromSet:numbers intoString:&numberString];
-//
-//    // Result.
-//    int number = [numberString integerValue];
-//
-//    //self.pPriceLbl.text
-//    self.pCountLbl.text = [NSString stringWithFormat:@"%ld", self.productCount];
-//    self.pPriceLbl.text = [NSString stringWithFormat:@"Unit price: $ %.2ld", (self.productCount * number)];
+}
+
+- (IBAction)minusButtonTapped:(UIButton *)sender
+{
+    self.minusButtonTapHandler();
 }
 
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
-    //self.productCount = 1;
-    //self.pCountLbl.text = [NSString stringWithFormat:@"%ld", Product.];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

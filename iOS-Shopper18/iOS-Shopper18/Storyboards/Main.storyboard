@@ -962,7 +962,7 @@
         <!--Cart View Controller-->
         <scene sceneID="kkV-qV-6f3">
             <objects>
-                <viewController storyboardIdentifier="CartViewController" id="LoZ-Vy-a6r" customClass="CartViewController" sceneMemberID="viewController">
+                <viewController id="LoZ-Vy-a6r" customClass="CartViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oK4-sM-bFy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1029,7 +1029,7 @@
                                                         <color key="titleColor" red="0.086453045689999994" green="0.086453045689999994" blue="0.086453045689999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="countBtnClick:" destination="doo-KK-6kk" eventType="touchUpInside" id="AwS-TR-DTl"/>
+                                                        <action selector="addButtonTapped:" destination="doo-KK-6kk" eventType="touchUpInside" id="ECR-9C-F2t"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kfh-MT-LU2">
@@ -1043,7 +1043,7 @@
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="countBtnClick:" destination="doo-KK-6kk" eventType="touchUpInside" id="scZ-4P-Ql4"/>
+                                                        <action selector="minusButtonTapped:" destination="doo-KK-6kk" eventType="touchUpInside" id="GdP-E1-nf0"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -1085,10 +1085,10 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TXc-VX-JlL">
                                 <rect key="frame" x="0.0" y="779" width="414" height="83"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Total price : $100 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s6P-d6-r3h">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s6P-d6-r3h">
                                         <rect key="frame" x="10" y="12" width="277" height="59"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -1143,7 +1143,7 @@
         <!--Navigation Controller-->
         <scene sceneID="rM5-C2-BZV">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LL6-C2-ZPL" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="CartViewController" automaticallyAdjustsScrollViewInsets="NO" id="LL6-C2-ZPL" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dN0-TK-KC6">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>

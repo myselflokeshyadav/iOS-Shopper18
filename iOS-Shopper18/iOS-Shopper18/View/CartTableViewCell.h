@@ -18,7 +18,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *pDescLbl;
 @property (weak, nonatomic) IBOutlet UILabel *pPriceLbl;
 @property (weak, nonatomic) IBOutlet UILabel *pCountLbl;
-@property (nonatomic, assign) int productCount;
 
 @property (nonatomic, copy) void(^plusButtonTapHandler)(void);
 @property (nonatomic, copy) void(^minusButtonTapHandler)(void);

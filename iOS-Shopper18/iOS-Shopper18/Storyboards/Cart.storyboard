@@ -25,7 +25,7 @@
                                     <constraint firstAttribute="height" constant="691" id="I0s-og-fYY"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="198" id="Q8g-St-uEC" customClass="CartTableViewCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="198" id="Q8g-St-uEC" customClass="CartTableViewCell">
                                         <rect key="frame" x="0.0" y="28" width="414" height="198"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Q8g-St-uEC" id="1nz-hA-hl8">
@@ -79,9 +79,6 @@
                                                     <state key="normal" title="+">
                                                         <color key="titleColor" red="0.086453045689999994" green="0.086453045689999994" blue="0.086453045689999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
-                                                    <connections>
-                                                        <action selector="countBtnClick:" destination="Q8g-St-uEC" eventType="touchUpInside" id="M5h-M5-BHT"/>
-                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZwF-tZ-RUo">
                                                     <rect key="frame" x="222" y="150" width="30" height="45"/>
@@ -93,9 +90,6 @@
                                                     <state key="normal" title="-">
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
-                                                    <connections>
-                                                        <action selector="countBtnClick:" destination="Q8g-St-uEC" eventType="touchUpInside" id="7tK-KI-BoD"/>
-                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>

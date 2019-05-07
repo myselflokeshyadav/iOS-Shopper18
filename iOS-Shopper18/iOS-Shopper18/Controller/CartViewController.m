@@ -17,7 +17,7 @@
 @property (nonatomic, strong) BTPayPalDriver *payPalDriver;
 @property (nonatomic, strong) NSMutableArray *dataArray;
 @property (weak, nonatomic) IBOutlet UITableView *tblView;
-
+@property (nonatomic, assign) float totalPaidPrice;
 
 @end
 
@@ -26,56 +26,31 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.totalPaidPrice = 0;
     self.navigationItem.title = @"Shopping Cart";
-    self.pCount = 1;
     [Cart.shared loadProducts:^(BOOL success) {
         if (success) {
-//            [self.dataArray addObjectsFromArray:Cart.shared.items];
-            self.dataArray = [Cart.shared.items mutableCopy];
-            NSLog(@"%@",self.dataArray);
+            for (int i = 0; i < Cart.shared.items.count; i++){
+                self.totalPaidPrice += Cart.shared.items[i].price;
+            }
+            self.totalPrizeLbl.text = [NSString stringWithFormat: @"Total price: $%.2f",self.totalPaidPrice];
             [self.tblView reloadData];
         }else{
             NSLog(@"Error loading data");
         }
     }];
-    
-    
-//    NSDictionary *testInfo = @{ @"id": @"2",
-//                                @"pname": @"test",
-//                                @"quantity": @10,
-//                                @"prize": @1.4,
-//                                @"discription": @"asdfasdfasdf",
-//                                @"image": @"testURL.com"
-//                                
-//                                };
-//    
-//    Product *product = [Product initWithInfo:testInfo];
-//    [FirebaseHandler.shared addProduct:product completion:^(NSError * _Nullable error) {
-//        
-//    }];
-    
-    //    [FirebaseHandler.shared cartForUser:kTestUserID completion:^(NSMutableArray * _Nullable result) {
-    //        for( id x in result){
-    //            NSLog(@"%@", x);
-    //        }
-    //    }];
-    
-    //    [FirebaseHandler.shared removeProductFromFirebase:product.pid completion:^(NSError * _Nullable error) {
-    //
-    //    }];
+
 }
 
 - (void)viewWillAppear:(BOOL)animated{
-    //todo
     //pull cart data from firebase.
     [Cart.shared loadProducts:^(BOOL success) {
         if (success) {
-            [self.dataArray addObjectsFromArray:Cart.shared.items];
+            [self.tblView reloadData];
         }else{
             NSLog(@"Error loading data");
         }
     }];
-    [self.tblView reloadData];
 }
 
 
@@ -98,7 +73,7 @@
             // result.paymentMethod
             // result.paymentIcon
             // result.paymentDescription
-            [self postNonceToServer:@"11"];
+            [self postNonceToServer:[NSString stringWithFormat:@"%.2f",self.totalPaidPrice]];
             
             [self dismissViewControllerAnimated:YES completion:nil];
             UIAlertController *alertVC1 = [UIAlertController alertControllerWithTitle:@"CheckOut Status" message:@"Payment success!" preferredStyle:UIAlertControllerStyleAlert];
@@ -131,22 +106,41 @@
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     CartTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    Product *pObj = [self.dataArray objectAtIndex:indexPath.row];
-    //self.totalPrizeLbl.text = cell.pPriceLbl.text;
-
+    Product *pObj = [Cart.shared.items objectAtIndex:indexPath.row];
+    __weak CartTableViewCell *weakcell = cell;
+    
+    cell.plusButtonTapHandler = ^{
+        
+        pObj.quantity += 1;
+        weakcell.pCountLbl.text = [NSString stringWithFormat: @"%ld",(long)pObj.quantity];
+        weakcell.pPriceLbl.text = [NSString stringWithFormat:@"Item price: $%.2f", pObj.totalPrice];
+        self.totalPaidPrice += pObj.price;
+        self.totalPrizeLbl.text = [NSString stringWithFormat: @"Total price: $%.2f",self.totalPaidPrice];
+    };
+    cell.minusButtonTapHandler = ^{
+        if (pObj.quantity > 1){
+            pObj.quantity -= 1;
+            weakcell.pCountLbl.text = [NSString stringWithFormat: @"%ld",(long)pObj.quantity];
+            weakcell.pPriceLbl.text = [NSString stringWithFormat:@"Item price: $%.2f", pObj.totalPrice];
+            self.totalPaidPrice -= pObj.price;
+            self.totalPrizeLbl.text = [NSString stringWithFormat: @"Total price: $%.2f",self.totalPaidPrice];
+        }
+    };
     cell.pNameLbl.text = pObj.name;
     cell.pDescLbl.text = pObj.desc;
     [cell.pImgView sd_setImageWithURL:[NSURL URLWithString:pObj.imageURL]
                  placeholderImage:[UIImage imageNamed:@"No image available"]];
-    cell.pPriceLbl.text = [NSString stringWithFormat:@"Item price: $%.2f", pObj.price];
-    
+    cell.pPriceLbl.text = [NSString stringWithFormat:@"Item price: $%.2f", pObj.totalPrice];
     cell.pCountLbl.text = [NSString stringWithFormat: @"%ld",(long)pObj.quantity];
-
+    
+//    self.totalPaidPrice += pObj.totalPrice;
+    NSLog(@"%f", self.totalPaidPrice);
+    
     return cell;
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.dataArray ? self.dataArray.count : 0;
+    return Cart.shared.items ? Cart.shared.items.count : 0;
 }
 
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -157,9 +151,10 @@
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         
-        [self.dataArray removeObjectAtIndex:indexPath.row];
+        [Cart.shared.items removeObjectAtIndex:indexPath.row];
         [self.tblView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-        [self.tblView reloadData];
+        [Cart.shared removeProduct:indexPath.row];
+
     }
 }
 
