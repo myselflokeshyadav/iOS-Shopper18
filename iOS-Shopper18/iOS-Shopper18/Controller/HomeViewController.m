@@ -26,6 +26,9 @@
     self.topSeller = TopSeller.new;
     self.category = Category.new;
     [self setControls];
+    self.navigationItem.backBarButtonItem.title = @" ";
+    self.navigationItem.leftBarButtonItem.title = @" ";
+    self.navigationItem.rightBarButtonItem.title = @" ";
 }
 
 -(void)setControls{

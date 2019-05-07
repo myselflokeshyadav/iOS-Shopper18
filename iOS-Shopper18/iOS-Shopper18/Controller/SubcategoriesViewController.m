@@ -21,7 +21,10 @@
     self.subcategories = NSMutableArray.new;
     self.subcategoryModel = SubcategoriesViewModel.new;
     [self getProductSubCategories:self.category.cid];
-    self.navigationItem.title = @"Product Subcategories";
+    self.navigationItem.title = @"Subcategories";
+    self.navigationItem.backBarButtonItem.title = @" ";
+    self.navigationItem.leftBarButtonItem.title = @" ";
+    self.navigationItem.rightBarButtonItem.title = @" ";
 }
 
 //Mark:  Handle failing links
@@ -60,5 +63,20 @@
     vc.category = self.category;
     [self.navigationController pushViewController:vc animated:YES];
 }
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    CGFloat size = collectionView.bounds.size.width / 2;
+    
+    return CGSizeMake(size - 8, size + 25);
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
+    return 0;
+}
+
+-(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
+    return UIEdgeInsetsMake(5, 5, 0, 10);
+}
+
 
 @end

@@ -19,6 +19,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationItem.title = @"Products";
+    self.navigationItem.backBarButtonItem.title = @" ";
     self.productList = NSMutableArray.new;
     self.productVModel = ProductsViewModel.new;
     [self getProducts:self.category.cid scid:self.subcategory.scid];
@@ -55,17 +57,27 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    
-   // UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
     ProductDetailViewController *detailVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ProductDetailViewController"];
     Product *product = self.productList[indexPath.item];
-//    ProductDetailViewModel * productVM = [[ProductDetailViewModel alloc] initWithProduct:product];
     ProductDetailViewModel * productVM = ProductDetailViewModel.new;
     productVM = [productVM initWithProduct:product];
     [detailVC setDetailViewModel:productVM];
     [self.navigationController pushViewController:detailVC animated:true];
 }
 
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    CGFloat size = collectionView.bounds.size.width / 2;
+    
+    return CGSizeMake(size - 8, size + 25);
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
+    return 0;
+}
+
+-(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
+    return UIEdgeInsetsMake(5, 5, 0, 10);
+}
 
 
 

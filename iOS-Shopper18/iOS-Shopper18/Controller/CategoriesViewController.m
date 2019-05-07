@@ -21,11 +21,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //    self.info = NSDictionary.new;
     self.categories = NSMutableArray.new;
     self.categoryModel = CategoriesViewModel.new;
     [self getProductCategories];
-    self.navigationItem.title = @"Product Categories";
+    self.navigationItem.title = @"Categories";
+    self.navigationItem.backBarButtonItem.title = @" ";
+    self.navigationItem.leftBarButtonItem.title = @" ";
+    self.navigationItem.rightBarButtonItem.title = @" ";
 }
 
 -(void) getProductCategories{
