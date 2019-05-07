@@ -29,6 +29,22 @@
     // Do any additional setup after loading the view.
     self.totalPaidPrice = 0;
     self.navigationItem.title = @"Shopping Cart";
+    [Cart.shared loadProducts:^(BOOL success) {
+        if (success) {
+            if (Cart.shared.items.count == 0){
+                self.checkoutBtnOutlet.enabled = NO;
+            }else{
+                [self.noProductInfoLbl setHidden:YES];
+                for (int i = 0; i < Cart.shared.items.count; i++){
+                    self.totalPaidPrice += Cart.shared.items[i].price;
+                }
+                self.totalPrizeLbl.text = [NSString stringWithFormat: @"Total price: $%.2f",self.totalPaidPrice];
+                [self.tblView reloadData];
+            }
+        }else{
+            NSLog(@"Error loading data");
+        }
+    }];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -39,10 +55,6 @@
                 self.checkoutBtnOutlet.enabled = NO;
             }else{
             [self.noProductInfoLbl setHidden:YES];
-            for (int i = 0; i < Cart.shared.items.count; i++){
-                self.totalPaidPrice += Cart.shared.items[i].price;
-            }
-            self.totalPrizeLbl.text = [NSString stringWithFormat: @"Total price: $%.2f",self.totalPaidPrice];
              [self.tblView reloadData];
             }
         }else{
@@ -106,7 +118,7 @@
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     Product *pObj = [Cart.shared.items objectAtIndex:indexPath.row];
     //__weak CartTableViewCell *weakcell = cell;
-    
+    NSLog(@"count: %d", Cart.shared.items.count);
     cell.plusButtonTapHandler = ^{
         
         pObj.quantity += 1;
@@ -145,11 +157,11 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        
+        NSLog(@"%@",Cart.shared.items[0].name);
         [Cart.shared.items removeObjectAtIndex:indexPath.row];
         [self.tblView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        NSLog(@"%ld",(long)indexPath.row);
         [Cart.shared removeProduct:indexPath.row];
-
     }
 }
 

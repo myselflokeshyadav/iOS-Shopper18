@@ -65,7 +65,7 @@
 }
 
 - (IBAction)resetPassTapped:(id)sender {
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Forgot your password"
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Forgot your password?"
                                                                    message:@"Enter the associated email" preferredStyle:UIAlertControllerStyleAlert];
     
     [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {

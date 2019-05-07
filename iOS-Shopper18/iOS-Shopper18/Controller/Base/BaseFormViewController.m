@@ -82,6 +82,7 @@
     row.required = required;
     [self floatCellForRow:row].floatLabeledTextField.autocorrectionType = UITextAutocorrectionTypeNo;
     [self floatCellForRow:row].floatLabeledTextField.autocapitalizationType = UITextAutocapitalizationTypeNone;
+    [self setKeyboardForRow:row keyboardType:UIKeyboardTypeEmailAddress];
     [row addValidator:[XLFormValidator emailValidator]];
     return row;
 }
@@ -109,6 +110,7 @@
     row.required = required;
     [self floatCellForRow:row].floatLabeledTextField.autocorrectionType = UITextAutocorrectionTypeNo;
     [self floatCellForRow:row].floatLabeledTextField.autocapitalizationType = UITextAutocapitalizationTypeWords;
+    [self setKeyboardForRow:row keyboardType:UIKeyboardTypeWebSearch];
     return row;
 }
 
@@ -131,6 +133,7 @@
     animation.keyPath = @"position.x";
     animation.values =  @[ @0, @20, @-20, @10, @0];
     animation.keyTimes = @[@0, @(1 / 6.0), @(3 / 6.0), @(5 / 6.0), @1];
+//    animation.repeatCount = 2;
     animation.duration = 0.3;
     animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
     animation.additive = YES;
