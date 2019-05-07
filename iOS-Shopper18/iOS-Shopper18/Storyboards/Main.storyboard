@@ -1314,7 +1314,7 @@
         <!--Order Form View Controller-->
         <scene sceneID="JIU-4e-BJC">
             <objects>
-                <viewController id="fb5-fN-phD" customClass="OrderFormViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OrderFormViewController" id="fb5-fN-phD" customClass="OrderFormViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VO9-zz-Ngg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1341,6 +1341,9 @@
                                         <real key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="confirmTapped" destination="fb5-fN-phD" eventType="touchUpInside" id="yv8-lC-yYz"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
