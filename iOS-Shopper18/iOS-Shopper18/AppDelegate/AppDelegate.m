@@ -21,6 +21,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     UITabBar.appearance.tintColor = UIColor.whiteColor;
     UITabBar.appearance.barTintColor = kColorPrimeGreen;
+    UITabBar.appearance.unselectedItemTintColor = kColorPrimeOrange;
     UINavigationBar.appearance.barTintColor = kColorPrimeGreen;
     UINavigationBar.appearance.tintColor = UIColor.whiteColor;
     [[UINavigationBar appearance] setTitleTextAttributes: @{NSForegroundColorAttributeName: [UIColor whiteColor]}];
