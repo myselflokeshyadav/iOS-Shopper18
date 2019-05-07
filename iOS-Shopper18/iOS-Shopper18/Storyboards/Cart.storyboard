@@ -139,15 +139,20 @@
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iX2-UN-mRm">
                                         <rect key="frame" x="295" y="24" width="111" height="45"/>
-                                        <color key="backgroundColor" red="0.45009386540000001" green="0.98132258650000004" blue="0.4743030667" alpha="0.55562392979452058" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.30980392156862746" green="0.68627450980392157" blue="0.38431372549019605" alpha="0.55562392979452058" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="eau-Bl-VAN"/>
                                             <constraint firstAttribute="width" constant="111" id="lGR-jl-Jxk"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                         <state key="normal" title="CheckOut">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="checkoutBtnClick:" destination="6KC-wk-BUI" eventType="touchUpInside" id="QOq-w7-hjc"/>
                                         </connections>
