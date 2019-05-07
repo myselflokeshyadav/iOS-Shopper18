@@ -318,10 +318,10 @@
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="10"/>
+                                        <real key="value" value="0.0"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.6087309528" green="1" blue="0.61691611619999998" alpha="0.73739833050000003" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="value" red="0.35686274509803922" green="0.72549019607843135" blue="0.45490196078431372" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="displayP3"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
@@ -846,29 +846,25 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Gi-nh-xuX">
-                                <rect key="frame" x="113" y="673" width="188" height="75"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Enter">
-                                            <attributes>
-                                                <color key="NSColor" red="0.35686274509803922" green="0.72549019607843135" blue="0.45490196078431372" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <font key="NSFont" size="46" name="MarkerFelt-Thin"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Gi-nh-xuX">
+                                <rect key="frame" x="80" y="693" width="254" height="55"/>
+                                <color key="backgroundColor" red="0.35686274509999999" green="0.72549019609999998" blue="0.4549019608" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="AHD-mE-jso"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Enter">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.2716325094" green="0.929132297" blue="0.38564158500000001" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <real key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="10"/>
+                                        <real key="value" value="2.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.35686274509999999" green="0.72549019609999998" blue="0.4549019608" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
@@ -878,9 +874,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="DuK-Qx-oRB" firstAttribute="bottom" secondItem="2Gi-nh-xuX" secondAttribute="bottom" constant="65" id="0Z9-l2-2lR"/>
                             <constraint firstItem="gBJ-vK-FHG" firstAttribute="leading" secondItem="DuK-Qx-oRB" secondAttribute="leading" constant="20" id="C0K-W2-rHB"/>
+                            <constraint firstItem="2Gi-nh-xuX" firstAttribute="leading" secondItem="DuK-Qx-oRB" secondAttribute="leading" constant="80" id="QFz-tx-LdG"/>
                             <constraint firstItem="DuK-Qx-oRB" firstAttribute="trailing" secondItem="gBJ-vK-FHG" secondAttribute="trailing" constant="20" id="Qpk-ej-jR7"/>
                             <constraint firstItem="gBJ-vK-FHG" firstAttribute="top" secondItem="DuK-Qx-oRB" secondAttribute="top" constant="20" id="gZn-t7-LHV"/>
+                            <constraint firstItem="DuK-Qx-oRB" firstAttribute="trailing" secondItem="2Gi-nh-xuX" secondAttribute="trailing" constant="80" id="s4D-O1-2qG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DuK-Qx-oRB"/>
                     </view>
@@ -1410,17 +1409,23 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mtz-Dm-quZ">
                                 <rect key="frame" x="40" y="423" width="334" height="55"/>
-                                <color key="backgroundColor" red="0.35686274509803922" green="0.72549019607843135" blue="0.45490196078431372" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="yiZ-ov-uwm"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Change Password">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" red="0.35686274509999999" green="0.72549019609999998" blue="0.4549019608" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.35686274509999999" green="0.72549019609999998" blue="0.4549019608" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
