@@ -21,6 +21,7 @@
     self.subcategories = NSMutableArray.new;
     self.subcategoryModel = SubcategoriesViewModel.new;
     [self getProductSubCategories:self.category.cid];
+    self.navigationItem.title = @"Product Subcategories";
 }
 
 //Mark:  Handle failing links

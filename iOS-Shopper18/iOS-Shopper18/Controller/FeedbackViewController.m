@@ -22,6 +22,7 @@
     _feedbackController = [[SMFeedbackViewController alloc] initWithSurvey:@"2T37ZS7"];
     _feedbackController.delegate = self;
     [_feedbackController presentFromViewController:self animated:true completion:nil];
+    self.navigationItem.title = @"Feedback";
     // Do any additional setup after loading the view.
 }
 - (void)respondentDidEndSurvey:(SMRespondent *)respondent error:(NSError *)error{

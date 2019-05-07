@@ -24,6 +24,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (NSDictionary *)encodeJSON;
 
+- (void)update:(NSDictionary *)info;
+
 - (NSString *)name;
 
 @end

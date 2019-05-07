@@ -1,29 +1,29 @@
 //
-//  RegisterViewController.m
+//  ProfileViewController.m
 //  iOS-Shopper18
 //
-//  Created by Alvin Ling on 5/3/19.
+//  Created by Alvin Ling on 5/7/19.
 //  Copyright © 2019 iOSPlayground. All rights reserved.
 //
 
-#import "RegisterViewController.h"
+#import "ProfileViewController.h"
+#import "ProfileViewModel.h"
 #import "FloatLabeledTextFieldCell.h"
 #import <JVFloatLabeledTextField/JVFloatLabeledTextField.h>
-#import "RegisterViewModel.h"
 #import <TWMessageBarManager.h>
 
-@interface RegisterViewController ()
+@interface ProfileViewController ()
 
-@property (strong, nonatomic) RegisterViewModel *vm;
+@property (strong, nonatomic) ProfileViewModel *vm;
 
 @end
 
-@implementation RegisterViewController
+@implementation ProfileViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.vm = RegisterViewModel.new;
-    self.navigationItem.title = @"New User";
+    self.vm = ProfileViewModel.new;
+    self.navigationItem.title = @"Profile";
 }
 
 - (void)initializeForm
@@ -35,37 +35,31 @@
     // First name
     section = [XLFormSectionDescriptor formSection];
     [form addFormSection:section];
-    row = [self fnameRowRequired:YES];
+    row = [self fnameRowRequired:NO];
     [section addFormRow:row];
     
     // Last name
     section = [XLFormSectionDescriptor formSection];
     [form addFormSection:section];
-    row = [self lnameRowRequired:YES];
+    row = [self lnameRowRequired:NO];
     [section addFormRow:row];
     
     // Address
     section = [XLFormSectionDescriptor formSection];
     [form addFormSection:section];
-    row = [self addressRowRequired:YES];
+    row = [self addressRowRequired:NO];
     [section addFormRow:row];
     
     // Mobile
     section = [XLFormSectionDescriptor formSection];
     [form addFormSection:section];
-    row = [self mobileRowRequired:YES];
+    row = [self mobileRowRequired:NO];
     [section addFormRow:row];
     
     // Email
     section = [XLFormSectionDescriptor formSection];
     [form addFormSection:section];
-    row = [self emailRowRequired:YES];
-    [section addFormRow:row];
-    
-    // Password
-    section = [XLFormSectionDescriptor formSection];
-    [form addFormSection:section];
-    row = [self passwordRowRequired:YES];
+    row = [self emailRowRequired:NO];
     [section addFormRow:row];
     
     self.lastField = [self floatCellForRow:row].floatLabeledTextField;
@@ -76,14 +70,13 @@
     [[self.tableView superview] endEditing:YES];
     NSArray<NSString *> *errorMsgs = [self validateForm];
     if (!errorMsgs) {
-        NSLog(@"%@", [self formValues]);
-        [self.vm register:[self formValues] completion:^(BOOL success, NSString * _Nullable msg) {
+        [self.vm updateProfile:[self formValues] completion:^(id _Nullable result, NSError * _Nullable error) {
             dispatch_async(dispatch_get_main_queue(), ^{
-                if (success) {
-                    id vc = [self.storyboard instantiateViewControllerWithIdentifier:@"HomeTab"];
-                    [self.navigationController presentViewController:vc animated:YES completion:nil];
+                if (result) {
+                    [TWMessageBarManager.sharedInstance showMessageWithTitle:@"Success" description:@"Profile Updated" type:TWMessageBarMessageTypeSuccess duration:2];
                 } else {
-                    [TWMessageBarManager.sharedInstance showMessageWithTitle:@"Error" description:msg type:TWMessageBarMessageTypeError duration:2];
+                    [TWMessageBarManager.sharedInstance showMessageWithTitle:@"Error" description:@"Mobile number not found"
+                                                                        type:TWMessageBarMessageTypeError duration:2];
                 }
             });
         }];
@@ -96,5 +89,5 @@
         [self doneTapped:nil];
     return shouldReturn;
 }
-
 @end
+

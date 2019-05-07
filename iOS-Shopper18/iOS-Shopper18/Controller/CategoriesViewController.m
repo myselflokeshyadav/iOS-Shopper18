@@ -25,6 +25,7 @@
     self.categories = NSMutableArray.new;
     self.categoryModel = CategoriesViewModel.new;
     [self getProductCategories];
+    self.navigationItem.title = @"Product Categories";
 }
 
 - (IBAction)featureCategorySegAction:(UISegmentedControl *)sender {

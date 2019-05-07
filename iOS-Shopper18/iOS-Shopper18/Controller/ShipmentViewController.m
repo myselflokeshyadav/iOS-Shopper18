@@ -22,6 +22,7 @@
     [super viewDidLoad];
     self.vm = ShipmentViewModel.new;
     self.orderID = @"2147484660";
+    self.navigationItem.title = @"Shipment Tracking";
     // Do any additional setup after loading the view.
 }
 

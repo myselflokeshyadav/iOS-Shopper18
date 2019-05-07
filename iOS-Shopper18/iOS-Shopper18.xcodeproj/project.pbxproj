@@ -42,6 +42,10 @@
 		E1A221DC227F6D5400952EC5 /* ShipmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A221DB227F6D5400952EC5 /* ShipmentViewController.m */; };
 		E1A221DF227F6D9E00952EC5 /* ShipmentViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A221DE227F6D9E00952EC5 /* ShipmentViewModel.m */; };
 		E1A221E2227F6DF100952EC5 /* ShipmentTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A221E1227F6DF100952EC5 /* ShipmentTrack.m */; };
+		E1AB3DD522816BDB00E5CC0F /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1AB3DD422816BDB00E5CC0F /* ProfileViewController.m */; };
+		E1AB3DD822816BE800E5CC0F /* PasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1AB3DD722816BE800E5CC0F /* PasswordViewController.m */; };
+		E1AB3DDB22816C5E00E5CC0F /* UIViewController+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = E1AB3DDA22816C5E00E5CC0F /* UIViewController+Helpers.m */; };
+		E1AB3DDE2281706200E5CC0F /* ProfileViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E1AB3DDD2281706200E5CC0F /* ProfileViewModel.m */; };
 		E1AF4A32227E411D0087D198 /* Category.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1AF4A31227E411D0087D198 /* Category.storyboard */; };
 		E1AF4A35227E47B40087D198 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = E1AF4A34227E47B40087D198 /* User.m */; };
 		E1BF3EC0227FEEAB00B26661 /* FirebaseHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E1BF3EBF227FEEAB00B26661 /* FirebaseHandler.m */; };
@@ -128,6 +132,14 @@
 		E1A221DE227F6D9E00952EC5 /* ShipmentViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShipmentViewModel.m; sourceTree = "<group>"; };
 		E1A221E0227F6DF100952EC5 /* ShipmentTrack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShipmentTrack.h; sourceTree = "<group>"; };
 		E1A221E1227F6DF100952EC5 /* ShipmentTrack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShipmentTrack.m; sourceTree = "<group>"; };
+		E1AB3DD322816BDB00E5CC0F /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		E1AB3DD422816BDB00E5CC0F /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		E1AB3DD622816BE800E5CC0F /* PasswordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PasswordViewController.h; sourceTree = "<group>"; };
+		E1AB3DD722816BE800E5CC0F /* PasswordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PasswordViewController.m; sourceTree = "<group>"; };
+		E1AB3DD922816C5E00E5CC0F /* UIViewController+Helpers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Helpers.h"; sourceTree = "<group>"; };
+		E1AB3DDA22816C5E00E5CC0F /* UIViewController+Helpers.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Helpers.m"; sourceTree = "<group>"; };
+		E1AB3DDC2281706200E5CC0F /* ProfileViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewModel.h; sourceTree = "<group>"; };
+		E1AB3DDD2281706200E5CC0F /* ProfileViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewModel.m; sourceTree = "<group>"; };
 		E1AF4A31227E411D0087D198 /* Category.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Category.storyboard; sourceTree = "<group>"; };
 		E1AF4A33227E47B40087D198 /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		E1AF4A34227E47B40087D198 /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
@@ -231,6 +243,8 @@
 			children = (
 				E1C45379227D4875001CD5E6 /* UIView+InterfaceBuilder.h */,
 				E1C4537A227D4875001CD5E6 /* UIView+InterfaceBuilder.m */,
+				E1AB3DD922816C5E00E5CC0F /* UIViewController+Helpers.h */,
+				E1AB3DDA22816C5E00E5CC0F /* UIViewController+Helpers.m */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -367,6 +381,8 @@
 				E1A221DE227F6D9E00952EC5 /* ShipmentViewModel.m */,
 				2F032E4D227FA2E500B2842F /* CartViewModel.h */,
 				2F032E4E227FA2E500B2842F /* CartViewModel.m */,
+				E1AB3DDC2281706200E5CC0F /* ProfileViewModel.h */,
+				E1AB3DDD2281706200E5CC0F /* ProfileViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -399,6 +415,10 @@
 				E1A221DB227F6D5400952EC5 /* ShipmentViewController.m */,
 				2F032E4A227FA29600B2842F /* CartViewController.h */,
 				2F032E4B227FA29600B2842F /* CartViewController.m */,
+				E1AB3DD322816BDB00E5CC0F /* ProfileViewController.h */,
+				E1AB3DD422816BDB00E5CC0F /* ProfileViewController.m */,
+				E1AB3DD622816BE800E5CC0F /* PasswordViewController.h */,
+				E1AB3DD722816BE800E5CC0F /* PasswordViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -583,9 +603,11 @@
 				E1A221D9227F653600952EC5 /* ProductDetailViewModel.m in Sources */,
 				E1C45376227D3AA5001CD5E6 /* BaseFormViewController.m in Sources */,
 				E1F91D0B227BEBE8009D0D54 /* Order.m in Sources */,
+				E1AB3DD522816BDB00E5CC0F /* ProfileViewController.m in Sources */,
 				2F032E54227FA3A300B2842F /* CartTableViewCell.m in Sources */,
 				6D0C41F4227E56EF005AE167 /* HomeViewController.m in Sources */,
 				6DBBB1AB227F32AD00979E87 /* ProductsViewModel.m in Sources */,
+				E1AB3DDE2281706200E5CC0F /* ProfileViewModel.m in Sources */,
 				E1A221DC227F6D5400952EC5 /* ShipmentViewController.m in Sources */,
 				E1E255A0227B61F000230E4F /* main.m in Sources */,
 				E1432AB7227E7B2000365467 /* OrderFormViewModel.m in Sources */,
@@ -614,9 +636,11 @@
 				6D0C41FD227E598D005AE167 /* SubcategoriesViewModel.m in Sources */,
 				6D0137AE227C9B6900797006 /* CategoriesViewController.m in Sources */,
 				E1AF4A35227E47B40087D198 /* User.m in Sources */,
+				E1AB3DD822816BE800E5CC0F /* PasswordViewController.m in Sources */,
 				E1A221E2227F6DF100952EC5 /* ShipmentTrack.m in Sources */,
 				E1C45371227CC1BF001CD5E6 /* FloatLabeledTextFieldCell.m in Sources */,
 				2F032E4F227FA2E500B2842F /* CartViewModel.m in Sources */,
+				E1AB3DDB22816C5E00E5CC0F /* UIViewController+Helpers.m in Sources */,
 				E1E255B4227B733300230E4F /* APIHandler.m in Sources */,
 				E1C4536D227CB586001CD5E6 /* RegisterViewModel.m in Sources */,
 				2F032E3B227E9EE900B2842F /* TopSellerViewController.m in Sources */,

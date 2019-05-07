@@ -41,6 +41,8 @@ typedef enum : NSUInteger {
 
 - (XLFormRowDescriptor *)addressRowRequired:(BOOL)required;
 
+- (UITableViewCell *)tableCellForRow:(XLFormRowDescriptor *)row;
+
 - (void)flashCell:(UITableViewCell *)cell color:(UIColor *)color;
 
 - (void)shakeCell:(UITableViewCell *)cell;

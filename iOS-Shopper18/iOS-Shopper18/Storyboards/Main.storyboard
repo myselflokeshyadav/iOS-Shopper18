@@ -1396,7 +1396,7 @@
                                     <constraint firstAttribute="height" constant="55" id="ctc-Nf-1bL"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Order History">
+                                <state key="normal" title="Sign Out">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -1405,7 +1405,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="vAe-C3-RXw" kind="show" id="4W7-Mg-HzH"/>
+                                    <action selector="signout" destination="ZqO-yX-yyB" eventType="touchUpInside" id="3Dc-mK-FxF"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mtz-Dm-quZ">
@@ -1451,7 +1451,7 @@
         <!--Profile-->
         <scene sceneID="ogZ-Qj-i7c">
             <objects>
-                <viewController title="Profile" id="vyD-GB-mSk" sceneMemberID="viewController">
+                <viewController title="Profile" id="vyD-GB-mSk" customClass="ProfileViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4Xb-ki-Cbo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1478,6 +1478,9 @@
                                         <real key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="doneTapped:" destination="vyD-GB-mSk" eventType="touchUpInside" id="0hC-e0-QqE"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1491,6 +1494,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wFQ-wU-GSd"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="HVw-bF-kAD" id="jrQ-i3-JNM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lru-BG-gXP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1499,7 +1505,7 @@
         <!--Edit Password-->
         <scene sceneID="87R-QJ-5Db">
             <objects>
-                <viewController title="Edit Password" id="E2H-Sm-PeF" sceneMemberID="viewController">
+                <viewController title="Edit Password" id="E2H-Sm-PeF" customClass="PasswordViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jk1-QQ-cen">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1527,6 +1533,9 @@
                                         <real key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="doneTapped:" destination="E2H-Sm-PeF" eventType="touchUpInside" id="KND-KZ-cOh"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1540,6 +1549,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yyg-dN-DiM"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="mmA-rv-rRn" id="WT1-ge-TpF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PIZ-RN-N5w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -23,6 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.vm = LoginViewModel.new;
+    self.navigationItem.title = @"Login";
 }
 
 - (void)initializeForm

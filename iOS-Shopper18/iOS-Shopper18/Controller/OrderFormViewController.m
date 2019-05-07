@@ -30,6 +30,7 @@
     [Cart.shared loadProducts:^(BOOL success) {
         
     }];
+    self.navigationItem.title = @"Order Details";
 }
 
 - (void)initializeForm

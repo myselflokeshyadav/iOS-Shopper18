@@ -27,6 +27,7 @@
 //    NSLog(@"%@",self.viewModel.showProductName);
 //    NSLog(@"%@",self.viewModel.showDescription);
     [self setupUI];
+    self.navigationItem.title = @"Product Details";
 }
 
 //setter

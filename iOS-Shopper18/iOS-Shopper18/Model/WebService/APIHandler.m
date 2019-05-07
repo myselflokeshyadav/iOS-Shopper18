@@ -107,16 +107,29 @@
 - (void)updateProfile:(NSDictionary *)info completion:(void(^)(id _Nullable, NSError * _Nullable))completion {
     
     [self callAPIWithBase:kAPIEcomBase endpoint:kAPIEndPointProfile params:info completion:^(id _Nullable result, NSError * _Nullable error ) {
-        
+        if (![result isKindOfClass:NSString.class]) {
+            completion(nil, error);
+            return;
+        }
+        NSString *msg = result;
+        if ([msg containsString:@"success"]) completion(msg, nil);
+        else completion(nil, error);
     }];
     
 }
 
 
-- (void)resetPassword:(NSDictionary *)info completion:(void(^)(id _Nullable, NSError * _Nullable))completion {
+- (void)changePassword:(NSDictionary *)info completion:(void(^)(id _Nullable, NSError * _Nullable))completion {
     
     [self callAPIWithBase:kAPIEcomBase endpoint:kAPIEndPointPassw params:info completion:^(id _Nullable result, NSError * _Nullable error ) {
-        
+        if (![result isKindOfClass:NSDictionary.class]) {
+            completion(nil, error);
+            return;
+        }
+        result = result[@"msg"];
+        if (result && result[0] && [result[0] isKindOfClass:NSString.class]) {
+            completion(result, nil);
+        } else completion(nil, error);
     }];
     
 }

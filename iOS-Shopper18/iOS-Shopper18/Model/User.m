@@ -33,6 +33,13 @@
              };
 }
 
+- (void)update:(NSDictionary *)info {
+    if (info[@"firstname"]) self.fname = info[@"firstname"];
+    if (info[@"lastname"]) self.lname = info[@"lastname"];
+    if (info[@"firstname"]) self.email = info[@"email"];
+    if (info[@"mobile"]) self.mobile = info[@"mobile"];
+}
+
 - (NSString *)name {
     return [NSString stringWithFormat:@"%@ %@", self.fname, self.lname];
 }
