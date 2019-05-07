@@ -17,7 +17,7 @@
     return vm;
 }
 
-- (void)placeOrder:(NSDictionary *)orderInfo completion:(void (^)(NSArray * _Nullable, NSError * _Nullable))completion {
+- (void)placeOrder:(NSDictionary *)orderInfo completion:(void (^)(BOOL success, NSError * _Nullable))completion {
     [APIHandler.shared placeOrders:orderInfo products:[Cart.shared items] completion:^(NSArray * _Nullable result, NSError * _Nullable error) {
         NSMutableIndexSet *indices = [NSMutableIndexSet new];
         NSMutableArray *succeeded = NSMutableArray.new;
@@ -27,7 +27,12 @@
                 [succeeded addObject:Cart.shared.items[idx]];
             }
         }];
-        completion(nil, nil);
+        if (Cart.shared.items.count == succeeded.count) {
+            [Cart.shared clearCart:completion];
+        }
+        else {
+            [Cart.shared deleteItems:indices completion:completion];
+        }
     }];
 }
 

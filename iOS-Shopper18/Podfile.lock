@@ -141,6 +141,7 @@ PODS:
   - SDWebImage/Core (5.0.2)
   - surveymonkey-ios-sdk (2.0.4)
   - SVProgressHUD (2.2.5)
+  - Toast (4.0.0)
   - TWMessageBarManager (1.8.1)
   - XLForm (4.0.1)
 
@@ -157,6 +158,7 @@ DEPENDENCIES:
   - SDWebImage
   - surveymonkey-ios-sdk
   - SVProgressHUD
+  - Toast (~> 4.0.0)
   - TWMessageBarManager
   - XLForm
 
@@ -181,6 +183,7 @@ SPEC REPOS:
     - SDWebImage
     - surveymonkey-ios-sdk
     - SVProgressHUD
+    - Toast
     - TWMessageBarManager
     - XLForm
 
@@ -204,9 +207,10 @@ SPEC CHECKSUMS:
   SDWebImage: 6764b5fa0f73c203728052955dbefa2bf1f33282
   surveymonkey-ios-sdk: 974f5b54687df43edf63253f6de8da035237e15f
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
   TWMessageBarManager: fd84e7948ba7968a2b5d9454859135761214ec56
   XLForm: b8d47a9a00fb6166981cb40de7169d70d611e9be
 
-PODFILE CHECKSUM: a18339c6d72d63a95ff386cf408dc85b48430a64
+PODFILE CHECKSUM: e9405946a0ac90d64726ce4827d362fe65c438f3
 
 COCOAPODS: 1.6.1

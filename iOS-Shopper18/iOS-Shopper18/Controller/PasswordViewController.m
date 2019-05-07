@@ -11,6 +11,9 @@
 #import "FloatLabeledTextFieldCell.h"
 #import <JVFloatLabeledTextField/JVFloatLabeledTextField.h>
 #import <TWMessageBarManager.h>
+#import "User.h"
+#import "APIHandler.h"
+
 @interface PasswordViewController ()
 
 @property (strong, nonatomic) ProfileViewModel *vm;
@@ -35,6 +38,7 @@
     section = [XLFormSectionDescriptor formSection];
     [form addFormSection:section];
     row = [self emailRowRequired:YES];
+    row.value = APIHandler.shared.currentUser.email;
     [section addFormRow:row];
     
     // Password
