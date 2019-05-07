@@ -23,6 +23,7 @@
     UITabBar.appearance.barTintColor = kColorPrimeGreen;
     UINavigationBar.appearance.barTintColor = kColorPrimeGreen;
     UINavigationBar.appearance.tintColor = UIColor.whiteColor;
+    [[UINavigationBar appearance] setTitleTextAttributes: @{NSForegroundColorAttributeName: [UIColor whiteColor]}];
     
     [BTAppSwitch setReturnURLScheme:@"com.iOSDevs.iOS-Shopper18.payments"];
     [FIRApp configure];
