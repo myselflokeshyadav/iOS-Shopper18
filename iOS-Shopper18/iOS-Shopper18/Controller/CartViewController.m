@@ -29,14 +29,24 @@
     // Do any additional setup after loading the view.
     self.totalPaidPrice = 0;
     self.navigationItem.title = @"Shopping Cart";
+    [self loadProductFromFirebase];
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    //pull cart data from firebase.
+    [self loadProductFromFirebase];
+}
+
+- (void)loadProductFromFirebase {
     [Cart.shared loadProducts:^(BOOL success) {
         if (success) {
+            self.totalPaidPrice = 0;
             if (Cart.shared.items.count == 0){
                 self.checkoutBtnOutlet.enabled = NO;
             }else{
                 [self.noProductInfoLbl setHidden:YES];
                 for (int i = 0; i < Cart.shared.items.count; i++){
-                    self.totalPaidPrice += Cart.shared.items[i].price;
+                    self.totalPaidPrice += Cart.shared.items[i].price * Cart.shared.items[i].quantity;
                 }
                 self.totalPrizeLbl.text = [NSString stringWithFormat: @"Total price: $%.2f",self.totalPaidPrice];
                 [self.tblView reloadData];
@@ -46,23 +56,6 @@
         }
     }];
 }
-
-- (void)viewWillAppear:(BOOL)animated{
-    //pull cart data from firebase.
-    [Cart.shared loadProducts:^(BOOL success) {
-        if (success) {
-            if (Cart.shared.items.count == 0){
-                self.checkoutBtnOutlet.enabled = NO;
-            }else{
-            [self.noProductInfoLbl setHidden:YES];
-             [self.tblView reloadData];
-            }
-        }else{
-            NSLog(@"Error loading data");
-        }
-    }];
-}
-
 
 - (IBAction)checkoutBtnClick:(UIButton *)sender {
     [self showDropIn:kclientToken];
@@ -118,10 +111,10 @@
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     Product *pObj = [Cart.shared.items objectAtIndex:indexPath.row];
     //__weak CartTableViewCell *weakcell = cell;
-    NSLog(@"count: %d", Cart.shared.items.count);
     cell.plusButtonTapHandler = ^{
         
         pObj.quantity += 1;
+        [Cart.shared changeProductQuantityAt:indexPath.row amount:pObj.quantity];
         cell.pCountLbl.text = [NSString stringWithFormat: @"%ld",(long)pObj.quantity];
         cell.pPriceLbl.text = [NSString stringWithFormat:@"Item price: $%.2f", pObj.totalPrice];
         self.totalPaidPrice += pObj.price;
@@ -130,6 +123,7 @@
     cell.minusButtonTapHandler = ^{
         if (pObj.quantity > 1){
             pObj.quantity -= 1;
+            [Cart.shared changeProductQuantityAt:indexPath.row amount:pObj.quantity];
             cell.pCountLbl.text = [NSString stringWithFormat: @"%ld",(long)pObj.quantity];
             cell.pPriceLbl.text = [NSString stringWithFormat:@"Item price: $%.2f", pObj.totalPrice];
             self.totalPaidPrice -= pObj.price;
@@ -157,11 +151,9 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        NSLog(@"%@",Cart.shared.items[0].name);
-        [Cart.shared.items removeObjectAtIndex:indexPath.row];
-        [self.tblView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-        NSLog(@"%ld",(long)indexPath.row);
         [Cart.shared removeProduct:indexPath.row];
+        [self.tblView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        [self loadProductFromFirebase];
     }
 }
 

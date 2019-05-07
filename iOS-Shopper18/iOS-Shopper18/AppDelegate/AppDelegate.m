@@ -28,7 +28,7 @@
     UINavigationBar.appearance.tintColor = UIColor.whiteColor;
     [UINavigationBar.appearance setTitleTextAttributes: @{NSForegroundColorAttributeName: [UIColor whiteColor]}];
     
-    [BTAppSwitch setReturnURLScheme:@"com.iOSDevs.iOS-Shopper18.payments"];
+    [BTAppSwitch setReturnURLScheme:kURLScheme];
     [FIRApp configure];
     
     NSUserDefaults *udefs = NSUserDefaults.standardUserDefaults;
@@ -50,7 +50,7 @@
 - (BOOL)application:(UIApplication *)application
             openURL:(NSURL *)url
             options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
-    if ([url.scheme localizedCaseInsensitiveCompare:@"com.iOSDevs.iOS-Shopper18.payments"] == NSOrderedSame) {
+    if ([url.scheme localizedCaseInsensitiveCompare:kURLScheme] == NSOrderedSame) {
         return [BTAppSwitch handleOpenURL:url options:options];
     }
     return NO;
