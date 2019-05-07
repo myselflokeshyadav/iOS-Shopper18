@@ -79,8 +79,8 @@
         [self.vm register:[self formValues] completion:^(BOOL success, NSString * _Nullable msg) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 if (success) {
-                    // Replace with jump to home page
-                    [TWMessageBarManager.sharedInstance showMessageWithTitle:@"Success" description:@"" type:TWMessageBarMessageTypeSuccess duration:1];
+                    id vc = [self.storyboard instantiateViewControllerWithIdentifier:@"HomeTab"];
+                    [self.navigationController presentViewController:vc animated:YES completion:nil];
                 } else {
                     [TWMessageBarManager.sharedInstance showMessageWithTitle:@"Error" description:msg type:TWMessageBarMessageTypeError duration:2];
                 }

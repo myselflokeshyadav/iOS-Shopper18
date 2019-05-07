@@ -37,7 +37,7 @@
 }
 
 - (BOOL)addProduct:(Product *)product {
-    if (!self.pids[product.pid]) return NO;
+    if (self.pids[product.pid]) return NO;
     [self.items addObject:[product copy]];
     self.pids[product.pid] = @YES;
     [FirebaseHandler.shared addProduct:product completion:^(NSError * _Nullable error) {

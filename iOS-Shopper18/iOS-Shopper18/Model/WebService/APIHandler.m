@@ -83,6 +83,7 @@
             if (user) {
                 self.userID = user.userID;
                 self.apiKey = user.apiKey;
+                self.currentUser = user;
             }
             completion(user, nil);
         }
