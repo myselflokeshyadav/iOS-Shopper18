@@ -72,7 +72,7 @@
     self.form = form;
 }
 
-- (IBAction)confirmTapped:(id)sender {
+- (IBAction)confirmTapped {
     [[self.tableView superview] endEditing:YES];
     NSArray<NSString *> *errorMsgs = [self validateForm];
     if (!errorMsgs) {
@@ -84,7 +84,7 @@
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     BOOL shouldReturn = [super textFieldShouldReturn:textField];
     if (shouldReturn && textField == self.lastField)
-        [self confirmTapped:nil];
+        [self confirmTapped];
     return shouldReturn;
 }
 

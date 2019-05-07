@@ -7,10 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+@class Product;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface APIHandler : NSObject
+
+@property (strong, nonatomic, readonly, nullable) NSString *apiKey;
+@property (strong, nonatomic, readonly, nullable) NSString *userID;
 
 + (instancetype)shared;
 
@@ -26,11 +30,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)getProductCategories:(void(^)(id _Nullable, NSError * _Nullable))completion;
 
-- (void)getProductCategories:(NSDictionary *)info completion:(void(^)(id _Nullable, NSError * _Nullable))completion;
-
 - (void)getProductSubCategories:(NSString *)cid completion:(void(^)(id _Nullable, NSError * _Nullable))completion;
 
+- (void)getProducts:(NSString *)cid scid:(NSString *)scid completion:(void(^)(id _Nullable, NSError * _Nullable))completion;
+
 - (void)placeOrder:(NSDictionary *)info completion:(void(^)(id _Nullable, NSError * _Nullable))completion;
+
+- (void)placeOrders:(NSDictionary *)info products:(NSArray<Product *> *)products
+         completion:(void(^)(NSArray<NSNumber *> *, NSError * _Nullable))completion;
 
 - (void)getOrderHistory:(NSDictionary *)info completion:(void(^)(id _Nullable, NSError * _Nullable))completion;
 

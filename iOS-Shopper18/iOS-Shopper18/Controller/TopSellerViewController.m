@@ -7,8 +7,14 @@
 //
 
 #import "TopSellerViewController.h"
+#import "TopSellerCell.h"
+#import "TopSellerViewModel.h"
+#import "TopSeller.h"
+#import <SDWebImage/SDWebImage.h>
 
 @interface TopSellerViewController ()
+@property (weak, nonatomic) IBOutlet UICollectionView *colView;
+@property (strong,nonatomic) TopSellerViewModel *topsellerVM;
 
 @end
 
@@ -17,16 +23,34 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.topsellerVM = TopSellerViewModel.new;
+    
+    [self.topsellerVM getTopSellers:^(BOOL success, NSString * _Nullable error) {
+        if (success == YES){
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.colView reloadData];
+            });
+        }
+        else{
+            NSLog(@"Can't get data from API Services");
+        }
+    }];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    TopSellerCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"topsellerCell" forIndexPath:indexPath];
+    TopSeller *tsObj = [self.topsellerVM topSellerAt:indexPath.item];
+    
+    cell.sNameLbl.text = [NSString stringWithFormat:@"Name: %@", tsObj.name];
+    cell.sDealLbl.text = [NSString stringWithFormat:@"Deal: %@", tsObj.deal];
+    cell.sRatingLbl.text = [NSString stringWithFormat:@"Rating: %@", tsObj.rating];
+    [cell.logoImgView sd_setImageWithURL:[NSURL URLWithString:tsObj.logo]
+                 placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
+    return cell;
 }
-*/
+
+- (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return self.topsellerVM.numTopSellers;
+}
 
 @end

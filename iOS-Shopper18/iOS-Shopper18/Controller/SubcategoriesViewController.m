@@ -8,6 +8,7 @@
 
 #import "SubcategoriesViewController.h"
 #import "CategoryViewCell.h"
+#import "ProductsViewController.h"
 
 @interface SubcategoriesViewController ()
 
@@ -22,11 +23,10 @@
     [self getProductSubCategories:self.category.cid];
 }
 
+//Mark:  Handle failing links
 - (void)getProductSubCategories:(NSString *)cid{
-    [self.subcategoryModel getProductSubCategories:cid completion:^(id listSubcategories, NSError * error) {
+    [self.subcategoryModel getProductSubCategories:cid completion:^(id _Nullable listSubcategories, NSError * _Nullable error) {
         if(error == nil){
-            
-            
             self.subcategoryModel.subcategories = listSubcategories;
             self.subcategories = self.subcategoryModel.subcategories;
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -48,11 +48,17 @@
 }
 
 - (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    if (!self.subcategoryModel.subcategories) return 0;
     return self.subcategoryModel.subcategories.count;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    
+    Subcategory * subcategory = self.subcategories[indexPath.item];
+    UIStoryboard * sb = [UIStoryboard storyboardWithName:@"Category" bundle:nil];
+    ProductsViewController *vc = [sb instantiateViewControllerWithIdentifier:@"ProductsViewController"];
+    vc.subcategory = subcategory;
+    vc.category = self.category;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,12 @@
 		2F032E3B227E9EE900B2842F /* TopSellerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F032E3A227E9EE900B2842F /* TopSellerViewController.m */; };
 		2F032E3E227E9EFD00B2842F /* TopSellerViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F032E3D227E9EFD00B2842F /* TopSellerViewModel.m */; };
 		2F032E41227E9F3500B2842F /* TopSellerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F032E40227E9F3500B2842F /* TopSellerCell.m */; };
+		2F032E4C227FA29600B2842F /* CartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F032E4B227FA29600B2842F /* CartViewController.m */; };
+		2F032E4F227FA2E500B2842F /* CartViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F032E4E227FA2E500B2842F /* CartViewModel.m */; };
+		2F032E51227FA36500B2842F /* Cart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F032E50227FA36500B2842F /* Cart.storyboard */; };
+		2F032E54227FA3A300B2842F /* CartTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F032E53227FA3A300B2842F /* CartTableViewCell.m */; };
+		2F032E56227FCED800B2842F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2F032E55227FCED800B2842F /* GoogleService-Info.plist */; };
+		40695A25BAA2416401173320 /* libPods-iOS-Shopper18.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 882449B0E6DB3505385877CA /* libPods-iOS-Shopper18.a */; };
 		6D0137AE227C9B6900797006 /* CategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0137AC227C9B6800797006 /* CategoriesViewController.m */; };
 		6D0137B3227C9BD200797006 /* CategoryViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0137B0227C9BD100797006 /* CategoryViewCell.m */; };
 		6D0137B4227C9BD200797006 /* CategoriesViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0137B2227C9BD200797006 /* CategoriesViewModel.m */; };
@@ -19,7 +25,9 @@
 		6D0C41F7227E5836005AE167 /* HomeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0C41F6227E5836005AE167 /* HomeViewModel.m */; };
 		6D0C41FA227E596C005AE167 /* SubcategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0C41F9227E596C005AE167 /* SubcategoriesViewController.m */; };
 		6D0C41FD227E598D005AE167 /* SubcategoriesViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0C41FC227E598D005AE167 /* SubcategoriesViewModel.m */; };
-		747D2DE84227179A0A92F8EF /* libPods-iOS-Shopper18.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CCC2A546E2A49C365C8BF4CC /* libPods-iOS-Shopper18.a */; };
+		6DBBB1A8227F328E00979E87 /* ProductsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DBBB1A7227F328E00979E87 /* ProductsViewController.m */; };
+		6DBBB1AB227F32AD00979E87 /* ProductsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DBBB1AA227F32AD00979E87 /* ProductsViewModel.m */; };
+		A33A855C22808631004F1A54 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A33A855B22808631004F1A54 /* Home.storyboard */; };
 		A3E30393227CEA3E001E48AF /* FeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3E30392227CEA3E001E48AF /* FeedbackViewController.m */; };
 		E1432AAD227E713900365467 /* TopSeller.m in Sources */ = {isa = PBXBuildFile; fileRef = E1432AAC227E713900365467 /* TopSeller.m */; };
 		E1432AAF227E718100365467 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1432AAE227E718100365467 /* Profile.storyboard */; };
@@ -29,8 +37,14 @@
 		E18ADF43227C034C001EC15F /* Category.m in Sources */ = {isa = PBXBuildFile; fileRef = E18ADF42227C034C001EC15F /* Category.m */; };
 		E18ADF46227C0A48001EC15F /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = E18ADF45227C0A48001EC15F /* Product.m */; };
 		E18ADF49227C10EA001EC15F /* APIParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E18ADF48227C10EA001EC15F /* APIParser.m */; };
+		E1A221D6227F64F600952EC5 /* ProductDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A221D5227F64F600952EC5 /* ProductDetailViewController.m */; };
+		E1A221D9227F653600952EC5 /* ProductDetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A221D8227F653600952EC5 /* ProductDetailViewModel.m */; };
+		E1A221DC227F6D5400952EC5 /* ShipmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A221DB227F6D5400952EC5 /* ShipmentViewController.m */; };
+		E1A221DF227F6D9E00952EC5 /* ShipmentViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A221DE227F6D9E00952EC5 /* ShipmentViewModel.m */; };
+		E1A221E2227F6DF100952EC5 /* ShipmentTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A221E1227F6DF100952EC5 /* ShipmentTrack.m */; };
 		E1AF4A32227E411D0087D198 /* Category.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1AF4A31227E411D0087D198 /* Category.storyboard */; };
 		E1AF4A35227E47B40087D198 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = E1AF4A34227E47B40087D198 /* User.m */; };
+		E1BF3EC0227FEEAB00B26661 /* FirebaseHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E1BF3EBF227FEEAB00B26661 /* FirebaseHandler.m */; };
 		E1C45367227CB47A001CD5E6 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1C45366227CB47A001CD5E6 /* Login.storyboard */; };
 		E1C4536A227CB4E4001CD5E6 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1C45369227CB4E3001CD5E6 /* RegisterViewController.m */; };
 		E1C4536D227CB586001CD5E6 /* RegisterViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E1C4536C227CB586001CD5E6 /* RegisterViewModel.m */; };
@@ -45,6 +59,7 @@
 		E1E255B1227B731A00230E4F /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E255B0227B731A00230E4F /* LoginViewController.m */; };
 		E1E255B4227B733300230E4F /* APIHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E255B3227B733300230E4F /* APIHandler.m */; };
 		E1E255B7227B74A400230E4F /* LoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E255B6227B74A400230E4F /* LoginViewModel.m */; };
+		E1F1AAAE22807767008DF53D /* Cart.m in Sources */ = {isa = PBXBuildFile; fileRef = E1F1AAAD22807767008DF53D /* Cart.m */; };
 		E1F91D0B227BEBE8009D0D54 /* Order.m in Sources */ = {isa = PBXBuildFile; fileRef = E1F91D0A227BEBE8009D0D54 /* Order.m */; };
 /* End PBXBuildFile section */
 
@@ -56,7 +71,14 @@
 		2F032E3D227E9EFD00B2842F /* TopSellerViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TopSellerViewModel.m; sourceTree = "<group>"; };
 		2F032E3F227E9F3500B2842F /* TopSellerCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TopSellerCell.h; sourceTree = "<group>"; };
 		2F032E40227E9F3500B2842F /* TopSellerCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TopSellerCell.m; sourceTree = "<group>"; };
-		6CB0C879F38E5A4F953F6960 /* Pods-iOS-Shopper18.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-Shopper18.release.xcconfig"; path = "Target Support Files/Pods-iOS-Shopper18/Pods-iOS-Shopper18.release.xcconfig"; sourceTree = "<group>"; };
+		2F032E4A227FA29600B2842F /* CartViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CartViewController.h; sourceTree = "<group>"; };
+		2F032E4B227FA29600B2842F /* CartViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CartViewController.m; sourceTree = "<group>"; };
+		2F032E4D227FA2E500B2842F /* CartViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CartViewModel.h; sourceTree = "<group>"; };
+		2F032E4E227FA2E500B2842F /* CartViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CartViewModel.m; sourceTree = "<group>"; };
+		2F032E50227FA36500B2842F /* Cart.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Cart.storyboard; sourceTree = "<group>"; };
+		2F032E52227FA3A300B2842F /* CartTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CartTableViewCell.h; sourceTree = "<group>"; };
+		2F032E53227FA3A300B2842F /* CartTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CartTableViewCell.m; sourceTree = "<group>"; };
+		2F032E55227FCED800B2842F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6D0137AC227C9B6800797006 /* CategoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriesViewController.m; sourceTree = "<group>"; };
 		6D0137AD227C9B6800797006 /* CategoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoriesViewController.h; sourceTree = "<group>"; };
 		6D0137AF227C9BD100797006 /* CategoryViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryViewCell.h; sourceTree = "<group>"; };
@@ -72,10 +94,16 @@
 		6D0C41F9227E596C005AE167 /* SubcategoriesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SubcategoriesViewController.m; sourceTree = "<group>"; };
 		6D0C41FB227E598D005AE167 /* SubcategoriesViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SubcategoriesViewModel.h; sourceTree = "<group>"; };
 		6D0C41FC227E598D005AE167 /* SubcategoriesViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SubcategoriesViewModel.m; sourceTree = "<group>"; };
-		9FE291F08751C929314A741E /* Pods-iOS-Shopper18.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-Shopper18.debug.xcconfig"; path = "Target Support Files/Pods-iOS-Shopper18/Pods-iOS-Shopper18.debug.xcconfig"; sourceTree = "<group>"; };
+		6DBBB1A6227F328E00979E87 /* ProductsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductsViewController.h; sourceTree = "<group>"; };
+		6DBBB1A7227F328E00979E87 /* ProductsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProductsViewController.m; sourceTree = "<group>"; };
+		6DBBB1A9227F32AD00979E87 /* ProductsViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductsViewModel.h; sourceTree = "<group>"; };
+		6DBBB1AA227F32AD00979E87 /* ProductsViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProductsViewModel.m; sourceTree = "<group>"; };
+		882449B0E6DB3505385877CA /* libPods-iOS-Shopper18.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOS-Shopper18.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9AC595C7461237891601B117 /* Pods-iOS-Shopper18.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-Shopper18.release.xcconfig"; path = "Target Support Files/Pods-iOS-Shopper18/Pods-iOS-Shopper18.release.xcconfig"; sourceTree = "<group>"; };
+		A33A855B22808631004F1A54 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		A3E30391227CEA3E001E48AF /* FeedbackViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedbackViewController.h; sourceTree = "<group>"; };
 		A3E30392227CEA3E001E48AF /* FeedbackViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedbackViewController.m; sourceTree = "<group>"; };
-		CCC2A546E2A49C365C8BF4CC /* libPods-iOS-Shopper18.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOS-Shopper18.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4CC99934A1FC435D6362B9F /* Pods-iOS-Shopper18.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-Shopper18.debug.xcconfig"; path = "Target Support Files/Pods-iOS-Shopper18/Pods-iOS-Shopper18.debug.xcconfig"; sourceTree = "<group>"; };
 		E1432AAB227E713900365467 /* TopSeller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TopSeller.h; sourceTree = "<group>"; };
 		E1432AAC227E713900365467 /* TopSeller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TopSeller.m; sourceTree = "<group>"; };
 		E1432AAE227E718100365467 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
@@ -90,9 +118,21 @@
 		E18ADF45227C0A48001EC15F /* Product.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
 		E18ADF47227C10EA001EC15F /* APIParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIParser.h; sourceTree = "<group>"; };
 		E18ADF48227C10EA001EC15F /* APIParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIParser.m; sourceTree = "<group>"; };
+		E1A221D4227F64F600952EC5 /* ProductDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductDetailViewController.h; sourceTree = "<group>"; };
+		E1A221D5227F64F600952EC5 /* ProductDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProductDetailViewController.m; sourceTree = "<group>"; };
+		E1A221D7227F653600952EC5 /* ProductDetailViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductDetailViewModel.h; sourceTree = "<group>"; };
+		E1A221D8227F653600952EC5 /* ProductDetailViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProductDetailViewModel.m; sourceTree = "<group>"; };
+		E1A221DA227F6D5400952EC5 /* ShipmentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShipmentViewController.h; sourceTree = "<group>"; };
+		E1A221DB227F6D5400952EC5 /* ShipmentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShipmentViewController.m; sourceTree = "<group>"; };
+		E1A221DD227F6D9E00952EC5 /* ShipmentViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShipmentViewModel.h; sourceTree = "<group>"; };
+		E1A221DE227F6D9E00952EC5 /* ShipmentViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShipmentViewModel.m; sourceTree = "<group>"; };
+		E1A221E0227F6DF100952EC5 /* ShipmentTrack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShipmentTrack.h; sourceTree = "<group>"; };
+		E1A221E1227F6DF100952EC5 /* ShipmentTrack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShipmentTrack.m; sourceTree = "<group>"; };
 		E1AF4A31227E411D0087D198 /* Category.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Category.storyboard; sourceTree = "<group>"; };
 		E1AF4A33227E47B40087D198 /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		E1AF4A34227E47B40087D198 /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		E1BF3EBE227FEEAB00B26661 /* FirebaseHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirebaseHandler.h; sourceTree = "<group>"; };
+		E1BF3EBF227FEEAB00B26661 /* FirebaseHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirebaseHandler.m; sourceTree = "<group>"; };
 		E1C45366227CB47A001CD5E6 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		E1C45368227CB4E3001CD5E6 /* RegisterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		E1C45369227CB4E3001CD5E6 /* RegisterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
@@ -120,6 +160,8 @@
 		E1E255B6227B74A400230E4F /* LoginViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewModel.m; sourceTree = "<group>"; };
 		E1EC9F5C227BA6AC00FD5CBB /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		E1EC9F5D227BA6B800FD5CBB /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		E1F1AAAC22807767008DF53D /* Cart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cart.h; sourceTree = "<group>"; };
+		E1F1AAAD22807767008DF53D /* Cart.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Cart.m; sourceTree = "<group>"; };
 		E1F91D09227BEBE8009D0D54 /* Order.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Order.h; sourceTree = "<group>"; };
 		E1F91D0A227BEBE8009D0D54 /* Order.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Order.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -129,17 +171,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				747D2DE84227179A0A92F8EF /* libPods-iOS-Shopper18.a in Frameworks */,
+				40695A25BAA2416401173320 /* libPods-iOS-Shopper18.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		38EACB0A855E45262A5DAEBC /* Frameworks */ = {
+		85875B58A28E9F2306B1B43D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				CCC2A546E2A49C365C8BF4CC /* libPods-iOS-Shopper18.a */,
+				882449B0E6DB3505385877CA /* libPods-iOS-Shopper18.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -147,10 +189,23 @@
 		DF3FF0407FBDBA03D55CBC33 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				9FE291F08751C929314A741E /* Pods-iOS-Shopper18.debug.xcconfig */,
-				6CB0C879F38E5A4F953F6960 /* Pods-iOS-Shopper18.release.xcconfig */,
+				B4CC99934A1FC435D6362B9F /* Pods-iOS-Shopper18.debug.xcconfig */,
+				9AC595C7461237891601B117 /* Pods-iOS-Shopper18.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		E1BF3EC1227FEF0100B26661 /* WebService */ = {
+			isa = PBXGroup;
+			children = (
+				E1E255B2227B733300230E4F /* APIHandler.h */,
+				E1E255B3227B733300230E4F /* APIHandler.m */,
+				E18ADF47227C10EA001EC15F /* APIParser.h */,
+				E18ADF48227C10EA001EC15F /* APIParser.m */,
+				E1BF3EBE227FEEAB00B26661 /* FirebaseHandler.h */,
+				E1BF3EBF227FEEAB00B26661 /* FirebaseHandler.m */,
+			);
+			path = WebService;
 			sourceTree = "<group>";
 		};
 		E1C4536E227CC180001CD5E6 /* XLFormCells */ = {
@@ -186,7 +241,7 @@
 				E1E2558F227B61EF00230E4F /* iOS-Shopper18 */,
 				E1E2558E227B61EF00230E4F /* Products */,
 				DF3FF0407FBDBA03D55CBC33 /* Pods */,
-				38EACB0A855E45262A5DAEBC /* Frameworks */,
+				85875B58A28E9F2306B1B43D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -224,6 +279,8 @@
 				E1432AAE227E718100365467 /* Profile.storyboard */,
 				E1432AB0227E722E00365467 /* OrderForm.storyboard */,
 				2F032E37227E9ED000B2842F /* TopSeller.storyboard */,
+				2F032E50227FA36500B2842F /* Cart.storyboard */,
+				A33A855B22808631004F1A54 /* Home.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -233,6 +290,7 @@
 			children = (
 				E1E2559F227B61F000230E4F /* main.m */,
 				E1E2559E227B61F000230E4F /* Info.plist */,
+				2F032E55227FCED800B2842F /* GoogleService-Info.plist */,
 				E1E25599227B61F000230E4F /* Assets.xcassets */,
 				E1E255A8227B639400230E4F /* Colors.xcassets */,
 			);
@@ -251,10 +309,7 @@
 		E1E255AB227B646A00230E4F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E1E255B2227B733300230E4F /* APIHandler.h */,
-				E1E255B3227B733300230E4F /* APIHandler.m */,
-				E18ADF47227C10EA001EC15F /* APIParser.h */,
-				E18ADF48227C10EA001EC15F /* APIParser.m */,
+				E1BF3EC1227FEF0100B26661 /* WebService */,
 				E1F91D09227BEBE8009D0D54 /* Order.h */,
 				E1F91D0A227BEBE8009D0D54 /* Order.m */,
 				E18ADF41227C034C001EC15F /* Category.h */,
@@ -265,6 +320,10 @@
 				E1AF4A34227E47B40087D198 /* User.m */,
 				E1432AAB227E713900365467 /* TopSeller.h */,
 				E1432AAC227E713900365467 /* TopSeller.m */,
+				E1A221E0227F6DF100952EC5 /* ShipmentTrack.h */,
+				E1A221E1227F6DF100952EC5 /* ShipmentTrack.m */,
+				E1F1AAAC22807767008DF53D /* Cart.h */,
+				E1F1AAAD22807767008DF53D /* Cart.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -277,6 +336,8 @@
 				6D0137B0227C9BD100797006 /* CategoryViewCell.m */,
 				2F032E3F227E9F3500B2842F /* TopSellerCell.h */,
 				2F032E40227E9F3500B2842F /* TopSellerCell.m */,
+				2F032E52227FA3A300B2842F /* CartTableViewCell.h */,
+				2F032E53227FA3A300B2842F /* CartTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -298,6 +359,14 @@
 				E1432AB6227E7B2000365467 /* OrderFormViewModel.m */,
 				2F032E3C227E9EFD00B2842F /* TopSellerViewModel.h */,
 				2F032E3D227E9EFD00B2842F /* TopSellerViewModel.m */,
+				6DBBB1A9227F32AD00979E87 /* ProductsViewModel.h */,
+				6DBBB1AA227F32AD00979E87 /* ProductsViewModel.m */,
+				E1A221D7227F653600952EC5 /* ProductDetailViewModel.h */,
+				E1A221D8227F653600952EC5 /* ProductDetailViewModel.m */,
+				E1A221DD227F6D9E00952EC5 /* ShipmentViewModel.h */,
+				E1A221DE227F6D9E00952EC5 /* ShipmentViewModel.m */,
+				2F032E4D227FA2E500B2842F /* CartViewModel.h */,
+				2F032E4E227FA2E500B2842F /* CartViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -322,6 +391,14 @@
 				E1432AB3227E7A4000365467 /* OrderFormViewController.m */,
 				2F032E39227E9EE900B2842F /* TopSellerViewController.h */,
 				2F032E3A227E9EE900B2842F /* TopSellerViewController.m */,
+				6DBBB1A6227F328E00979E87 /* ProductsViewController.h */,
+				6DBBB1A7227F328E00979E87 /* ProductsViewController.m */,
+				E1A221D4227F64F600952EC5 /* ProductDetailViewController.h */,
+				E1A221D5227F64F600952EC5 /* ProductDetailViewController.m */,
+				E1A221DA227F6D5400952EC5 /* ShipmentViewController.h */,
+				E1A221DB227F6D5400952EC5 /* ShipmentViewController.m */,
+				2F032E4A227FA29600B2842F /* CartViewController.h */,
+				2F032E4B227FA29600B2842F /* CartViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -342,11 +419,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E1E255A3227B61F000230E4F /* Build configuration list for PBXNativeTarget "iOS-Shopper18" */;
 			buildPhases = (
-				F6CDCD36F952B160B4C4646B /* [CP] Check Pods Manifest.lock */,
+				B9F3AEA266F14D3F744CECDC /* [CP] Check Pods Manifest.lock */,
 				E1E25589227B61EF00230E4F /* Sources */,
 				E1E2558A227B61EF00230E4F /* Frameworks */,
 				E1E2558B227B61EF00230E4F /* Resources */,
-				3FAF61267208F2720F04D7A8 /* [CP] Copy Pods Resources */,
+				AD4FF6ABF995D2969704CAEA /* [CP] Copy Pods Resources */,
+				E1F1AAAF2280C3ED008DF53D /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -397,11 +475,14 @@
 				E1AF4A32227E411D0087D198 /* Category.storyboard in Resources */,
 				2F032E38227E9ED000B2842F /* TopSeller.storyboard in Resources */,
 				6D0137B6227C9C8800797006 /* Main.storyboard in Resources */,
+				A33A855C22808631004F1A54 /* Home.storyboard in Resources */,
 				E1E2559D227B61F000230E4F /* LaunchScreen.storyboard in Resources */,
 				E1432AB1227E722E00365467 /* OrderForm.storyboard in Resources */,
 				E1E255A9227B639400230E4F /* Colors.xcassets in Resources */,
 				E1C45367227CB47A001CD5E6 /* Login.storyboard in Resources */,
 				E1432AAF227E718100365467 /* Profile.storyboard in Resources */,
+				2F032E56227FCED800B2842F /* GoogleService-Info.plist in Resources */,
+				2F032E51227FA36500B2842F /* Cart.storyboard in Resources */,
 				E1E2559A227B61F000230E4F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -409,24 +490,49 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3FAF61267208F2720F04D7A8 /* [CP] Copy Pods Resources */ = {
+		AD4FF6ABF995D2969704CAEA /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-iOS-Shopper18/Pods-iOS-Shopper18-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iOS-Shopper18/Pods-iOS-Shopper18-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/Braintree/Braintree-UI-Localization.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/Braintree/Braintree-Drop-In-Localization.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/BraintreeDropIn/Braintree-UIKit-Localization.bundle",
+				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
+				"${PODS_ROOT}/TWMessageBarManager/Classes/Icons/icon-error.png",
+				"${PODS_ROOT}/TWMessageBarManager/Classes/Icons/icon-error@2x.png",
+				"${PODS_ROOT}/TWMessageBarManager/Classes/Icons/icon-info.png",
+				"${PODS_ROOT}/TWMessageBarManager/Classes/Icons/icon-info@2x.png",
+				"${PODS_ROOT}/TWMessageBarManager/Classes/Icons/icon-success.png",
+				"${PODS_ROOT}/TWMessageBarManager/Classes/Icons/icon-success@2x.png",
+				"${PODS_ROOT}/XLForm/XLForm/XLForm.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-iOS-Shopper18/Pods-iOS-Shopper18-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Braintree-UI-Localization.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Braintree-Drop-In-Localization.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Braintree-UIKit-Localization.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icon-error.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icon-error@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icon-info.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icon-info@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icon-success.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icon-success@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/XLForm.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iOS-Shopper18/Pods-iOS-Shopper18-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F6CDCD36F952B160B4C4646B /* [CP] Check Pods Manifest.lock */ = {
+		B9F3AEA266F14D3F744CECDC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -448,6 +554,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		E1F1AAAF2280C3ED008DF53D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\"\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -456,31 +580,43 @@
 			buildActionMask = 2147483647;
 			files = (
 				E18ADF43227C034C001EC15F /* Category.m in Sources */,
+				E1A221D9227F653600952EC5 /* ProductDetailViewModel.m in Sources */,
 				E1C45376227D3AA5001CD5E6 /* BaseFormViewController.m in Sources */,
 				E1F91D0B227BEBE8009D0D54 /* Order.m in Sources */,
+				2F032E54227FA3A300B2842F /* CartTableViewCell.m in Sources */,
 				6D0C41F4227E56EF005AE167 /* HomeViewController.m in Sources */,
+				6DBBB1AB227F32AD00979E87 /* ProductsViewModel.m in Sources */,
+				E1A221DC227F6D5400952EC5 /* ShipmentViewController.m in Sources */,
 				E1E255A0227B61F000230E4F /* main.m in Sources */,
 				E1432AB7227E7B2000365467 /* OrderFormViewModel.m in Sources */,
 				6D0C41FA227E596C005AE167 /* SubcategoriesViewController.m in Sources */,
 				E1C4537B227D4875001CD5E6 /* UIView+InterfaceBuilder.m in Sources */,
 				6D0137B3227C9BD200797006 /* CategoryViewCell.m in Sources */,
 				E18ADF49227C10EA001EC15F /* APIParser.m in Sources */,
+				E1A221D6227F64F600952EC5 /* ProductDetailViewController.m in Sources */,
+				6DBBB1A8227F328E00979E87 /* ProductsViewController.m in Sources */,
 				E1E25592227B61EF00230E4F /* AppDelegate.m in Sources */,
 				2F032E41227E9F3500B2842F /* TopSellerCell.m in Sources */,
 				E1432AB4227E7A4000365467 /* OrderFormViewController.m in Sources */,
+				E1BF3EC0227FEEAB00B26661 /* FirebaseHandler.m in Sources */,
 				6D0C41F7227E5836005AE167 /* HomeViewModel.m in Sources */,
+				E1A221DF227F6D9E00952EC5 /* ShipmentViewModel.m in Sources */,
+				2F032E4C227FA29600B2842F /* CartViewController.m in Sources */,
 				2F032E3E227E9EFD00B2842F /* TopSellerViewModel.m in Sources */,
 				6D0137B4227C9BD200797006 /* CategoriesViewModel.m in Sources */,
 				A3E30393227CEA3E001E48AF /* FeedbackViewController.m in Sources */,
 				E1E255B1227B731A00230E4F /* LoginViewController.m in Sources */,
 				E18ADF46227C0A48001EC15F /* Product.m in Sources */,
+				E1F1AAAE22807767008DF53D /* Cart.m in Sources */,
 				E1C4536A227CB4E4001CD5E6 /* RegisterViewController.m in Sources */,
 				E1432AAD227E713900365467 /* TopSeller.m in Sources */,
 				E1E255B7227B74A400230E4F /* LoginViewModel.m in Sources */,
 				6D0C41FD227E598D005AE167 /* SubcategoriesViewModel.m in Sources */,
 				6D0137AE227C9B6900797006 /* CategoriesViewController.m in Sources */,
 				E1AF4A35227E47B40087D198 /* User.m in Sources */,
+				E1A221E2227F6DF100952EC5 /* ShipmentTrack.m in Sources */,
 				E1C45371227CC1BF001CD5E6 /* FloatLabeledTextFieldCell.m in Sources */,
+				2F032E4F227FA2E500B2842F /* CartViewModel.m in Sources */,
 				E1E255B4227B733300230E4F /* APIHandler.m in Sources */,
 				E1C4536D227CB586001CD5E6 /* RegisterViewModel.m in Sources */,
 				2F032E3B227E9EE900B2842F /* TopSellerViewController.m in Sources */,
@@ -615,10 +751,11 @@
 		};
 		E1E255A4227B61F000230E4F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9FE291F08751C929314A741E /* Pods-iOS-Shopper18.debug.xcconfig */;
+			baseConfigurationReference = B4CC99934A1FC435D6362B9F /* Pods-iOS-Shopper18.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = RQAE768Z9N;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/Utilities/PrefixHeader.pch";
@@ -636,10 +773,11 @@
 		};
 		E1E255A5227B61F000230E4F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6CB0C879F38E5A4F953F6960 /* Pods-iOS-Shopper18.release.xcconfig */;
+			baseConfigurationReference = 9AC595C7461237891601B117 /* Pods-iOS-Shopper18.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = RQAE768Z9N;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/Utilities/PrefixHeader.pch";

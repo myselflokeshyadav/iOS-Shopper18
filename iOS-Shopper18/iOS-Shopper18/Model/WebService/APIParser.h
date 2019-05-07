@@ -12,6 +12,7 @@
 @class Order;
 @class User;
 @class TopSeller;
+@class ShipmentTrack;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -23,6 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (nullable NSArray<Order *> *)orderHistoryFrom:(id)jsonObject;
 + (nullable User *)userFrom:(id)jsonObject;
 + (nullable NSArray<TopSeller *> *)topSellersFrom:(id)jsonObject;
++ (nullable ShipmentTrack *)shipmentFrom:(id)jsonObject;
 
 @end
 

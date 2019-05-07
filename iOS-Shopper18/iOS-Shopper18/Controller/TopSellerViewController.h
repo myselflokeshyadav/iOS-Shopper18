@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TopSellerViewController : UIViewController
+@interface TopSellerViewController : UIViewController<UICollectionViewDelegate, UICollectionViewDataSource>
 
 @end
 

@@ -7,10 +7,28 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HomeViewModel.h"
+#import "TopSeller.h"
+#import "Category.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface HomeViewController : UIViewController
+@interface HomeViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource>
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UIView *subView;
+@property (weak, nonatomic) IBOutlet UIImageView *topSellerImage;
+@property (weak, nonatomic) IBOutlet UILabel *topSellerProductLabel;
+@property (weak, nonatomic) IBOutlet UICollectionView *colView;
+@property (weak, nonatomic) IBOutlet UICollectionView *categoryCollectionView;
+
+@property (strong, nonatomic) HomeViewModel * homeVM;
+@property (strong, nonatomic) TopSeller * topSeller;
+@property (strong, nonatomic) Category * category;
+@property (strong, nonatomic) NSMutableArray<Category *>* categories;
+
+- (void)setControls;
+- (void)getProductCategories;
+- (void)getTopSellerCompany;
 
 @end
 

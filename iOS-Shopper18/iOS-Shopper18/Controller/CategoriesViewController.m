@@ -9,6 +9,7 @@
 #import "CategoriesViewController.h"
 #import "CategoryViewCell.h"
 #import "SubcategoriesViewController.h"
+#import "TopSellerViewController.h"
 
 @interface CategoriesViewController ()
 
@@ -26,8 +27,16 @@
     [self getProductCategories];
 }
 
+- (IBAction)featureCategorySegAction:(UISegmentedControl *)sender {
+    NSInteger * selectedSegment = [sender selectedSegmentIndex];
+    UIStoryboard * sb = [UIStoryboard storyboardWithName:@"Category" bundle:nil];
+    if(selectedSegment == 1){
+        TopSellerViewController *vc = [sb instantiateViewControllerWithIdentifier:@"TopSellerViewController"];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+}
+
 -(void) getProductCategories{
-    
     //    info = NSDictionary.new;
     [self.categoryModel getProductCategories:^(NSError * error) {
         if(error == nil){
@@ -44,6 +53,8 @@
     
 }
 
+
+
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     CategoryViewCell *cell =  [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
     Category * category = self.categories[indexPath.item];
@@ -56,7 +67,6 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    CategoryViewCell *cell =  [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
     Category * category = self.categories[indexPath.item];
     UIStoryboard * sb = [UIStoryboard storyboardWithName:@"Category" bundle:nil];
     SubcategoriesViewController *vc = [sb instantiateViewControllerWithIdentifier:@"SubcategoriesViewController"];
