@@ -8,13 +8,15 @@
 
 #import <Foundation/Foundation.h>
 @class Product;
+@class User;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface APIHandler : NSObject
 
-@property (strong, nonatomic, readonly, nullable) NSString *apiKey;
-@property (strong, nonatomic, readonly, nullable) NSString *userID;
+@property (strong, nonatomic, nullable) User *currentUser;
+@property (strong, nonatomic, nullable) NSString *apiKey;
+@property (strong, nonatomic, nullable) NSString *userID;
 
 + (instancetype)shared;
 

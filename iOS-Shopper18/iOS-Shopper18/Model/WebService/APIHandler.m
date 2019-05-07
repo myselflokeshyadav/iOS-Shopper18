@@ -13,9 +13,6 @@
 
 @interface APIHandler ()
 
-@property (readwrite) NSString *apiKey;
-@property (readwrite) NSString *userID;
-
 @end
 
 
@@ -48,6 +45,7 @@
     }
     
     NSString *combinedParams = [paramList componentsJoinedByString:@"&"];
+    combinedParams = [combinedParams stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     return [base stringByAppendingString:combinedParams];
 }
 
@@ -156,7 +154,8 @@
          completion:(void(^)(NSArray<NSNumber *> *, NSError * _Nullable))completion {
     
     info = [self extendedInfo:info];
-    NSMutableArray *orderResults = [NSMutableArray arrayWithCapacity:products.count];;
+    NSMutableArray *orderResults = [NSMutableArray arrayWithCapacity:products.count];
+    for (NSInteger i = 0; i < products.count; i++) [orderResults addObject:@NO];
     dispatch_group_t dgPlaceOrder = dispatch_group_create();
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
