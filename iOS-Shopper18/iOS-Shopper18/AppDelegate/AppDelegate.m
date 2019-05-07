@@ -19,6 +19,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    UITabBar.appearance.tintColor = UIColor.whiteColor;
+    UITabBar.appearance.barTintColor = kColorPrimeGreen;
+    UINavigationBar.appearance.barTintColor = kColorPrimeGreen;
+    UINavigationBar.appearance.tintColor = UIColor.whiteColor;
+    
     [BTAppSwitch setReturnURLScheme:@"com.iOSDevs.iOS-Shopper18.payments"];
     [FIRApp configure];
     return YES;
