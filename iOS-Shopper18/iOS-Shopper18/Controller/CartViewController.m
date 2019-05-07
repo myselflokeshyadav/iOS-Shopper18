@@ -11,6 +11,8 @@
 #import "CartTableViewCell.h"
 #import "Cart.h"
 #import <SDWebImage/SDWebImage.h>
+#import "ProductDetailViewController.h"
+#import "ProductDetailViewModel.h"
 
 
 @interface CartViewController ()<BTDropInViewControllerDelegate, BTViewControllerPresentingDelegate>
@@ -166,6 +168,18 @@
         [self.tblView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
         [self loadProductFromFirebase];
     }
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    NSLog(@"hahaha");
+    ProductDetailViewController *detailVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ProductDetailViewController"];
+    Product *product = Cart.shared.items[indexPath.row];
+    ProductDetailViewModel * productVM = ProductDetailViewModel.new;
+    productVM = [productVM initWithProduct:product];
+    [detailVC setDetailViewModel:productVM];
+    [self.navigationController pushViewController:detailVC animated:true];
+    
 }
 
 @end
