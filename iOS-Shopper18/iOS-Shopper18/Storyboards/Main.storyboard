@@ -966,7 +966,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l5D-aB-UTn">
-                                                    <rect key="frame" x="260" y="163.5" width="70" height="21"/>
+                                                    <rect key="frame" x="260" y="164" width="70" height="21"/>
                                                     <color key="backgroundColor" red="0.0" green="0.69803921568627447" blue="0.32941176470588235" alpha="0.53223994006849318" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="70" id="QZO-h3-0mm"/>
@@ -982,7 +982,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <button opaque="NO" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m2o-qi-hgw">
-                                                    <rect key="frame" x="344" y="150" width="30" height="45"/>
+                                                    <rect key="frame" x="344" y="150.5" width="30" height="45"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="45" id="VV7-6W-nfm"/>
                                                         <constraint firstAttribute="width" constant="30" id="nuZ-N5-l77"/>
@@ -992,11 +992,11 @@
                                                         <color key="titleColor" red="0.086453045689999994" green="0.086453045689999994" blue="0.086453045689999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="countBtnClick:" destination="doo-KK-6kk" eventType="touchUpInside" id="AwS-TR-DTl"/>
+                                                        <action selector="addButtonTapped:" destination="doo-KK-6kk" eventType="touchUpInside" id="O0R-G3-Mbc"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kfh-MT-LU2">
-                                                    <rect key="frame" x="222" y="150" width="30" height="45"/>
+                                                    <rect key="frame" x="222" y="150.5" width="30" height="45"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="30" id="Nxq-BE-oyb"/>
                                                         <constraint firstAttribute="height" constant="45" id="XZb-30-zPx"/>
@@ -1006,7 +1006,7 @@
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="countBtnClick:" destination="doo-KK-6kk" eventType="touchUpInside" id="scZ-4P-Ql4"/>
+                                                        <action selector="minusButtonTapped:" destination="doo-KK-6kk" eventType="touchUpInside" id="aE9-o0-0WV"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
