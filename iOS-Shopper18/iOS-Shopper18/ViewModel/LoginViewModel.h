@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface LoginViewModel : NSObject
 
 - (void)login:(NSDictionary *)info completion:(void (^)(BOOL success, NSString * _Nullable msg))completion;
-
+- (void)resetPass:(NSString *)email completion:(void (^)(BOOL, NSString * _Nullable))completion;
 @end
 
 NS_ASSUME_NONNULL_END

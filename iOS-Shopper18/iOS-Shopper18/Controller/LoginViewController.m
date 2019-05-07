@@ -63,6 +63,32 @@
     }
 }
 
+- (IBAction)resetPassTapped:(id)sender {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Forgot your password"
+                                                                   message:@"Enter the associated email" preferredStyle:UIAlertControllerStyleAlert];
+    
+    [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        textField.placeholder = @"Email";
+    }];
+    
+    [alert addAction:[UIAlertAction actionWithTitle:@"Cancel"
+                                              style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {}]];
+    
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        NSString *email = alert.textFields[0].text;
+        if (!email || !email.length) return;
+        [self.vm resetPass:email completion:^(BOOL success, NSString * _Nullable msg) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [TWMessageBarManager.sharedInstance showMessageWithTitle:@"Password reset email sent."
+                                                             description:@"" type:TWMessageBarMessageTypeInfo duration:2];
+            });
+        }];
+    }];
+    [alert addAction:okAction];
+    [self presentViewController:alert animated:YES completion:nil];
+    
+}
+
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     BOOL shouldReturn = [super textFieldShouldReturn:textField];
     if (shouldReturn && textField == self.lastField)

@@ -123,9 +123,7 @@
 
 - (void)forgotPassword:(NSDictionary *)info completion:(void(^)(id _Nullable, NSError * _Nullable))completion {
     
-    [self callAPIWithBase:kAPIEcomBase endpoint:kAPIEndPointForgot params:info completion:^(id _Nullable result, NSError * _Nullable error ) {
-        
-    }];
+    [self callAPIWithBase:kAPIEcomBase endpoint:kAPIEndPointForgot params:info completion:completion];
     
 }
 

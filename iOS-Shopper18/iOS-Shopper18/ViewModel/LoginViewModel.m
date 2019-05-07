@@ -18,4 +18,10 @@
     }];
 }
 
+- (void)resetPass:(NSString *)email completion:(void (^)(BOOL, NSString * _Nullable))completion {
+    [APIHandler.shared forgotPassword:@{@"email": email} completion:^(id _Nullable result, NSError * _Nullable error) {
+        completion(YES, nil);
+    }];
+}
+
 @end
