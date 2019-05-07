@@ -11,6 +11,8 @@
 #import "FloatLabeledTextFieldCell.h"
 #import <JVFloatLabeledTextField/JVFloatLabeledTextField.h>
 #import <TWMessageBarManager.h>
+#import "APIHandler.h"
+#import "User.h"
 
 @interface ProfileViewController ()
 
@@ -32,16 +34,20 @@
     XLFormSectionDescriptor *section;
     XLFormRowDescriptor *row;
     
+    User *user = APIHandler.shared.currentUser;
+    
     // First name
     section = [XLFormSectionDescriptor formSection];
     [form addFormSection:section];
-    row = [self fnameRowRequired:NO];
+    row = [self fnameRowRequired:YES];
+    row.value = user.fname;
     [section addFormRow:row];
     
     // Last name
     section = [XLFormSectionDescriptor formSection];
     [form addFormSection:section];
-    row = [self lnameRowRequired:NO];
+    row = [self lnameRowRequired:YES];
+    row.value = user.lname;
     [section addFormRow:row];
     
     // Address
@@ -53,13 +59,15 @@
     // Mobile
     section = [XLFormSectionDescriptor formSection];
     [form addFormSection:section];
-    row = [self mobileRowRequired:NO];
+    row = [self mobileRowRequired:YES];
+    row.value = user.mobile;
     [section addFormRow:row];
     
     // Email
     section = [XLFormSectionDescriptor formSection];
     [form addFormSection:section];
-    row = [self emailRowRequired:NO];
+    row = [self emailRowRequired:YES];
+    row.value = user.email;
     [section addFormRow:row];
     
     self.lastField = [self floatCellForRow:row].floatLabeledTextField;
