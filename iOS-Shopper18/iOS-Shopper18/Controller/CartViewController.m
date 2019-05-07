@@ -17,6 +17,7 @@
 @property (nonatomic, strong) BTPayPalDriver *payPalDriver;
 @property (nonatomic, strong) NSMutableArray *dataArray;
 @property (weak, nonatomic) IBOutlet UITableView *tblView;
+@property (weak, nonatomic) IBOutlet UILabel *noProductInfoLbl;
 @property (nonatomic, assign) float totalPaidPrice;
 
 @end
@@ -36,12 +37,14 @@
         if (success) {
             if (Cart.shared.items.count == 0){
                 self.checkoutBtnOutlet.enabled = NO;
-            }
+            }else{
+            [self.noProductInfoLbl setHidden:YES];
             for (int i = 0; i < Cart.shared.items.count; i++){
                 self.totalPaidPrice += Cart.shared.items[i].price;
             }
             self.totalPrizeLbl.text = [NSString stringWithFormat: @"Total price: $%.2f",self.totalPaidPrice];
              [self.tblView reloadData];
+            }
         }else{
             NSLog(@"Error loading data");
         }
@@ -102,21 +105,21 @@
     CartTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     Product *pObj = [Cart.shared.items objectAtIndex:indexPath.row];
-    __weak CartTableViewCell *weakcell = cell;
+    //__weak CartTableViewCell *weakcell = cell;
     
     cell.plusButtonTapHandler = ^{
         
         pObj.quantity += 1;
-        weakcell.pCountLbl.text = [NSString stringWithFormat: @"%ld",(long)pObj.quantity];
-        weakcell.pPriceLbl.text = [NSString stringWithFormat:@"Item price: $%.2f", pObj.totalPrice];
+        cell.pCountLbl.text = [NSString stringWithFormat: @"%ld",(long)pObj.quantity];
+        cell.pPriceLbl.text = [NSString stringWithFormat:@"Item price: $%.2f", pObj.totalPrice];
         self.totalPaidPrice += pObj.price;
         self.totalPrizeLbl.text = [NSString stringWithFormat: @"Total price: $%.2f",self.totalPaidPrice];
     };
     cell.minusButtonTapHandler = ^{
         if (pObj.quantity > 1){
             pObj.quantity -= 1;
-            weakcell.pCountLbl.text = [NSString stringWithFormat: @"%ld",(long)pObj.quantity];
-            weakcell.pPriceLbl.text = [NSString stringWithFormat:@"Item price: $%.2f", pObj.totalPrice];
+            cell.pCountLbl.text = [NSString stringWithFormat: @"%ld",(long)pObj.quantity];
+            cell.pPriceLbl.text = [NSString stringWithFormat:@"Item price: $%.2f", pObj.totalPrice];
             self.totalPaidPrice -= pObj.price;
             self.totalPrizeLbl.text = [NSString stringWithFormat: @"Total price: $%.2f",self.totalPaidPrice];
         }
