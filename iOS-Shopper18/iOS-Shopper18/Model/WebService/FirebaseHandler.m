@@ -75,4 +75,20 @@
     }];
 }
 
+- (void)saveProducts:(NSArray<Product *> *)products completion:(void (^)(BOOL, NSError * _Nullable ))completion {
+    dispatch_group_t dg = dispatch_group_create();
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [products enumerateObjectsUsingBlock:^(Product *prod, NSUInteger i, BOOL *stop) {
+            dispatch_group_enter(dg);
+            [self addProduct:prod completion:^(NSError * _Nullable error) {
+                dispatch_group_leave(dg);
+            }];
+        }];
+        dispatch_group_notify(dg, dispatch_get_main_queue(), ^{
+            completion(YES, nil);
+        });
+    });
+}
+
 @end

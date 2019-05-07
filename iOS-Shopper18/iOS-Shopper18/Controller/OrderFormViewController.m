@@ -97,7 +97,7 @@
     NSArray<NSString *> *errorMsgs = [self validateForm];
     if (!errorMsgs) {
         NSLog(@"%@", [self formValues]);
-        [self.vm placeOrder:self.formValues completion:^(NSArray * _Nullable result, NSError * _Nullable error) {
+        [self.vm placeOrder:self.formValues completion:^(BOOL success, NSError * _Nullable error) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 [TWMessageBarManager.sharedInstance showMessageWithTitle:@"Thank you!" description:@"Your order has been placed" type:TWMessageBarMessageTypeSuccess duration:2];
                 [self dismissViewControllerAnimated:YES completion:nil];
