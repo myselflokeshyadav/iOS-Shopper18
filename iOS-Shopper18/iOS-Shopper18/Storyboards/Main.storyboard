@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="G5g-Zt-qfN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ms7-mm-TwC">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -819,7 +819,7 @@
         <!--Feedback View Controller-->
         <scene sceneID="bHv-jz-hpk">
             <objects>
-                <viewController id="Ms7-mm-TwC" customClass="FeedbackViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FeedbackViewController" id="Ms7-mm-TwC" customClass="FeedbackViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SEJ-Wf-pRW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -878,28 +878,29 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Order ID I.E. 2147484660" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SSG-eG-xRx">
-                                <rect key="frame" x="113" y="380" width="188" height="30"/>
+                                <rect key="frame" x="113" y="350" width="188" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mek-2E-UZK">
-                                <rect key="frame" x="113" y="498" width="188" height="49"/>
+                                <rect key="frame" x="113" y="220" width="188" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Gi-nh-xuX">
-                                <rect key="frame" x="113" y="673" width="188" height="75"/>
+                                <rect key="frame" x="20" y="673" width="374" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
                                         <fragment content="Enter">
                                             <attributes>
-                                                <color key="NSColor" red="0.2716325094" green="0.929132297" blue="0.38564158500000001" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <font key="NSFont" size="46" name="MarkerFelt-Thin"/>
+                                                <color key="NSColor" red="0.56193309966788052" green="0.84979774746192893" blue="0.50795660606953941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <font key="NSFont" size="46" name="Monaco"/>
+                                                <font key="NSOriginalFont" size="46" name="AppleColorEmoji"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                             </attributes>
                                         </fragment>
@@ -920,6 +921,10 @@
                                     <action selector="enterOrderID:" destination="CwS-xy-069" eventType="touchUpInside" id="ENU-HC-NDF"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="freeShipping" translatesAutoresizingMaskIntoConstraints="NO" id="w5d-7r-ATn">
+                                <rect key="frame" x="47" y="408" width="320" height="240"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -937,7 +942,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wvf-d1-lQm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2774" y="1755"/>
+            <point key="canvasLocation" x="2773.913043478261" y="1754.4642857142856"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ChV-qd-IMp">
@@ -1611,5 +1616,6 @@
     </scenes>
     <resources>
         <image name="No image available" width="650" height="644"/>
+        <image name="freeShipping" width="80.666664123535156" height="69.333335876464844"/>
     </resources>
 </document>

@@ -24,4 +24,9 @@
     [_feedbackController presentFromViewController:self animated:true completion:nil];
     // Do any additional setup after loading the view.
 }
+- (void)respondentDidEndSurvey:(SMRespondent *)respondent error:(NSError *)error{
+    if(respondent != nil){
+        NSLog(@"cool");
+    }
+}
 @end
