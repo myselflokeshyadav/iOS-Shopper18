@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "BraintreeCore.h"
+#import "APIHandler.h"
+#import "User.h"
 @import Firebase;
 
 @interface AppDelegate ()
@@ -16,9 +18,7 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
     UITabBar.appearance.tintColor = UIColor.whiteColor;
     UITabBar.appearance.barTintColor = kColorPrimeGreen;
     UINavigationBar.appearance.barTintColor = kColorPrimeGreen;
@@ -27,17 +27,18 @@
     [BTAppSwitch setReturnURLScheme:@"com.iOSDevs.iOS-Shopper18.payments"];
     [FIRApp configure];
     
+    NSUserDefaults *udefs = NSUserDefaults.standardUserDefaults;
+    NSDictionary *userInfo = [udefs dictionaryForKey:kUserDefaultsUserInfo];
+    User *user;
+    if (!userInfo || !(user = [User initWithInfo:userInfo])) return YES;
+    APIHandler.shared.currentUser = user;
     
-//    NSString *starting = @"HomeTab";
-    
-//    self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
-//
-//    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-//
-//    UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier: starting];
-//
-//    self.window.rootViewController = viewController;
-//    [self.window makeKeyAndVisible];
+    NSString *starting = @"HomeTab";
+    self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier: starting];
+    self.window.rootViewController = viewController;
+    [self.window makeKeyAndVisible];
     
     return YES;
 }

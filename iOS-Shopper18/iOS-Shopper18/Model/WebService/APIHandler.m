@@ -37,6 +37,13 @@
     return self;
 }
 
+- (void)setCurrentUser:(User *)currentUser {
+    if (!currentUser) return;
+    _currentUser = currentUser;
+    self.apiKey = currentUser.apiKey;
+    self.userID = currentUser.userID;
+}
+
 - (NSString *)constructURL:(NSString *)base endpoint:(NSString *)endpoint params:(NSDictionary *)params {
     base = [base stringByAppendingString:endpoint];
     NSMutableArray *paramList = NSMutableArray.new;
@@ -84,6 +91,11 @@
                 self.userID = user.userID;
                 self.apiKey = user.apiKey;
                 self.currentUser = user;
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    NSUserDefaults *udefs = NSUserDefaults.standardUserDefaults;
+                    [udefs setObject:user.encodeJSON forKey:kUserDefaultsUserInfo];
+                    [udefs synchronize];
+                });
             }
             completion(user, nil);
         }

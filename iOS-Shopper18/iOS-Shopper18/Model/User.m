@@ -23,7 +23,17 @@
     return user;
 }
 
--(NSString *)name {
+- (NSDictionary *)encodeJSON {
+    return @{@"id": self.userID,
+             @"firstname": self.fname,
+             @"lastname": self.lname,
+             @"email": self.email,
+             @"mobile": self.mobile,
+             @"appapikey ": self.apiKey
+             };
+}
+
+- (NSString *)name {
     return [NSString stringWithFormat:@"%@ %@", self.fname, self.lname];
 }
 

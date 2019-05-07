@@ -22,6 +22,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)initWithInfo:(NSDictionary *)info;
 
+- (NSDictionary *)encodeJSON;
+
 - (NSString *)name;
 
 @end
