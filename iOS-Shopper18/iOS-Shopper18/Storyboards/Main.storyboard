@@ -962,7 +962,7 @@
         <!--Cart View Controller-->
         <scene sceneID="kkV-qV-6f3">
             <objects>
-                <viewController id="LoZ-Vy-a6r" customClass="CartViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CartViewController" id="LoZ-Vy-a6r" customClass="CartViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oK4-sM-bFy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
