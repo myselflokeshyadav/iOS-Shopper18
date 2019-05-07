@@ -134,14 +134,14 @@
     Product *pObj = [self.dataArray objectAtIndex:indexPath.row];
     //self.totalPrizeLbl.text = cell.pPriceLbl.text;
 
-//
     cell.pNameLbl.text = pObj.name;
     cell.pDescLbl.text = pObj.desc;
     [cell.pImgView sd_setImageWithURL:[NSURL URLWithString:pObj.imageURL]
                  placeholderImage:[UIImage imageNamed:@"No image available"]];
     cell.pPriceLbl.text = [NSString stringWithFormat:@"Item price: $%.2f", pObj.price];
-//
-//    NSLog(@"%@",[self.dataArray objectAtIndex:indexPath.row]);
+    
+    cell.pCountLbl.text = [NSString stringWithFormat: @"%ld",(long)pObj.quantity];
+
     return cell;
 }
 
