@@ -12,7 +12,7 @@
 
 @implementation ShipmentViewModel
 
--(void)getShipmenTrack:(NSString *)orderID completionHandler:(void (^)(NSError * _Nullable))completion{
+-(void)shipment:(NSString *)orderID completionHandler:(void (^)(NSError * _Nullable))completion{
     NSMutableDictionary *newInfo = NSMutableDictionary.new;
     [newInfo setValue:orderID forKey:@"order_id"];
     NSLog(@"before I call getshipment with info %@",newInfo);;

@@ -12,9 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ShipmentViewModel : NSObject
 
-@property(assign,nonatomic) ShipmentTrack * shipmentTrack;
+@property(strong, nonatomic) ShipmentTrack * shipmentTrack;
 
--(void)getShipmenTrack:(NSString *)orderID completionHandler:(void(^)(NSError * _Nullable))completion;
+-(void)shipment:(NSString *)orderID completionHandler:(void(^)(NSError * _Nullable))completion;
 -(NSString *)getShipmentID;
 
 @end

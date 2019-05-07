@@ -28,7 +28,7 @@
 
 - (IBAction)enterOrderID:(UIButton*)sender {
     
-    [self.vm getShipmenTrack:self.orderIDInput.text completionHandler:^(NSError * error){
+    [self.vm shipment:self.orderIDInput.text completionHandler:^(NSError * error){
         if(error == nil){
             dispatch_async(dispatch_get_main_queue(), ^{
                 self.responseLabel.text = self.vm.shipmentTrack.status;
