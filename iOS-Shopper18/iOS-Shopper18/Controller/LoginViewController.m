@@ -116,8 +116,9 @@ NSString const *emailRegex = kRegexEmail;
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
     if (textField != self.alert.textFields[0]) return [super textField:textField shouldChangeCharactersInRange:range replacementString:string];
-    
-    string = [textField.text stringByAppendingString:string];
+    NSString *text = textField.text;
+    if (!string.length && text.length) string = [text substringToIndex:text.length - 1];
+    else string = [text stringByAppendingString:string];
     BOOL isValid = [[NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex] evaluateWithObject:[string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]];
     
     self.alert.actions[1].enabled = isValid;
