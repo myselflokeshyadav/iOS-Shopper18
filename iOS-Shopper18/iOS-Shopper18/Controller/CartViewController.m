@@ -11,6 +11,8 @@
 #import "CartTableViewCell.h"
 #import "Cart.h"
 #import <SDWebImage/SDWebImage.h>
+#import "ProductDetailViewController.h"
+#import "ProductDetailViewModel.h"
 
 
 @interface CartViewController ()<BTDropInViewControllerDelegate, BTViewControllerPresentingDelegate>
@@ -40,17 +42,20 @@
 - (void)loadProductFromFirebase {
     [Cart.shared loadProducts:^(BOOL success) {
         if (success) {
+            
             self.totalPaidPrice = 0;
             if (Cart.shared.items.count == 0){
+                self.tabBarController.tabBar.items[1].badgeValue = nil;
                 self.checkoutBtnOutlet.enabled = NO;
                 [self.noProductInfoLbl setHidden:NO];
-                self.totalPrizeLbl.text = [NSString stringWithFormat: @"Total: $%.2f",self.totalPaidPrice];
+                self.totalPrizeLbl.text = [NSString stringWithFormat: @"Total: $%.2f",self.totalPaidPrice/100];
             }else{
+                self.tabBarController.tabBar.items[1].badgeValue = [NSString stringWithFormat:@"%lu",(unsigned long)Cart.shared.items.count];
                 [self.noProductInfoLbl setHidden:YES];
                 for (int i = 0; i < Cart.shared.items.count; i++){
                     self.totalPaidPrice += Cart.shared.items[i].price * Cart.shared.items[i].quantity;
                 }
-                self.totalPrizeLbl.text = [NSString stringWithFormat: @"Total: $%.2f",self.totalPaidPrice];
+                self.totalPrizeLbl.text = [NSString stringWithFormat: @"Total: $%.2f",self.totalPaidPrice/100];
                 [self.tblView reloadData];
             }
         }else{
@@ -73,7 +78,7 @@
             NSLog(@"CANCELLED");
             [self dismissViewControllerAnimated:YES completion:nil];
         } else {
-            [self postNonceToServer:[NSString stringWithFormat:@"%.2f",self.totalPaidPrice]];
+            [self postNonceToServer:[NSString stringWithFormat:@"%.2f",self.totalPaidPrice/100]];
             
             [self dismissViewControllerAnimated:YES completion:nil];
             [self customAlertView:@"CheckOut Status" errorMessage:@"Payment success!!"];
@@ -115,11 +120,13 @@
             pObj.quantity += 1;
             [Cart.shared changeProductQuantityAt:indexPath.row amount:pObj.quantity];
             cell.pCountLbl.text = [NSString stringWithFormat: @"%ld",(long)pObj.quantity];
-            cell.pPriceLbl.text = [NSString stringWithFormat:@"Subtotal: $%.2f", pObj.totalPrice];
+            cell.pPriceLbl.text = [NSString stringWithFormat:@"Subtotal: $%.2f", pObj.totalPrice/100];
             self.totalPaidPrice += pObj.price;
-            self.totalPrizeLbl.text = [NSString stringWithFormat: @"Total: $%.2f",self.totalPaidPrice];
+            self.totalPrizeLbl.text = [NSString stringWithFormat: @"Total: $%.2f",self.totalPaidPrice/100];
+            cell.minusBtnOutlet.enabled = YES;
+            
         }else{
-            [self customAlertView:@"Amount Limit Exceed!" errorMessage:@"Total amount of product can't exceed 10!"];
+            cell.pulsBtnOutlet.enabled = NO;
         }
     };
     cell.minusButtonTapHandler = ^{
@@ -127,18 +134,20 @@
             pObj.quantity -= 1;
             [Cart.shared changeProductQuantityAt:indexPath.row amount:pObj.quantity];
             cell.pCountLbl.text = [NSString stringWithFormat: @"%ld",(long)pObj.quantity];
-            cell.pPriceLbl.text = [NSString stringWithFormat:@"Subtotal: $%.2f", pObj.totalPrice];
+            cell.pPriceLbl.text = [NSString stringWithFormat:@"Subtotal: $%.2f", pObj.totalPrice/100];
             self.totalPaidPrice -= pObj.price;
-            self.totalPrizeLbl.text = [NSString stringWithFormat: @"Total: $%.2f",self.totalPaidPrice];
+            self.totalPrizeLbl.text = [NSString stringWithFormat: @"Total: $%.2f",self.totalPaidPrice/100];
+            cell.pulsBtnOutlet.enabled = YES;
         }else{
-            [self customAlertView:@"Amount Limit Exceed!" errorMessage:@"Total amount of product can't less than 1!"];
+            cell.minusBtnOutlet.enabled = NO;
         }
     };
     cell.pNameLbl.text = pObj.name;
-    cell.pDescLbl.text = pObj.desc;
+    //cell.pDescLbl.text = pObj.desc;
+    cell.itemPriceLbl.text = [NSString stringWithFormat:@"$%.2f", pObj.price/100];
     [cell.pImgView sd_setImageWithURL:[NSURL URLWithString:pObj.imageURL]
                  placeholderImage:kImagePlaceholder];
-    cell.pPriceLbl.text = [NSString stringWithFormat:@"Subtotal: $%.2f", pObj.totalPrice];
+    cell.pPriceLbl.text = [NSString stringWithFormat:@"Subtotal: $%.2f", pObj.totalPrice/100];
     cell.pCountLbl.text = [NSString stringWithFormat: @"%ld",(long)pObj.quantity];
     
     return cell;
@@ -159,6 +168,18 @@
         [self.tblView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
         [self loadProductFromFirebase];
     }
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    NSLog(@"hahaha");
+    ProductDetailViewController *detailVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ProductDetailViewController"];
+    Product *product = Cart.shared.items[indexPath.row];
+    ProductDetailViewModel * productVM = ProductDetailViewModel.new;
+    productVM = [productVM initWithProduct:product];
+    [detailVC setDetailViewModel:productVM];
+    [self.navigationController pushViewController:detailVC animated:true];
+    
 }
 
 @end
