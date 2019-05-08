@@ -28,6 +28,7 @@
     self.navigationItem.backBarButtonItem.title = @" ";
     self.navigationItem.leftBarButtonItem.title = @" ";
     self.navigationItem.rightBarButtonItem.title = @" ";
+    
 }
 
 -(void) getProductCategories{

@@ -9,6 +9,7 @@
 #import "SubcategoriesViewController.h"
 #import "CategoryViewCell.h"
 #import "ProductsViewController.h"
+#import "UIView+Toast.h"
 
 @interface SubcategoriesViewController ()
 
@@ -22,12 +23,9 @@
     self.subcategoryModel = SubcategoriesViewModel.new;
     [self getProductSubCategories:self.category.cid];
     self.navigationItem.title = @"Subcategories";
-    self.navigationItem.backBarButtonItem.title = @" ";
-    self.navigationItem.leftBarButtonItem.title = @" ";
-    self.navigationItem.rightBarButtonItem.title = @" ";
 }
 
-//Mark:  Handle failing links
+// Mark:  Handle failing links
 - (void)getProductSubCategories:(NSString *)cid{
     [self.subcategoryModel getProductSubCategories:cid completion:^(id _Nullable listSubcategories, NSError * _Nullable error) {
         if(error == nil){
@@ -35,6 +33,9 @@
             self.subcategories = self.subcategoryModel.subcategories;
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.collectionView reloadData];
+                if(self.subcategoryModel.subcategories.count == 0){
+                    [self displayToast];
+                }
             });
         }
         else{
@@ -42,6 +43,24 @@
         }
     }];
     
+}
+
+-(void)displayToast{
+    double delayInSeconds = 0.5;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        if(self.subcategoryModel.subcategories.count == 0){
+            [self.view makeToast:@"This subcategory does not exist."
+                        duration:3.0
+                        position:CSToastPositionCenter
+                           title:@"Sorry"
+                           image:[UIImage imageNamed:@"toast.png"]
+                           style:nil
+                      completion:^(BOOL didTap) {
+                          [self.navigationController popViewControllerAnimated:YES];
+                      }];
+        }
+    });
 }
 
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {

@@ -10,6 +10,7 @@
 #import "CategoryViewCell.h"
 #import "ProductDetailViewController.h"
 #import "ProductDetailViewModel.h"
+#import "UIView+Toast.h"
 
 @interface ProductsViewController ()
 
@@ -36,6 +37,9 @@
             self.productList = self.productVModel.productList;
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.collectionView reloadData];
+                if(self.productVModel.productList.count == 0){
+                    [self displayToast];
+                }
             });
         }
         else{
@@ -44,6 +48,22 @@
     }];
     
 }
+
+-(void)displayToast{
+    if(self.productVModel.productList.count == 0){
+        [self.view makeToast:@"This product is out of stock."
+                    duration:3.0
+                    position:CSToastPositionCenter
+                       title:@"Sorry"
+                       image:[UIImage imageNamed:@"toast.png"]
+                       style:nil
+                  completion:^(BOOL didTap) {
+                      [self.navigationController popViewControllerAnimated:YES];
+                  }];
+    }
+    
+}
+
 
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     CategoryViewCell *cell =  [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
