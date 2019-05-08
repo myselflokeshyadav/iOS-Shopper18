@@ -10,7 +10,7 @@
 #import "APIHandler.h"
 #import "ShipmentViewModel.h"
 
-@interface ShipmentViewController ()
+@interface ShipmentViewController () <UITextFieldDelegate>
 @property (strong, nonatomic) NSString* orderID;
 @property (strong,nonatomic) ShipmentViewModel* vm;
 
@@ -23,6 +23,7 @@
     self.vm = ShipmentViewModel.new;
     self.orderID = @"2147484660";
     self.navigationItem.title = @"Shipment Tracking";
+    self.orderIDInput.delegate = self;
     // Do any additional setup after loading the view.
 }
 
@@ -66,7 +67,11 @@
     [self presentViewController:alert animated:YES completion:nil];
 }
 
-
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    [self enterOrderID:nil];
+    return YES;
+}
 
 
 @end
