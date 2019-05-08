@@ -73,6 +73,7 @@
 
 - (IBAction)buyProduct:(id)sender {
     [self.sharedManager addProduct:self.product with:self.itemsBoughtCount];
+    self.tabBarController.tabBar.items[1].badgeValue = [NSString stringWithFormat:@"%lu",(unsigned long)Cart.shared.items.count];
     NSString *mess = [NSString stringWithFormat:@"%@ x %ld added to cart.",self.product.name, (long)self.itemsBoughtCount];
     UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Added to Cart!" message:mess preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"Great!" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){}];
