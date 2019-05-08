@@ -9,6 +9,7 @@
 #import "OrderFormViewModel.h"
 #import "APIHandler.h"
 #import "Cart.h"
+
 @implementation OrderFormViewModel
 
 + (instancetype)initWithProducts:(NSMutableArray<Product *> *)products {
@@ -28,12 +29,30 @@
             }
         }];
         if (Cart.shared.items.count == succeeded.count) {
-            [Cart.shared clearCart:completion];
+            [Cart.shared clearCart:^(BOOL success, NSError * _Nullable error) {
+                completion(YES, nil);
+            }];
         }
         else {
-            [Cart.shared deleteItems:indices completion:completion];
+            [Cart.shared deleteItems:indices completion:^(BOOL success, NSError * _Nullable error) {
+                completion(NO, nil);
+            }];
         }
     }];
+}
+
+- (void)postToServer:(NSString *)amount completion:(void (^)(id _Nullable, NSError *))completion {
+    // Update URL with your server
+    NSURL *paymentURL = [NSURL URLWithString:@"http://127.0.0.1:3000/payment"];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:paymentURL];
+    request.HTTPBody = [[NSString stringWithFormat:@"amount=%@", amount] dataUsingEncoding:NSUTF8StringEncoding];
+    request.HTTPMethod = @"POST";
+    
+    [[[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        // TODO: Handle success and failure
+        completion(data, error);
+        NSLog(@"Post request success!!");
+    }] resume];
 }
 
 @end

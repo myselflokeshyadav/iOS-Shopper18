@@ -115,4 +115,11 @@
     }];
 }
 
+- (double)totalPrice {
+    double sum = 0;
+    for (Product *product in self.items)
+        sum += product.totalPrice;
+    return sum;
+}
+
 @end

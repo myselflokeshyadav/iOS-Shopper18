@@ -1002,7 +1002,7 @@
                 <navigationController storyboardIdentifier="HomeNavBar" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="KSP-09-0Yq" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Shop" image="shop" id="UD0-gA-CwL"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="a4M-9P-113">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" backIndicatorImage="back" id="a4M-9P-113">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1869,6 +1869,7 @@
     </scenes>
     <resources>
         <image name="No image available" width="650" height="644"/>
+        <image name="back" width="256" height="256"/>
         <image name="cart" width="25" height="25"/>
         <image name="profile" width="25" height="25"/>
         <image name="shipment" width="24" height="24"/>
