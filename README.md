@@ -7,10 +7,11 @@ Clone this repo., install the pods and run your XCode
 
 ## Features
 
-Register and login users
-Provide a platform for users to purchase our product
-Provide a way for Users to find shipping status with Order ID
-Displpay our Top sellers, product details and  
+Register and login users. 
+Provide a platform for users to purchase our product. 
+Provide a way for Users to find shipping status with Order ID. 
+Displpay our Top sellers, product details and Shipping detail.
+Order products with payment User Interfaec.
 
 
 ## Contributing
