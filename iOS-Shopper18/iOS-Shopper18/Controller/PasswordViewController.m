@@ -67,6 +67,8 @@
         XLFormRowDescriptor *passRow = [self.form formRowWithTag:@"password"];
         passwordsMatch = passRow.value && [passRow.value isEqualToString:newValue];
     }];
+    
+    [self setReturnKeyForRow:row returnType:UIReturnKeyDone];
     [section addFormRow:row];
     
     self.lastField = [self floatCellForRow:row].floatLabeledTextField;
@@ -114,5 +116,9 @@
     if (shouldReturn && textField == self.lastField)
         [self doneTapped:nil];
     return shouldReturn;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return 30;
 }
 @end

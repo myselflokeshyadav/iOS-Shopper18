@@ -13,7 +13,7 @@
 #import <SDWebImage/SDWebImage.h>
 #import "SingleTopSellerViewController.h"
 
-@interface TopSellerViewController ()
+@interface TopSellerViewController ()<UICollectionViewDelegateFlowLayout>
 @property (weak, nonatomic) IBOutlet UICollectionView *colView;
 @property (strong,nonatomic) TopSellerViewModel *topsellerVM;
 
@@ -41,6 +41,12 @@
         }
     }];
 }
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    CGFloat size = collectionView.bounds.size.width;
+    return CGSizeMake(size, 300);
+}
+
 
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     TopSellerCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"topsellerCell" forIndexPath:indexPath];

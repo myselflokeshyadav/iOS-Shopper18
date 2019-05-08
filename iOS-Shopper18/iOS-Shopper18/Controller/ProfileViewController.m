@@ -74,10 +74,10 @@
     [form addFormSection:section];
     row = [self emailRowRequired:YES];
     row.value = user.email;
+    [self setReturnKeyForRow:row returnType:UIReturnKeyDone];
     [section addFormRow:row];
     
     self.lastField = [self floatCellForRow:row].floatLabeledTextField;
-    
     self.form = form;
 }
 
@@ -127,6 +127,10 @@
     if (shouldReturn && textField == self.lastField)
         [self doneTapped:nil];
     return shouldReturn;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return 30;
 }
 @end
 

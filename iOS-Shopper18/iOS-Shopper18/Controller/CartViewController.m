@@ -40,9 +40,9 @@
 }
 
 - (void)loadProductFromFirebase {
-    [Cart.shared loadProducts:^(BOOL success) {
-        if (success) {
-            
+//    [Cart.shared loadProducts:^(BOOL success) {
+//        if (success) {
+    
             self.totalPaidPrice = 0;
             if (Cart.shared.items.count == 0){
                 self.tabBarController.tabBar.items[1].badgeValue = nil;
@@ -64,10 +64,11 @@
                     [self.tblView reloadData];
                 });
             }
-        }else{
-            NSLog(@"Error loading data");
-        }
-    }];
+        //}
+//    else{
+//            NSLog(@"Error loading data");
+//        }
+//    }];
 }
 
 - (IBAction)checkoutBtnClick:(UIButton *)sender {
