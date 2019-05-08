@@ -1603,7 +1603,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HVw-bF-kAD">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HVw-bF-kAD">
                                 <rect key="frame" x="40" y="298" width="334" height="300"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -1641,6 +1641,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wFQ-wU-GSd"/>
                     </view>
+                    <navigationItem key="navigationItem" id="TMD-rV-5tU">
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="UTZ-8w-tPI">
+                            <connections>
+                                <action selector="editTapped:" destination="vyD-GB-mSk" id="IMa-oe-xHg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="HVw-bF-kAD" id="jrQ-i3-JNM"/>
                     </connections>

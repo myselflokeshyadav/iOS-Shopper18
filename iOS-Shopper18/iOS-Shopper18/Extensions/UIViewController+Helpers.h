@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIViewController (Helpers)
 
+- (void)alert:(NSString*)title msg:(NSString *)msg;
 - (IBAction) signout;
 
 @end

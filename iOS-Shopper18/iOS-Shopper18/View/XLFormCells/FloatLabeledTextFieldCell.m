@@ -81,7 +81,7 @@ const static CGFloat kFloatingLabelFontSize = 11.0f;
                                     attributes:@{NSForegroundColorAttributeName: [UIColor lightGrayColor]}];
     
     self.floatLabeledTextField.text = self.rowDescriptor.value ? [self.rowDescriptor.value displayText] : self.rowDescriptor.noValueDisplayText;
-    [self.floatLabeledTextField setEnabled:!self.rowDescriptor.isDisabled];
+//    [self.floatLabeledTextField setEnabled:!self.rowDescriptor.isDisabled];
     
     self.floatLabeledTextField.floatingLabelTextColor = [UIColor lightGrayColor];
     

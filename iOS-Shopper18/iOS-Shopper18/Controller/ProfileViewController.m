@@ -7,12 +7,15 @@
 //
 
 #import "ProfileViewController.h"
+#import "UIViewController+Helpers.h"
 #import "ProfileViewModel.h"
 #import "FloatLabeledTextFieldCell.h"
 #import <JVFloatLabeledTextField/JVFloatLabeledTextField.h>
 #import <TWMessageBarManager.h>
 #import "APIHandler.h"
 #import "User.h"
+
+#define formTags @[@"fname", @"lname", @"address", @"mobile", @"email"]
 
 @interface ProfileViewController ()
 
@@ -26,6 +29,7 @@
     [super viewDidLoad];
     self.vm = ProfileViewModel.new;
     self.navigationItem.title = @"Profile";
+    [self setRowEditing:self.isEditing tags:formTags];
 }
 
 - (void)initializeForm
@@ -42,6 +46,7 @@
     row = [self fnameRowRequired:YES];
     row.value = user.fname;
     [section addFormRow:row];
+    self.firstField = [self floatCellForRow:row].floatLabeledTextField;
     
     // Last name
     section = [XLFormSectionDescriptor formSection];
@@ -53,7 +58,7 @@
     // Address
     section = [XLFormSectionDescriptor formSection];
     [form addFormSection:section];
-    row = [self addressRowRequired:NO];
+    row = [self addressRowRequired:YES];
     [section addFormRow:row];
     
     // Mobile
@@ -71,17 +76,29 @@
     [section addFormRow:row];
     
     self.lastField = [self floatCellForRow:row].floatLabeledTextField;
+    
     self.form = form;
+}
+
+- (IBAction)editTapped:(id)sender {
+    self.isEditing = !self.isEditing;
+    [self setRowEditing:self.isEditing tags:formTags];
+    if (self.isEditing) [self.firstField becomeFirstResponder];
 }
 
 - (IBAction)doneTapped:(id)sender {
     [[self.tableView superview] endEditing:YES];
+    if (!self.formChanged) {
+        [self alert:@"Nothing's changed!" msg:@"Try making some edits first"];
+        return;
+    }
     NSArray<NSString *> *errorMsgs = [self validateForm];
     if (!errorMsgs) {
         [self.vm updateProfile:[self formValues] completion:^(id _Nullable result, NSError * _Nullable error) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 if (result) {
                     [TWMessageBarManager.sharedInstance showMessageWithTitle:@"Success" description:@"Profile Updated" type:TWMessageBarMessageTypeSuccess duration:2];
+                    self.formChanged = NO;
                 } else {
                     [TWMessageBarManager.sharedInstance showMessageWithTitle:@"Error" description:@"Mobile number not found"
                                                                         type:TWMessageBarMessageTypeError duration:2];

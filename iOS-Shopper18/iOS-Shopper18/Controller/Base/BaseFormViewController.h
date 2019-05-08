@@ -19,7 +19,9 @@ typedef enum : NSUInteger {
 } FormInputOption;
 
 @interface BaseFormViewController : XLFormViewController
+@property (weak, nonatomic, nullable) UITextField *firstField;
 @property (weak, nonatomic, nullable) UITextField *lastField;
+@property (assign, nonatomic) BOOL isEditing, formChanged;
 
 - (FloatLabeledTextFieldCell *)floatCellForRow:(XLFormRowDescriptor *)row;
 
@@ -42,6 +44,8 @@ typedef enum : NSUInteger {
 - (XLFormRowDescriptor *)addressRowRequired:(BOOL)required;
 
 - (UITableViewCell *)tableCellForRow:(XLFormRowDescriptor *)row;
+
+- (void)setRowEditing:(BOOL)editable tags:(NSArray *)tags;
 
 - (void)flashCell:(UITableViewCell *)cell color:(UIColor *)color;
 
