@@ -12,10 +12,14 @@
 @implementation UIViewController (Helpers)
 
 - (void)alert:(NSString*)title msg:(NSString *)msg {
+    [self alert:title msg:msg completion:nil];
+}
+
+- (void)alert:(NSString*)title msg:(NSString *)msg completion:(void (^)(void))completion {
     UIAlertController* alert = [UIAlertController alertControllerWithTitle:title message:msg preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action){}];
     [alert addAction:defaultAction];
-    [self presentViewController:alert animated:YES completion:nil];
+    [self presentViewController:alert animated:YES completion:completion];
 }
 
 - (void)signout {

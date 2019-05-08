@@ -25,6 +25,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)clearCart:(void (^)(BOOL success, NSError * _Nullable error))completion;
 - (void)deleteItems:(NSMutableIndexSet *)indices completion:(void (^)(BOOL success, NSError * _Nullable error))completion;
 - (void)saveCart:(void (^)(BOOL))completion;
+- (double)totalPrice;
+
 @end
 
 NS_ASSUME_NONNULL_END
