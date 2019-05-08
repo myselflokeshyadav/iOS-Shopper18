@@ -117,4 +117,8 @@
         [self doneTapped:nil];
     return shouldReturn;
 }
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return 30;
+}
 @end
