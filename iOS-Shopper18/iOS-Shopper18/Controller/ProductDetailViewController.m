@@ -124,7 +124,7 @@
     }
     else {
         CSToastStyle *style = [[CSToastStyle alloc] initWithDefaultStyle];
-        [self.view makeToast:@"This is a piece of toast."
+        [self.view makeToast:@"Log in to instagram."
                     duration:3.0
                     position:CSToastPositionCenter
                        style:style];
