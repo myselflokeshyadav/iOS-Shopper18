@@ -50,7 +50,7 @@
                 [self.noProductInfoLbl setHidden:NO];
                 self.totalPrizeLbl.text = [NSString stringWithFormat: @"Total: $%.2f",self.totalPaidPrice/100];
             }else{
-                self.tabBarController.tabBar.items[1].badgeValue = [NSString stringWithFormat:@"%lu",(unsigned long)Cart.shared.items.count];
+               self.checkoutBtnOutlet.enabled = YES; self.tabBarController.tabBar.items[1].badgeValue = [NSString stringWithFormat:@"%lu",(unsigned long)Cart.shared.items.count];
                 [self.noProductInfoLbl setHidden:YES];
                 for (int i = 0; i < Cart.shared.items.count; i++){
                     self.totalPaidPrice += Cart.shared.items[i].price * Cart.shared.items[i].quantity;
@@ -70,6 +70,7 @@
 
 - (void)showDropIn:(NSString *)clientTokenOrTokenizationKey {
     BTDropInRequest *request = [[BTDropInRequest alloc] init];
+    request.paypalDisabled = TRUE;
     BTDropInController *dropIn = [[BTDropInController alloc] initWithAuthorization:clientTokenOrTokenizationKey request:request handler:^(BTDropInController * _Nonnull controller, BTDropInResult * _Nullable result, NSError * _Nullable error) {
         
         if (error != nil) {
@@ -82,7 +83,7 @@
             
             [self dismissViewControllerAnimated:YES completion:nil];
             [self customAlertView:@"CheckOut Status" errorMessage:@"Payment success!!"];
-            result.paymentOptionType = BTUIKPaymentOptionTypePayPal;
+            
         }
     }];
     [self presentViewController:dropIn animated:YES completion:nil];

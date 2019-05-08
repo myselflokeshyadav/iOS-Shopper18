@@ -24,9 +24,6 @@
 - (void)viewDidLoad {
     self.sharedManager = [Cart shared];
     [super viewDidLoad];
-//    [self setupUI];
-//    NSLog(@"%@",self.viewModel.showProductName);
-//    NSLog(@"%@",self.viewModel.showDescription);
     [self setupUI];
     self.navigationItem.title = @"Product Details";
     
