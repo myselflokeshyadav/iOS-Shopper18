@@ -12,7 +12,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ProductDetailViewController : UIViewController
+@interface ProductDetailViewController : UIViewController <UIDocumentInteractionControllerDelegate> 
 
 @property (weak, nonatomic) IBOutlet UIImageView *productImage;
 @property (weak, nonatomic) IBOutlet UILabel *productName;
