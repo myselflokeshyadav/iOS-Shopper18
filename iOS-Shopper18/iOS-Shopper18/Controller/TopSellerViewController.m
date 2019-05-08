@@ -22,7 +22,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.navigationItem.title = @"Top Sellers";
+    self.navigationItem.backBarButtonItem.title = @" ";
     self.topsellerVM = TopSellerViewModel.new;
     
     [self.topsellerVM getTopSellers:^(BOOL success, NSString * _Nullable error) {

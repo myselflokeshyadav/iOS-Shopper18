@@ -8,6 +8,7 @@
 
 #import "OrderFormViewController.h"
 #import "OrderFormViewModel.h"
+#import "UIViewController+Helpers.h"
 #import "FloatLabeledTextFieldCell.h"
 #import <JVFloatLabeledTextField/JVFloatLabeledTextField.h>
 #import "APIHandler.h"
@@ -25,27 +26,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.navigationItem.title = @"Order Details";
     self.vm = OrderFormViewModel.new;
     [Cart.shared loadProducts:^(BOOL success) {
         
     }];
-    self.navigationItem.title = @"Order Details";
 }
 
 - (void)initializeForm
 {
-    APIHandler.shared.apiKey = @"31bd6630cdc9f58af3d048f9e650e2d1";
-    APIHandler.shared.userID = @"1750";
-    User *user = [User initWithInfo:@{@"firstname":@"Test",
-                                      @"lastname":@"TestLast",
-                                      @"mobile":@"1234560",
-                                      @"email":@"test@test.com"
-                                      
-                                      }];
     XLFormDescriptor *form = [XLFormDescriptor formDescriptor];
     XLFormSectionDescriptor *section;
     XLFormRowDescriptor *row;
+    
+    User *user = APIHandler.shared.currentUser;
     
     // First name
     section = [XLFormSectionDescriptor formSection];
@@ -96,15 +90,64 @@
     [[self.tableView superview] endEditing:YES];
     NSArray<NSString *> *errorMsgs = [self validateForm];
     if (!errorMsgs) {
-        NSLog(@"%@", [self formValues]);
-        [self.vm placeOrder:self.formValues completion:^(BOOL success, NSError * _Nullable error) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [TWMessageBarManager.sharedInstance showMessageWithTitle:@"Thank you!" description:@"Your order has been placed" type:TWMessageBarMessageTypeSuccess duration:2];
-                [self dismissViewControllerAnimated:YES completion:nil];
-            });
-        }];
+        [self beginTransaction];
     }
 }
+
+- (void)beginTransaction {
+    [self promptPayment:^(BOOL success, BOOL canceled, NSError * _Nullable error) {
+        if (!success) {
+            if (error) {
+                [TWMessageBarManager.sharedInstance showMessageWithTitle:@"Error" description:@"Transaction failed, please try again later" type:TWMessageBarMessageTypeSuccess duration:2];
+            }
+            [self dismissViewControllerAnimated:YES completion:nil];
+            return;
+        }
+        [self placeOrder];
+    }];
+}
+
+
+- (void)promptPayment:(void (^)(BOOL success, BOOL canceled, NSError * _Nullable))completion {
+    BTDropInRequest *request = BTDropInRequest.new;
+    request.paypalDisabled = TRUE;
+    BTDropInController *dropIn = [[BTDropInController alloc] initWithAuthorization:kclientToken request:request handler:^(BTDropInController * _Nonnull controller, BTDropInResult * _Nullable result, NSError * _Nullable error) {
+        
+        if (error != nil) completion(NO, NO, error);
+        else if (result.cancelled) completion(NO, YES, nil);
+        else {
+            NSString *totalPrice = [NSString stringWithFormat:@"%.2f", Cart.shared.totalPrice / 100];
+            [self.vm postToServer:totalPrice completion:^(id _Nullable result, NSError * _Nonnull error) {
+                completion(YES, NO, nil);
+            }];
+            result.paymentOptionType = BTUIKPaymentOptionTypePayPal;
+        }
+    }];
+    
+    [self presentViewController:dropIn animated:YES completion:nil];
+}
+
+
+- (void)placeOrder {
+    [self.vm placeOrder:self.formValues completion:^(BOOL success, NSError * _Nullable error) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSString *title = success? @"Success!" : @"Error";
+            NSString *msg = success? @"Your order has been placed" : @"Some orders may not have gone through, place check your cart";
+            if (success) {
+                
+            } else {
+                [TWMessageBarManager.sharedInstance showMessageWithTitle:@"Thank you!" description:@"Your order has been placed" type:TWMessageBarMessageTypeSuccess duration:2];
+            }
+            [self dismissViewControllerAnimated:YES completion:^{
+                [self alert:title msg:msg completion:^{
+                    [self.navigationController popViewControllerAnimated:YES];
+                }];
+            }];
+            
+        });
+    }];
+}
+
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     BOOL shouldReturn = [super textFieldShouldReturn:textField];

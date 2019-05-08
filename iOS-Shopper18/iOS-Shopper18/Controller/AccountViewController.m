@@ -8,6 +8,7 @@
 
 #import "AccountViewController.h"
 #import <SurveyMonkeyiOSSDK/SurveyMonkeyiOSSDK.h>
+#import <SVProgressHUD.h>
 
 @interface AccountViewController ()<SMFeedbackDelegate, UIAlertViewDelegate>
 
@@ -21,9 +22,12 @@
 }
 
 - (IBAction)feedbackTapped:(id)sender {
+    [SVProgressHUD show];
     SMFeedbackViewController *vc = [[SMFeedbackViewController alloc] initWithSurvey:@"2T37ZS7"];
     vc.delegate = self;
-    [vc presentFromViewController:self animated:YES completion:nil];
+    [vc presentFromViewController:self animated:YES completion:^{
+        [SVProgressHUD dismiss];
+    }];
     
 }
 
