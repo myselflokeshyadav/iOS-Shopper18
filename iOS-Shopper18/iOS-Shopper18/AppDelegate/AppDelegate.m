@@ -11,6 +11,7 @@
 #import "APIHandler.h"
 #import "User.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import "Cart.h"
 @import Firebase;
 
 @interface AppDelegate ()
@@ -41,7 +42,18 @@
     User *user;
     if (!userInfo || !(user = [User initWithInfo:userInfo])) return YES;
     APIHandler.shared.currentUser = user;
-    
+    [Cart.shared loadProducts:^(BOOL success) {
+        if (!success || !Cart.shared.items.count) return;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (self.window.rootViewController) {
+                if (![self.window.rootViewController isKindOfClass:UITabBarController.class]) return;
+                UITabBarController *tabController = (UITabBarController *)self.window.rootViewController;
+                tabController.tabBar.items[1].badgeValue = [NSString stringWithFormat:@"%lu",(unsigned long)Cart.shared.items.count];
+            }
+        });
+
+        
+    }];
     NSString *starting = @"HomeTab";
     self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
@@ -70,5 +82,7 @@
 //facebook log, testing if this is activated
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     [FBSDKAppEvents activateApp];
+    
+    
 }
 @end
