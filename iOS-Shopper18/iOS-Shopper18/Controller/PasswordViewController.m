@@ -14,7 +14,9 @@
 #import "User.h"
 #import "APIHandler.h"
 
-@interface PasswordViewController ()
+@interface PasswordViewController () {
+    BOOL passwordsMatch;
+}
 
 @property (strong, nonatomic) ProfileViewModel *vm;
 
@@ -26,6 +28,7 @@
     [super viewDidLoad];
     self.vm = ProfileViewModel.new;
     self.navigationItem.title = @"Edit Password";
+    passwordsMatch = NO;
 }
 
 - (void)initializeForm
@@ -48,6 +51,10 @@
     row.tag = @"password";
     row.title = @"Old Password";
     [section addFormRow:row];
+    [row setOnChangeBlock:^(id  _Nullable oldValue, id  _Nullable newValue, XLFormRowDescriptor * _Nonnull rowDescriptor) {
+        XLFormRowDescriptor *passRow = [self.form formRowWithTag:@"newpassword"];
+        passwordsMatch = passRow.value && [passRow.value isEqualToString:newValue];
+    }];
     
     // Password
     section = [XLFormSectionDescriptor formSection];
@@ -57,9 +64,7 @@
     row.title = @"New Password";
     [row setOnChangeBlock:^(id  _Nullable oldValue, id  _Nullable newValue, XLFormRowDescriptor * _Nonnull rowDescriptor) {
         XLFormRowDescriptor *passRow = [self.form formRowWithTag:@"password"];
-        if (passRow.value && [passRow.value isEqualToString:newValue]) return;
-        UITableViewCell *cell = [self tableCellForRow:passRow];
-        [self shakeCell:cell];
+        passwordsMatch = passRow.value && [passRow.value isEqualToString:newValue];
     }];
     [section addFormRow:row];
     
@@ -70,10 +75,10 @@
 - (IBAction)doneTapped:(id)sender {
     [[self.tableView superview] endEditing:YES];
     NSArray<NSString *> *errorMsgs = [self validateForm];
-    if (!errorMsgs) {
+    if (!errorMsgs && passwordsMatch) {
         [self.vm changePassword:[self formValues] completion:^(id _Nullable result, NSError * _Nullable error) {
             dispatch_async(dispatch_get_main_queue(), ^{
-                if ([result containsString:@"success"]) {
+                if (result && [result containsString:@"success"]) {
                     [TWMessageBarManager.sharedInstance showMessageWithTitle:@"Success" description:@"Password Updated" type:TWMessageBarMessageTypeSuccess duration:2];
                 } else {
                     [TWMessageBarManager.sharedInstance showMessageWithTitle:@"Error" description:result

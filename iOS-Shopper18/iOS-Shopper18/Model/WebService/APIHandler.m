@@ -128,7 +128,7 @@
         }
         result = result[@"msg"];
         if (result && result[0] && [result[0] isKindOfClass:NSString.class]) {
-            completion(result, nil);
+            completion(result[0], nil);
         } else completion(nil, error);
     }];
     
