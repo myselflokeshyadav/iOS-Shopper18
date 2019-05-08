@@ -8,6 +8,7 @@
 
 #import "PasswordViewController.h"
 #import "ProfileViewModel.h"
+#import "UIViewController+Helpers.h"
 #import "FloatLabeledTextFieldCell.h"
 #import <JVFloatLabeledTextField/JVFloatLabeledTextField.h>
 #import <TWMessageBarManager.h>
@@ -74,19 +75,38 @@
 
 - (IBAction)doneTapped:(id)sender {
     [[self.tableView superview] endEditing:YES];
+    if (!self.formChanged) {
+        [self alert:@"Nothing's changed!" msg:@"Try making some edits first"];
+        return;
+    }
     NSArray<NSString *> *errorMsgs = [self validateForm];
     if (!errorMsgs && passwordsMatch) {
         [self.vm changePassword:[self formValues] completion:^(id _Nullable result, NSError * _Nullable error) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 if (result && [result containsString:@"success"]) {
-                    [TWMessageBarManager.sharedInstance showMessageWithTitle:@"Success" description:@"Password Updated" type:TWMessageBarMessageTypeSuccess duration:2];
+                    [TWMessageBarManager.sharedInstance showMessageWithTitle:@"Success" description:@"Password Updated" type:TWMessageBarMessageTypeSuccess duration:4];
+                    self.formChanged = NO;
                 } else {
                     [TWMessageBarManager.sharedInstance showMessageWithTitle:@"Error" description:result
-                                                                        type:TWMessageBarMessageTypeError duration:2];
+                                                                        type:TWMessageBarMessageTypeError duration:4];
                 }
             });
         }];
-    } 
+    } else if (!passwordsMatch) {
+        [TWMessageBarManager.sharedInstance showMessageWithTitle:@"Error" description:@"Passwords do not match"
+                                                            type:TWMessageBarMessageTypeError duration:4];
+    }
+}
+
+- (void)formRowDescriptorValueHasChanged:(XLFormRowDescriptor *)formRow oldValue:(id)oldValue newValue:(id)newValue {
+    [super formRowDescriptorValueHasChanged:formRow oldValue:oldValue newValue:newValue];
+    if (![oldValue isKindOfClass:NSString.class] && ![newValue isKindOfClass:NSString.class]) return;
+    if (![oldValue isKindOfClass:NSString.class] || ![newValue isKindOfClass:NSString.class]) {
+        self.formChanged = YES;
+        return;
+    }
+    BOOL changed = ![(NSString *)oldValue isEqualToString:newValue];
+    self.formChanged = self.formChanged || changed;
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
