@@ -27,6 +27,8 @@ typedef enum : NSUInteger {
 
 - (void)setKeyboardForRow:(XLFormRowDescriptor *)row keyboardType:(UIKeyboardType)type;
 
+- (void)setReturnKeyForRow:(XLFormRowDescriptor *)row returnType:(UIReturnKeyType)type;
+
 - (void)setInputOptionForRow:(XLFormRowDescriptor *)row option:(FormInputOption)option;
 
 - (XLFormRowDescriptor *)floatRowWithTag:(NSString *)tag title:(NSString *)title;

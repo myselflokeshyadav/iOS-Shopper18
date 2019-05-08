@@ -74,10 +74,10 @@
     [form addFormSection:section];
     row = [self emailRowRequired:YES];
     row.value = user.email;
+    [self setReturnKeyForRow:row returnType:UIReturnKeyDone];
     [section addFormRow:row];
     
     self.lastField = [self floatCellForRow:row].floatLabeledTextField;
-    
     self.form = form;
 }
 

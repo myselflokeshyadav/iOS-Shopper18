@@ -54,6 +54,12 @@
     cell.floatLabeledTextField.keyboardType = type;
 }
 
+- (void)setReturnKeyForRow:(XLFormRowDescriptor *)row returnType:(UIReturnKeyType)type{
+    FloatLabeledTextFieldCell *cell = [self floatCellForRow:row];
+    [cell.floatLabeledTextField setReturnKeyType:type];
+}
+
+
 - (void)setInputOptionForRow:(XLFormRowDescriptor *)row option:(FormInputOption)option {
     FloatLabeledTextFieldCell *cell = [self floatCellForRow:row];
     cell.floatLabeledTextField.tag = option;
@@ -67,7 +73,8 @@
     XLFormRowDescriptor *row = [self floatRowWithTag:@"mobile" title:@"Mobile"];
     row.required = required;
     [row.cellConfigAtConfigure setObject:@10 forKey:@"textFieldMaxNumberOfCharacters"];
-    [self setKeyboardForRow:row keyboardType:UIKeyboardTypePhonePad];
+    JVFloatLabeledTextField *field = [self floatCellForRow:row].floatLabeledTextField;  
+    field.keyboardType = UIKeyboardTypePhonePad;
     [self setInputOptionForRow:row option:InputNumbersOnly];
     [row addValidator:[XLFormRegexValidator formRegexValidatorWithMsg:@"Not a valid phone number"
                                                                 regex:@"^\\d{10}$"]];
@@ -77,7 +84,13 @@
 - (XLFormRowDescriptor *)passwordRowRequired:(BOOL)required {
     XLFormRowDescriptor *row = [self floatRowWithTag:@"password" title:@"Password"];
     row.required = required;
-    [self floatCellForRow:row].floatLabeledTextField.secureTextEntry = YES;
+    
+    JVFloatLabeledTextField *field = [self floatCellForRow:row].floatLabeledTextField;
+    field.returnKeyType = UIReturnKeyNext;
+    field.autocorrectionType = UITextAutocorrectionTypeNo;
+    field.autocapitalizationType = UITextAutocapitalizationTypeNone;
+    field.secureTextEntry = YES;
+    
     [row addValidator:[XLFormRegexValidator formRegexValidatorWithMsg:@"At least 6, max 32 characters" regex:@"^.{6,32}$"]];
     return row;
 }
@@ -85,9 +98,11 @@
 - (XLFormRowDescriptor *)emailRowRequired:(BOOL)required {
     XLFormRowDescriptor *row = [self floatRowWithTag:@"email" title:@"Email"];
     row.required = required;
-    [self floatCellForRow:row].floatLabeledTextField.autocorrectionType = UITextAutocorrectionTypeNo;
-    [self floatCellForRow:row].floatLabeledTextField.autocapitalizationType = UITextAutocapitalizationTypeNone;
-    [self setKeyboardForRow:row keyboardType:UIKeyboardTypeEmailAddress];
+    JVFloatLabeledTextField *field = [self floatCellForRow:row].floatLabeledTextField;
+    field.returnKeyType = UIReturnKeyNext;
+    field.autocorrectionType = UITextAutocorrectionTypeNo;
+    field.autocapitalizationType = UITextAutocapitalizationTypeNone;
+    field.keyboardType = UIKeyboardTypeEmailAddress;
     [row addValidator:[XLFormValidator emailValidator]];
     return row;
 }
@@ -95,27 +110,38 @@
 - (XLFormRowDescriptor *)fnameRowRequired:(BOOL)required {
     XLFormRowDescriptor *row = [self floatRowWithTag:@"fname" title:@"First Name"];
     row.required = required;
+    
+    JVFloatLabeledTextField *field = [self floatCellForRow:row].floatLabeledTextField;
+    field.returnKeyType = UIReturnKeyNext;
+    field.autocorrectionType = UITextAutocorrectionTypeNo;
+    field.autocapitalizationType = UITextAutocapitalizationTypeWords;
     [self setInputOptionForRow:row option:InputLettersOnly];
-    [self floatCellForRow:row].floatLabeledTextField.autocorrectionType = UITextAutocorrectionTypeNo;
-    [self floatCellForRow:row].floatLabeledTextField.autocapitalizationType = UITextAutocapitalizationTypeWords;
+    
     return row;
 }
 
 - (XLFormRowDescriptor *)lnameRowRequired:(BOOL)required {
     XLFormRowDescriptor *row = [self floatRowWithTag:@"lname" title:@"Last Name"];
     row.required = required;
+    
+    JVFloatLabeledTextField *field = [self floatCellForRow:row].floatLabeledTextField;
+    field.returnKeyType = UIReturnKeyNext;
+    field.autocorrectionType = UITextAutocorrectionTypeNo;
+    field.autocapitalizationType = UITextAutocapitalizationTypeWords;
     [self setInputOptionForRow:row option:InputLettersOnly];
-    [self floatCellForRow:row].floatLabeledTextField.autocorrectionType = UITextAutocorrectionTypeNo;
-    [self floatCellForRow:row].floatLabeledTextField.autocapitalizationType = UITextAutocapitalizationTypeWords;
+    
     return row;
 }
 
 - (XLFormRowDescriptor *)addressRowRequired:(BOOL)required {
     XLFormRowDescriptor *row = [self floatRowWithTag:@"address" title:@"Address"];
     row.required = required;
-    [self floatCellForRow:row].floatLabeledTextField.autocorrectionType = UITextAutocorrectionTypeNo;
-    [self floatCellForRow:row].floatLabeledTextField.autocapitalizationType = UITextAutocapitalizationTypeWords;
-    [self setKeyboardForRow:row keyboardType:UIKeyboardTypeWebSearch];
+    
+    JVFloatLabeledTextField *field = [self floatCellForRow:row].floatLabeledTextField;
+    field.returnKeyType = UIReturnKeyNext;
+    field.autocorrectionType = UITextAutocorrectionTypeNo;
+    field.autocapitalizationType = UITextAutocapitalizationTypeWords;
+    
     return row;
 }
 

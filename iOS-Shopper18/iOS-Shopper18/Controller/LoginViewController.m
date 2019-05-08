@@ -47,6 +47,7 @@ NSString const *emailRegex = kRegexEmail;
     section = [XLFormSectionDescriptor formSection];
     [form addFormSection:section];
     row = [self passwordRowRequired:YES];
+    [self setReturnKeyForRow:row returnType:UIReturnKeyDone];
     [section addFormRow:row];
     
     self.lastField = [self floatCellForRow:row].floatLabeledTextField;
