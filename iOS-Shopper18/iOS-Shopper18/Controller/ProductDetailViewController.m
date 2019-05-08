@@ -100,9 +100,7 @@
 
 -(void)instaGramWallPost:(Product * _Nonnull)product
 {
-    NSURL *myURL = [NSURL URLWithString:product.imageURL];
-    NSData * imageData = [[NSData alloc] initWithContentsOfURL:myURL];
-    UIImage *imgShare = [[UIImage alloc] initWithData:imageData];
+    UIImage *imgShare = self.productImage.image;
     
     NSURL *instagramURL = [NSURL URLWithString:@"instagram://app"];
     
