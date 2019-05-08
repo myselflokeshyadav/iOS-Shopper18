@@ -13,8 +13,6 @@ Provide a way for Users to find shipping status with Order ID.
 Displpay our Top sellers, product details and Shipping detail.
 Order products with payment User Interfaec.
 
-## Screen shots
-
 
 ## API Reference
 
