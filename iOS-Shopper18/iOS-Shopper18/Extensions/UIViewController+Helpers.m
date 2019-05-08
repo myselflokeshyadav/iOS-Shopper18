@@ -17,9 +17,11 @@
 
 - (void)alert:(NSString*)title msg:(NSString *)msg completion:(void (^)(void))completion {
     UIAlertController* alert = [UIAlertController alertControllerWithTitle:title message:msg preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action){}];
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action){
+        if (completion) completion();
+    }];
     [alert addAction:defaultAction];
-    [self presentViewController:alert animated:YES completion:completion];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 - (void)signout {

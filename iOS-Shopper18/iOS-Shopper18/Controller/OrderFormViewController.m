@@ -110,6 +110,7 @@
 
 - (void)promptPayment:(void (^)(BOOL success, BOOL canceled, NSError * _Nullable))completion {
     BTDropInRequest *request = BTDropInRequest.new;
+    request.paypalDisabled = TRUE;
     BTDropInController *dropIn = [[BTDropInController alloc] initWithAuthorization:kclientToken request:request handler:^(BTDropInController * _Nonnull controller, BTDropInResult * _Nullable result, NSError * _Nullable error) {
         
         if (error != nil) completion(NO, NO, error);
@@ -137,9 +138,12 @@
             } else {
                 [TWMessageBarManager.sharedInstance showMessageWithTitle:@"Thank you!" description:@"Your order has been placed" type:TWMessageBarMessageTypeSuccess duration:2];
             }
-            [self alert:title msg:msg completion:^{
-                [self dismissViewControllerAnimated:YES completion:nil];
+            [self dismissViewControllerAnimated:YES completion:^{
+                [self alert:title msg:msg completion:^{
+                    [self.navigationController popViewControllerAnimated:YES];
+                }];
             }];
+            
         });
     }];
 }

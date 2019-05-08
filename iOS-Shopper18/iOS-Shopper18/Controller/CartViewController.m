@@ -49,6 +49,10 @@
                 self.checkoutBtnOutlet.enabled = NO;
                 [self.noProductInfoLbl setHidden:NO];
                 self.totalPrizeLbl.text = [NSString stringWithFormat: @"Total: $%.2f",self.totalPaidPrice/100];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self.tblView reloadData];
+                });
+                
             }else{
                self.checkoutBtnOutlet.enabled = YES; self.tabBarController.tabBar.items[1].badgeValue = [NSString stringWithFormat:@"%lu",(unsigned long)Cart.shared.items.count];
                 [self.noProductInfoLbl setHidden:YES];
@@ -56,7 +60,9 @@
                     self.totalPaidPrice += Cart.shared.items[i].price * Cart.shared.items[i].quantity;
                 }
                 self.totalPrizeLbl.text = [NSString stringWithFormat: @"Total: $%.2f",self.totalPaidPrice/100];
-                [self.tblView reloadData];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self.tblView reloadData];
+                });
             }
         }else{
             NSLog(@"Error loading data");
