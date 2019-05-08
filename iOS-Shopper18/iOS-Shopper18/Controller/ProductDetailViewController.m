@@ -31,26 +31,26 @@
     
     //FACEBOOK SHARE STARTS HERE
     //Get current picture
-    NSString * urlString = self.product.imageURL;
-    NSURL * url = [NSURL URLWithString:urlString];
-    UIImageView* productPic = UIImageView.new;
-    [productPic sd_setImageWithURL:url placeholderImage:kImagePlaceholder];
-    //facebook photo share button setup
-    FBSDKSharePhoto *photo = [[FBSDKSharePhoto alloc]init];
-    photo.image = productPic.image;
-    photo.userGenerated = YES;
-    FBSDKSharePhotoContent *content = [[FBSDKSharePhotoContent alloc]init];
-    content.photos = @[photo];
-    content.ref = [NSString stringWithFormat:@"%@",_viewModel.productName];
-    FBSDKShareButton *button = [[FBSDKShareButton alloc] init];
-    button.shareContent = content;
-    [self.facebookShareView addSubview:button];
+    //    NSString * urlString = self.product.imageURL;
+    //    NSURL * url = [NSURL URLWithString:urlString];
+    //    UIImageView* productPic = UIImageView.new;
+    //    [productPic sd_setImageWithURL:url placeholderImage:kImagePlaceholder];
+    //    //facebook photo share button setup
+    //    FBSDKSharePhoto *photo = [[FBSDKSharePhoto alloc]init];
+    //    photo.image = productPic.image;
+    //    photo.userGenerated = YES;
+    //    FBSDKSharePhotoContent *content = [[FBSDKSharePhotoContent alloc]init];
+    //    content.photos = @[photo];
+    //    content.ref = [NSString stringWithFormat:@"%@",_viewModel.productName];
+    //    FBSDKShareButton *button = [[FBSDKShareButton alloc] init];
+    //    button.shareContent = content;
+    //    [self.facebookShareView addSubview:button];
     //facebook url share button setup
-//    FBSDKShareLinkContent *contents = [[FBSDKShareLinkContent alloc] init];
-//    contents.contentURL = [NSURL URLWithString:@"https://developers.facebook.com"];
-//    FBSDKShareButton *button2 = [[FBSDKShareButton alloc] init];
-//    button2.shareContent = contents;
-//    [self.facebookShareView addSubview:button2];
+    FBSDKShareLinkContent *contents = [[FBSDKShareLinkContent alloc] init];
+    contents.contentURL = [NSURL URLWithString:@"https://developers.facebook.com"];
+    FBSDKShareButton *button2 = [[FBSDKShareButton alloc] init];
+    button2.shareContent = contents;
+    [self.facebookShareView addSubview:button2];
     
 }
 
