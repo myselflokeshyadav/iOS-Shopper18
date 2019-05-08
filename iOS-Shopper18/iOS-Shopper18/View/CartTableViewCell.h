@@ -21,10 +21,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIButton *pulsBtnOutlet;
 @property (weak, nonatomic) IBOutlet UIButton *minusBtnOutlet;
 @property (weak, nonatomic) IBOutlet UILabel *itemPriceLbl;
+@property (weak, nonatomic) IBOutlet UIButton *detailBtnOutlet;
 
 @property (nonatomic, copy) void(^plusButtonTapHandler)(void);
 @property (nonatomic, copy) void(^minusButtonTapHandler)(void);
-
+@property (nonatomic, copy) void(^detailButtonTapHandler)(void);
 @end
 
 NS_ASSUME_NONNULL_END
