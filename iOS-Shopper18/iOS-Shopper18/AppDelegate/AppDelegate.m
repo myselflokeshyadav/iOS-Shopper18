@@ -10,6 +10,7 @@
 #import "BraintreeCore.h"
 #import "APIHandler.h"
 #import "User.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
 @import Firebase;
 
 @interface AppDelegate ()
@@ -19,6 +20,10 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    //Facebook stuff
+    [[FBSDKApplicationDelegate sharedInstance] application:application
+                             didFinishLaunchingWithOptions:launchOptions];
+    //UI AppDel
     UITabBar.appearance.tintColor = UIColor.whiteColor;
     UITabBar.appearance.barTintColor = kColorPrimeGreen;
     UITabBar.appearance.unselectedItemTintColor = kColorSecondaryGreen;
@@ -53,10 +58,17 @@
     if ([url.scheme localizedCaseInsensitiveCompare:kURLScheme] == NSOrderedSame) {
         return [BTAppSwitch handleOpenURL:url options:options];
     }
-    return NO;
+    //starting facebook handled code
+    BOOL handled = [[FBSDKApplicationDelegate sharedInstance] application:application
+                                                                  openURL:url
+                                                        sourceApplication:options[UIApplicationOpenURLOptionsSourceApplicationKey]
+                                                               annotation:options[UIApplicationOpenURLOptionsAnnotationKey]
+                    ];
+    return handled;
+//delete from facebook code//    return NO;
 }
-
-//- (void)configure
-
-
+//facebook log, testing if this is activated
+- (void)applicationDidBecomeActive:(UIApplication *)application {
+    [FBSDKAppEvents activateApp];
+}
 @end

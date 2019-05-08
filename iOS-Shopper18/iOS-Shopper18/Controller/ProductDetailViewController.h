@@ -30,7 +30,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (weak, nonatomic) IBOutlet UIButton *btnFive;
 
-
+@property (weak, nonatomic) IBOutlet UIView *facebookShareView;
+    
+    @property (weak, nonatomic) IBOutlet UIView *facebookPhotoShareView;
+    
+    
 
 @property (strong, nonatomic) ProductDetailViewModel *vm;
 @property (strong, nonatomic) Product * product;
