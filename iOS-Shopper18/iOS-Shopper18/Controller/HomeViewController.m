@@ -28,6 +28,7 @@
     self.homeVM = HomeViewModel.new;
     self.topSeller = TopSeller.new;
     self.category = Category.new;
+    self.navigationItem.title = @"Shop";
     [self setControls];
 }
 

@@ -19,6 +19,7 @@
     [super viewDidLoad];
     self.nameLbl.text = self.name;
     self.dealLbl.text =self.deal;
+    self.navigationItem.title = self.name;
     [self.imgView sd_setImageWithURL:[NSURL URLWithString:self.imgString]
                                     placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
     switch (self.starCount.intValue) {
@@ -51,14 +52,5 @@
             break;
     }
 }
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
