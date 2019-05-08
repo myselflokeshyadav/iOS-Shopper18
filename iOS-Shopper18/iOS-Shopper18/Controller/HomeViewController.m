@@ -104,6 +104,7 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     if(collectionView == self.colView){
+        
         TopSellerViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"TopSellerViewController"];
         [self.navigationController pushViewController:vc animated:YES];
         

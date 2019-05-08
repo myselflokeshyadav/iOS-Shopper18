@@ -21,6 +21,11 @@
     self.minusButtonTapHandler();
 }
 
+- (IBAction)detailBtnTapped:(UIButton *)sender {
+    self.detailButtonTapHandler();
+}
+
+
 
 - (void)awakeFromNib {
     [super awakeFromNib];

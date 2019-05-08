@@ -149,6 +149,15 @@
             cell.minusBtnOutlet.enabled = NO;
         }
     };
+    
+    cell.detailButtonTapHandler = ^{
+        ProductDetailViewController *detailVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ProductDetailViewController"];
+        Product *product = Cart.shared.items[indexPath.row];
+        ProductDetailViewModel * productVM = ProductDetailViewModel.new;
+        productVM = [productVM initWithProduct:product];
+        [detailVC setDetailViewModel:productVM];
+        [self.navigationController pushViewController:detailVC animated:true];
+    };
     cell.pNameLbl.text = pObj.name;
     //cell.pDescLbl.text = pObj.desc;
     cell.itemPriceLbl.text = [NSString stringWithFormat:@"$%.2f", pObj.price/100];
@@ -177,16 +186,16 @@
     }
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    NSLog(@"hahaha");
-    ProductDetailViewController *detailVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ProductDetailViewController"];
-    Product *product = Cart.shared.items[indexPath.row];
-    ProductDetailViewModel * productVM = ProductDetailViewModel.new;
-    productVM = [productVM initWithProduct:product];
-    [detailVC setDetailViewModel:productVM];
-    [self.navigationController pushViewController:detailVC animated:true];
-    
-}
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+//
+//    NSLog(@"hahaha");
+//    ProductDetailViewController *detailVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ProductDetailViewController"];
+//    Product *product = Cart.shared.items[indexPath.row];
+//    ProductDetailViewModel * productVM = ProductDetailViewModel.new;
+//    productVM = [productVM initWithProduct:product];
+//    [detailVC setDetailViewModel:productVM];
+//    [self.navigationController pushViewController:detailVC animated:true];
+//
+//}
 
 @end
