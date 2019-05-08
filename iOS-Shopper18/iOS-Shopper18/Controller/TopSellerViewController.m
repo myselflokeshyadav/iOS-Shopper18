@@ -44,7 +44,7 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     CGFloat size = collectionView.bounds.size.width;
-    return CGSizeMake(size, 200);
+    return CGSizeMake(size, 300);
 }
 
 
