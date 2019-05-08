@@ -11,6 +11,7 @@
 #import <JVFloatLabeledTextField/JVFloatLabeledTextField.h>
 #import "RegisterViewModel.h"
 #import <TWMessageBarManager.h>
+#import <SVProgressHUD.h>
 
 @interface RegisterViewController ()
 
@@ -66,6 +67,7 @@
     section = [XLFormSectionDescriptor formSection];
     [form addFormSection:section];
     row = [self passwordRowRequired:YES];
+    [self setReturnKeyForRow:row returnType:UIReturnKeyDone];
     [section addFormRow:row];
     
     self.lastField = [self floatCellForRow:row].floatLabeledTextField;
@@ -77,14 +79,23 @@
     NSArray<NSString *> *errorMsgs = [self validateForm];
     if (!errorMsgs) {
         NSLog(@"%@", [self formValues]);
+        [SVProgressHUD show];
         [self.vm register:[self formValues] completion:^(BOOL success, NSString * _Nullable msg) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                if (success) {
-                    id vc = [self.storyboard instantiateViewControllerWithIdentifier:@"HomeTab"];
+            
+            if (success) {
+                id vc = [self.storyboard instantiateViewControllerWithIdentifier:@"HomeTab"];
+                double delayInSeconds = 1.0;
+                dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+                dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                    [SVProgressHUD dismiss];
                     [self.navigationController presentViewController:vc animated:YES completion:nil];
-                } else {
-                    [TWMessageBarManager.sharedInstance showMessageWithTitle:@"Error" description:msg type:TWMessageBarMessageTypeError duration:2];
-                }
+                });
+                return;
+            }
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [TWMessageBarManager.sharedInstance showMessageWithTitle:@"Error" description:msg type:TWMessageBarMessageTypeError duration:2];
+                [SVProgressHUD dismiss];
             });
         }];
     }

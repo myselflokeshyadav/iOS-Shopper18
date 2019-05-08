@@ -11,10 +11,14 @@
 #import "TopSellerViewModel.h"
 #import "TopSeller.h"
 #import <SDWebImage/SDWebImage.h>
+#import "SingleTopSellerViewController.h"
 
-@interface TopSellerViewController ()
+@interface TopSellerViewController ()<UICollectionViewDelegateFlowLayout>
 @property (weak, nonatomic) IBOutlet UICollectionView *colView;
 @property (strong,nonatomic) TopSellerViewModel *topsellerVM;
+
+
+
 
 @end
 
@@ -38,13 +42,48 @@
     }];
 }
 
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    CGFloat size = collectionView.bounds.size.width;
+    return CGSizeMake(size, 200);
+}
+
+
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     TopSellerCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"topsellerCell" forIndexPath:indexPath];
     TopSeller *tsObj = [self.topsellerVM topSellerAt:indexPath.item];
     
-    cell.sNameLbl.text = [NSString stringWithFormat:@"Name: %@", tsObj.name];
+    cell.sNameLbl.text = [NSString stringWithFormat:@"%@", tsObj.name];
     cell.sDealLbl.text = [NSString stringWithFormat:@"Deal: %@", tsObj.deal];
-    cell.sRatingLbl.text = [NSString stringWithFormat:@"Rating: %@", tsObj.rating];
+    switch (tsObj.rating.intValue) {
+        case 1:
+            cell.starImg1.image = [UIImage imageNamed:@"star"];
+            break;
+        case 2:
+            cell.starImg1.image = [UIImage imageNamed:@"star"];
+            cell.starImg2.image = [UIImage imageNamed:@"star"];
+            break;
+        case 3:
+            cell.starImg1.image = [UIImage imageNamed:@"star"];
+            cell.starImg2.image = [UIImage imageNamed:@"star"];
+            cell.starImg3.image = [UIImage imageNamed:@"star"];
+            break;
+        case 4:
+            cell.starImg1.image = [UIImage imageNamed:@"star"];
+            cell.starImg2.image = [UIImage imageNamed:@"star"];
+            cell.starImg3.image = [UIImage imageNamed:@"star"];
+            cell.starImg4.image = [UIImage imageNamed:@"star"];
+            break;
+        case 5:
+            cell.starImg1.image = [UIImage imageNamed:@"star"];
+            cell.starImg2.image = [UIImage imageNamed:@"star"];
+            cell.starImg3.image = [UIImage imageNamed:@"star"];
+            cell.starImg4.image = [UIImage imageNamed:@"star"];
+            cell.starImg5.image = [UIImage imageNamed:@"star"];
+            break;
+        default:
+            break;
+    }
+    cell.sRatingLbl.text = @"Rating:";
     [cell.logoImgView sd_setImageWithURL:[NSURL URLWithString:tsObj.logo]
                  placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
     return cell;
@@ -52,6 +91,18 @@
 
 - (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return self.topsellerVM.numTopSellers;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    SingleTopSellerViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"SingleTopSellerViewController"];
+    TopSeller *tsObj = [self.topsellerVM topSellerAt:indexPath.row];
+    
+    //vc.nameLbl.text = [NSString stringWithFormat:@"%@", tsObj.name];
+    vc.name = [NSString stringWithFormat:@"%@", tsObj.name];
+    vc.deal = [NSString stringWithFormat:@"Deal: %@", tsObj.deal];
+    vc.imgString = tsObj.logo;
+    vc.starCount = tsObj.rating;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end

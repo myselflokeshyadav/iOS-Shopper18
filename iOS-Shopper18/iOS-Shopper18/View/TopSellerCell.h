@@ -16,6 +16,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *sDealLbl;
 @property (weak, nonatomic) IBOutlet UILabel *sRatingLbl;
 
+@property (weak, nonatomic) IBOutlet UIImageView *starImg1;
+@property (weak, nonatomic) IBOutlet UIImageView *starImg2;
+@property (weak, nonatomic) IBOutlet UIImageView *starImg3;
+@property (weak, nonatomic) IBOutlet UIImageView *starImg4;
+@property (weak, nonatomic) IBOutlet UIImageView *starImg5;
+
 @end
 
 NS_ASSUME_NONNULL_END

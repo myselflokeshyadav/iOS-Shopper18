@@ -67,6 +67,8 @@
         XLFormRowDescriptor *passRow = [self.form formRowWithTag:@"password"];
         passwordsMatch = passRow.value && [passRow.value isEqualToString:newValue];
     }];
+    
+    [self setReturnKeyForRow:row returnType:UIReturnKeyDone];
     [section addFormRow:row];
     
     self.lastField = [self floatCellForRow:row].floatLabeledTextField;
