@@ -14,6 +14,7 @@
 #import <TWMessageBarManager.h>
 #import "APIHandler.h"
 #import "User.h"
+#import <SVProgressHUD.h>
 
 #define formTags @[@"fname", @"lname", @"address", @"mobile", @"email"]
 
@@ -94,18 +95,31 @@
     }
     NSArray<NSString *> *errorMsgs = [self validateForm];
     if (!errorMsgs) {
+        [SVProgressHUD show];
         [self.vm updateProfile:[self formValues] completion:^(id _Nullable result, NSError * _Nullable error) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 if (result) {
-                    [TWMessageBarManager.sharedInstance showMessageWithTitle:@"Success" description:@"Profile Updated" type:TWMessageBarMessageTypeSuccess duration:2];
+                    [TWMessageBarManager.sharedInstance showMessageWithTitle:@"Success" description:@"Profile Updated" type:TWMessageBarMessageTypeSuccess duration:4];
                     self.formChanged = NO;
                 } else {
                     [TWMessageBarManager.sharedInstance showMessageWithTitle:@"Error" description:@"Mobile number not found"
-                                                                        type:TWMessageBarMessageTypeError duration:2];
+                                                                        type:TWMessageBarMessageTypeError duration:4];
                 }
+                [SVProgressHUD dismiss];
             });
         }];
     }
+}
+
+- (void)formRowDescriptorValueHasChanged:(XLFormRowDescriptor *)formRow oldValue:(id)oldValue newValue:(id)newValue {
+    [super formRowDescriptorValueHasChanged:formRow oldValue:oldValue newValue:newValue];
+    if (![oldValue isKindOfClass:NSString.class] && ![newValue isKindOfClass:NSString.class]) return;
+    if (![oldValue isKindOfClass:NSString.class] || ![newValue isKindOfClass:NSString.class]) {
+      self.formChanged = YES;
+        return;
+    }
+    BOOL changed = ![(NSString *)oldValue isEqualToString:newValue];
+    self.formChanged = self.formChanged || changed;
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
