@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonnull) NSMutableArray<Product *> *products;
 
 - (void)placeOrder:(NSDictionary *)orderInfo completion:(void (^)(BOOL, NSError * _Nullable))completion;
+- (void)postToServer:(NSString *)amount completion:(void (^)(id _Nullable, NSError *))completion;
 
 @end
 

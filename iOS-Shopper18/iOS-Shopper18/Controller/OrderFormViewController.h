@@ -7,6 +7,10 @@
 //
 
 #import "BaseFormViewController.h"
+#import "BraintreeCore.h"
+#import "BraintreeDropIn.h"
+#import "BTDropInViewController.h"
+#import "BraintreePayPal.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
