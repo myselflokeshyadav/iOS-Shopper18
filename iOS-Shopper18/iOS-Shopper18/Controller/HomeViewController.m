@@ -11,11 +11,14 @@
 #import "TopSellerCell.h"
 #import "CategoryViewCell.h"
 #import "TopSellerViewController.h"
+#import "TopSellerViewModel.h"
 #import "SubcategoriesViewController.h"
 #import "CategoriesViewController.h"
+#import "SingleTopSellerViewController.h"
+#import "TopSeller.h"
 
 @interface HomeViewController ()
-
+@property (strong,nonatomic) TopSellerViewModel *topsellerVM;
 @end
 
 @implementation HomeViewController
@@ -26,9 +29,6 @@
     self.topSeller = TopSeller.new;
     self.category = Category.new;
     [self setControls];
-    self.navigationItem.backBarButtonItem.title = @" ";
-    self.navigationItem.leftBarButtonItem.title = @" ";
-    self.navigationItem.rightBarButtonItem.title = @" ";
 }
 
 -(void)setControls{
@@ -105,9 +105,13 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     if(collectionView == self.colView){
         
-        TopSellerViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"TopSellerViewController"];
+        SingleTopSellerViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"SingleTopSellerViewController"];
+        TopSeller *tsObj = [self.homeVM topSellerAt:indexPath.item];
+        vc.name = [NSString stringWithFormat:@"%@", tsObj.name];
+        vc.deal = [NSString stringWithFormat:@"Deal: %@", tsObj.deal];
+        vc.imgString = tsObj.logo;
+        vc.starCount = tsObj.rating;
         [self.navigationController pushViewController:vc animated:YES];
-        
     }
     else{
         Category * category = self.categories[indexPath.item];
