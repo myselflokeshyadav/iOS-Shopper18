@@ -12,14 +12,18 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ProductsViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource>
+@interface ProductsViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource, UIDocumentInteractionControllerDelegate>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (strong, nonatomic) ProductsViewModel * productVModel;
 @property (strong, nonatomic) NSMutableArray<Product *> *productList;
 @property(assign, nonatomic) Subcategory * subcategory;
 @property(assign, nonatomic) Category * category;
+//Instagram
+
+
 
 - (void)getProducts:(NSString *)cid scid:(NSString *)sid;
+
 
 @end
 

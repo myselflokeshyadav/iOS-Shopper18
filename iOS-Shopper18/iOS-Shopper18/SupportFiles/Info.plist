@@ -60,6 +60,7 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
@@ -67,5 +68,13 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+    
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+        <string>instagram</string>
+    </array>
+    
+	<key></key>
+	<string></string>
 </dict>
 </plist>

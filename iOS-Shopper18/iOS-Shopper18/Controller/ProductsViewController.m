@@ -96,7 +96,7 @@
 }
 
 -(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
-    return UIEdgeInsetsMake(5, 5, 0, 10);
+    return UIEdgeInsetsMake(5, 5, 0, 5);
 }
 
 

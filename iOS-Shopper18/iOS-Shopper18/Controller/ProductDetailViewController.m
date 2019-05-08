@@ -12,11 +12,13 @@
 #import <SDWebImage/SDWebImage.h>
 #import "Cart.h"
 #import <FBSDKShareKit/FBSDKShareKit.h>
+#import "UIView+Toast.h"
 
 @interface ProductDetailViewController ()
 @property (nonatomic, strong) ProductDetailViewModel* viewModel;
 @property (nonatomic, strong) Cart *sharedManager;
 @property (readwrite) NSInteger itemsBoughtCount;
+@property (strong, nonatomic) UIImageView * imageView;
 @end
 
 @implementation ProductDetailViewController
@@ -81,6 +83,7 @@
     UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"Great!" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){}];
     [alert addAction:defaultAction];
     [self presentViewController:alert animated:YES completion:nil];
+    
 }
 - (IBAction)pickQuantity:(UIButton*)sender {
     self.btnOne.backgroundColor = UIColor.whiteColor;
@@ -93,35 +96,41 @@
     NSInteger tag = [sender tag];
     self.itemsBoughtCount = tag;
     sender.backgroundColor = orange;
+}
+
+-(void)instaGramWallPost:(Product * _Nonnull)product
+{
+    UIImage *imgShare = self.productImage.image;
     
-    //  HOOOOOF
-//    switch (tag) {
-//        case 1:
-//            self.itemsBoughtCount = tag;
-//            sender.backgroundColor = orange;
-//            break;
-//        case 2:
-//            self.itemsBoughtCount = tag;
-//            sender.backgroundColor = orange;
-//            break;
-//        case 3:
-//            self.itemsBoughtCount = tag;
-//            sender.backgroundColor = orange;
-//            break;
-//        case 4:
-//            self.itemsBoughtCount = tag;
-//            sender.backgroundColor = orange;
-//            break;
-//        case 5:
-//            self.itemsBoughtCount = tag;
-//            sender.backgroundColor = orange;
-//            break;
-//        default:
-//            break;
-//    }
+    NSURL *instagramURL = [NSURL URLWithString:@"instagram://app"];
+    
+    if([[UIApplication sharedApplication] canOpenURL:instagramURL]) //check for App is install or not
+    {
+        UIImage *imageToUse = imgShare;
+        NSString *documentDirectory=[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"];
+        NSString *saveImagePath=[documentDirectory stringByAppendingPathComponent:@"Image.igo"];
+        NSData *imageData=UIImagePNGRepresentation(imageToUse);
+        [imageData writeToFile:saveImagePath atomically:YES];
+        NSURL *imageURL=[NSURL fileURLWithPath:saveImagePath];
+        self.documentController=[[UIDocumentInteractionController alloc]init];
+        self.documentController = [UIDocumentInteractionController interactionControllerWithURL:imageURL];
+        self.documentController.delegate = self;
+        self.documentController.annotation = [NSDictionary dictionaryWithObjectsAndKeys:[NSString stringWithFormat:@"Testing"], @"InstagramCaption", nil];
+        self.documentController.UTI = @"com.instagram.exclusivegram";
+        UIViewController *vc = [UIApplication sharedApplication].keyWindow.rootViewController;
+        [self.documentController presentOpenInMenuFromRect:CGRectMake(1, 1, 1, 1) inView:vc.view animated:YES];
+    }
+    else {
+        CSToastStyle *style = [[CSToastStyle alloc] initWithDefaultStyle];
+        [self.view makeToast:@"Log in to instagram."
+                    duration:3.0
+                    position:CSToastPositionCenter
+                       style:style];
+    }
 }
 
 
-
-
+- (IBAction)instagramButton:(UIButton *)sender {
+    [self instaGramWallPost:self.product];
+}
 @end
