@@ -66,6 +66,7 @@ const static CGFloat kFloatingLabelFontSize = 11.0f;
     [self.contentView addConstraints:[self layoutConstraints]];
     self.contentView.backgroundColor = UIColor.clearColor;
     self.floatLabeledTextField.backgroundColor = UIColor.clearColor;
+    [self setReturnKeyType:UIReturnKeyNext];
     self.backgroundColor = UIColor.groupTableViewBackgroundColor;
     self.layer.cornerRadius = 10;
     self.layer.borderWidth = 2.5;
