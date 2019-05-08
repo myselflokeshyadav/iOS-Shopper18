@@ -1187,7 +1187,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="checkoutBtnClick:" destination="LoZ-Vy-a6r" eventType="touchUpInside" id="UU9-68-Zep"/>
+                                            <segue destination="fb5-fN-phD" kind="show" id="ViH-hR-6c7"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total: $0 " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s6P-d6-r3h">
@@ -1483,14 +1483,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7w0-Qb-SyX">
-                                <rect key="frame" x="40" y="298" width="334" height="300"/>
+                                <rect key="frame" x="40" y="295.5" width="334" height="300"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="Vfv-Oa-LHg"/>
                                 </constraints>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LXQ-6V-YR5">
-                                <rect key="frame" x="40" y="648" width="334" height="55"/>
+                                <rect key="frame" x="40" y="645.5" width="334" height="55"/>
                                 <color key="backgroundColor" red="0.35780721900000001" green="0.7258044481" blue="0.45485973359999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="jSa-ZX-rua"/>
@@ -1504,6 +1504,9 @@
                                         <real key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="confirmTapped" destination="fb5-fN-phD" eventType="touchUpInside" id="Dar-ry-9ch"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1517,6 +1520,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="li9-Fd-xUW"/>
                     </view>
+                    <navigationItem key="navigationItem" id="0B0-7A-N1M">
+                        <barButtonItem key="backBarButtonItem" title="  " id="ADq-GL-Nom"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="7w0-Qb-SyX" id="vFa-Wq-o7R"/>
                     </connections>
