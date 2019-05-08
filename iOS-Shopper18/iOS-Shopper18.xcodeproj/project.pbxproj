@@ -16,6 +16,7 @@
 		2F032E51227FA36500B2842F /* Cart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F032E50227FA36500B2842F /* Cart.storyboard */; };
 		2F032E54227FA3A300B2842F /* CartTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F032E53227FA3A300B2842F /* CartTableViewCell.m */; };
 		2F032E56227FCED800B2842F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2F032E55227FCED800B2842F /* GoogleService-Info.plist */; };
+		2F391D4F228339C7004A1348 /* SingleTopSellerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F391D4E228339C6004A1348 /* SingleTopSellerViewController.m */; };
 		40695A25BAA2416401173320 /* libPods-iOS-Shopper18.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 882449B0E6DB3505385877CA /* libPods-iOS-Shopper18.a */; };
 		6D0137AE227C9B6900797006 /* CategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0137AC227C9B6800797006 /* CategoriesViewController.m */; };
 		6D0137B3227C9BD200797006 /* CategoryViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0137B0227C9BD100797006 /* CategoryViewCell.m */; };
@@ -84,6 +85,8 @@
 		2F032E52227FA3A300B2842F /* CartTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CartTableViewCell.h; sourceTree = "<group>"; };
 		2F032E53227FA3A300B2842F /* CartTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CartTableViewCell.m; sourceTree = "<group>"; };
 		2F032E55227FCED800B2842F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2F391D4D228339C6004A1348 /* SingleTopSellerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SingleTopSellerViewController.h; sourceTree = "<group>"; };
+		2F391D4E228339C6004A1348 /* SingleTopSellerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SingleTopSellerViewController.m; sourceTree = "<group>"; };
 		6D0137AC227C9B6800797006 /* CategoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriesViewController.m; sourceTree = "<group>"; };
 		6D0137AD227C9B6800797006 /* CategoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoriesViewController.h; sourceTree = "<group>"; };
 		6D0137AF227C9BD100797006 /* CategoryViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryViewCell.h; sourceTree = "<group>"; };
@@ -410,6 +413,8 @@
 				E1432AB3227E7A4000365467 /* OrderFormViewController.m */,
 				2F032E39227E9EE900B2842F /* TopSellerViewController.h */,
 				2F032E3A227E9EE900B2842F /* TopSellerViewController.m */,
+				2F391D4D228339C6004A1348 /* SingleTopSellerViewController.h */,
+				2F391D4E228339C6004A1348 /* SingleTopSellerViewController.m */,
 				6DBBB1A6227F328E00979E87 /* ProductsViewController.h */,
 				6DBBB1A7227F328E00979E87 /* ProductsViewController.m */,
 				E1A221D4227F64F600952EC5 /* ProductDetailViewController.h */,
@@ -645,6 +650,7 @@
 				6D0137AE227C9B6900797006 /* CategoriesViewController.m in Sources */,
 				E1AF4A35227E47B40087D198 /* User.m in Sources */,
 				E1AB3DD822816BE800E5CC0F /* PasswordViewController.m in Sources */,
+				2F391D4F228339C7004A1348 /* SingleTopSellerViewController.m in Sources */,
 				E1A221E2227F6DF100952EC5 /* ShipmentTrack.m in Sources */,
 				E1C45371227CC1BF001CD5E6 /* FloatLabeledTextFieldCell.m in Sources */,
 				2F032E4F227FA2E500B2842F /* CartViewModel.m in Sources */,
