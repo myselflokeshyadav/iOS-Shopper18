@@ -1331,14 +1331,20 @@
                                     <action selector="resetPassTapped:" destination="yvL-hW-M5z" eventType="touchUpInside" id="Tgt-Xi-4gh"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="g1W-mE-ayK">
+                                <rect key="frame" x="40" y="128" width="334" height="187"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="5gX-kt-Imh" firstAttribute="centerX" secondItem="qYJ-cf-QWS" secondAttribute="centerX" id="6GW-Ob-mpm"/>
+                            <constraint firstItem="g1W-mE-ayK" firstAttribute="leading" secondItem="kq6-rE-3t6" secondAttribute="leading" constant="40" id="7bh-wK-ERX"/>
                             <constraint firstItem="1Na-Kt-Uj3" firstAttribute="centerY" secondItem="kq6-rE-3t6" secondAttribute="centerY" constant="-50" id="AXl-aH-N9F"/>
                             <constraint firstItem="1Na-Kt-Uj3" firstAttribute="leading" secondItem="kq6-rE-3t6" secondAttribute="leading" constant="40" id="Mcu-1y-pno"/>
                             <constraint firstItem="e4P-a2-Y9C" firstAttribute="trailing" secondItem="qYJ-cf-QWS" secondAttribute="trailing" id="OGn-TM-OHZ"/>
                             <constraint firstItem="5gX-kt-Imh" firstAttribute="top" secondItem="qYJ-cf-QWS" secondAttribute="bottom" id="Rye-pi-Eyr"/>
+                            <constraint firstItem="1Na-Kt-Uj3" firstAttribute="top" secondItem="g1W-mE-ayK" secondAttribute="bottom" constant="40" id="UaN-4F-gdO"/>
+                            <constraint firstItem="g1W-mE-ayK" firstAttribute="top" secondItem="kq6-rE-3t6" secondAttribute="top" constant="40" id="VNz-al-2YW"/>
                             <constraint firstItem="qYJ-cf-QWS" firstAttribute="leading" secondItem="kq6-rE-3t6" secondAttribute="leading" constant="40" id="aI2-zg-cde"/>
                             <constraint firstItem="e4P-a2-Y9C" firstAttribute="top" secondItem="qYJ-cf-QWS" secondAttribute="bottom" constant="40" id="ac1-K7-DOd"/>
                             <constraint firstItem="kq6-rE-3t6" firstAttribute="trailing" secondItem="1Na-Kt-Uj3" secondAttribute="trailing" constant="40" id="bcS-eP-rVH"/>
@@ -1346,6 +1352,7 @@
                             <constraint firstItem="e4P-a2-Y9C" firstAttribute="leading" secondItem="qYJ-cf-QWS" secondAttribute="leading" id="daD-YB-Ono"/>
                             <constraint firstItem="qYJ-cf-QWS" firstAttribute="top" secondItem="1Na-Kt-Uj3" secondAttribute="bottom" constant="90" id="f8U-fJ-8mu"/>
                             <constraint firstItem="e4P-a2-Y9C" firstAttribute="height" secondItem="qYJ-cf-QWS" secondAttribute="height" id="ww9-me-1BM"/>
+                            <constraint firstItem="kq6-rE-3t6" firstAttribute="trailing" secondItem="g1W-mE-ayK" secondAttribute="trailing" constant="40" id="yIZ-fJ-VFG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kq6-rE-3t6"/>
                     </view>
@@ -1358,7 +1365,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sme-Tf-o3S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2522" y="-733"/>
+            <point key="canvasLocation" x="-2523.1884057971015" y="-733.25892857142856"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="DFU-8D-IRc">
