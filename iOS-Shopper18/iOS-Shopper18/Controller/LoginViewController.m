@@ -11,6 +11,8 @@
 #import <JVFloatLabeledTextField/JVFloatLabeledTextField.h>
 #import "LoginViewModel.h"
 #import <TWMessageBarManager.h>
+#import "Cart.h"
+#import <SVProgressHUD.h>
 
 @interface LoginViewController ()
 
@@ -56,15 +58,32 @@ NSString const *emailRegex = kRegexEmail;
     NSArray<NSString *> *errorMsgs = [self validateForm];
     if (!errorMsgs) {
         NSLog(@"%@", [self formValues]);
+        [SVProgressHUD show];
         [self.vm login:[self formValues] completion:^(BOOL success, NSString * _Nullable msg) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                if (success) {
-                    id vc = [self.storyboard instantiateViewControllerWithIdentifier:@"HomeTab"];
-                    [self.navigationController presentViewController:vc animated:YES completion:nil];
-                } else {
-                    [TWMessageBarManager.sharedInstance showMessageWithTitle:@"Error" description:msg type:TWMessageBarMessageTypeError duration:2];
+            if (!success) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [TWMessageBarManager.sharedInstance showMessageWithTitle:@"Error" description:msg type:TWMessageBarMessageTypeError duration:4];
+                    [SVProgressHUD dismiss];
+                });
+                return;
+            }
+            // Succeeded in logging in
+            id vc = [self.storyboard instantiateViewControllerWithIdentifier:@"HomeTab"];
+            [Cart.shared loadProducts:^(BOOL loadSuccess) {
+                if (loadSuccess && Cart.shared.items.count) {
+                    if (vc && [vc isKindOfClass:UITabBarController.class]) {
+                        UITabBarController *tab = vc;
+                        tab.tabBar.items[1].badgeValue = [NSString stringWithFormat:@"%lu",(unsigned long)Cart.shared.items.count];
+                    }
                 }
-            });
+                double delayInSeconds = 1.0;
+                dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+                dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                    [SVProgressHUD dismiss];
+                    [self.navigationController presentViewController:vc animated:YES completion:nil];
+                });
+            }];
+            
         }];
     }
 }
