@@ -15,9 +15,12 @@ NS_ASSUME_NONNULL_BEGIN
 @interface CartTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *pImgView;
 @property (weak, nonatomic) IBOutlet UILabel *pNameLbl;
-@property (weak, nonatomic) IBOutlet UILabel *pDescLbl;
+//@property (weak, nonatomic) IBOutlet UILabel *pDescLbl;
 @property (weak, nonatomic) IBOutlet UILabel *pPriceLbl;
 @property (weak, nonatomic) IBOutlet UILabel *pCountLbl;
+@property (weak, nonatomic) IBOutlet UIButton *pulsBtnOutlet;
+@property (weak, nonatomic) IBOutlet UIButton *minusBtnOutlet;
+@property (weak, nonatomic) IBOutlet UILabel *itemPriceLbl;
 
 @property (nonatomic, copy) void(^plusButtonTapHandler)(void);
 @property (nonatomic, copy) void(^minusButtonTapHandler)(void);
