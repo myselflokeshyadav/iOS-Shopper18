@@ -11,11 +11,8 @@
 #import "ProductDetailViewController.h"
 #import "ProductDetailViewModel.h"
 #import "UIView+Toast.h"
-#import <SDWebImage/SDWebImage.h>
 
 @interface ProductsViewController ()
-
-@property (strong, nonatomic) UIImageView * imageView;
 
 @end
 
@@ -85,7 +82,6 @@
     ProductDetailViewModel * productVM = ProductDetailViewModel.new;
     productVM = [productVM initWithProduct:product];
     [detailVC setDetailViewModel:productVM];
-    [self instaGramWallPost:product];
     [self.navigationController pushViewController:detailVC animated:true];
 }
 
@@ -101,39 +97,6 @@
 
 -(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
     return UIEdgeInsetsMake(5, 5, 0, 5);
-}
-
--(void)instaGramWallPost:(Product * _Nonnull)product
-    {
-        NSURL *myURL = [NSURL URLWithString:product.imageURL];
-        NSData * imageData = [[NSData alloc] initWithContentsOfURL:myURL];
-        UIImage *imgShare = [[UIImage alloc] initWithData:imageData];
-        
-        NSURL *instagramURL = [NSURL URLWithString:@"instagram://app"];
-        
-        if([[UIApplication sharedApplication] canOpenURL:instagramURL]) //check for App is install or not
-        {
-            UIImage *imageToUse = imgShare;
-            NSString *documentDirectory=[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"];
-            NSString *saveImagePath=[documentDirectory stringByAppendingPathComponent:@"Image.igo"];
-            NSData *imageData=UIImagePNGRepresentation(imageToUse);
-            [imageData writeToFile:saveImagePath atomically:YES];
-            NSURL *imageURL=[NSURL fileURLWithPath:saveImagePath];
-            self.documentController=[[UIDocumentInteractionController alloc]init];
-            self.documentController = [UIDocumentInteractionController interactionControllerWithURL:imageURL];
-            self.documentController.delegate = self;
-            self.documentController.annotation = [NSDictionary dictionaryWithObjectsAndKeys:[NSString stringWithFormat:@"Testing"], @"InstagramCaption", nil];
-            self.documentController.UTI = @"com.instagram.exclusivegram";
-            UIViewController *vc = [UIApplication sharedApplication].keyWindow.rootViewController;
-            [self.documentController presentOpenInMenuFromRect:CGRectMake(1, 1, 1, 1) inView:vc.view animated:YES];
-        }
-        else {
-            CSToastStyle *style = [[CSToastStyle alloc] initWithDefaultStyle];
-            [self.view makeToast:@"This is a piece of toast."
-                        duration:3.0
-                        position:CSToastPositionCenter
-                           style:style];
-        }
 }
 
 

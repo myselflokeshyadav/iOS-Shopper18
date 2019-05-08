@@ -33,14 +33,15 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIView *facebookShareView;
     
     @property (weak, nonatomic) IBOutlet UIView *facebookPhotoShareView;
-    
-    
+- (IBAction)instagramButton:(UIButton *)sender;
+
+@property (nonatomic, retain) UIDocumentInteractionController *documentController;
 
 @property (strong, nonatomic) ProductDetailViewModel *vm;
 @property (strong, nonatomic) Product * product;
 
 -(void)setDetailViewModel:(ProductDetailViewModel *)viewModel;
-
+-(void)instaGramWallPost:(Product * _Nonnull)product;
 @end
 
 NS_ASSUME_NONNULL_END

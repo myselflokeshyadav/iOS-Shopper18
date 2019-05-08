@@ -19,11 +19,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property(assign, nonatomic) Subcategory * subcategory;
 @property(assign, nonatomic) Category * category;
 //Instagram
-@property (nonatomic, retain) UIDocumentInteractionController *documentController;
+
 
 
 - (void)getProducts:(NSString *)cid scid:(NSString *)sid;
--(void)instaGramWallPost:(Product * _Nonnull)product;
+
 
 @end
 

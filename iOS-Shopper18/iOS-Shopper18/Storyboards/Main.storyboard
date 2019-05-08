@@ -577,10 +577,6 @@
                                     <constraint firstAttribute="height" constant="227" id="Aou-ak-Kdq"/>
                                 </constraints>
                             </imageView>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rRh-4a-dTh" userLabel="instagramShareView">
-                                <rect key="frame" x="358" y="174" width="24" height="22"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fSy-xg-SX8" userLabel="baseView">
                                 <rect key="frame" x="0.0" y="746" width="414" height="101"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -593,6 +589,17 @@
                                     <constraint firstAttribute="height" constant="16" id="tbp-Ad-l4v"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DjM-Di-CbV">
+                                <rect key="frame" x="373" y="100" width="30" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="16" id="3r3-TF-siN"/>
+                                    <constraint firstAttribute="width" constant="30" id="iWr-jr-1eG"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="instagram png"/>
+                                <connections>
+                                    <action selector="instagramButton:" destination="Uxh-nw-PxC" eventType="touchUpInside" id="au7-sq-h2e"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -601,6 +608,7 @@
                             <constraint firstItem="DnZ-9B-ft6" firstAttribute="top" secondItem="Sd4-48-2On" secondAttribute="bottom" constant="10" id="69l-Ry-vXo"/>
                             <constraint firstItem="WTG-rJ-S77" firstAttribute="top" secondItem="FVQ-h2-i19" secondAttribute="bottom" constant="5" id="6nR-Lb-aew"/>
                             <constraint firstItem="FVQ-h2-i19" firstAttribute="top" secondItem="5D8-ir-m1c" secondAttribute="bottom" constant="5" id="93x-Cb-ZeP"/>
+                            <constraint firstItem="DjM-Di-CbV" firstAttribute="top" secondItem="Foh-RC-Msx" secondAttribute="bottom" constant="10" id="FIg-vp-dPQ"/>
                             <constraint firstItem="g1o-yU-SFw" firstAttribute="top" secondItem="WTG-rJ-S77" secondAttribute="bottom" constant="5" id="IIU-cA-4Yd"/>
                             <constraint firstItem="KNj-fK-oDu" firstAttribute="trailing" secondItem="edZ-CG-WsM" secondAttribute="trailing" id="ISa-f9-lge"/>
                             <constraint firstItem="BCD-5J-lKw" firstAttribute="leading" secondItem="edZ-CG-WsM" secondAttribute="leading" constant="20" id="IXp-hw-cWL"/>
@@ -615,10 +623,10 @@
                             <constraint firstAttribute="trailing" secondItem="AZg-bd-Wd8" secondAttribute="trailing" constant="20" id="UYm-0m-luq"/>
                             <constraint firstItem="DnZ-9B-ft6" firstAttribute="leading" secondItem="edZ-CG-WsM" secondAttribute="leading" constant="20" id="VbX-2e-2t2"/>
                             <constraint firstItem="edZ-CG-WsM" firstAttribute="trailing" secondItem="WTG-rJ-S77" secondAttribute="trailing" constant="20" id="Wbf-Jf-vwA"/>
+                            <constraint firstItem="edZ-CG-WsM" firstAttribute="trailing" secondItem="DjM-Di-CbV" secondAttribute="trailing" constant="11" id="YhJ-fb-Dfw"/>
                             <constraint firstItem="edZ-CG-WsM" firstAttribute="trailing" secondItem="Zwv-Dl-nWE" secondAttribute="trailing" constant="20" id="aRu-G3-DRs"/>
                             <constraint firstItem="FVQ-h2-i19" firstAttribute="leading" secondItem="edZ-CG-WsM" secondAttribute="leading" constant="20" id="ac1-Rr-JeL"/>
                             <constraint firstItem="WTG-rJ-S77" firstAttribute="leading" secondItem="edZ-CG-WsM" secondAttribute="leading" constant="20" id="bKQ-YC-CZe"/>
-                            <constraint firstItem="rRh-4a-dTh" firstAttribute="top" secondItem="Foh-RC-Msx" secondAttribute="bottom" constant="41" id="ek2-OB-Qs2"/>
                             <constraint firstItem="5D8-ir-m1c" firstAttribute="top" secondItem="AZg-bd-Wd8" secondAttribute="bottom" constant="5" id="fh6-6j-r5c"/>
                             <constraint firstItem="AZg-bd-Wd8" firstAttribute="top" secondItem="BCD-5J-lKw" secondAttribute="bottom" constant="5" id="gxS-ed-OMi"/>
                             <constraint firstItem="AZg-bd-Wd8" firstAttribute="leading" secondItem="ovb-3p-eum" secondAttribute="leading" constant="20" id="iJo-PP-BxQ"/>
@@ -1135,7 +1143,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kfh-MT-LU2">
-                                                    <rect key="frame" x="177" y="95" width="30" height="30"/>
+                                                    <rect key="frame" x="177" y="95.5" width="30" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="6Jd-PB-frw"/>
                                                         <constraint firstAttribute="width" constant="30" id="Q3A-76-lda"/>
@@ -1913,6 +1921,7 @@
         <image name="No image available" width="650" height="644"/>
         <image name="back" width="256" height="256"/>
         <image name="cart" width="25" height="25"/>
+        <image name="instagram png" width="512" height="512"/>
         <image name="nostar" width="69.5" height="69.5"/>
         <image name="profile" width="25" height="25"/>
         <image name="shipment" width="24" height="24"/>
