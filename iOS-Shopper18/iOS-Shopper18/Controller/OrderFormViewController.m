@@ -110,7 +110,6 @@
 
 - (void)promptPayment:(void (^)(BOOL success, BOOL canceled, NSError * _Nullable))completion {
     BTDropInRequest *request = BTDropInRequest.new;
-    request.paypalDisabled = TRUE;
     BTDropInController *dropIn = [[BTDropInController alloc] initWithAuthorization:kclientToken request:request handler:^(BTDropInController * _Nonnull controller, BTDropInResult * _Nullable result, NSError * _Nullable error) {
         
         if (error != nil) completion(NO, NO, error);
