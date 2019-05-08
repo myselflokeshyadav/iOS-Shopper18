@@ -48,6 +48,7 @@
     FBSDKShareButton *button2 = [[FBSDKShareButton alloc] init];
     button2.shareContent = contents;
     [self.facebookShareView addSubview:button2];
+    
 }
 
 //setter
