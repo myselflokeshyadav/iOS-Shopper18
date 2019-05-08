@@ -18,9 +18,11 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)shared;
 
 - (BOOL)addProduct:(Product *)product;
+- (void)addProduct:(Product *)product with:(NSInteger)amount;
 - (void)removeProduct:(NSUInteger)index;
 - (void)setProducts:(NSArray<Product *> *)products;
 - (void)loadProducts:(void (^)(BOOL))completion;
+- (void)changeQuantityAt:(NSInteger)index by:(NSInteger)amount;
 - (void)changeProductQuantityAt:(NSInteger)index amount:(NSInteger)amount;
 - (void)clearCart:(void (^)(BOOL success, NSError * _Nullable error))completion;
 - (void)deleteItems:(NSMutableIndexSet *)indices completion:(void (^)(BOOL success, NSError * _Nullable error))completion;

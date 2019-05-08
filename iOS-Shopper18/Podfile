@@ -29,4 +29,6 @@ target 'iOS-Shopper18' do
   pod 'FBSDKLoginKit'
   pod 'FBSDKShareKit'
   pod 'FBSDKPlacesKit'
+  #twitter SDK Pods
+  pod 'TwitterKit'
 end

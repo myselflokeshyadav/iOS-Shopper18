@@ -36,6 +36,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tableView.clipsToBounds = NO;
+    self.tableView.showsVerticalScrollIndicator = NO;
+    self.tableView.showsHorizontalScrollIndicator = NO;
+    self.tableView.scrollEnabled = NO;
+    self.isEditing = NO;
+    self.formChanged = NO;
 }
 
 #pragma MARK: - Row constructors
@@ -156,6 +161,16 @@
     }
     NSLog(@"%@", [msgs componentsJoinedByString:@"\n"]);
     return msgs;
+}
+
+- (void)setRowEditing:(BOOL)editable tags:(NSArray *)tags {
+    for (NSString *tag in tags) {
+        XLFormRowDescriptor *row = [self.form formRowWithTag:tag];
+        
+        FloatLabeledTextFieldCell *cell = [self floatCellForRow:row];
+        cell.floatLabeledTextField.enabled = editable;
+        cell.floatLabeledTextField.textColor = editable? UIColor.blackColor : UIColor.grayColor;
+    }
 }
 
 

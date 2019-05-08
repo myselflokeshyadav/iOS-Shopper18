@@ -46,6 +46,26 @@
     return YES;
 }
 
+- (void)addProduct:(Product *)product with:(NSInteger)amount {
+    if (!self.pids[product.pid]) {
+        product = [product copy];
+        product.quantity = MIN(MAX(1, amount), 10);
+        [self.items addObject:product];
+        self.pids[product.pid] = @YES;
+        [FirebaseHandler.shared addProduct:product completion:^(NSError * _Nullable error) {
+            
+        }];
+        return;
+    }
+
+    for (NSInteger idx = 0; idx < self.items.count; idx++) {
+        if ([self.items[idx].pid isEqualToString:product.pid]) {
+            [self changeQuantityAt:idx by:amount];
+            return;
+        }
+    }
+}
+
 - (void)removeProduct:(NSUInteger)index {
     if (index < 0 || index >= self.items.count) return;
     Product *removed = self.items[index];
@@ -72,6 +92,16 @@
                 self.pids[product.pid] = @YES;
         }
         completion(results);
+    }];
+}
+
+- (void)changeQuantityAt:(NSInteger)index by:(NSInteger)amount {
+    if (index < 0 || index >= self.items.count) return;
+    NSInteger newVal = self.items[index].quantity + amount;
+    newVal = MIN(MAX(1, newVal), 10);
+    self.items[index].quantity = newVal;
+    [FirebaseHandler.shared addProduct:self.items[index] completion:^(NSError * _Nullable error) {
+        
     }];
 }
 

@@ -15,15 +15,20 @@
 @interface LoginViewController ()
 
 @property (strong, nonatomic) LoginViewModel *vm;
+@property (strong, nonatomic) UIAlertController *alert;
 
 @end
 
 @implementation LoginViewController
 
+
+NSString const *emailRegex = kRegexEmail;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.vm = LoginViewModel.new;
     self.navigationItem.title = @"Ready to shop?";
+    [self setupEmailInput];
 }
 
 - (void)initializeForm
@@ -64,29 +69,41 @@
     }
 }
 
-- (IBAction)resetPassTapped:(id)sender {
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Forgot your password?"
+- (void)setupEmailInput {
+    __weak LoginViewController *weakself = self;
+    
+    self.alert = [UIAlertController alertControllerWithTitle:@"Forgot your password?"
                                                                    message:@"Enter the associated email" preferredStyle:UIAlertControllerStyleAlert];
     
-    [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+    [self.alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
         textField.placeholder = @"Email";
+        textField.delegate = weakself;
     }];
     
-    [alert addAction:[UIAlertAction actionWithTitle:@"Cancel"
-                                              style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {}]];
+    [self.alert addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        weakself.alert.textFields[0].text = @"";
+    }]];
+    
+    
     
     UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        NSString *email = alert.textFields[0].text;
+        NSString *email = weakself.alert.textFields[0].text;
         if (!email || !email.length) return;
-        [self.vm resetPass:email completion:^(BOOL success, NSString * _Nullable msg) {
+        [weakself.vm resetPass:email completion:^(BOOL success, NSString * _Nullable msg) {
             dispatch_async(dispatch_get_main_queue(), ^{
+                self.alert.textFields[0].text = @"";
                 [TWMessageBarManager.sharedInstance showMessageWithTitle:@"Password reset email sent."
                                                              description:@"" type:TWMessageBarMessageTypeInfo duration:2];
             });
         }];
     }];
-    [alert addAction:okAction];
-    [self presentViewController:alert animated:YES completion:nil];
+    
+    okAction.enabled = NO;
+    [self.alert addAction:okAction];
+}
+
+- (IBAction)resetPassTapped:(id)sender {
+    [self presentViewController:self.alert animated:YES completion:nil];
     
 }
 
@@ -97,5 +114,17 @@
     return shouldReturn;
 }
 
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    if (textField != self.alert.textFields[0]) return [super textField:textField shouldChangeCharactersInRange:range replacementString:string];
+    NSString *text = textField.text;
+    if (!string.length && text.length) string = [text substringToIndex:text.length - 1];
+    else string = [text stringByAppendingString:string];
+    BOOL isValid = [[NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex] evaluateWithObject:[string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]];
+    
+    self.alert.actions[1].enabled = isValid;
+    
+    return YES;
+    
+}
 
 @end

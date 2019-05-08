@@ -64,7 +64,7 @@
     self.productName.text = self.product.name;
     NSString *productDescribTxt = [NSString stringWithFormat:@"%@",self.product.desc];
     self.productDescribtion.text = productDescribTxt;
-    NSString* formattedNumber = [NSString stringWithFormat:@"$%.02f", self.product.price];
+    NSString* formattedNumber = [NSString stringWithFormat:@"$%.02f", self.product.price / 100];
     self.productPrize.text = formattedNumber;
     NSString * urlString = self.product.imageURL;
     NSURL * url = [NSURL URLWithString:urlString];
@@ -72,11 +72,10 @@
 }
 
 - (IBAction)buyProduct:(id)sender {
-    for( int i = 0; i <self.itemsBoughtCount; i ++){
-    [self.sharedManager addProduct:self.product];
-    }
-    NSString *mess = [NSString stringWithFormat:@"Success in purchasing %ld of %@",(long)self.itemsBoughtCount,self.product.name];
-    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Add to Cart!" message:mess preferredStyle:UIAlertControllerStyleAlert];
+    [self.sharedManager addProduct:self.product with:self.itemsBoughtCount];
+    self.tabBarController.tabBar.items[1].badgeValue = [NSString stringWithFormat:@"%lu",(unsigned long)Cart.shared.items.count];
+    NSString *mess = [NSString stringWithFormat:@"%@ x %ld added to cart.",self.product.name, (long)self.itemsBoughtCount];
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Added to Cart!" message:mess preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"Great!" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){}];
     [alert addAction:defaultAction];
     [self presentViewController:alert animated:YES completion:nil];
@@ -89,32 +88,35 @@
     self.btnFive.backgroundColor = UIColor.whiteColor;
 
     UIColor *orange = kColorPrimeOrange;
-    
     NSInteger tag = [sender tag];
-    switch (tag) {
-        case 1:
-            self.itemsBoughtCount = tag;
-            sender.backgroundColor = orange;
-            break;
-        case 2:
-            self.itemsBoughtCount = tag;
-            sender.backgroundColor = orange;
-            break;
-        case 3:
-            self.itemsBoughtCount = tag;
-            sender.backgroundColor = orange;
-            break;
-        case 4:
-            self.itemsBoughtCount = tag;
-            sender.backgroundColor = orange;
-            break;
-        case 5:
-            self.itemsBoughtCount = tag;
-            sender.backgroundColor = orange;
-            break;
-        default:
-            break;
-    }
+    self.itemsBoughtCount = tag;
+    sender.backgroundColor = orange;
+    
+    //  HOOOOOF
+//    switch (tag) {
+//        case 1:
+//            self.itemsBoughtCount = tag;
+//            sender.backgroundColor = orange;
+//            break;
+//        case 2:
+//            self.itemsBoughtCount = tag;
+//            sender.backgroundColor = orange;
+//            break;
+//        case 3:
+//            self.itemsBoughtCount = tag;
+//            sender.backgroundColor = orange;
+//            break;
+//        case 4:
+//            self.itemsBoughtCount = tag;
+//            sender.backgroundColor = orange;
+//            break;
+//        case 5:
+//            self.itemsBoughtCount = tag;
+//            sender.backgroundColor = orange;
+//            break;
+//        default:
+//            break;
+//    }
 }
 
 
