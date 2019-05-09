@@ -348,7 +348,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="No image available" translatesAutoresizingMaskIntoConstraints="NO" id="2NG-rP-J2i">
-                                                    <rect key="frame" x="12" y="30" width="164" height="119"/>
+                                                    <rect key="frame" x="8" y="28" width="172" height="121"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Orh-vu-E8q">
                                                     <rect key="frame" x="18" y="154" width="152" height="20"/>
@@ -362,13 +362,13 @@
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstAttribute="trailingMargin" secondItem="2NG-rP-J2i" secondAttribute="trailing" constant="4" id="6fs-1e-YfK"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="2NG-rP-J2i" secondAttribute="trailing" id="6fs-1e-YfK"/>
                                             <constraint firstItem="Orh-vu-E8q" firstAttribute="top" secondItem="2NG-rP-J2i" secondAttribute="bottom" constant="5" id="8iB-iU-lgg"/>
-                                            <constraint firstItem="2NG-rP-J2i" firstAttribute="top" secondItem="n7r-3y-OQQ" secondAttribute="topMargin" constant="2" id="IEx-cL-ZdG"/>
+                                            <constraint firstItem="2NG-rP-J2i" firstAttribute="top" secondItem="n7r-3y-OQQ" secondAttribute="topMargin" id="IEx-cL-ZdG"/>
                                             <constraint firstAttribute="bottomMargin" secondItem="Orh-vu-E8q" secondAttribute="bottom" constant="6" id="c2Q-HC-hMd"/>
                                             <constraint firstItem="Orh-vu-E8q" firstAttribute="leading" secondItem="n7r-3y-OQQ" secondAttribute="leadingMargin" constant="10" id="lk0-dt-EYM"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="Orh-vu-E8q" secondAttribute="trailing" constant="10" id="qcA-Vi-es8"/>
-                                            <constraint firstItem="2NG-rP-J2i" firstAttribute="leading" secondItem="n7r-3y-OQQ" secondAttribute="leadingMargin" constant="4" id="wqG-ph-Eob"/>
+                                            <constraint firstItem="2NG-rP-J2i" firstAttribute="leading" secondItem="n7r-3y-OQQ" secondAttribute="leadingMargin" id="wqG-ph-Eob"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="categoryImage" destination="2NG-rP-J2i" id="Pes-9C-VpV"/>
@@ -752,7 +752,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="No image available" translatesAutoresizingMaskIntoConstraints="NO" id="MlN-7u-b5S">
-                                                    <rect key="frame" x="12" y="30" width="174" height="128"/>
+                                                    <rect key="frame" x="8" y="28" width="182" height="130"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zb1-P3-E3B">
                                                     <rect key="frame" x="18" y="163" width="162" height="20"/>
@@ -766,11 +766,11 @@
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstAttribute="trailingMargin" secondItem="MlN-7u-b5S" secondAttribute="trailing" constant="4" id="Pdk-2M-MpF"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="MlN-7u-b5S" secondAttribute="trailing" id="Pdk-2M-MpF"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="Zb1-P3-E3B" secondAttribute="trailing" constant="10" id="US6-Sb-cjT"/>
                                             <constraint firstItem="Zb1-P3-E3B" firstAttribute="leading" secondItem="1Yk-3h-nLY" secondAttribute="leadingMargin" constant="10" id="aTr-rP-O9W"/>
-                                            <constraint firstItem="MlN-7u-b5S" firstAttribute="leading" secondItem="1Yk-3h-nLY" secondAttribute="leadingMargin" constant="4" id="baS-2S-asU"/>
-                                            <constraint firstItem="MlN-7u-b5S" firstAttribute="top" secondItem="1Yk-3h-nLY" secondAttribute="topMargin" constant="2" id="f9C-2k-5mp"/>
+                                            <constraint firstItem="MlN-7u-b5S" firstAttribute="leading" secondItem="1Yk-3h-nLY" secondAttribute="leadingMargin" id="baS-2S-asU"/>
+                                            <constraint firstItem="MlN-7u-b5S" firstAttribute="top" secondItem="1Yk-3h-nLY" secondAttribute="topMargin" id="f9C-2k-5mp"/>
                                             <constraint firstAttribute="bottomMargin" secondItem="Zb1-P3-E3B" secondAttribute="bottom" constant="6" id="rLT-28-NvV"/>
                                             <constraint firstItem="Zb1-P3-E3B" firstAttribute="top" secondItem="MlN-7u-b5S" secondAttribute="bottom" constant="5" id="wX2-Bb-sih"/>
                                         </constraints>
@@ -829,7 +829,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="No image available" translatesAutoresizingMaskIntoConstraints="NO" id="0sI-dK-s8J">
-                                                    <rect key="frame" x="12" y="30" width="174" height="128"/>
+                                                    <rect key="frame" x="8" y="28" width="182" height="130"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gsi-eH-RWk">
                                                     <rect key="frame" x="18" y="163" width="162" height="20"/>
@@ -843,12 +843,12 @@
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="0sI-dK-s8J" firstAttribute="leading" secondItem="weg-sQ-m6L" secondAttribute="leadingMargin" constant="4" id="1HI-cI-qC6"/>
+                                            <constraint firstItem="0sI-dK-s8J" firstAttribute="leading" secondItem="weg-sQ-m6L" secondAttribute="leadingMargin" id="1HI-cI-qC6"/>
                                             <constraint firstItem="gsi-eH-RWk" firstAttribute="leading" secondItem="weg-sQ-m6L" secondAttribute="leadingMargin" constant="10" id="JKV-Y1-VeP"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="0sI-dK-s8J" secondAttribute="trailing" constant="4" id="cfF-dY-sNF"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="0sI-dK-s8J" secondAttribute="trailing" id="cfF-dY-sNF"/>
                                             <constraint firstAttribute="bottomMargin" secondItem="gsi-eH-RWk" secondAttribute="bottom" constant="6" id="gEB-vb-WKu"/>
                                             <constraint firstItem="gsi-eH-RWk" firstAttribute="top" secondItem="0sI-dK-s8J" secondAttribute="bottom" constant="5" id="jQk-BB-0yz"/>
-                                            <constraint firstItem="0sI-dK-s8J" firstAttribute="top" secondItem="weg-sQ-m6L" secondAttribute="topMargin" constant="2" id="qze-ii-sLW"/>
+                                            <constraint firstItem="0sI-dK-s8J" firstAttribute="top" secondItem="weg-sQ-m6L" secondAttribute="topMargin" id="qze-ii-sLW"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="gsi-eH-RWk" secondAttribute="trailing" constant="10" id="y2r-zJ-qYh"/>
                                         </constraints>
                                         <connections>
@@ -1151,7 +1151,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yyo-NW-NrH">
-                                                    <rect key="frame" x="177" y="13" width="197" height="21.5"/>
+                                                    <rect key="frame" x="177" y="13" width="123.5" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1219,7 +1219,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B1o-xw-rpN">
-                                                    <rect key="frame" x="382" y="13" width="22" height="22"/>
+                                                    <rect key="frame" x="308.5" y="13" width="22" height="22"/>
                                                     <color key="tintColor" red="0.35686274509999999" green="0.72549019609999998" blue="0.4549019608" alpha="0.66197559930000005" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <connections>
                                                         <action selector="detailBtnTapped:" destination="doo-KK-6kk" eventType="touchUpInside" id="8gN-9q-zx6"/>
