@@ -44,9 +44,9 @@
 //        if (success) {
     
             self.totalPaidPrice = 0;
-            if (Cart.shared.items.count == 0){
-                self.tabBarController.tabBar.items[1].badgeValue = nil;
+            if (Cart.shared.items.count == 0){                self.tabBarController.tabBar.items[1].badgeValue = nil;
                 self.checkoutBtnOutlet.enabled = NO;
+                self.checkoutBtnOutlet.alpha = 0.1;
                 [self.noProductInfoLbl setHidden:NO];
                 self.totalPrizeLbl.text = [NSString stringWithFormat: @"Total: $%.2f",self.totalPaidPrice/100];
                 dispatch_async(dispatch_get_main_queue(), ^{
@@ -54,7 +54,8 @@
                 });
                 
             }else{
-               self.checkoutBtnOutlet.enabled = YES; self.tabBarController.tabBar.items[1].badgeValue = [NSString stringWithFormat:@"%lu",(unsigned long)Cart.shared.items.count];
+               self.checkoutBtnOutlet.enabled = YES;
+               self.checkoutBtnOutlet.alpha = 1.0; self.tabBarController.tabBar.items[1].badgeValue = [NSString stringWithFormat:@"%lu",(unsigned long)Cart.shared.items.count];
                 [self.noProductInfoLbl setHidden:YES];
                 for (int i = 0; i < Cart.shared.items.count; i++){
                     self.totalPaidPrice += Cart.shared.items[i].price * Cart.shared.items[i].quantity;
@@ -132,9 +133,11 @@
             self.totalPaidPrice += pObj.price;
             self.totalPrizeLbl.text = [NSString stringWithFormat: @"Total: $%.2f",self.totalPaidPrice/100];
             cell.minusBtnOutlet.enabled = YES;
+            cell.minusBtnOutlet.alpha = 1.0;
             
         }else{
             cell.pulsBtnOutlet.enabled = NO;
+            cell.pulsBtnOutlet.alpha = 0.1;
         }
     };
     cell.minusButtonTapHandler = ^{
@@ -146,8 +149,10 @@
             self.totalPaidPrice -= pObj.price;
             self.totalPrizeLbl.text = [NSString stringWithFormat: @"Total: $%.2f",self.totalPaidPrice/100];
             cell.pulsBtnOutlet.enabled = YES;
+            cell.pulsBtnOutlet.alpha = 1.0;
         }else{
             cell.minusBtnOutlet.enabled = NO;
+            cell.minusBtnOutlet.alpha = 0.1;
         }
     };
     
