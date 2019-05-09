@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home-->
+        <!--Home View Controller-->
         <scene sceneID="b9B-Ij-bWS">
             <objects>
                 <viewController storyboardIdentifier="HomeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="poo-0i-NFk" customClass="HomeViewController" sceneMemberID="viewController">
@@ -190,7 +190,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TQN-p8-ouW"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Home" id="H3W-wc-wLn"/>
+                    <navigationItem key="navigationItem" id="H3W-wc-wLn"/>
                     <size key="freeformSize" width="414" height="1200"/>
                     <connections>
                         <outlet property="categoryCollectionView" destination="pbk-E6-z1r" id="MSy-Qb-h9A"/>
@@ -906,13 +906,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FK2-JT-t7W">
-                                                    <rect key="frame" x="10" y="10" width="393" height="199"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="199" id="E4X-VV-Rb2"/>
-                                                    </constraints>
+                                                    <rect key="frame" x="10" y="0.0" width="393" height="216"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FmT-nC-Ex0">
-                                                    <rect key="frame" x="10" y="214" width="393" height="34"/>
+                                                    <rect key="frame" x="10" y="216" width="393" height="34"/>
                                                     <color key="backgroundColor" red="0.35686274509999999" green="0.72549019609999998" blue="0.4549019608" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="34" id="9XN-cc-ADX"/>
@@ -932,12 +929,12 @@
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="FK2-JT-t7W" firstAttribute="top" secondItem="MKo-xk-T11" secondAttribute="top" constant="10" id="3kl-Aa-zAY"/>
+                                            <constraint firstItem="FK2-JT-t7W" firstAttribute="top" secondItem="MKo-xk-T11" secondAttribute="top" id="3kl-Aa-zAY"/>
                                             <constraint firstAttribute="trailing" secondItem="FmT-nC-Ex0" secondAttribute="trailing" constant="10" id="QlH-o6-Jij"/>
                                             <constraint firstItem="FmT-nC-Ex0" firstAttribute="leading" secondItem="MKo-xk-T11" secondAttribute="leading" constant="10" id="e9H-LI-5gU"/>
                                             <constraint firstAttribute="trailing" secondItem="FK2-JT-t7W" secondAttribute="trailing" constant="10" id="hx4-4K-Q7n"/>
-                                            <constraint firstItem="FmT-nC-Ex0" firstAttribute="top" secondItem="FK2-JT-t7W" secondAttribute="bottom" constant="5" id="kTj-6J-ihc"/>
-                                            <constraint firstAttribute="bottom" secondItem="FmT-nC-Ex0" secondAttribute="bottom" constant="17" id="ulc-Gf-omc"/>
+                                            <constraint firstItem="FmT-nC-Ex0" firstAttribute="top" secondItem="FK2-JT-t7W" secondAttribute="bottom" id="kTj-6J-ihc"/>
+                                            <constraint firstAttribute="bottom" secondItem="FmT-nC-Ex0" secondAttribute="bottom" constant="15" id="ulc-Gf-omc"/>
                                             <constraint firstItem="FK2-JT-t7W" firstAttribute="leading" secondItem="MKo-xk-T11" secondAttribute="leading" constant="10" id="vgE-mE-Kee"/>
                                         </constraints>
                                         <connections>

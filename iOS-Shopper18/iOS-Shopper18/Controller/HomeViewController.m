@@ -25,6 +25,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationItem.title = @"Shop";
     self.homeVM = HomeViewModel.new;
     self.topSeller = TopSeller.new;
     self.category = Category.new;
