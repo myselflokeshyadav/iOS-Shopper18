@@ -61,37 +61,6 @@
     TopSeller *tsObj = [self.topsellerVM topSellerAt:indexPath.item];
     
     cell.sNameLbl.text = [NSString stringWithFormat:@"%@", tsObj.name];
-    cell.sDealLbl.text = [NSString stringWithFormat:@"Deal: %@", tsObj.deal];
-    switch (tsObj.rating.intValue) {
-        case 1:
-            cell.starImg1.image = [UIImage imageNamed:@"star"];
-            break;
-        case 2:
-            cell.starImg1.image = [UIImage imageNamed:@"star"];
-            cell.starImg2.image = [UIImage imageNamed:@"star"];
-            break;
-        case 3:
-            cell.starImg1.image = [UIImage imageNamed:@"star"];
-            cell.starImg2.image = [UIImage imageNamed:@"star"];
-            cell.starImg3.image = [UIImage imageNamed:@"star"];
-            break;
-        case 4:
-            cell.starImg1.image = [UIImage imageNamed:@"star"];
-            cell.starImg2.image = [UIImage imageNamed:@"star"];
-            cell.starImg3.image = [UIImage imageNamed:@"star"];
-            cell.starImg4.image = [UIImage imageNamed:@"star"];
-            break;
-        case 5:
-            cell.starImg1.image = [UIImage imageNamed:@"star"];
-            cell.starImg2.image = [UIImage imageNamed:@"star"];
-            cell.starImg3.image = [UIImage imageNamed:@"star"];
-            cell.starImg4.image = [UIImage imageNamed:@"star"];
-            cell.starImg5.image = [UIImage imageNamed:@"star"];
-            break;
-        default:
-            break;
-    }
-    cell.sRatingLbl.text = @"Rating:";
     [cell.logoImgView sd_setImageWithURL:[NSURL URLWithString:tsObj.logo]
                  placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
     return cell;
@@ -105,7 +74,6 @@
     SingleTopSellerViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"SingleTopSellerViewController"];
     TopSeller *tsObj = [self.topsellerVM topSellerAt:indexPath.row];
     
-    //vc.nameLbl.text = [NSString stringWithFormat:@"%@", tsObj.name];
     vc.name = [NSString stringWithFormat:@"%@", tsObj.name];
     vc.deal = [NSString stringWithFormat:@"Deal: %@", tsObj.deal];
     vc.imgString = tsObj.logo;

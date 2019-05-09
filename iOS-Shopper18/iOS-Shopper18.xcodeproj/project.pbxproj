@@ -434,6 +434,7 @@
 				E1E2558B227B61EF00230E4F /* Resources */,
 				AD4FF6ABF995D2969704CAEA /* [CP] Copy Pods Resources */,
 				E1F1AAAF2280C3ED008DF53D /* ShellScript */,
+				A1E6FC9C0AF676C598B3360A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -492,6 +493,30 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		A1E6FC9C0AF676C598B3360A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iOS-Shopper18/Pods-iOS-Shopper18-frameworks.sh",
+				"${PODS_ROOT}/TwitterCore/iOS/TwitterCore.framework",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iOS-Shopper18/Pods-iOS-Shopper18-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		AD4FF6ABF995D2969704CAEA /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -512,6 +537,7 @@
 				"${PODS_ROOT}/TWMessageBarManager/Classes/Icons/icon-info@2x.png",
 				"${PODS_ROOT}/TWMessageBarManager/Classes/Icons/icon-success.png",
 				"${PODS_ROOT}/TWMessageBarManager/Classes/Icons/icon-success@2x.png",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterKitResources.bundle",
 				"${PODS_ROOT}/XLForm/XLForm/XLForm.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -529,6 +555,7 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icon-info@2x.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icon-success.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icon-success@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TwitterKitResources.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/XLForm.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;

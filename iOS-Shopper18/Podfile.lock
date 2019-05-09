@@ -188,6 +188,9 @@ PODS:
   - surveymonkey-ios-sdk (2.0.4)
   - SVProgressHUD (2.2.5)
   - Toast (4.0.0)
+  - TwitterCore (3.2.0)
+  - TwitterKit (3.4.2):
+    - TwitterCore (>= 3.2.0)
   - TWMessageBarManager (1.8.1)
   - XLForm (4.0.1)
 
@@ -211,6 +214,7 @@ DEPENDENCIES:
   - surveymonkey-ios-sdk
   - SVProgressHUD
   - Toast (~> 4.0.0)
+  - TwitterKit
   - TWMessageBarManager
   - XLForm
 
@@ -246,6 +250,8 @@ SPEC REPOS:
     - surveymonkey-ios-sdk
     - SVProgressHUD
     - Toast
+    - TwitterCore
+    - TwitterKit
     - TWMessageBarManager
     - XLForm
 
@@ -280,9 +286,11 @@ SPEC CHECKSUMS:
   surveymonkey-ios-sdk: 974f5b54687df43edf63253f6de8da035237e15f
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
+  TwitterCore: 8cbc9ad34d91c63a0035ea05bfbfc0d7ca72a28c
+  TwitterKit: 5e4f41d70b9abdb41df5467f52d7aa2c0fd26ebb
   TWMessageBarManager: fd84e7948ba7968a2b5d9454859135761214ec56
   XLForm: b8d47a9a00fb6166981cb40de7169d70d611e9be
 
-PODFILE CHECKSUM: 62ab6bccf49d7d1d7ad26347e02741fb008ca186
+PODFILE CHECKSUM: 7092d6894d519fb1ac9f36ba2824c70d107e2372
 
 COCOAPODS: 1.6.1

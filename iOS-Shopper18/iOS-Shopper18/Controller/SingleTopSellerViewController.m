@@ -8,6 +8,7 @@
 
 #import "SingleTopSellerViewController.h"
 #import <SDWebImage/SDWebImage.h>
+#import "UIView+Toast.h"
 
 @interface SingleTopSellerViewController ()
 
@@ -51,14 +52,24 @@
             break;
     }
 }
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)ratingBtnClick:(UIButton *)sender {
+    [self displayToast];
 }
-*/
+
+-(void)displayToast{
+    double delayInSeconds = 0.5;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            [self.view makeToast:@"Rating functionality is not available yet."
+                        duration:3.0
+                        position:CSToastPositionCenter
+                           title:@"Sorry"
+                           image:[UIImage imageNamed:@"toast.png"]
+                           style:nil
+                      completion:^(BOOL didTap) {
+                      }];
+    });
+}
 
 @end
