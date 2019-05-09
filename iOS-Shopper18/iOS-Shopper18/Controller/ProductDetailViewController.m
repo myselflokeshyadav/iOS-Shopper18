@@ -13,6 +13,7 @@
 #import "Cart.h"
 #import <FBSDKShareKit/FBSDKShareKit.h>
 #import "UIView+Toast.h"
+#import <TwitterKit/TWTRKit.h>
 
 @interface ProductDetailViewController ()
 @property (nonatomic, strong) ProductDetailViewModel* viewModel;
@@ -52,7 +53,36 @@
     button2.shareContent = contents;
     [self.facebookShareView addSubview:button2];
     
+    
 }
+
+- (IBAction)twitterBtnClick:(UIButton *)sender {
+    
+    if ([[Twitter sharedInstance].sessionStore hasLoggedInUsers]) {
+    
+        TWTRComposer *composer = [[TWTRComposer alloc] init];
+        
+        [composer setText:self.productName.text];
+        [composer setImage:self.productImage.image];
+        
+        // Called from a UIViewController
+        [composer showFromViewController:self completion:^(TWTRComposerResult result) {
+            if (result == TWTRComposerResultCancelled) {
+                NSLog(@"Tweet composition cancelled");
+            }
+            else {
+                NSLog(@"Sending Tweet!");
+            }
+        }];
+    }else{
+        CSToastStyle *style = [[CSToastStyle alloc] initWithDefaultStyle];
+        [self.view makeToast:@"Login Twitter to share!"
+                    duration:3.0
+                    position:CSToastPositionCenter
+                       style:style];
+    }
+}
+
 
 //setter
 -(void)setDetailViewModel:(ProductDetailViewModel *)viewModel{
@@ -122,7 +152,7 @@
     }
     else {
         CSToastStyle *style = [[CSToastStyle alloc] initWithDefaultStyle];
-        [self.view makeToast:@"Log in to instagram."
+        [self.view makeToast:@"Login instagram to share!"
                     duration:3.0
                     position:CSToastPositionCenter
                        style:style];

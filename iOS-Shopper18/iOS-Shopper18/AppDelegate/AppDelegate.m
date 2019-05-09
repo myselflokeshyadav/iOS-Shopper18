@@ -12,6 +12,7 @@
 #import "User.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import "Cart.h"
+#import <TwitterKit/TWTRKit.h>
 @import Firebase;
 
 @interface AppDelegate ()
@@ -21,6 +22,9 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    //Twitter API
+    [[Twitter sharedInstance] startWithConsumerKey:@"m0j7S08Qk0X5dxlDaRafkOTRs" consumerSecret:@"zRZoFMOnARo8y6PtunGC9HtN43luu7Sgfaf6SyGbDwluHuQOxN"];
+    
     //Facebook stuff
     [[FBSDKApplicationDelegate sharedInstance] application:application
                              didFinishLaunchingWithOptions:launchOptions];
@@ -70,6 +74,12 @@
     if ([url.scheme localizedCaseInsensitiveCompare:kURLScheme] == NSOrderedSame) {
         return [BTAppSwitch handleOpenURL:url options:options];
     }
+    
+    //for Twitter
+    if ([Twitter.sharedInstance application:application openURL:url options:options]){
+        return YES;
+    }
+    
     //starting facebook handled code
     BOOL handled = [[FBSDKApplicationDelegate sharedInstance] application:application
                                                                   openURL:url
@@ -78,6 +88,8 @@
                     ];
     return handled;
 //delete from facebook code//    return NO;
+    
+
 }
 //facebook log, testing if this is activated
 - (void)applicationDidBecomeActive:(UIApplication *)application {
