@@ -29,6 +29,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.tblView.rowHeight = UITableViewAutomaticDimension;
+    self.tblView.estimatedRowHeight = 175;
+    
+
     self.totalPaidPrice = 0;
     self.navigationItem.title = @"Shopping Cart";
     [self loadProductFromFirebase];
